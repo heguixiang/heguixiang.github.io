@@ -12,10 +12,10 @@ title: "关于：About"
 ## 联系方式
 
 <p class="contact">
-微博：  <a href="http://weibo.com/u/2182513544/home?wvr=5&lf=reg" title="微博联系我"><img src="http://www.sinaimg.cn/blog/developer/wiki/LOGO_32x32.png" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
-知乎： <a href="http://www.zhihu.com/people/he-gui-xiang-51" title="知乎联系我"><img src="http://www.zhihu.com/favicon.ico" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
-Githubi： <a href="https://github.com/heguixiang" title="Github联系我"><img src="http://www.github.com/favicon.ico" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
-邮箱: guixiang.he@outlook.com 
+微  博：  <a href="http://weibo.com/u/2182513544/home?wvr=5&lf=reg" title="微博联系我"><img src="http://www.sinaimg.cn/blog/developer/wiki/LOGO_32x32.png" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
+知  乎： <a href="http://www.zhihu.com/people/he-gui-xiang-51" title="知乎联系我"><img src="http://www.zhihu.com/favicon.ico" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
+Github： <a href="https://github.com/heguixiang" title="Github联系我"><img src="http://www.github.com/favicon.ico" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
+邮  箱： guixiang.he@outlook.com 
 </p>
 
 ## 关于本站：
@@ -25,6 +25,8 @@ Githubi： <a href="https://github.com/heguixiang" title="Github联系我"><img 
 
 ## 个人爱好
 * NBA骑士Lebron James球迷
-* NBA骑士Lebron James球迷
+* 喜欢听歌，看电影
+* 喜欢阿喵阿狗
+
 
 
