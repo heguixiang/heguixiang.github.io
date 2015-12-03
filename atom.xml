@@ -2,18 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>浪号</title>
- <link href="http://seu2gcj.github.io/atom.xml" rel="self"/>
- <link href="http://seu2gcj.github.io"/>
- <updated>2015-12-03T12:54:55+08:00</updated>
+ <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
+ <link href="http://heguixiang.github.io"/>
+ <updated>2015-12-03T19:13:33+08:00</updated>
  <author>
    <name>Guixiang.He</name>
-   <email>wade_he@qq.com</email>
+   <email>guixiang.he@outlook.com</email>
  </author>
 
  
  <entry>
    <title>hello,world</title>
-   <link href="http://seu2gcj.github.io/blog/2015/12/just-a-test.html"/>
+   <link href="http://heguixiang.github.io/blog/2015/12/just-a-test.html"/>
    <updated>2015-12-02T00:00:00+08:00</updated>
    <id>/blog/2015/12/just-a-test</id>
    <content type="html">&lt;p&gt;这只是一个测试，hello，world&lt;/p&gt;
@@ -23,7 +23,7 @@
  
  <entry>
    <title>Volley源码分析</title>
-   <link href="http://seu2gcj.github.io/blog/2015/08/volley-source-code.html"/>
+   <link href="http://heguixiang.github.io/blog/2015/08/volley-source-code.html"/>
    <updated>2015-08-27T00:00:00+08:00</updated>
    <id>/blog/2015/08/volley-source-code</id>
    <content type="html">&lt;p&gt;说到Android的网络库，比较常用的就是Volley和okHttp了，最近重温了下Volley的源码，感觉应该写点什么．Volley 是 Google 推出的 Android 异步网络请求框架和图片加载框架，适合数据量小通信比较频繁的情形．&lt;/p&gt;
@@ -235,7 +235,7 @@ Volley默认启动了４个&lt;code&gt;NetworkDispatcher&lt;/code&gt;线程来�
  
  <entry>
    <title>Zsh-Linux下最好的Shell简介</title>
-   <link href="http://seu2gcj.github.io/blog/2015/08/linux-zsh.html"/>
+   <link href="http://heguixiang.github.io/blog/2015/08/linux-zsh.html"/>
    <updated>2015-08-23T00:00:00+08:00</updated>
    <id>/blog/2015/08/linux-zsh</id>
    <content type="html">&lt;p&gt;没听过Shell?Shell是Unix/Linux系统下的外壳，负责外界和Linux内核的交互，将用户输入的命令转换成内核能懂的语言，执行相应的指令，然后将输出返回给用户．&lt;/p&gt;
@@ -309,7 +309,7 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
  
  <entry>
    <title>Latex中英文环境设置</title>
-   <link href="http://seu2gcj.github.io/blog/2015/08/latex-fonts-settings.html"/>
+   <link href="http://heguixiang.github.io/blog/2015/08/latex-fonts-settings.html"/>
    <updated>2015-08-22T00:00:00+08:00</updated>
    <id>/blog/2015/08/latex-fonts-settings</id>
    <content type="html">&lt;p&gt;Latex默认是不支持中文的,后来有人开发了XeLatex来支持非英文字符,xetex是一种使用Unicode的TeX排版引擎,并默认其输入文件为UTF-8编码，也即,英文字符与非英文字符不再有区别，原生支持系统字体，这意味着我们无需再额外编译字体, 故可以在不进行额外配置的情况下直接使用操作系统中安装的字体。&lt;/p&gt;
@@ -370,7 +370,7 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
  
  <entry>
    <title>Dagger依赖注入浅析</title>
-   <link href="http://seu2gcj.github.io/blog/2015/08/dagger-dependency-injection.html"/>
+   <link href="http://heguixiang.github.io/blog/2015/08/dagger-dependency-injection.html"/>
    <updated>2015-08-13T00:00:00+08:00</updated>
    <id>/blog/2015/08/dagger-dependency-injection</id>
    <content type="html">&lt;p&gt;最早接触依赖注入这个概念是在使用Spring框架的时候，一开始没太在意它，后面开发项目的过程中发现使用依赖注入可以降低代码的耦合性,Spring的依赖注入是通过反射机制实现的，而Dagger依赖注入是在编译期生成辅助的类，这些类继承特定父类或实现特定接口，程序在运行时 Dagger 加载这些辅助类，调用相应接口完成依赖生成和注入.&lt;/p&gt;
