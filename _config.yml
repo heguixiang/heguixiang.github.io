@@ -3,7 +3,7 @@ include: ['.htaccess']
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "CNAME", "Gemfile", "Gemfile.lock"]
 markdown: kramdown
 highlights: pygments
-url: http://seu2gcj.github.io 
+url: http://heguixiang.github.io 
 #cdn_url: 7u2t01.com1.z0.glb.clouddn.com
 #lsi: false
 safe: true
@@ -22,16 +22,16 @@ kramdown:
 
 JB :
     #IMAGE_PATH : http://coolshell.info/images
-    IMAGE_PATH :  seu2gcj.github.io/images
+    IMAGE_PATH :  heguixiang.github.io/images
 
 # presonal config
 #domain: http://coolshell.info
-domain: seu2gcj.github.io
+domain: heguixiang.github.io
 title: 浪号
 description: 快乐生活
 author: Guixiang.He
-email: wade_he@qq.com
-github: seu2hgx
+email: guixiang.he@outlook.com
+github: heguixiang
 
 config:
   js_dir:
