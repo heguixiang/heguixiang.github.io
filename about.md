@@ -12,17 +12,19 @@ title: "关于：About"
 ## 联系方式
 
 <p class="contact">
-  <a href="http://weibo.com/ouyanglip" title="微博联系我"><img src="http://www.sinaimg.cn/blog/developer/wiki/LOGO_32x32.png" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
- <a href="http://www.zhihu.com/people/lippi-ouyang" title="知乎联系我"><img src="http://www.zhihu.com/favicon.ico" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
- <a href="https://github.com/LippiOuYang" title="Github联系我"><img src="http://www.github.com/favicon.ico" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
-邮箱: wade_he@qq.com 
+微博：  <a href="http://weibo.com/u/2182513544/home?wvr=5&lf=reg" title="微博联系我"><img src="http://www.sinaimg.cn/blog/developer/wiki/LOGO_32x32.png" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
+知乎： <a href="http://www.zhihu.com/people/he-gui-xiang-51" title="知乎联系我"><img src="http://www.zhihu.com/favicon.ico" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
+Githubi： <a href="https://github.com/heguixiang" title="Github联系我"><img src="http://www.github.com/favicon.ico" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
+邮箱: guixiang.he@outlook.com 
 </p>
 
 ## 关于本站：
 
-* 搭建于[Github](https://github.com/seu2hgx/seu2hgx.github.io),欢迎Fork
+* 搭建于[Github](https://github.com/heguixiang/heguixiang.github.io),欢迎Fork
 * 模板及样式来源[Useful Paradigm](http://usefulparadigm.com/)
 
-## 其他流言
-* NBA骑士球迷 
+## 个人爱好
+* NBA骑士Lebron James球迷
+* NBA骑士Lebron James球迷
+
 
