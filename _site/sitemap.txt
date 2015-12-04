@@ -23,11 +23,17 @@
 
     /blog/2015/12/just-a-test.html
 
-    /blog/2015/08/volley-source-code.html
+    /blog/2014/10/android-opensource.html
 
-    /blog/2015/08/linux-zsh.html
+    /blog/2014/08/java-multithread.html
 
-    /blog/2015/08/latex-fonts-settings.html
+    /blog/2014/07/use-jekyll-build-blog-on-github.html
 
-    /blog/2015/08/dagger-dependency-injection.html
+    /blog/2014/07/qualified-programmer-should-read-what-books.html
+
+    /blog/2014/07/markdown-syntax.html
+
+    /blog/2014/07/markdown-basics.html
+
+    /blog/2014/07/c-advanced-programming.html
 
