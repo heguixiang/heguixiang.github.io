@@ -10,11 +10,11 @@ title: "问答：Faqs"
 
 ####或作为url收藏记录
 1,Markdown语法：<http://wowubuntu.com/markdown/basic.html>  
-2,该模板的github仓库，需要在根目录下将search.html的google自定义搜索id换成你的，详细教程请看: <http://jn3.141592654.blog.163.com/blog/static/27477260201123065932466/>
+2,该模板的github仓库，需要在根目录下将search.html的google自定义搜索id换成你的，详细教程请看: <http://jn3.141592654.blog.163.com/blog/static/27477260201123065932466/>  
 
 3,git文章收藏:  
 Git分支管理策略: <http://www.ruanyifeng.com/blog/2012/07/git.html>    
-Git查看、删除、重命名远程分支和tag: http://zengrong.net/post/1746.htm  
+Git查看、删除、重命名远程分支和tag: <http://zengrong.net/post/1746.htm>  
 4,Google无障碍浏览链接：<https://github.com/greatfire/wiki>  
 5,在线Android等源码：<http://www.grepcode.com/>, <http://androidxref.com/>  
 6,Twitter University: <http://www.bluemobi.cn/>  
