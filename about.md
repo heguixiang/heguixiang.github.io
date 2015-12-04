@@ -3,7 +3,7 @@ layout: default
 title: "关于：About"
 ---
 
-## 个人简介：
+## 个人简介
 
 * 何贵翔，在读研究生
 * 嵌入式操作系统专业
@@ -17,8 +17,9 @@ title: "关于：About"
 Github： <a href="https://github.com/heguixiang" title="Github联系我"><img src="http://www.github.com/favicon.ico" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
 </p>
 
-## 写给自己的blog：
+## 关于本站
 
+* 写给自己的blog
 * 搭建于[Github](https://github.com/heguixiang/heguixiang.github.io),欢迎Fork
 * 模板及样式来源[Useful Paradigm](http://usefulparadigm.com/)
 
