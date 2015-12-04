@@ -36,12 +36,12 @@ tags : [java, 多线程]
 你也可以如下创建一个Thread的匿名子类：
 
 
-    Thread thread = new Thread(){
+    'Thread thread = new Thread(){
        public void run(){
          System.out.println("Thread Running");
        }
     };
-    thread.start();
+    thread.start();'
 
 当新的线程的run方法执行以后，计算机将会打印出字符串”Thread Running”。
 ###实现Runnable接口
