@@ -17,7 +17,7 @@ title: "关于：About"
 Github： <a href="https://github.com/heguixiang" title="Github联系我"><img src="http://www.github.com/favicon.ico" width="24" height="24" style="display:inline-block;vertical-align:middle"></a><br/>
 </p>
 
-## 关于本站：
+## 写给自己的blog：
 
 * 搭建于[Github](https://github.com/heguixiang/heguixiang.github.io),欢迎Fork
 * 模板及样式来源[Useful Paradigm](http://usefulparadigm.com/)
