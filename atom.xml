@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-08T12:04:11+08:00</updated>
+ <updated>2015-12-08T12:05:06+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -43,7 +43,7 @@
    3.1 堆栈距离
    3.2 一致性缺失事件的获取机理
    3.3 神经网络
-                      这一节主要用来说明为什么要采用神经网络，主要出于两个原因的考虑，其一，很难分析outstanding对处理器访存的影响程度，但是它和堆栈距离分布的迁移又有关系，同样的，乱序对访存顺序的影响也很难定量分析。借助于神经网络解决不知道确切关系但是又知道和哪些因素相关的问题。&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+            这一节主要用来说明为什么要采用神经网络，主要出于两个原因的考虑，其一，很难分析outstanding对处理器访存的影响程度，但是它和堆栈距离分布的迁移又有关系，同样的，乱序对访存顺序的影响也很难定量分析。借助于神经网络解决不知道确切关系但是又知道和哪些因素相关的问题。&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </content>
  </entry>
