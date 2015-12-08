@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-08T10:38:43+08:00</updated>
+ <updated>2015-12-08T10:40:43+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -19,7 +19,7 @@
    <content type="html">&lt;p&gt;老板在要论文的思路，这里我就把我毕业论文的目录框架发给他吧，正好让老板帮我看看，有没有什么不妥的地方，现在这个时间也该开始写论文初稿了。
 ###论文结构目录结构如下：&lt;/p&gt;
 
-&lt;h4 id=&quot;androidarm&quot;&gt;课题；面向android应用的ARM多核处理器核间通信开销建模&lt;/h4&gt;
+&lt;h4 id=&quot;androidarm&quot;&gt;课题: 《面向android应用的ARM多核处理器核间通信开销建模》&lt;/h4&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;第一章&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;绪论&lt;/span&gt;
    &lt;span class=&quot;mf&quot;&gt;1.1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;课题背景与意义&lt;/span&gt;
