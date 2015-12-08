@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-08T13:58:37+08:00</updated>
+ <updated>2015-12-08T13:59:49+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -45,21 +45,22 @@
    3.1 堆栈距离
    3.2 一致性缺失事件的获取机理
    3.3 神经网络
-      这一节主要用来说明为什么要采用神经网络，主要出于两个原因的考虑，其一，很难分析outstanding对处理器访存的影响程度，但是它和堆栈距离分布的迁移又有关系，同样的，乱序对访存顺序的影响也很难定量分析。借助于神经网络解决不知道确切关系但是又知道和哪些因素相关的问题。&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      这一节主要用来说明为什么要采用神经网络，主要出于两个原因的考虑，其一，很难分析outstanding对处理器访存的影响程度，但是它和堆栈距离分布的迁移又有关系，同样的，乱序对访存顺序的影响也很难定量分析。借助于神经网络解决不知道确切关系但是又知道和哪些因素相关的问题。
 
-&lt;p&gt;第四章 面向android应用的ARM多处理器核间通信开销建模方法实现
+第四章 面向android应用的ARM多处理器核间通信开销建模方法实现
    4.1 gem5仿真器平台搭建及参数设置
    4.2 访存trace流获取 
    4.3 堆栈距离分布提取
-   4.4 神经网络模型获取&lt;/p&gt;
+   4.4 神经网络模型获取
 
-&lt;p&gt;第五章 实验结果与分析
+第五章 实验结果与分析
    5.1 实验环境
    5.2 不同cache 大小下一致性缺失情况
    5.2 全功能仿真时间和模型获取一致性缺失时间对比
-   5.3 结果分析&lt;/p&gt;
+   5.3 结果分析
 
-&lt;p&gt;第六章 总结与展望&lt;/p&gt;
+第六章 总结与展望&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 </content>
  </entry>
  
