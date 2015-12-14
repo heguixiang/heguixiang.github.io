@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 毕业论文的目录框架
+title: parsec3.0 android JNI
 category: graduation
 tags: [ graduation, android ]
 ---
