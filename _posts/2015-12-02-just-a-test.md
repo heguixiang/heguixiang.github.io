@@ -4,6 +4,12 @@ title: hello,world
 category: life
 tag: test
 ---
-
-这只是一个测试，hello，world，edited by wade
+##test1
+这只是一个测试，hello，world，edited by wade,1
+##test2
+这只是一个测试，hello，world，edited by wade,2
+##test3
+这只是一个测试，hello，world，edited by wade,3
+<a name="test4"/>##test4
+这只是一个测试，hello，world，edited by wade,4
 
