@@ -20,6 +20,10 @@ kramdown:
   toc_levels: 1..6
   use_coderay: false
 
+toc:
+    maxDepth: 6
+    slugify: false
+
 JB :
     #IMAGE_PATH : http://coolshell.info/images
     IMAGE_PATH :  heguixiang.github.io/images
