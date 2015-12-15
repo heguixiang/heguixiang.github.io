@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-15T15:43:35+08:00</updated>
+ <updated>2015-12-15T15:53:18+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -1262,7 +1262,7 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 &lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 本项目同时也托管于 &lt;a href=&quot;https://github.com/riku/Markdown-Syntax-CN&quot;&gt;Github&lt;/a&gt; 上，请通过 fork＋pull request 方式来帮忙改进本项目。&lt;/p&gt;
 
 &lt;h1 id=&quot;markdown----markdown-basicshtml&quot;&gt;Markdown 语法说明 (简体中文版) / (&lt;a href=&quot;./markdown-basics.html&quot;&gt;点击查看快速入门&lt;/a&gt;)&lt;/h1&gt;
-
+&lt;!-- ttoc --&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#overview&quot;&gt;概述&lt;/a&gt;
     &lt;ul&gt;
