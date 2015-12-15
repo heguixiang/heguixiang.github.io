@@ -15,6 +15,6 @@ tag: test
 这只是一个测试，hello，world，edited by wade,3 
 
 ##test4
- <a name="test4"/>
-这只是一个测试，hello，world，edited by wade,4.
+<a name="test4"/>
+这只是一个测试，hello，world，edited by wade,4 
 
