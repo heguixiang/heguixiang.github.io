@@ -16,5 +16,5 @@ tag: test
 
 ##test4
  <a name="test4"/>
-这只是一个测试，hello，world，edited by wade,4. </a>
+这只是一个测试，hello，world，edited by wade,4.
 
