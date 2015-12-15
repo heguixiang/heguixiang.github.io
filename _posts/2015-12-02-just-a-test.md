@@ -4,7 +4,7 @@ title: hello,world
 category: life
 tag: test
 ---
-<!-- ttoc --> 
+[TOC] 
 
 ##test1
 这只是一个测试，hello，world，edited by wade,1 

@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-15T16:04:32+08:00</updated>
+ <updated>2015-12-15T16:28:37+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -127,7 +127,7 @@
    <link href="http://heguixiang.github.io/blog/2015/12/just-a-test.html"/>
    <updated>2015-12-02T00:00:00+08:00</updated>
    <id>/blog/2015/12/just-a-test</id>
-   <content type="html">&lt;!-- ttoc --&gt;
+   <content type="html">&lt;p&gt;[TOC]&lt;/p&gt;
 
 &lt;h2 id=&quot;test1&quot;&gt;test1&lt;/h2&gt;
 &lt;p&gt;这只是一个测试，hello，world，edited by wade,1&lt;/p&gt;
