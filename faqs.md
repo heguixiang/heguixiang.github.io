@@ -17,8 +17,7 @@ Git查看、删除、重命名远程分支和tag: <http://zengrong.net/post/1746
 4,Google无障碍浏览链接：<https://github.com/greatfire/wiki>  
 5,在线Android等源码：<http://www.grepcode.com/>, <http://androidxref.com/>  
 6,Twitter University: <http://www.bluemobi.cn/>  
-更多请看本文评论，欢迎来盖楼！
-
+7,网页侧边栏目录制作博客链接:<http://jianshu.com/p/34c92cbd0aaf/>
 <!-- Blog Comments -->
 <div class="media">
   <!-- UY BEGIN -->
