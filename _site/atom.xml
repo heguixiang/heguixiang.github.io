@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-16T19:44:01+08:00</updated>
+ <updated>2015-12-16T19:50:14+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -20,8 +20,7 @@
 
 &lt;p&gt;测试&lt;a href=&quot;./just-a-test.html#test4&quot;&gt;test4&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;parsec30-streamcluster-android-jni&quot;&gt;parsec3.0 streamcluster android JNI&lt;/h3&gt;
-
+&lt;h3&gt;parsec3.0 streamcluster android JNI&lt;/h3&gt;
 </content>
  </entry>
  
@@ -32,9 +31,9 @@
    <id>/blog/2015/12/graduation-thesis-framework</id>
    <content type="html">&lt;p&gt;老板在要论文的思路，这里我就把我毕业论文的目录框架发给他吧，正好让老板帮我看看，有没有什么不妥的地方，现在这个时间也该开始写论文初稿了。&lt;/p&gt;
 
-&lt;h3 id=&quot;section&quot;&gt;论文结构目录结构如下：&lt;/h3&gt;
+&lt;h3&gt;论文结构目录结构如下：&lt;/h3&gt;
 
-&lt;h4 id=&quot;androidarm&quot;&gt;课题: 《面向android应用的ARM多核处理器核间通信开销建模》&lt;/h4&gt;
+&lt;h4&gt;课题: 《面向android应用的ARM多核处理器核间通信开销建模》&lt;/h4&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;第一章 绪论
    1.1 课题背景与意义
@@ -77,7 +76,7 @@
 
 第六章 总结与展望&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;section-1&quot;&gt;老板修改后版本&lt;/h4&gt;
+&lt;h4&gt;老板修改后版本&lt;/h4&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;第一章 绪论
    1.1 课题背景与意义
@@ -118,7 +117,6 @@
    5.6 结果分析
 
 第六章 总结与展望&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 </content>
  </entry>
  
@@ -127,22 +125,26 @@
    <link href="http://heguixiang.github.io/blog/2015/12/just-a-test.html"/>
    <updated>2015-12-02T00:00:00+08:00</updated>
    <id>/blog/2015/12/just-a-test</id>
-   <content type="html">
+   <content type="html">&lt;p&gt;{:toc}&lt;/p&gt;
+
 &lt;div class=&quot;toc&quot;&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;test1&quot;&gt;test1&lt;/h2&gt;
-&lt;p&gt;这只是一个测试，hello，world，edited by wade,1&lt;/p&gt;
+&lt;h2&gt;test1&lt;/h2&gt;
 
-&lt;h2 id=&quot;test2&quot;&gt;test2&lt;/h2&gt;
-&lt;p&gt;这只是一个测试，hello，world，edited by wade,2&lt;/p&gt;
+&lt;p&gt;这只是一个测试，hello，world，edited by wade,1 &lt;/p&gt;
 
-&lt;h2 id=&quot;test3&quot;&gt;test3&lt;/h2&gt;
-&lt;p&gt;这只是一个测试，hello，world，edited by wade,3&lt;/p&gt;
+&lt;h2&gt;test2&lt;/h2&gt;
 
-&lt;h2 id=&quot;test4&quot;&gt;test4&lt;/h2&gt;
-&lt;p&gt;&lt;a name=&quot;test4&quot;&gt;&lt;/a&gt;
-这只是一个测试，hello，world，edited by wade,4&lt;/p&gt;
+&lt;p&gt;这只是一个测试，hello，world，edited by wade,2 &lt;/p&gt;
 
+&lt;h2&gt;test3&lt;/h2&gt;
+
+&lt;p&gt;这只是一个测试，hello，world，edited by wade,3 &lt;/p&gt;
+
+&lt;h2&gt;test4&lt;/h2&gt;
+
+&lt;p&gt;&lt;a name=&quot;test4&quot;/&gt;
+这只是一个测试，hello，world，edited by wade,4 &lt;/p&gt;
 </content>
  </entry>
  
@@ -160,76 +162,70 @@
 &lt;p&gt;再后来发展到多线程技术，使得在一个程序内部能拥有多个线程并行执行。一个线程的执行可以被认为是一个CPU在执行该程序。当一个程序运行在多线程下，就好像有多个CPU在同时执行该程序。&lt;/p&gt;
 
 &lt;p&gt;多线程比多任务更加有挑战。多线程是在同一个程序内部并行执行，因此会对相同的内存空间进行并发读写操作。这可能是在单线程程序中从来不会遇到的问题。其中的一些错误也未必会在单CPU机器上出现，因为两个线程从来不会得到真正的并行执行。然而，更现代的计算机伴随着多核CPU的出现，也就意味着不同的线程能被不同的CPU核得到真正意义的并行执行。
-本文将会介绍java多线程编程的一些要点：
-##如何创建并运行java线程
-###创建Thread的子类&lt;/p&gt;
+本文将会介绍java多线程编程的一些要点：&lt;/p&gt;
+
+&lt;h2&gt;如何创建并运行java线程&lt;/h2&gt;
+
+&lt;h3&gt;创建Thread的子类&lt;/h3&gt;
 
 &lt;p&gt;创建Thread子类的一个实例并重写run方法，run方法会在调用start()方法之后被执行。例子如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class MyThread extends Thread {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class MyThread extends Thread {
    public void run(){
-     System.out.println(&quot;MyThread running&quot;);
+     System.out.println(&amp;quot;MyThread running&amp;quot;);
    }
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;可以用如下方式创建并运行上述Thread子类&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;MyThread myThread = new MyThread();
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;MyThread myThread = new MyThread();
 myTread.start();
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;一旦线程启动后start方法就会立即返回，而不会等待到run方法执行完毕才返回。就好像run方法是在另外一个cpu上执行一样。当run方法执行后，将会打印出字符串MyThread running。&lt;/p&gt;
 
 &lt;p&gt;你也可以如下创建一个Thread的匿名子类：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Thread thread = new Thread(){
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Thread thread = new Thread(){
    public void run(){
-     System.out.println(&quot;Thread Running&quot;);
+     System.out.println(&amp;quot;Thread Running&amp;quot;);
    }
 };
 thread.start();
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;当新的线程的run方法执行以后，计算机将会打印出字符串”Thread Running”。&lt;/p&gt;
 
-&lt;p&gt;当新的线程的run方法执行以后，计算机将会打印出字符串”Thread Running”。
-###实现Runnable接口&lt;/p&gt;
+&lt;h3&gt;实现Runnable接口&lt;/h3&gt;
 
 &lt;p&gt;第二种编写线程执行代码的方式是新建一个实现了java.lang.Runnable接口的类的实例，实例中的方法可以被线程调用。下面给出例子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class MyRunnable implements Runnable {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class MyRunnable implements Runnable {
    public void run(){
-    System.out.println(&quot;MyRunnable running&quot;);
+    System.out.println(&amp;quot;MyRunnable running&amp;quot;);
    }
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;为了使线程能够执行run()方法，需要在Thread类的构造函数中传入 MyRunnable的实例对象。示例如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Thread thread = new Thread(new MyRunnable());
-thread.start(); 当线程运行时，它将会调用实现了Runnable接口的run方法。上例中将会打印出”MyRunnable running”。
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Thread thread = new Thread(new MyRunnable());
+thread.start();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;当线程运行时，它将会调用实现了Runnable接口的run方法。上例中将会打印出”MyRunnable running”。&lt;/p&gt;
 
 &lt;p&gt;同样，也可以创建一个实现了Runnable接口的匿名类，如下所示：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Runnable myRunnable = new Runnable(){
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Runnable myRunnable = new Runnable(){
    public void run(){
-     System.out.println(&quot;Runnable running&quot;);
+     System.out.println(&amp;quot;Runnable running&amp;quot;);
    }
 }
 Thread thread = new Thread(myRunnable);
 thread.start();
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;java同步块&lt;/h2&gt;
 
-&lt;h2 id=&quot;java&quot;&gt;java同步块&lt;/h2&gt;
 &lt;p&gt;ava中的同步块用synchronized标记。同步块在Java中是同步在某个对象上。所有同步在一个对象上的同步块在同时只能被一个线程进入并执行操作。所有其他等待进入该同步块的线程将被阻塞，直到执行该同步块中的线程退出。&lt;/p&gt;
 
 &lt;p&gt;有四种不同的同步块：&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;实例方法&lt;/li&gt;
-  &lt;li&gt;静态方法&lt;/li&gt;
-  &lt;li&gt;实例方法中的同步块&lt;/li&gt;
-  &lt;li&gt;静态方法中的同步块&lt;/li&gt;
+&lt;li&gt;实例方法 &lt;/li&gt;
+&lt;li&gt;静态方法 &lt;/li&gt;
+&lt;li&gt;实例方法中的同步块 &lt;/li&gt;
+&lt;li&gt;静态方法中的同步块&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;上述同步块都同步在不同对象上。实际需要那种同步块视具体情况而定。&lt;/p&gt;
@@ -237,12 +233,10 @@ thread.start();
 &lt;p&gt;&lt;strong&gt;实例方法同步&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;下面是一个同步的实例方法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public synchronized void add(int value){
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public synchronized void add(int value){
 this.count += value;
  }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;注意在方法声明中同步（synchronized ）关键字。这告诉Java该方法是同步的。&lt;/p&gt;
 
 &lt;p&gt;Java实例方法同步是同步在拥有该方法的对象上。这样，每个实例其方法同步都同步在不同的对象上，即该方法所属的实例。只有一个线程能够在实例方法同步块中运行。如果有多个实例存在，那么一个线程一次可以在一个实例同步块中执行操作。一个实例一个线程。&lt;/p&gt;
@@ -250,12 +244,10 @@ this.count += value;
 &lt;p&gt;&lt;strong&gt;静态方法同步&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;静态方法同步和实例方法同步方法一样，也使用synchronized 关键字。Java静态方法同步如下示例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public static synchronized void add(int value){
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public static synchronized void add(int value){
  count += value;
  }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;同样，这里synchronized 关键字告诉Java这个方法是同步的。&lt;/p&gt;
 
 &lt;p&gt;静态方法的同步是指同步在该方法所在的类对象上。因为在Java虚拟机中一个类只能对应一个类对象，所以同时只允许一个线程执行同一个类中的静态同步方法。&lt;/p&gt;
@@ -267,14 +259,12 @@ this.count += value;
 &lt;p&gt;有时你不需要同步整个方法，而是同步方法中的一部分。Java可以对方法的一部分进行同步。&lt;/p&gt;
 
 &lt;p&gt;在非同步的Java方法中的同步块的例子如下所示：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public void add(int value){
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public void add(int value){
     synchronized(this){
        this.count += value;
     }
   }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;示例使用Java同步块构造器来标记一块代码是同步的。该代码在执行时和同步方法一样。&lt;/p&gt;
 
 &lt;p&gt;注意Java同步块构造器用括号将对象括起来。在上例中，使用了“this”，即为调用add方法的实例本身。在同步构造器中用括号括起来的对象叫做监视器对象。上述代码使用监视器对象同步，同步实例方法使用调用方法本身的实例作为监视器对象。&lt;/p&gt;
@@ -282,13 +272,12 @@ this.count += value;
 &lt;p&gt;一次只有一个线程能够在同步于同一个监视器对象的Java方法内执行。&lt;/p&gt;
 
 &lt;p&gt;下面两个例子都同步他们所调用的实例对象上，因此他们在同步的执行效果上是等效的。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class MyClass {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class MyClass {
    public synchronized void log1(String msg1, String msg2){
       log.writeln(msg1);
       log.writeln(msg2);
    }
-   
+
    public void log2(String msg1, String msg2){
       synchronized(this){
          log.writeln(msg1);
@@ -296,8 +285,7 @@ this.count += value;
       }
    }
  }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;在上例中，每次只有一个线程能够在两个同步块中任意一个方法内执行。&lt;/p&gt;
 
 &lt;p&gt;如果第二个同步块不是同步在this实例对象上，那么两个方法可以被线程同时执行。&lt;/p&gt;
@@ -305,8 +293,7 @@ this.count += value;
 &lt;p&gt;&lt;strong&gt;静态方法中的同步块&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;和上面类似，下面是两个静态方法同步的例子。这些方法同步在该方法所属的类对象上。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class MyClass {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class MyClass {
     public static synchronized void log1(String msg1, String msg2){
        log.writeln(msg1);
        log.writeln(msg2);
@@ -318,30 +305,28 @@ this.count += value;
        }
     }
   }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这两个方法不允许同时被线程访问。&lt;/p&gt;
 
 &lt;p&gt;如果第二个同步块不是同步在MyClass.class这个对象上。那么这两个方法可以同时被线程访问。&lt;/p&gt;
 
-&lt;h2 id=&quot;java-1&quot;&gt;Java同步实例&lt;/h2&gt;
+&lt;h2&gt;Java同步实例&lt;/h2&gt;
 
 &lt;p&gt;在下面例子中，启动了两个线程，都调用Counter类同一个实例的add方法。因为同步在该方法所属的实例上，所以同时只能有一个线程访问该方法。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class Counter{
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class Counter{
      long count = 0;
      public synchronized void add(long value){
        this.count += value;
      }
   }
   public class CounterThread extends Thread{
- 
+
      protected Counter counter = null;
- 
+
      public CounterThread(Counter counter){
         this.counter = counter;
      }
- 
+
      public void run() {
     for(int i=0; i&amp;lt;10; i++){
            counter.add(i);
@@ -357,13 +342,11 @@ this.count += value;
       threadB.start();
     }
   }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;创建了两个线程。他们的构造器引用同一个Counter实例。Counter.add方法是同步在实例上，是因为add方法是实例方法并且被标记上synchronized关键字。因此每次只允许一个线程调用该方法。另外一个线程必须要等到第一个线程退出add()方法时，才能继续执行方法。&lt;/p&gt;
 
 &lt;p&gt;如果两个线程引用了两个不同的Counter实例，那么他们可以同时调用add()方法。这些方法调用了不同的对象，因此这些方法也就同步在不同的对象上。这些方法调用将不会被阻塞。如下面这个例子所示：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class Example {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class Example {
    public static void main(String[] args){
      Counter counterA = new Counter();
      Counter counterB = new Counter();
@@ -373,11 +356,11 @@ this.count += value;
      threadB.start();
    }
  }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;注意这两个线程，threadA和threadB，不再引用同一个counter实例。CounterA和counterB的add方法同步在他们所属的对象上。调用counterA的add方法将不会阻塞调用counterB的add方法。&lt;/p&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;线程间通信&lt;/h2&gt;
+&lt;h2&gt;线程间通信&lt;/h2&gt;
+
 &lt;p&gt;线程通信的目标是使线程间能够互相发送信号。另一方面，线程通信使线程能够等待其他线程的信号。&lt;/p&gt;
 
 &lt;p&gt;例如，线程B可以等待线程A的一个信号，这个信号会通知线程B数据已经准备好了。本文将讲解以下几个JAVA线程间通信的主题：&lt;/p&gt;
@@ -392,8 +375,7 @@ this.count += value;
 
 &lt;p&gt;&lt;strong&gt;1、通过共享对象通信&lt;/strong&gt;
 线程间发送信号的一个简单方式是在共享对象的变量里设置信号值。线程A在一个同步块里设置boolean型成员变量hasDataToProcess为true，线程B也在同步块里读取hasDataToProcess这个成员变量。这个简单的例子使用了一个持有信号的对象，并提供了set和check方法:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class MySignal{
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class MySignal{
 
   protected boolean hasDataToProcess = false;
 
@@ -404,28 +386,24 @@ this.count += value;
     this.hasDataToProcess = hasData;
   }
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;线程A和B必须获得指向一个MySignal共享实例的引用，以便进行通信。如果它们持有的引用指向不同的MySingal实例，那么彼此将不能检测到对方的信号。需要处理的数据可以存放在一个共享缓存区里，它和MySignal实例是分开存放的。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;2、忙等待(Busy Wait)&lt;/strong&gt;
 准备处理数据的线程B正在等待数据变为可用。换句话说，它在等待线程A的一个信号，这个信号使hasDataToProcess()返回true。线程B运行在一个循环里，以等待这个信号：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;protected MySignal sharedSignal = ...
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;protected MySignal sharedSignal = ...
 ...
 while(!sharedSignal.hasDataToProcess()){
   //do nothing... busy waiting
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;3、wait(),notify()和notifyAll()&lt;/strong&gt;
 忙等待没有对运行等待线程的CPU进行有效的利用，除非平均等待时间非常短。否则，让等待线程进入睡眠或者非运行状态更为明智，直到它接收到它等待的信号。&lt;/p&gt;
 
 &lt;p&gt;Java有一个内建的等待机制来允许线程在等待信号的时候变为非运行状态。java.lang.Object 类定义了三个方法，wait()、notify()和notifyAll()来实现这个等待机制。&lt;/p&gt;
 
 &lt;p&gt;一个线程一旦调用了任意对象的wait()方法，就会变为非运行状态，直到另一个线程调用了同一个对象的notify()方法。为了调用wait()或者notify()，线程必须先获得那个对象的锁。也就是说，线程必须在同步块里调用wait()或者notify()。以下是MySingal的修改版本——使用了wait()和notify()的MyWaitNotify：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class MonitorObject{
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class MonitorObject{
 }
 public class MyWaitNotify{
   MonitorObject myMonitorObject = new MonitorObject();
@@ -442,8 +420,7 @@ public class MyWaitNotify{
     }
   }
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;等待线程将调用doWait()，而唤醒线程将调用doNotify()。当一个线程调用一个对象的notify()方法，正在等待该对象的所有线程中将有一个线程被唤醒并允许执行（校注：这个将被唤醒的线程是随机的，不可以指定唤醒哪个线程）。同时也提供了一个notifyAll()方法来唤醒正在等待一个给定对象的所有线程。&lt;/p&gt;
 
 &lt;p&gt;如你所见，不管是等待线程还是唤醒线程都在同步块里调用wait()和notify()。这是强制性的！一个线程如果没有持有对象锁，将不能调用wait()，notify()或者notifyAll()。否则，会抛出IllegalMonitorStateException异常。&lt;/p&gt;
@@ -457,8 +434,7 @@ public class MyWaitNotify{
 &lt;p&gt;&lt;strong&gt;4、丢失的信号（Missed Signals）&lt;/strong&gt;
 notify()和notifyAll()方法不会保存调用它们的方法，因为当这两个方法被调用时，有可能没有线程处于等待状态。通知信号过后便丢弃了。因此，如果一个线程先于被通知线程调用wait()前调用了notify()，等待的线程将错过这个信号。这可能是也可能不是个问题。不过，在某些情况下，这可能使等待线程永远在等待，不再醒来，因为线程错过了唤醒信号。
 为了避免丢失信号，必须把它们保存在信号类里。在MyWaitNotify的例子中，通知信号应被存储在MyWaitNotify实例的一个成员变量里。以下是MyWaitNotify的修改版本：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class MyWaitNotify2{
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class MyWaitNotify2{
 
   MonitorObject myMonitorObject = new MonitorObject();
   boolean wasSignalled = false;
@@ -481,8 +457,7 @@ notify()和notifyAll()方法不会保存调用它们的方法，因为当这两�
     }
   }
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;留意doNotify()方法在调用notify()前把wasSignalled变量设为true。同时，留意doWait()方法在调用wait()前会检查wasSignalled变量。事实上，如果没有信号在前一次doWait()调用和这次doWait()调用之间的时间段里被接收到，它将只调用wait()。&lt;/p&gt;
 
 &lt;p&gt;（校注：为了避免信号丢失， 用一个变量来保存是否被通知过。在notify前，设置自己已经被通知过。在wait后，设置自己没有被通知过，需要等待通知。）&lt;/p&gt;
@@ -493,8 +468,7 @@ notify()和notifyAll()方法不会保存调用它们的方法，因为当这两�
 &lt;p&gt;如果在MyWaitNotify2的doWait()方法里发生了假唤醒，等待线程即使没有收到正确的信号，也能够执行后续的操作。这可能导致你的应用程序出现严重问题。&lt;/p&gt;
 
 &lt;p&gt;为了防止假唤醒，保存信号的成员变量将在一个while循环里接受检查，而不是在if表达式里。这样的一个while循环叫做自旋锁（校注：这种做法要慎重，目前的JVM实现自旋会消耗CPU，如果长时间不调用doNotify方法，doWait方法会一直自旋，CPU会消耗太大）。被唤醒的线程会自旋直到自旋锁(while循环)里的条件变为false。以下MyWaitNotify2的修改版本展示了这点：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class MyWaitNotify3{
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class MyWaitNotify3{
   MonitorObject myMonitorObject = new MonitorObject();
   boolean wasSignalled = false;
   public void doWait(){
@@ -515,8 +489,7 @@ notify()和notifyAll()方法不会保存调用它们的方法，因为当这两�
     }
   }
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;留意wait()方法是在while循环里，而不在if表达式里。如果等待线程没有收到信号就唤醒，wasSignalled变量将变为false,while循环会再执行一次，促使醒来的线程回到等待状态。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;6、多个线程等待相同信号&lt;/strong&gt;
@@ -526,9 +499,8 @@ notify()和notifyAll()方法不会保存调用它们的方法，因为当这两�
 （校注：这里说的字符串常量指的是值为常量的变量）&lt;/p&gt;
 
 &lt;p&gt;本文早期的一个版本在MyWaitNotify例子里使用字符串常量（””）作为管程对象。以下是那个例子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class MyWaitNotify{
-  String myMonitorObject = &quot;&quot;;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class MyWaitNotify{
+  String myMonitorObject = &amp;quot;&amp;quot;;
   boolean wasSignalled = false;
   public void doWait(){
     synchronized(myMonitorObject){
@@ -548,8 +520,7 @@ notify()和notifyAll()方法不会保存调用它们的方法，因为当这两�
     }
   }
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;在空字符串作为锁的同步块(或者其他常量字符串)里调用wait()和notify()产生的问题是，JVM/编译器内部会把常量字符串转换成同一个对象。这意味着，即使你有2个不同的MyWaitNotify实例，它们都引用了相同的空字符串实例。同时也意味着存在这样的风险：在第一个MyWaitNotify实例上调用doWait()的线程会被在第二个MyWaitNotify实例上调用doNotify()的线程唤醒。这种情况可以画成以下这张图：&lt;/p&gt;
 
 &lt;p&gt;起初这可能不像个大问题。毕竟，如果doNotify()在第二个MyWaitNotify实例上被调用，真正发生的事不外乎线程A和B被错误的唤醒了 。这个被唤醒的线程（A或者B）将在while循环里检查信号值，然后回到等待状态，因为doNotify()并没有在第一个MyWaitNotify实例上调用，而这个正是它要等待的实例。这种情况相当于引发了一次假唤醒。线程A或者B在信号值没有更新的情况下唤醒。但是代码处理了这种情况，所以线程回到了等待状态。记住，即使4个线程在相同的共享字符串实例上调用wait()和notify()，doWait()和doNotify()里的信号还会被2个MyWaitNotify实例分别保存。在MyWaitNotify1上的一次doNotify()调用可能唤醒MyWaitNotify2的线程，但是信号值只会保存在MyWaitNotify1里。&lt;/p&gt;
@@ -566,24 +537,21 @@ notify()和notifyAll()方法不会保存调用它们的方法，因为当这两�
 
 &lt;p&gt;管程 (英语：Monitors，也称为监视器) 是对多个工作线程实现互斥访问共享资源的对象或模块。这些共享资源一般是硬件设备或一群变量。管程实现了在一个时间点，最多只有一个线程在执行它的某个子程序。与那些通过修改数据结构实现互斥访问的并发程序设计相比，管程很大程度上简化了程序设计。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;死锁&lt;/h2&gt;
+&lt;h2&gt;死锁&lt;/h2&gt;
 
 &lt;p&gt;死锁是两个或更多线程阻塞着等待其它处于死锁状态的线程所持有的锁。死锁通常发生在多个线程同时但以不同的顺序请求同一组锁的时候。&lt;/p&gt;
 
 &lt;p&gt;例如，如果线程1锁住了A，然后尝试对B进行加锁，同时线程2已经锁住了B，接着尝试对A进行加锁，这时死锁就发生了。线程1永远得不到B，线程2也永远得不到A，并且它们永远也不会知道发生了这样的事情。为了得到彼此的对象（A和B），它们将永远阻塞下去。这种情况就是一个死锁。&lt;/p&gt;
 
 &lt;p&gt;该情况如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Thread 1  locks A, waits for B
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Thread 1  locks A, waits for B
 Thread 2  locks B, waits for A
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这里有一个TreeNode类的例子，它调用了不同实例的synchronized方法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class TreeNode {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class TreeNode {
     TreeNode parent   = null; 
     List children = new ArrayList();
- 
+
     public synchronized void addChild(TreeNode child){
         if(!this.children.contains(child)) {
             this.children.add(child);
@@ -603,17 +571,14 @@ Thread 2  locks B, waits for A
         this.parent = parent;
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果线程1调用parent.addChild(child)方法的同时有另外一个线程2调用child.setParent(parent)方法，两个线程中的parent表示的是同一个对象，child亦然，此时就会发生死锁。下面的伪代码说明了这个过程：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Thread 1: parent.addChild(child); //locks parent
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Thread 1: parent.addChild(child); //locks parent
           --&amp;gt; child.setParentOnly(parent);
 
 Thread 2: child.setParent(parent); //locks child
           --&amp;gt; parent.addChildOnly()
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;首先线程1调用parent.addChild(child)。因为addChild()是同步的，所以线程1会对parent对象加锁以不让其它线程访问该对象。&lt;/p&gt;
 
 &lt;p&gt;然后线程2调用child.setParent(parent)。因为setParent()是同步的，所以线程2会对child对象加锁以不让其它线程访问该对象。&lt;/p&gt;
@@ -627,13 +592,11 @@ Thread 2: child.setParent(parent); //locks child
 &lt;p&gt;&lt;strong&gt;更复杂的死锁&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;死锁可能不止包含2个线程，这让检测死锁变得更加困难。下面是4个线程发生死锁的例子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Thread 1  locks A, waits for B
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Thread 1  locks A, waits for B
 Thread 2  locks B, waits for C
 Thread 3  locks C, waits for D
 Thread 4  locks D, waits for A
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;线程1等待线程2，线程2等待线程3，线程3等待线程4，线程4等待线程1。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;数据库的死锁&lt;/strong&gt;&lt;/p&gt;
@@ -641,15 +604,12 @@ Thread 4  locks D, waits for A
 &lt;p&gt;更加复杂的死锁场景发生在数据库事务中。一个数据库事务可能由多条SQL更新请求组成。当在一个事务中更新一条记录，这条记录就会被锁住避免其他事务的更新请求，直到第一个事务结束。同一个事务中每一个更新请求都可能会锁住一些记录。&lt;/p&gt;
 
 &lt;p&gt;当多个事务同时需要对一些相同的记录做更新操作时，就很有可能发生死锁，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Transaction 1, request 1, locks record 1 for update
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Transaction 1, request 1, locks record 1 for update
 Transaction 2, request 1, locks record 2 for update
 Transaction 1, request 2, tries to lock record 2 for update.
 Transaction 2, request 2, tries to lock record 1 for update.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;因为锁发生在不同的请求中，并且对于一个事务来说不可能提前知道所有它需要的锁，因此很难检测和避免数据库事务中的死锁。&lt;/p&gt;
-
 </content>
  </entry>
  
@@ -665,14 +625,11 @@ Transaction 2, request 2, tries to lock record 1 for update.
 &lt;p&gt;在开始前，请确保你已经有了Github账号一枚和Git的正确配置。没有的朋友可以先移步Github注册并安装配置Git。&lt;/p&gt;
 
 &lt;p&gt;首先，创建你的 Blog 仓库 &lt;code&gt;username.github.com&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ mkdir username.github.com
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ mkdir username.github.com
 $ cd username.github.com
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;新建一个 &lt;code&gt;index.html&lt;/code&gt; 文件，像下面这样:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;!doctype html&amp;gt;
 &amp;lt;html&amp;gt;
   &amp;lt;head&amp;gt;
     &amp;lt;title&amp;gt;Hello&amp;lt;/title&amp;gt;
@@ -682,29 +639,25 @@ $ cd username.github.com
     &amp;lt;h1&amp;gt;Hello!&amp;lt;/h1&amp;gt;
   &amp;lt;/body&amp;gt;
 &amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;初始化仓库、提交并push到Github:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git init
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ git init
 $ git add .
-$ git commit -a -m 'init commit.'
+$ git commit -a -m &amp;#39;init commit.&amp;#39;
 $ git remote add origin
 $ git push origin master
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;现在你打开 &lt;code&gt;username.github.com&lt;/code&gt; 就可以看到刚才新建的页面了，就是这么简单。当然也可以为你的Blog仓库绑定独立域名，具体做法就是：&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;在你的仓库中新建内容为 www.youdomain.com 的 CNAME 文件；&lt;/li&gt;
-  &lt;li&gt;在你的域名管理页或者是DNS解析的地方，增加一个记录，记录类别为CNAME(Alias)类型.&lt;/li&gt;
+&lt;li&gt;在你的仓库中新建内容为 &lt;a href=&quot;http://www.youdomain.com&quot;&gt;www.youdomain.com&lt;/a&gt; 的 CNAME 文件；&lt;/li&gt;
+&lt;li&gt;在你的域名管理页或者是DNS解析的地方，增加一个记录，记录类别为CNAME(Alias)类型.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;strong&gt;Note：&lt;/strong&gt; 如果你在CNAME中填写的是顶级域名，就得设置DNS的记录类别为A(Host)型，并设置主机为 &lt;code&gt;207.97.227.245&lt;/code&gt;。详细介绍请移步Github的Pages页面。&lt;/p&gt;
 
 &lt;p&gt;接下来我们只需要按照自己的喜好设计页面。首先认识下jekyll的文件及目录配置:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  .
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;  .
   |-- _includes
   |-- _plugins 
   |-- _layout 
@@ -716,23 +669,14 @@ $ git push origin master
   |-- _site
   |-- _config.yml
   `-- index.html
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;_includes&lt;/strong&gt;存放你需要在模板文件中包含的文件，你可以使用Liquid标签 &lt;code&gt;{‰ include file.ext ‰} &lt;/code&gt;来引用相应的文件。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;_includes&lt;/strong&gt;存放你需要在模板文件中包含的文件，你可以使用Liquid标签 &lt;code&gt;{‰ include file.ext ‰}&lt;/code&gt;来引用相应的文件。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;_plugins&lt;/strong&gt;可以增加你自己的插件&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;_layout&lt;/strong&gt;存放布局模板，请参考&lt;a href=&quot;https://github.com/taberhuang/taberhuang.github.com/tree/master/_layouts&quot;&gt;https://github.com/taberhuang/taberhuang.github.com/tree/master/_layouts&lt;/a&gt;&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;_post&lt;/strong&gt;存放文章列表，文件命名一定要遵循 yyyy-mm-dd-title.html&lt;/td&gt;
-      &lt;td&gt;markdown&lt;/td&gt;
-      &lt;td&gt;textile 规则，请参考&lt;a href=&quot;https://github.com/taberhuang/taberhuang.github.com/tree/master/_posts&quot;&gt;https://github.com/taberhuang/taberhuang.github.com/tree/master/_posts&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;_post&lt;/strong&gt;存放文章列表，文件命名一定要遵循 yyyy-mm-dd-title.html|markdown|textile 规则，请参考&lt;a href=&quot;https://github.com/taberhuang/taberhuang.github.com/tree/master/_posts&quot;&gt;https://github.com/taberhuang/taberhuang.github.com/tree/master/_posts&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;_sitejekyll&lt;/strong&gt;自动生成的，所以可以忽略，如果你有在本地安装jekyll并预览了的话，可以使用.gitignore设置Git停止对本目录的跟踪。&lt;/p&gt;
 
@@ -741,49 +685,38 @@ $ git push origin master
 &lt;p&gt;&lt;strong&gt;index.html 和所有的 HTML/Markdown/Textile 文件&lt;/strong&gt; 所有的HTML/Markdown/Textile文件都可以包含 YAML 配置，这类文件都会被jekyll解析。&lt;/p&gt;
 
 &lt;p&gt;现在你可以在自己的仓库中配置好你自己的目录及文件，也可以&lt;code&gt;clone&lt;/code&gt;我的仓库，然后修改。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/taberhuang/taberhuang.github.com.git
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ git clone https://github.com/taberhuang/taberhuang.github.com.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;修改完后就可以&lt;code&gt;push&lt;/code&gt;你的代码到Github上，看到结果了。刚才有说到本地预览，如果你想在本地预览后，确保没错误再&lt;code&gt;push&lt;/code&gt;的话，就需要在本地安装jekyll，下面介绍下jekyll的安装方法。&lt;/p&gt;
 
 &lt;p&gt;一、安装Ruby运行环境和RubyGem:Windows用户只要下载 RubyInstaller。下载安装后请手动升级gem.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gem update --system
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;二、安装DevKit。DevKit是windows平台编译和使用本地C/C++扩展包工具。用来模拟Linux平台下的 make,gcc,sh 进行编译。下载文件后，解压到 `C:\DevKit’，再通过命令行安装:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cd C:\DevKit
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ gem update --system
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;二、安装DevKit。DevKit是windows平台编译和使用本地C/C++扩展包工具。用来模拟Linux平台下的 make,gcc,sh 进行编译。下载文件后，解压到 `C:\DevKit&amp;#39;，再通过命令行安装:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ cd C:\DevKit
 $ ruby dk.rb init
 $ ruby dk.rb install
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;三、安装并检查刚才的DevKit安装是否成功。如果成功安装，则DevKit也就安装成功，如果不成功，请重新安装DevKit。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gem install jekyll
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;四、安装Rdiscount，这个是用来解析Markdown标记的解析包。如果你使用Textile的话，就是安装Kramdown。&lt;/p&gt;
 
 &lt;p&gt;$ gem install rdiscount&lt;/p&gt;
 
 &lt;p&gt;所有的环境和依赖包都安装成功后，进入你的仓库目录，用下面的命令便可启动jekyll，并在本地预览了，预览地址默认为 &lt;code&gt;127.0.0.1:4000&lt;/code&gt;，当然你也可以通过 _config.yml 配置:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;jekyll --server
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;jekyll --server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;是不是很爽?&lt;/p&gt;
 
 &lt;p&gt;参考及相关资料：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://pages.github.com/&quot;&gt;http://pages.github.com/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/mojombo/jekyll/wiki&quot;&gt;https://github.com/mojombo/jekyll/wiki&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.envylabs.com/2009/08/publishing-a-blog-with-github-pages-and-jekyll/&quot;&gt;http://blog.envylabs.com/2009/08/publishing-a-blog-with-github-pages-and-jekyll/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;http://daringfireball.net/projects/markdown/syntax&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://pages.github.com/&quot;&gt;http://pages.github.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mojombo/jekyll/wiki&quot;&gt;https://github.com/mojombo/jekyll/wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.envylabs.com/2009/08/publishing-a-blog-with-github-pages-and-jekyll/&quot;&gt;http://blog.envylabs.com/2009/08/publishing-a-blog-with-github-pages-and-jekyll/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;http://daringfireball.net/projects/markdown/syntax&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 </content>
  </entry>
  
@@ -795,7 +728,7 @@ $ ruby dk.rb install
    <content type="html">&lt;p&gt;编者按：2008年8月4日，StackOverflow 网友 Bert F 发帖提问：哪本最具影响力的书，是每个程序员都应该读的？&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;“如果能时光倒流，回到过去，作为一个开发人员，你可以告诉自己在职业生涯初期应该读一本，
+&lt;p&gt;“如果能时光倒流，回到过去，作为一个开发人员，你可以告诉自己在职业生涯初期应该读一本，
 你会选择哪本书呢？我希望这个书单列表内容丰富，可以涵盖很多东西。”&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -806,17 +739,15 @@ $ ruby dk.rb install
 
 &lt;p&gt;下面就按照各本书的推荐数排列。&lt;/p&gt;
 
-&lt;h2 id=&quot;httptcnzoes03n-&quot;&gt;1、《&lt;a href=&quot;http://t.cn/zOEs03N&quot;&gt;代码大全&lt;/a&gt;》 史蒂夫·迈克康奈尔&lt;/h2&gt;
+&lt;h2&gt;1、《&lt;a href=&quot;http://t.cn/zOEs03N&quot;&gt;代码大全&lt;/a&gt;》 史蒂夫·迈克康奈尔&lt;/h2&gt;
 
 &lt;p&gt;推荐数：1684&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;“优秀的编程实践的百科全书，《&lt;a href=&quot;http://t.cn/zOEs03N&quot;&gt;代码大全&lt;/a&gt;》注重个人技术，其中所有东西加起来，
+&lt;p&gt;“优秀的编程实践的百科全书，《&lt;a href=&quot;http://t.cn/zOEs03N&quot;&gt;代码大全&lt;/a&gt;》注重个人技术，其中所有东西加起来，
 就是我们本能所说的“编写整洁的代码”。这本书有50页在谈论代码布局。” —— Joel Spolsky&lt;/p&gt;
-&lt;/blockquote&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;对于新手来说，这本书中的观念有点高阶了。到你准备阅读此书时，你应该已经知道并实践过书中99%的观念。– esac&lt;/p&gt;
+&lt;p&gt;对于新手来说，这本书中的观念有点高阶了。到你准备阅读此书时，你应该已经知道并实践过书中99%的观念。– esac&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Steve McConnell的原作《代码大全》(第1版)是公认的关于编程的最佳实践指南之一，
@@ -832,7 +763,7 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 
 &lt;p&gt;《&lt;a href=&quot;(http://t.cn/zOEs03N)&quot;&gt;代码大全（第2版）&lt;/a&gt;》做了全面的更新，增加了很多与时俱进的内容，包括对新语言、新的开发过程与方法论的讨论等等。&lt;/p&gt;
 
-&lt;h2 id=&quot;httptcnzoesld9&quot;&gt;2、《&lt;a href=&quot;http://t.cn/zOEslD9&quot;&gt;程序员修炼之道&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;2、《&lt;a href=&quot;http://t.cn/zOEslD9&quot;&gt;程序员修炼之道&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：1504&lt;/p&gt;
 
@@ -840,7 +771,7 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 或许他们还是在校生，但对要自己做什么，还感觉不是很安全。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;就像草图和架构之间的差别。虽然你在学校课堂上学到的是画图，你也可以画的很漂亮，
+&lt;p&gt;就像草图和架构之间的差别。虽然你在学校课堂上学到的是画图，你也可以画的很漂亮，
 但如果你觉得你不太知道从哪儿下手，如果某人要你独自画一个P2P的音乐交换网络图，那这本书就适合你了。—— Joel&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -851,7 +782,7 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 
 &lt;p&gt;无论你是初学者，是有经验的程序员，还是软件项目经理，《程序员修炼之道:从小工到专家》都适合你阅读。&lt;/p&gt;
 
-&lt;h2 id=&quot;httptcnzoesycs&quot;&gt;3、《&lt;a href=&quot;http://t.cn/zOEsYcs&quot;&gt;计算机程序的构造和解释&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;3、《&lt;a href=&quot;http://t.cn/zOEsYcs&quot;&gt;计算机程序的构造和解释&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：916&lt;/p&gt;
 
@@ -875,12 +806,12 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 毕竟这本书是写给著名的6.001，是麻省理工学院的入门编程课程。
 此书或许需要多做努力（尤其你在做练习的时候，你也应当如此），但这个价是对得起这本书的。&lt;/p&gt;
 
-&lt;h2 id=&quot;chttptcnzoeshqb&quot;&gt;4、《&lt;a href=&quot;http://t.cn/zOEsHqb&quot;&gt;C程序设计语言&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;4、《&lt;a href=&quot;http://t.cn/zOEsHqb&quot;&gt;C程序设计语言&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：774&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;这本书简洁易读，会教给你三件事：C 编程语言；如何像程序员一样思考；底层计算模型。
+&lt;p&gt;这本书简洁易读，会教给你三件事：C 编程语言；如何像程序员一样思考；底层计算模型。
 （这对理解“底层”非常重要）—— Nathan&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -894,7 +825,7 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 
 &lt;p&gt;人们熟知的“hello,world”程序就是由本书首次引入的，现在，这一程序已经成为所有程序设计语言入门的第一课。&lt;/p&gt;
 
-&lt;h2 id=&quot;httptcnzoesqan&quot;&gt;5、《&lt;a href=&quot;http://t.cn/zOEsQAn&quot;&gt;算法导论&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;5、《&lt;a href=&quot;http://t.cn/zOEsQAn&quot;&gt;算法导论&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：671&lt;/p&gt;
 
@@ -907,7 +838,7 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 其他部分则像重新组装乐高砖块或创建“管理”层。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;我依然梦想这样的工作，我的大部分时间（&amp;gt;50%）是在写算法，其他“管理”细节则留给其他人…… —— Ran Biron&lt;/p&gt;
+&lt;p&gt;我依然梦想这样的工作，我的大部分时间（&amp;gt;50%）是在写算法，其他“管理”细节则留给其他人…… —— Ran Biron&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
@@ -917,7 +848,7 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 &lt;li&gt;编写上采用了“五个一”，即一章介绍一个算法、一种设计技术、一个应用领域和一个相关话题。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;httptcnzoes8lu&quot;&gt;6、《&lt;a href=&quot;http://t.cn/zOEs8Lu&quot;&gt;重构：改善既有代码的设计&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;6、《&lt;a href=&quot;http://t.cn/zOEs8Lu&quot;&gt;重构：改善既有代码的设计&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：617&lt;/p&gt;
 
@@ -931,15 +862,13 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 也可作为高等院校计算机及相关专业师生的参考读物。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;我想我不得不推荐《重构》：改进现有代码的设计。—— Martin&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;我想我不得不推荐《重构》：改进现有代码的设计。—— Martin&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;我必须承认，我最喜欢的编程语录是出自这本书：任何一个傻瓜都能写出计算机能理解的程序，
+&lt;p&gt;我必须承认，我最喜欢的编程语录是出自这本书：任何一个傻瓜都能写出计算机能理解的程序，
 而优秀的程序员却能写出别人能读得懂的程序。—— Martin Fowler&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;httptcnzoes8k1&quot;&gt;7、《&lt;a href=&quot;http://t.cn/zOEs8k1&quot;&gt;设计模式&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;7、《&lt;a href=&quot;http://t.cn/zOEs8k1&quot;&gt;设计模式&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：617&lt;/p&gt;
 
@@ -948,12 +877,12 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 中文版销售逾4万册。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;就我而言，我认为四人帮编著的《设计模式》是一本极为有用的书。
+&lt;p&gt;就我而言，我认为四人帮编著的《设计模式》是一本极为有用的书。
 虽然此书并不像其他建议一样有关“元”编程，但它强调封装诸如模式一类的优秀编程技术，
 因而鼓励其他人提出新模式和反模式（antipatterns），并运用于编程对话中。—— Chris Jester-Young&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;httptcnzoesr1z&quot;&gt;8、《&lt;a href=&quot;http://t.cn/zOEsR1z&quot;&gt;人月神话&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;8、《&lt;a href=&quot;http://t.cn/zOEsR1z&quot;&gt;人月神话&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：588&lt;/p&gt;
 
@@ -966,7 +895,7 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 &lt;p&gt;该书英文原版一经面世，即引起业内人士的强烈反响，后又译为德、法、日、俄中等多种语言，全球销量数百万册。
 确立了其在行业内的经典地位。&lt;/p&gt;
 
-&lt;h2 id=&quot;httptcnzoesexr&quot;&gt;9、《&lt;a href=&quot;http://t.cn/zOEsExR&quot;&gt;计算机程序设计艺术&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;9、《&lt;a href=&quot;http://t.cn/zOEsExR&quot;&gt;计算机程序设计艺术&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：542&lt;/p&gt;
 
@@ -977,10 +906,10 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 目前Knuth正将毕生精力投入到这部史诗性著作的撰写中。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;这是高德纳倾注心血写的一本书。—— Peter Coulton&lt;/p&gt;
+&lt;p&gt;这是高德纳倾注心血写的一本书。—— Peter Coulton&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;httptcnzoesefg&quot;&gt;10、《&lt;a href=&quot;http://t.cn/zOEsEFG&quot;&gt;编译原理&lt;/a&gt;》（龙书）&lt;/h2&gt;
+&lt;h2&gt;10、《&lt;a href=&quot;http://t.cn/zOEsEFG&quot;&gt;编译原理&lt;/a&gt;》（龙书）&lt;/h2&gt;
 
 &lt;p&gt;推荐数：462&lt;/p&gt;
 
@@ -988,17 +917,17 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 我从没忘过此书的第一版封面。
 此书让我知道了编译器是多么地神奇绝妙。- DB&lt;/p&gt;
 
-&lt;h2 id=&quot;httptcnzonvx9n&quot;&gt;11、《&lt;a href=&quot;http://t.cn/zOnvX9N&quot;&gt;深入浅出设计模式&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;11、《&lt;a href=&quot;http://t.cn/zOnvX9N&quot;&gt;深入浅出设计模式&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：445&lt;/p&gt;
 
 &lt;p&gt;强大的写作阵容。&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;《Head First设计模式》(中文版) 作者Eric Freeman；&lt;/li&gt;
-  &lt;li&gt;ElElisabeth Freeman是作家、讲师和技术顾问。&lt;/li&gt;
-  &lt;li&gt;Eric拥有耶鲁大学的计算机科学博士学位，E1isabath拥有耶鲁大学的计算机科学硕士学位。&lt;/li&gt;
-  &lt;li&gt;Kathy Sierra(javaranch．com的创始人)FHBert Bates是畅销的HeadFirst系列书籍的创立者，也是Sun公司Java开发员认证考试的开发者。&lt;/li&gt;
+&lt;li&gt;《Head First设计模式》(中文版) 作者Eric Freeman；&lt;/li&gt;
+&lt;li&gt;ElElisabeth Freeman是作家、讲师和技术顾问。&lt;/li&gt;
+&lt;li&gt;Eric拥有耶鲁大学的计算机科学博士学位，E1isabath拥有耶鲁大学的计算机科学硕士学位。&lt;/li&gt;
+&lt;li&gt;Kathy Sierra(javaranch．com的创始人)FHBert Bates是畅销的HeadFirst系列书籍的创立者，也是Sun公司Java开发员认证考试的开发者。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;本书的产品设计应用神经生物学、认知科学，以及学习理论，这使得这本书能够将这些知识深深地印在你的脑海里，
@@ -1017,11 +946,11 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 每章最后有一页要点整理，这也是精华所在，我都是利用这一页做复习。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;我知道四人帮的《设计模式》是一本标准书，但倒不如先看看这部大部头，此书更为简易。
+&lt;p&gt;我知道四人帮的《设计模式》是一本标准书，但倒不如先看看这部大部头，此书更为简易。
 一旦你了解了解了基本原则，可以去看四人帮的那本圣经了。- Calanus&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;httptcnzoesu0d&quot;&gt;12、《&lt;a href=&quot;http://t.cn/zOEsu0d&quot;&gt;哥德尔、艾舍尔、巴赫书：集异璧之大成&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;12、《&lt;a href=&quot;http://t.cn/zOEsu0d&quot;&gt;哥德尔、艾舍尔、巴赫书：集异璧之大成&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：437&lt;/p&gt;
 
@@ -1029,7 +958,7 @@ McConnell汇集了来自研究机构、学术界以及业界日常实践的主�
 他极为深入研究了程序员每日都要面对的问题：递归、验证、证明和布尔代数。
 这是一本很出色的读物，难度不大，偶尔有挑战，一旦你要鏖战到底，将是非常值得的。 – Jonik&lt;/p&gt;
 
-&lt;h2 id=&quot;httptcnzoes3tt&quot;&gt;13、《&lt;a href=&quot;http://t.cn/zOEs3tt&quot;&gt;代码整洁之道&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;13、《&lt;a href=&quot;http://t.cn/zOEs3tt&quot;&gt;代码整洁之道&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：329&lt;/p&gt;
 
@@ -1059,10 +988,10 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;虽然《代码整洁之道》和《代码大全》有很多共同之处，但它有更为简洁更为实际的清晰例子。 – Craig P. Motlin&lt;/p&gt;
+&lt;p&gt;虽然《代码整洁之道》和《代码大全》有很多共同之处，但它有更为简洁更为实际的清晰例子。 – Craig P. Motlin&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;effective-chttptcnzoes1mwmore-effective-chttptcnzoesbvc&quot;&gt;14、《&lt;a href=&quot;http://t.cn/zOEs1Mw&quot;&gt;Effective C++&lt;/a&gt;》和《&lt;a href=&quot;http://t.cn/zOEsBvc&quot;&gt;More Effective C++&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;14、《&lt;a href=&quot;http://t.cn/zOEs1Mw&quot;&gt;Effective C++&lt;/a&gt;》和《&lt;a href=&quot;http://t.cn/zOEsBvc&quot;&gt;More Effective C++&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：297&lt;/p&gt;
 
@@ -1071,7 +1000,7 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 
 &lt;p&gt;去年对我影响最大的一本书是《大教堂与市集》，该书教会我很有关开源开发过程如何运作，和如何处理我代码中的Bug。 – John Channing&lt;/p&gt;
 
-&lt;h2 id=&quot;httptcnzoesbur&quot;&gt;15、《&lt;a href=&quot;http://t.cn/zOEsBur&quot;&gt;编程珠玑&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;15、《&lt;a href=&quot;http://t.cn/zOEsBur&quot;&gt;编程珠玑&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;推荐数：282&lt;/p&gt;
 
@@ -1084,10 +1013,10 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 &lt;p&gt;本书为第一卷，主要讨论计算机科学中最本质的问题：如何正确选择和高效地实现算法。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;尽管我不得不羞愧地承认，书中一半的东西我都没有理解，但我真的推荐《编程珠玑》，书中有些令人惊奇的东西。 – Matt Warren&lt;/p&gt;
+&lt;p&gt;尽管我不得不羞愧地承认，书中一半的东西我都没有理解，但我真的推荐《编程珠玑》，书中有些令人惊奇的东西。 – Matt Warren&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;httptcnzoesgc0by-michael-feathers&quot;&gt;16、《&lt;a href=&quot;http://t.cn/zOEsgC0&quot;&gt;修改代码的艺术&lt;/a&gt;》by Michael Feathers&lt;/h2&gt;
+&lt;h2&gt;16、《&lt;a href=&quot;http://t.cn/zOEsgC0&quot;&gt;修改代码的艺术&lt;/a&gt;》by Michael Feathers&lt;/h2&gt;
 
 &lt;p&gt;本书是继《重构》和《重构与模式》之后探讨修改代码技术的又一里程碑式的著作，
 而且从涵盖面和深度上都超过了前两部经典。
@@ -1100,16 +1029,14 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 通过这部集大成之作，你不仅能掌握最顶尖的修改代码技术，还可以大大提高对代码和软件开发的领悟力。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;我认为没有任何一本书能向这本书一样影响了我的编程观点。
+&lt;p&gt;我认为没有任何一本书能向这本书一样影响了我的编程观点。
 它明确地告诉你如何处理其他人的代码，含蓄地教会你避免哪些（以及为什么要避免）。- Wolfbyte&lt;/p&gt;
-&lt;/blockquote&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;同意。很多开发人员讨论用干净的石板来编写软件。
+&lt;p&gt;同意。很多开发人员讨论用干净的石板来编写软件。
 但我想几乎所有开发人员的某些时候是在吃其他开发人员的狗食。– Bernard Dy&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;httptcnzoeseyx&quot;&gt;17、《&lt;a href=&quot;http://t.cn/zOEseyX&quot;&gt;编码：隐匿在计算机软硬件背后的语言&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;17、《&lt;a href=&quot;http://t.cn/zOEseyX&quot;&gt;编码：隐匿在计算机软硬件背后的语言&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;这是一本讲述计算机工作原理的书。&lt;/p&gt;
 
@@ -1122,27 +1049,27 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 都不妨翻阅一下《编码:隐匿在计算机软硬件背后的语言》，读一读大师的经典作品，必然会有收获。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;我推荐Charles Petzold的《编码》。
+&lt;p&gt;我推荐Charles Petzold的《编码》。
 在这个充满工具和IDE的年代，很多复杂度已经从程序员那“抽取”走了，这本书一本开眼之作。 – hemil&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;zen-and-the-art-of-motorcycle-maintenancehttptcnzoesdwc&quot;&gt;18、《&lt;a href=&quot;http://t.cn/zOEsDwc&quot;&gt;禅与摩托车维修艺术 / Zen and the Art of Motorcycle Maintenance&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;18、《&lt;a href=&quot;http://t.cn/zOEsDwc&quot;&gt;禅与摩托车维修艺术 / Zen and the Art of Motorcycle Maintenance&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;对我影响最大的那本书是 Robert Pirsig 的《禅与摩托车维修艺术》。
+&lt;p&gt;对我影响最大的那本书是 Robert Pirsig 的《禅与摩托车维修艺术》。
 不管你做什么事，总是要力求完美，彻底了解你手中的工具和任务，更为重要的是，
 要有乐趣（因为如果你做事有乐趣，一切将自发引向更好的结果）。 – akr&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;peopleware--httptcnzoeskve&quot;&gt;19、《&lt;a href=&quot;http://t.cn/zOEskvE&quot;&gt;Peopleware / 人件集:人性化的软件开发&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;19、《&lt;a href=&quot;http://t.cn/zOEskvE&quot;&gt;Peopleware / 人件集:人性化的软件开发&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Demarco 和 Lister 表明，软件开发中的首要问题是人，并非技术。
+&lt;p&gt;Demarco 和 Lister 表明，软件开发中的首要问题是人，并非技术。
 他们的答案并不简单，只是令人难以置信的成功。
 第二版新增加了八章内容。 – Eduardo Molteni&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;coders-at-work--httptcnzoeskjt&quot;&gt;20、《&lt;a href=&quot;http://t.cn/zOEskjT&quot;&gt;Coders at Work / 编程人生&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;20、《&lt;a href=&quot;http://t.cn/zOEskjT&quot;&gt;Coders at Work / 编程人生&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;这是一本访谈笔录，记录了当今最具个人魅力的15位软件先驱的编程生涯。
 包括DonaldKnuth、Jamie Zawinski、Joshua Bloch、Ken Thompson等在内的业界传奇人物，为我们讲述了
@@ -1150,32 +1077,32 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 并对诸如应该如何设计软件等长久以来一直困扰很多程序员的问题谈了自己的观点。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;一本非常有影响力的书，可以从中学到一些业界顶级人士的经验，了解他们如何思考并工作。 – Jahanzeb Farooq&lt;/p&gt;
+&lt;p&gt;一本非常有影响力的书，可以从中学到一些业界顶级人士的经验，了解他们如何思考并工作。 – Jahanzeb Farooq&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;surely-youre-joking-mr-feynman--&quot;&gt;21、《Surely You’re Joking, Mr. Feynman! / 别闹了，费曼先生！》&lt;/h2&gt;
+&lt;h2&gt;21、《Surely You’re Joking, Mr. Feynman! / 别闹了，费曼先生！》&lt;/h2&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;虽然这本书可能有点偏题，但不管你信不信，这本书曾在计算机科学专业课程的阅读列表之上。
+&lt;p&gt;虽然这本书可能有点偏题，但不管你信不信，这本书曾在计算机科学专业课程的阅读列表之上。
 一个优秀的角色模型，一本有关好奇心的优秀书籍。 – mike511&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;effective-java-httptcnzonvvov&quot;&gt;22、《&lt;a href=&quot;http://t.cn/zOnvvoV&quot;&gt;Effective Java 中文版&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;22、《&lt;a href=&quot;http://t.cn/zOnvvoV&quot;&gt;Effective Java 中文版&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;此书第二版教你如何编写漂亮并高效的代码，虽然这是一本Java书，但其中有很多跨语言的理念。 – Marcio Aguiar&lt;/p&gt;
+&lt;p&gt;此书第二版教你如何编写漂亮并高效的代码，虽然这是一本Java书，但其中有很多跨语言的理念。 – Marcio Aguiar&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;patterns-of-enterprise-application-architecture--httptcnzonvp4i&quot;&gt;23、《&lt;a href=&quot;http://t.cn/zOnvP4i&quot;&gt;Patterns of Enterprise Application Architecture / 企业应用架构模式&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;23、《&lt;a href=&quot;http://t.cn/zOnvP4i&quot;&gt;Patterns of Enterprise Application Architecture / 企业应用架构模式&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;很奇怪，还没人推荐 Martin Fowler 的《企业应用架构模式》- levi rosol&lt;/p&gt;
 
-&lt;h2 id=&quot;the-little-schemerthe-seasoned-schemer-nmiranda&quot;&gt;24、《The Little Schemer》和《The Seasoned Schemer》 nmiranda&lt;/h2&gt;
+&lt;h2&gt;24、《The Little Schemer》和《The Seasoned Schemer》 nmiranda&lt;/h2&gt;
 
 &lt;p&gt;这两本是LISP的英文书，尚无中文版。
 美国东北大学网站上也有电子版。&lt;/p&gt;
 
-&lt;h2 id=&quot;the-inmates-are-running-the-asylum-why-high-tech-products-drive-us-crazy-and-how-to-restore-the-sanityalan-coopervisual-basic&quot;&gt;25、《交互设计之路》英文名：《The Inmates Are Running The Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity》该书作者：Alan Cooper，人称Visual Basic之父，交互设计之父。&lt;/h2&gt;
+&lt;h2&gt;25、《交互设计之路》英文名：《The Inmates Are Running The Asylum: Why High Tech Products Drive Us Crazy and How to Restore the Sanity》该书作者：Alan Cooper，人称Visual Basic之父，交互设计之父。&lt;/h2&gt;
 
 &lt;p&gt;本书是基于众多商务案例，讲述如何创建更好的、高客户忠诚度的软件产品和基于软件的高科技产品的书。
 本书列举了很多真实可信的实际例子，说明目前在软件产品和基于软件的高科技产品中，普遍存在着“难用”的问题。&lt;/p&gt;
@@ -1192,41 +1119,37 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 
 &lt;p&gt;他还有另一本中文版著作：《About Face 3 交互设计精髓》&lt;/p&gt;
 
-&lt;h2 id=&quot;whys-poignant-guide-to-ruby-&quot;&gt;26、《Why’s (Poignant) Guide to Ruby 》&lt;/h2&gt;
+&lt;h2&gt;26、《Why’s (Poignant) Guide to Ruby 》&lt;/h2&gt;
 
 &lt;p&gt;如果你不是程序员，阅读此书可能会很有趣，但如果你已经是个程序员，可能会有点乏味。&lt;/p&gt;
 
-&lt;h2 id=&quot;unix&quot;&gt;27、《Unix编程艺术》&lt;/h2&gt;
+&lt;h2&gt;27、《Unix编程艺术》&lt;/h2&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;It is useful regardless operating system you use. – J.F. Sebastian&lt;/p&gt;
+&lt;p&gt;It is useful regardless operating system you use. – J.F. Sebastian&lt;/p&gt;
+
+&lt;p&gt;不管你使用什么操作系统，这本书都很有用。 – J.F. Sebastian&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;不管你使用什么操作系统，这本书都很有用。 – J.F. Sebastian&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;httptcnzonvhrm&quot;&gt;28、《&lt;a href=&quot;http://t.cn/zOnvhRM&quot;&gt;高效程序员的45个习惯：敏捷开发修炼之道&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;28、《&lt;a href=&quot;http://t.cn/zOnvhRM&quot;&gt;高效程序员的45个习惯：敏捷开发修炼之道&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;45个习惯，分为7个方面：工作态度、学习、软件交付、反馈、编码、调试和协作。&lt;/p&gt;
 
 &lt;p&gt;每一个具体的习惯里，一开始提出一个谬论，然后展开分析，之后有正队性地提出正确的做法，并设身处地地讲出了正确做法给你个人的“切身感受”，最后列出几条注意事项，帮助你修正自己的做法（“平衡的艺术”）。&lt;/p&gt;
 
-&lt;h2 id=&quot;httptcnzonvzk7&quot;&gt;29、《&lt;a href=&quot;http://t.cn/zOnvzK7&quot;&gt;测试驱动开发&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;29、《&lt;a href=&quot;http://t.cn/zOnvzK7&quot;&gt;测试驱动开发&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;前面已经提到的很多书都启发了我，并影响了我，但这本书每位程序员都应该读。
+&lt;p&gt;前面已经提到的很多书都启发了我，并影响了我，但这本书每位程序员都应该读。
 它向我展示了单元测试和TDD的重要性，并让我很快上手。 – Curro&lt;/p&gt;
-&lt;/blockquote&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;我不关心你的代码有多好或优雅。
+&lt;p&gt;我不关心你的代码有多好或优雅。
 如果你没有测试，你或许就如同没有编写代码。
 这本书得到的推荐数应该更高些。
 人们讨论编写用户喜欢的软件，或既设计出色并健壮的高效代码，但如果你的软件有一堆bug，谈论那些东西毫无意义。– Adam Gent&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;httptcnzonvzyq&quot;&gt;30、《&lt;a href=&quot;http://t.cn/zOnvZYq&quot;&gt;点石成金:访客至上的网页设计秘笈&lt;/a&gt;》&lt;/h2&gt;
+&lt;h2&gt;30、《&lt;a href=&quot;http://t.cn/zOnvZYq&quot;&gt;点石成金:访客至上的网页设计秘笈&lt;/a&gt;》&lt;/h2&gt;
 
 &lt;p&gt;可用性设计是Web设计中最重要也是难度最大的一项任务。
 《点石成金－访客至上的网页设计秘笈（原书第二版）》作者根据多年从业的经验，剖析用户的心理，
@@ -1244,10 +1167,9 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 你便能对照书中讲授的设计原则找到网站设计的症结所在，令你的网站焕然一新。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;取决于你所追求的目标。
+&lt;p&gt;取决于你所追求的目标。
 我喜欢《代码大全》是因纯编程，《点石成金》是一本有关UI设计的卓越书籍。 – Justin Standard&lt;/p&gt;
 &lt;/blockquote&gt;
-
 </content>
  </entry>
  
@@ -1258,56 +1180,57 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
    <id>/blog/2014/07/markdown-syntax</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown: Syntax&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;声明：&lt;/strong&gt; 这份文档派生(fork)于&lt;a href=&quot;http://markdown.tw/&quot;&gt;繁体中文版&lt;/a&gt;，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里&lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md&quot;&gt;查看它的源文件&lt;/a&gt;。「繁体中文版的原始文件可以&lt;a href=&quot;https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md&quot;&gt;查看这里&lt;/a&gt; 。」–By @&lt;a href=&quot;http://twitter.com/riku&quot;&gt;riku&lt;/a&gt; / 本项目托管于 &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN&quot;&gt;GitCafe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;声明：&lt;/strong&gt; 这份文档派生(fork)于&lt;a href=&quot;http://markdown.tw/&quot;&gt;繁体中文版&lt;/a&gt;，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里&lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md&quot;&gt;查看它的源文件&lt;/a&gt;。「繁体中文版的原始文件可以&lt;a href=&quot;https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md&quot;&gt;查看这里&lt;/a&gt; 。」--By @&lt;a href=&quot;http://twitter.com/riku&quot;&gt;riku&lt;/a&gt; / 本项目托管于 &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN&quot;&gt;GitCafe&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 本项目同时也托管于 &lt;a href=&quot;https://github.com/riku/Markdown-Syntax-CN&quot;&gt;Github&lt;/a&gt; 上，请通过 fork＋pull request 方式来帮忙改进本项目。&lt;/p&gt;
 
-&lt;h1 id=&quot;markdown----markdown-basicshtml&quot;&gt;Markdown 语法说明 (简体中文版) / (&lt;a href=&quot;./markdown-basics.html&quot;&gt;点击查看快速入门&lt;/a&gt;)&lt;/h1&gt;
+&lt;h1&gt;Markdown 语法说明 (简体中文版) / (&lt;a href=&quot;./markdown-basics.html&quot;&gt;点击查看快速入门&lt;/a&gt;)&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;auto-gen TOC:&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;auto-gen TOC:
+{:toc}
 &lt;div class=&quot;toc&quot;&gt;&lt;/div&gt;
-&lt;p&gt;[toc]&lt;/p&gt;
+[toc]&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;[TOC]&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#overview&quot;&gt;概述&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#philosophy&quot;&gt;宗旨&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#html&quot;&gt;兼容 HTML&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#autoescape&quot;&gt;特殊字符自动转换&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#block&quot;&gt;区块元素&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#p&quot;&gt;段落和换行&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#header&quot;&gt;标题&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#blockquote&quot;&gt;区块引用&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#list&quot;&gt;列表&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#precode&quot;&gt;代码区块&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#hr&quot;&gt;分隔线&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#span&quot;&gt;区段元素&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#link&quot;&gt;链接&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#em&quot;&gt;强调&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#code&quot;&gt;代码&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#img&quot;&gt;图片&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#misc&quot;&gt;其它&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#backslash&quot;&gt;反斜杠&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#autolink&quot;&gt;自动链接&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#acknowledgement&quot;&gt;感谢&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#overview&quot;&gt;概述&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;#philosophy&quot;&gt;宗旨&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#html&quot;&gt;兼容 HTML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#autoescape&quot;&gt;特殊字符自动转换&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#block&quot;&gt;区块元素&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;#p&quot;&gt;段落和换行&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#header&quot;&gt;标题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#blockquote&quot;&gt;区块引用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#list&quot;&gt;列表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#precode&quot;&gt;代码区块&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#hr&quot;&gt;分隔线&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#span&quot;&gt;区段元素&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;#link&quot;&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#em&quot;&gt;强调&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#code&quot;&gt;代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#img&quot;&gt;图片&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#misc&quot;&gt;其它&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;a href=&quot;#backslash&quot;&gt;反斜杠&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#autolink&quot;&gt;自动链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;  &lt;a href=&quot;#acknowledgement&quot;&gt;感谢&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;h2 id=&quot;overview&quot;&gt;概述&lt;/h2&gt;
 
@@ -1330,8 +1253,7 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 &lt;p&gt;要制约的只有一些 HTML 区块元素――比如 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 标签。&lt;/p&gt;
 
 &lt;p&gt;例子如下，在 Markdown 文件里加上一段 HTML 表格：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;这是一个普通段落。
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;这是一个普通段落。
 
 &amp;lt;table&amp;gt;
     &amp;lt;tr&amp;gt;
@@ -1340,8 +1262,7 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 &amp;lt;/table&amp;gt;
 
 这是另一个普通段落。
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;请注意，在 HTML 区块标签间的 Markdown 格式语法将不会被处理。比如，你在 HTML 区块内使用 Markdown 样式的&lt;code&gt;*强调*&lt;/code&gt;会没有效果。&lt;/p&gt;
 
 &lt;p&gt;HTML 的区段（行内）标签如 &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt; 可以在 Markdown 的段落、列表或是标题里随意使用。依照个人习惯，甚至可以不用 Markdown 格式，而直接采用 HTML 标签来格式化。举例说明：如果比较喜欢 HTML 的 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 或 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图像标签语法。&lt;/p&gt;
@@ -1353,47 +1274,33 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 &lt;p&gt;在 HTML 文件中，有两个字符需要特殊处理： &lt;code&gt;&amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;amp;&lt;/code&gt; 。 &lt;code&gt;&amp;lt;&lt;/code&gt; 符号用于起始标签，&lt;code&gt;&amp;amp;&lt;/code&gt; 符号则用于标记 HTML 实体，如果你只是想要显示这些字符的原型，你必须要使用实体的形式，像是 &lt;code&gt;&amp;amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;amp;amp;&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;&amp;amp;&lt;/code&gt; 字符尤其让网络文档编写者受折磨，如果你要打「&lt;code&gt;AT&amp;amp;T&lt;/code&gt;」 ，你必须要写成「&lt;code&gt;AT&amp;amp;amp;T&lt;/code&gt;」。而网址中的 &lt;code&gt;&amp;amp;&lt;/code&gt; 字符也要转换。比如你要链接到：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http://images.google.com/images?num=30&amp;amp;q=larry+bird
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;http://images.google.com/images?num=30&amp;amp;q=larry+bird
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;你必须要把网址转换写为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http://images.google.com/images?num=30&amp;amp;amp;q=larry+bird
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;http://images.google.com/images?num=30&amp;amp;amp;q=larry+bird
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;才能放到链接标签的 &lt;code&gt;href&lt;/code&gt; 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。&lt;/p&gt;
 
 &lt;p&gt;Markdown 让你可以自然地书写字符，需要转换的由它来处理好了。如果你使用的 &lt;code&gt;&amp;amp;&lt;/code&gt; 字符是 HTML 字符实体的一部分，它会保留原状，否则它会被转换成 &lt;code&gt;&amp;amp;amp&lt;/code&gt;;。&lt;/p&gt;
 
 &lt;p&gt;所以你如果要在文档中插入一个版权符号 &lt;code&gt;©&lt;/code&gt;，你可以这样写：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;copy;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;amp;copy;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Markdown 会保留它不动。而若你写：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;AT&amp;amp;T
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;AT&amp;amp;T
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Markdown 就会将它转为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;AT&amp;amp;amp;T
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;AT&amp;amp;amp;T
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;类似的状况也会发生在 &lt;code&gt;&amp;lt;&lt;/code&gt; 符号上，因为 Markdown 允许 &lt;a href=&quot;#html&quot;&gt;兼容 HTML&lt;/a&gt; ，如果你是把 &lt;code&gt;&amp;lt;&lt;/code&gt; 符号作为 HTML 标签的定界符使用，那 Markdown 也不会对它做任何转换，但是如果你写：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;4 &amp;lt; 5
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;4 &amp;lt; 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Markdown 将会把它转换为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;4 &amp;amp;lt; 5
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;4 &amp;amp;lt; 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;不过需要注意的是，code 范围内，不论是行内还是区块， &lt;code&gt;&amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;amp;&lt;/code&gt; 两个符号都&lt;em&gt;一定&lt;/em&gt;会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code （和 HTML 相对而言， HTML 语法中，你要把所有的 &lt;code&gt;&amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;amp;&lt;/code&gt; 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。）&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;h2 id=&quot;block&quot;&gt;区块元素&lt;/h2&gt;
 
@@ -1412,77 +1319,63 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 &lt;p&gt;Markdown 支持两种标题的语法，类 &lt;a href=&quot;http://docutils.sourceforge.net/mirror/setext.html&quot;&gt;Setext&lt;/a&gt; 和类 &lt;a href=&quot;http://www.aaronsw.com/2002/atx/&quot;&gt;atx&lt;/a&gt; 形式。&lt;/p&gt;
 
 &lt;p&gt;类 Setext 形式是用底线的形式，利用 &lt;code&gt;=&lt;/code&gt; （最高阶标题）和 &lt;code&gt;-&lt;/code&gt; （第二阶标题），例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;This is an H1
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;This is an H1
 =============
 
 This is an H2
 -------------
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;任何数量的 &lt;code&gt;=&lt;/code&gt; 和 &lt;code&gt;-&lt;/code&gt; 都可以有效果。&lt;/p&gt;
 
 &lt;p&gt;类 Atx 形式则是在行首插入 1 到 6 个 &lt;code&gt;#&lt;/code&gt; ，对应到标题 1 到 6 阶，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 这是 H1
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;# 这是 H1
 
 ## 这是 H2
 
 ###### 这是 H6
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;你可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 &lt;code&gt;#&lt;/code&gt;，而行尾的 &lt;code&gt;#&lt;/code&gt; 数量也不用和开头一样（行首的井字符数量决定标题的阶数）：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 这是 H1 #
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;# 这是 H1 #
 
 ## 这是 H2 ##
 
 ### 这是 H3 ######
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&quot;blockquote&quot;&gt;区块引用 Blockquotes&lt;/h3&gt;
 
 &lt;p&gt;Markdown 标记区块引用是使用类似 email 中用 &lt;code&gt;&amp;gt;&lt;/code&gt; 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 &lt;code&gt;&amp;gt;&lt;/code&gt; ：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
 &amp;gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
 &amp;gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 &amp;gt; 
 &amp;gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
 &amp;gt; id sem consectetuer libero luctus adipiscing.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Markdown 也允许你偷懒只在整个段落的第一行最前面加上 &lt;code&gt;&amp;gt;&lt;/code&gt; ：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
 consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
 Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
 &amp;gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
 id sem consectetuer libero luctus adipiscing.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &lt;code&gt;&amp;gt;&lt;/code&gt; ：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; This is the first level of quoting.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;gt; This is the first level of quoting.
 &amp;gt;
 &amp;gt; &amp;gt; This is nested blockquote.
 &amp;gt;
 &amp;gt; Back to the first level.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; ## 这是一个标题。
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;gt; ## 这是一个标题。
 &amp;gt; 
 &amp;gt; 1.   这是第一行列表项。
 &amp;gt; 2.   这是第二行列表项。
 &amp;gt; 
 &amp;gt; 给出一些例子代码：
 &amp;gt; 
-&amp;gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
+&amp;gt;     return shell_exec(&amp;quot;echo $input | $markdown_script&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;任何像样的文本编辑器都能轻松地建立 email 型的引用。例如在 BBEdit 中，你可以选取文字后然后从选单中选择&lt;em&gt;增加引用阶层&lt;/em&gt;。&lt;/p&gt;
 
 &lt;h3 id=&quot;list&quot;&gt;列表&lt;/h3&gt;
@@ -1490,56 +1383,42 @@ id sem consectetuer libero luctus adipiscing.
 &lt;p&gt;Markdown 支持有序列表和无序列表。&lt;/p&gt;
 
 &lt;p&gt;无序列表使用星号、加号或是减号作为列表标记：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;*   Red
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;*   Red
 *   Green
 *   Blue
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;等同于：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+   Red
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;+   Red
 +   Green
 +   Blue
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;也等同于：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;-   Red
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;-   Red
 -   Green
 -   Blue
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;有序列表则使用数字接着一个英文句点：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;1.  Bird
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.  Bird
 2.  McHale
 3.  Parish
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;ol&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ol&amp;gt;
 &amp;lt;li&amp;gt;Bird&amp;lt;/li&amp;gt;
 &amp;lt;li&amp;gt;McHale&amp;lt;/li&amp;gt;
 &amp;lt;li&amp;gt;Parish&amp;lt;/li&amp;gt;
 &amp;lt;/ol&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果你的列表标记写成：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;1.  Bird
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.  Bird
 1.  McHale
 1.  Parish
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;或甚至是：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;3. Bird
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;3. Bird
 1. McHale
 8. Parish
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;你都会得到完全相同的 HTML 输出。重点在于，你可以让 Markdown 文件的列表数字和输出的结果相同，或是你懒一点，你可以完全不用在意数字的正确性。&lt;/p&gt;
 
 &lt;p&gt;如果你使用懒惰的写法，建议第一个项目最好还是从 1. 开始，因为 Markdown 未来可能会支持有序列表的 start 属性。&lt;/p&gt;
@@ -1547,56 +1426,43 @@ id sem consectetuer libero luctus adipiscing.
 &lt;p&gt;列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。&lt;/p&gt;
 
 &lt;p&gt;要让列表看起来更漂亮，你可以把内容用固定的缩进整理好：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
     viverra nec, fringilla in, laoreet vitae, risus.
 *   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
     Suspendisse id sem consectetuer libero luctus adipiscing.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;但是如果你懒，那也行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
 viverra nec, fringilla in, laoreet vitae, risus.
 *   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
 Suspendisse id sem consectetuer libero luctus adipiscing.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 
 标签包起来，举例来说：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;*   Bird
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;*   Bird
 *   Magic
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;会被转换为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
 &amp;lt;li&amp;gt;Bird&amp;lt;/li&amp;gt;
 &amp;lt;li&amp;gt;Magic&amp;lt;/li&amp;gt;
 &amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;但是这个：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;*   Bird
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;*   Bird
 
 *   Magic
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;会被转换为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
 &amp;lt;li&amp;gt;&amp;lt;p&amp;gt;Bird&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
 &amp;lt;li&amp;gt;&amp;lt;p&amp;gt;Magic&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
 &amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;1.  This is a list item with two paragraphs. Lorem ipsum dolor
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.  This is a list item with two paragraphs. Lorem ipsum dolor
     sit amet, consectetuer adipiscing elit. Aliquam hendrerit
     mi posuere lectus.
 
@@ -1605,106 +1471,82 @@ Suspendisse id sem consectetuer libero luctus adipiscing.
     sit amet velit.
 
 2.  Suspendisse id sem consectetuer libero luctus adipiscing.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;*   This is a list item with two paragraphs.
 
-&lt;pre&gt;&lt;code&gt;*   This is a list item with two paragraphs.
-
-    This is the second paragraph in the list item. You're
+    This is the second paragraph in the list item. You&amp;#39;re
 only required to indent the first line. Lorem ipsum dolor
 sit amet, consectetuer adipiscing elit.
 
 *   Another item in the same list.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果要在列表项目内放进引用，那 &lt;code&gt;&amp;gt;&lt;/code&gt; 就需要缩进：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;*   A list item with a blockquote:
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;*   A list item with a blockquote:
 
     &amp;gt; This is a blockquote
     &amp;gt; inside a list item.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果要放代码区块的话，该区块就需要缩进&lt;em&gt;两次&lt;/em&gt;，也就是 8 个空格或是 2 个制表符：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;*   一列表项包含一个列表区块：
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;*   一列表项包含一个列表区块：
 
         &amp;lt;代码写在这&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;当然，项目列表很可能会不小心产生，像是下面这样的写法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;1986. What a great season.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1986. What a great season.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;换句话说，也就是在行首出现&lt;em&gt;数字-句点-空白&lt;/em&gt;，要避免这样的状况，你可以在句点前面加上反斜杠。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;1986\. What a great season.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1986\. What a great season.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&quot;precode&quot;&gt;代码区块&lt;/h3&gt;
 
 &lt;p&gt;和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是照原来的样子显示，Markdown 会用 &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; 和 &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; 标签来把代码区块包起来。&lt;/p&gt;
 
 &lt;p&gt;要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;这是一个普通段落：
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;这是一个普通段落：
 
     这是一个代码区块。
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Markdown 会转换成：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;这是一个普通段落：&amp;lt;/p&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;这是一个普通段落：&amp;lt;/p&amp;gt;
 
 &amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;这是一个代码区块。
 &amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Here is an example of AppleScript:
 
-&lt;pre&gt;&lt;code&gt;Here is an example of AppleScript:
-
-    tell application &quot;Foo&quot;
+    tell application &amp;quot;Foo&amp;quot;
         beep
     end tell
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;会被转换为：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;Here is an example of AppleScript:&amp;lt;/p&amp;gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Here is an example of AppleScript:&amp;lt;/p&amp;gt;
-
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;tell application &quot;Foo&quot;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;tell application &amp;quot;Foo&amp;quot;
     beep
 end tell
 &amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。&lt;/p&gt;
 
 &lt;p&gt;在代码区块里面， &lt;code&gt;&amp;amp;&lt;/code&gt; 、 &lt;code&gt;&amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;gt;&lt;/code&gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    &amp;lt;div class=&quot;footer&quot;&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;    &amp;lt;div class=&amp;quot;footer&amp;quot;&amp;gt;
         &amp;amp;copy; 2004 Foo Corporation
     &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;会被转换为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;amp;lt;div class=&quot;footer&quot;&amp;amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;amp;lt;div class=&amp;quot;footer&amp;quot;&amp;amp;gt;
     &amp;amp;amp;copy; 2004 Foo Corporation
 &amp;amp;lt;/div&amp;amp;gt;
 &amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。&lt;/p&gt;
 
 &lt;h3 id=&quot;hr&quot;&gt;分隔线&lt;/h3&gt;
 
 &lt;p&gt;你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;* * *
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;* * *
 
 ***
 
@@ -1713,9 +1555,8 @@ end tell
 - - -
 
 ---------------------------------------
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
 
 &lt;h2 id=&quot;span&quot;&gt;区段元素&lt;/h2&gt;
 
@@ -1726,136 +1567,100 @@ end tell
 &lt;p&gt;不管是哪一种，链接文字都是用 [方括号] 来标记。&lt;/p&gt;
 
 &lt;p&gt;要建立一个&lt;em&gt;行内式&lt;/em&gt;的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;This is [an example](http://example.com/ &quot;Title&quot;) inline link.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;This is [an example](http://example.com/ &amp;quot;Title&amp;quot;) inline link.
 
 [This link](http://example.net/) has no title attribute.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;会产生：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is &amp;lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;This is &amp;lt;a href=&amp;quot;http://example.com/&amp;quot; title=&amp;quot;Title&amp;quot;&amp;gt;
 an example&amp;lt;/a&amp;gt; inline link.&amp;lt;/p&amp;gt;
 
-&amp;lt;p&amp;gt;&amp;lt;a href=&quot;http://example.net/&quot;&amp;gt;This link&amp;lt;/a&amp;gt; has no
+&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://example.net/&amp;quot;&amp;gt;This link&amp;lt;/a&amp;gt; has no
 title attribute.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果你是要链接到同样主机的资源，你可以使用相对路径：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;See my [About](/about/) page for details.   
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;See my [About](/about/) page for details.   
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;em&gt;参考式&lt;/em&gt;的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;This is [an example][id] reference-style link.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;This is [an example][id] reference-style link.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;你也可以选择性地在两个方括号中间加上一个空格：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;This is [an example] [id] reference-style link.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;This is [an example] [id] reference-style link.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;接着，在文件的任意处，你可以把这个标记的链接内容定义出来：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[id]: http://example.com/  &quot;Optional Title Here&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[id]: http://example.com/  &amp;quot;Optional Title Here&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;链接内容定义的形式为：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字&lt;/li&gt;
-  &lt;li&gt;接着一个冒号&lt;/li&gt;
-  &lt;li&gt;接着一个以上的空格或制表符&lt;/li&gt;
-  &lt;li&gt;接着链接的网址&lt;/li&gt;
-  &lt;li&gt;选择性地接着 title 内容，可以用单引号、双引号或是括弧包着&lt;/li&gt;
+&lt;li&gt;  方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字&lt;/li&gt;
+&lt;li&gt;  接着一个冒号&lt;/li&gt;
+&lt;li&gt;  接着一个以上的空格或制表符&lt;/li&gt;
+&lt;li&gt;  接着链接的网址&lt;/li&gt;
+&lt;li&gt;  选择性地接着 title 内容，可以用单引号、双引号或是括弧包着&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;下面这三种链接的定义都是相同：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[foo]: http://example.com/  &quot;Optional Title Here&quot;
-[foo]: http://example.com/  'Optional Title Here'
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[foo]: http://example.com/  &amp;quot;Optional Title Here&amp;quot;
+[foo]: http://example.com/  &amp;#39;Optional Title Here&amp;#39;
 [foo]: http://example.com/  (Optional Title Here)
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;请注意：&lt;/strong&gt;有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title。&lt;/p&gt;
 
 &lt;p&gt;链接网址也可以用方括号包起来：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[id]: &amp;lt;http://example.com/&amp;gt;  &quot;Optional Title Here&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[id]: &amp;lt;http://example.com/&amp;gt;  &amp;quot;Optional Title Here&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;你也可以把 title 属性放到下一行，也可以加一些缩进，若网址太长的话，这样会比较好看：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[id]: http://example.com/longish/path/to/resource/here
-    &quot;Optional Title Here&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[id]: http://example.com/longish/path/to/resource/here
+    &amp;quot;Optional Title Here&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;网址定义只有在产生链接的时候用到，并不会直接出现在文件之中。&lt;/p&gt;
 
 &lt;p&gt;链接辨别标签可以有字母、数字、空白和标点符号，但是并&lt;em&gt;不&lt;/em&gt;区分大小写，因此下面两个链接是一样的：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[link text][a]
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[link text][a]
 [link text][A]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;隐式链接标记&lt;/em&gt;功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 “Google” 链接到 google.com，你可以简化成：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[Google][]
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;隐式链接标记&lt;/em&gt;功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 &amp;quot;Google&amp;quot; 链接到 google.com，你可以简化成：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[Google][]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;然后定义链接内容：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[Google]: http://google.com/
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[Google]: http://google.com/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;由于链接文字可能包含空白，所以这种简化型的标记内也许包含多个单词：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Visit [Daring Fireball][] for more information.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Visit [Daring Fireball][] for more information.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;然后接着定义链接：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[Daring Fireball]: http://daringfireball.net/
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[Daring Fireball]: http://daringfireball.net/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;链接的定义可以放在文件中的任何一个地方，我比较偏好直接放在链接出现段落的后面，你也可以把它放在文件最后面，就像是注解一样。&lt;/p&gt;
 
 &lt;p&gt;下面是一个参考式链接的范例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google] [1] than from
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;I get 10 times more traffic from [Google] [1] than from
 [Yahoo] [2] or [MSN] [3].
 
-  [1]: http://google.com/        &quot;Google&quot;
-  [2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;
-  [3]: http://search.msn.com/    &quot;MSN Search&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
+  [1]: http://google.com/        &amp;quot;Google&amp;quot;
+  [2]: http://search.yahoo.com/  &amp;quot;Yahoo Search&amp;quot;
+  [3]: http://search.msn.com/    &amp;quot;MSN Search&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果改成用链接名称的方式写：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google][] than from
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;I get 10 times more traffic from [Google][] than from
 [Yahoo][] or [MSN][].
 
-  [google]: http://google.com/        &quot;Google&quot;
-  [yahoo]:  http://search.yahoo.com/  &quot;Yahoo Search&quot;
-  [msn]:    http://search.msn.com/    &quot;MSN Search&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
+  [google]: http://google.com/        &amp;quot;Google&amp;quot;
+  [yahoo]:  http://search.yahoo.com/  &amp;quot;Yahoo Search&amp;quot;
+  [msn]:    http://search.msn.com/    &amp;quot;MSN Search&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;上面两种写法都会产生下面的 HTML。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;I get 10 times more traffic from &amp;lt;a href=&quot;http://google.com/&quot;
-title=&quot;Google&quot;&amp;gt;Google&amp;lt;/a&amp;gt; than from
-&amp;lt;a href=&quot;http://search.yahoo.com/&quot; title=&quot;Yahoo Search&quot;&amp;gt;Yahoo&amp;lt;/a&amp;gt;
-or &amp;lt;a href=&quot;http://search.msn.com/&quot; title=&quot;MSN Search&quot;&amp;gt;MSN&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;I get 10 times more traffic from &amp;lt;a href=&amp;quot;http://google.com/&amp;quot;
+title=&amp;quot;Google&amp;quot;&amp;gt;Google&amp;lt;/a&amp;gt; than from
+&amp;lt;a href=&amp;quot;http://search.yahoo.com/&amp;quot; title=&amp;quot;Yahoo Search&amp;quot;&amp;gt;Yahoo&amp;lt;/a&amp;gt;
+or &amp;lt;a href=&amp;quot;http://search.msn.com/&amp;quot; title=&amp;quot;MSN Search&amp;quot;&amp;gt;MSN&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;下面是用行内式写的同样一段内容的 Markdown 文件，提供作为比较之用：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google](http://google.com/ &quot;Google&quot;)
-than from [Yahoo](http://search.yahoo.com/ &quot;Yahoo Search&quot;) or
-[MSN](http://search.msn.com/ &quot;MSN Search&quot;).
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;I get 10 times more traffic from [Google](http://google.com/ &amp;quot;Google&amp;quot;)
+than from [Yahoo](http://search.yahoo.com/ &amp;quot;Yahoo Search&amp;quot;) or
+[MSN](http://search.msn.com/ &amp;quot;MSN Search&amp;quot;).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;参考式的链接其实重点不在于它比较好写，而是它比较好读，比较一下上面的范例，使用参考式的文章本身只有 81 个字符，但是用行内形式的却会增加到 176 个字元，如果是用纯 HTML 格式来写，会有 234 个字元，在 HTML 格式中，标签比文本还要多。&lt;/p&gt;
 
 &lt;p&gt;使用 Markdown 的参考式链接，可以让文件更像是浏览器最后产生的结果，让你可以把一些标记相关的元数据移到段落文字之外，你就可以增加链接而不让文章的阅读感觉被打断。&lt;/p&gt;
@@ -1863,98 +1668,70 @@ than from [Yahoo](http://search.yahoo.com/ &quot;Yahoo Search&quot;) or
 &lt;h3 id=&quot;em&quot;&gt;强调&lt;/h3&gt;
 
 &lt;p&gt;Markdown 使用星号（&lt;code&gt;*&lt;/code&gt;）和底线（&lt;code&gt;_&lt;/code&gt;）作为标记强调字词的符号，被 &lt;code&gt;*&lt;/code&gt; 或 &lt;code&gt;_&lt;/code&gt; 包围的字词会被转成用 &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt; 标签包围，用两个 &lt;code&gt;*&lt;/code&gt; 或 &lt;code&gt;_&lt;/code&gt; 包起来的话，则会被转成 &lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;*single asterisks*
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;*single asterisks*
 
 _single underscores_
 
 **double asterisks**
 
 __double underscores__
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;会转成：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;em&amp;gt;single asterisks&amp;lt;/em&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;em&amp;gt;single asterisks&amp;lt;/em&amp;gt;
 
 &amp;lt;em&amp;gt;single underscores&amp;lt;/em&amp;gt;
 
 &amp;lt;strong&amp;gt;double asterisks&amp;lt;/strong&amp;gt;
 
 &amp;lt;strong&amp;gt;double underscores&amp;lt;/strong&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;你可以随便用你喜欢的样式，唯一的限制是，你用什么符号开启标签，就要用什么符号结束。&lt;/p&gt;
 
 &lt;p&gt;强调也可以直接插在文字中间：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;un*frigging*believable
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;un*frigging*believable
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;但是&lt;strong&gt;如果你的 &lt;code&gt;*&lt;/code&gt; 和 &lt;code&gt;_&lt;/code&gt; 两边都有空白的话，它们就只会被当成普通的符号&lt;/strong&gt;。&lt;/p&gt;
 
 &lt;p&gt;如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\*this text is surrounded by literal asterisks\*
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;\*this text is surrounded by literal asterisks\*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&quot;code&quot;&gt;代码&lt;/h3&gt;
 
 &lt;p&gt;如果要标记一小段行内代码，你可以用反引号把它包起来（&lt;code&gt;`&lt;/code&gt;），例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Use the `printf()` function.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Use the `printf()` function.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;会产生：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Use the &amp;lt;code&amp;gt;printf()&amp;lt;/code&amp;gt; function.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;Use the &amp;lt;code&amp;gt;printf()&amp;lt;/code&amp;gt; function.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;``There is a literal backtick (`) here.``
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;``There is a literal backtick (`) here.``
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这段语法会产生：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;There is a literal backtick (`) here.&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;There is a literal backtick (`) here.&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;代码区段的起始和结束端都可以放入一个空白，起始端后面一个，结束端前面一个，这样你就可以在区段的一开始就插入反引号：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;A single backtick in a code span: `` ` ``
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;A single backtick in a code span: `` ` ``
 
 A backtick-delimited string in a code span: `` `foo` ``
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;会产生：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;A single backtick in a code span: &amp;lt;code&amp;gt;`&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;A single backtick in a code span: &amp;lt;code&amp;gt;`&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
 
 &amp;lt;p&amp;gt;A backtick-delimited string in a code span: &amp;lt;code&amp;gt;`foo`&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;在代码区段内，&lt;code&gt;&amp;amp;&lt;/code&gt; 和方括号&lt;strong&gt;都&lt;/strong&gt;会被自动地转成 HTML 实体，这使得插入 HTML 原始码变得很容易，Markdown 会把下面这段：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Please don't use any `&amp;lt;blink&amp;gt;` tags.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Please don&amp;#39;t use any `&amp;lt;blink&amp;gt;` tags.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;转为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Please don't use any &amp;lt;code&amp;gt;&amp;amp;lt;blink&amp;amp;gt;&amp;lt;/code&amp;gt; tags.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;Please don&amp;#39;t use any &amp;lt;code&amp;gt;&amp;amp;lt;blink&amp;amp;gt;&amp;lt;/code&amp;gt; tags.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;你也可以这样写：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;`&amp;amp;#8212;` is the decimal-encoded equivalent of `&amp;amp;mdash;`.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;`&amp;amp;#8212;` is the decimal-encoded equivalent of `&amp;amp;mdash;`.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;以产生：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;&amp;amp;amp;#8212;&amp;lt;/code&amp;gt; is the decimal-encoded
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;&amp;amp;amp;#8212;&amp;lt;/code&amp;gt; is the decimal-encoded
 equivalent of &amp;lt;code&amp;gt;&amp;amp;amp;mdash;&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&quot;img&quot;&gt;图片&lt;/h3&gt;
 
 &lt;p&gt;很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。&lt;/p&gt;
@@ -1962,76 +1739,59 @@ equivalent of &amp;lt;code&amp;gt;&amp;amp;amp;mdash;&amp;lt;/code&amp;gt;.&amp;
 &lt;p&gt;Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： &lt;em&gt;行内式&lt;/em&gt;和&lt;em&gt;参考式&lt;/em&gt;。&lt;/p&gt;
 
 &lt;p&gt;行内式的图片语法看起来像是：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;![Alt text](/path/to/img.jpg)
 
-&lt;pre&gt;&lt;code&gt;![Alt text](/path/to/img.jpg)
-
-![Alt text](/path/to/img.jpg &quot;Optional title&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
+![Alt text](/path/to/img.jpg &amp;quot;Optional title&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;详细叙述如下：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;一个惊叹号 &lt;code&gt;!&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;接着一个方括号，里面放上图片的替代文字&lt;/li&gt;
-  &lt;li&gt;接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上
-选择性的 ‘title’ 文字。&lt;/li&gt;
+&lt;li&gt;  一个惊叹号 &lt;code&gt;!&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;  接着一个方括号，里面放上图片的替代文字&lt;/li&gt;
+&lt;li&gt;  接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上
+选择性的 &amp;#39;title&amp;#39; 文字。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;参考式的图片语法则长得像这样：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;![Alt text][id]
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;![Alt text][id]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[id]: url/to/image  &quot;Optional title attribute&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[id]: url/to/image  &amp;quot;Optional title attribute&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 标签。&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;h2 id=&quot;misc&quot;&gt;其它&lt;/h2&gt;
 
 &lt;h3 id=&quot;autolink&quot;&gt;自动链接&lt;/h3&gt;
 
 &lt;p&gt;Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;http://example.com/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;http://example.com/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Markdown 会转为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&quot;http://example.com/&quot;&amp;gt;http://example.com/&amp;lt;/a&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;a href=&amp;quot;http://example.com/&amp;quot;&amp;gt;http://example.com/&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;邮址的自动链接也很类似，只是 Markdown 会先做一个编码转换的过程，把文字字符转成 16 进位码的 HTML 实体，这样的格式可以糊弄一些不好的邮址收集机器人，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;address@example.com&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;address@example.com&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Markdown 会转成：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&quot;&amp;amp;#x6D;&amp;amp;#x61;i&amp;amp;#x6C;&amp;amp;#x74;&amp;amp;#x6F;:&amp;amp;#x61;&amp;amp;#x64;&amp;amp;#x64;&amp;amp;#x72;&amp;amp;#x65;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;a href=&amp;quot;&amp;amp;#x6D;&amp;amp;#x61;i&amp;amp;#x6C;&amp;amp;#x74;&amp;amp;#x6F;:&amp;amp;#x61;&amp;amp;#x64;&amp;amp;#x64;&amp;amp;#x72;&amp;amp;#x65;
 &amp;amp;#115;&amp;amp;#115;&amp;amp;#64;&amp;amp;#101;&amp;amp;#120;&amp;amp;#x61;&amp;amp;#109;&amp;amp;#x70;&amp;amp;#x6C;e&amp;amp;#x2E;&amp;amp;#99;&amp;amp;#111;
-&amp;amp;#109;&quot;&amp;gt;&amp;amp;#x61;&amp;amp;#x64;&amp;amp;#x64;&amp;amp;#x72;&amp;amp;#x65;&amp;amp;#115;&amp;amp;#115;&amp;amp;#64;&amp;amp;#101;&amp;amp;#120;&amp;amp;#x61;
+&amp;amp;#109;&amp;quot;&amp;gt;&amp;amp;#x61;&amp;amp;#x64;&amp;amp;#x64;&amp;amp;#x72;&amp;amp;#x65;&amp;amp;#115;&amp;amp;#115;&amp;amp;#64;&amp;amp;#101;&amp;amp;#120;&amp;amp;#x61;
 &amp;amp;#109;&amp;amp;#x70;&amp;amp;#x6C;e&amp;amp;#x2E;&amp;amp;#99;&amp;amp;#111;&amp;amp;#109;&amp;lt;/a&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在浏览器里面，这段字串（其实是 &lt;code&gt;&amp;lt;a href=&quot;mailto:address@example.com&quot;&amp;gt;address@example.com&amp;lt;/a&amp;gt;&lt;/code&gt;）会变成一个可以点击的「address@example.com」链接。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在浏览器里面，这段字串（其实是 &lt;code&gt;&amp;lt;a href=&amp;quot;mailto:address@example.com&amp;quot;&amp;gt;address@example.com&amp;lt;/a&amp;gt;&lt;/code&gt;）会变成一个可以点击的「&lt;a href=&quot;mailto:address@example.com&quot;&gt;address@example.com&lt;/a&gt;」链接。&lt;/p&gt;
 
 &lt;p&gt;（这种作法虽然可以糊弄不少的机器人，但并不能全部挡下来，不过总比什么都不做好些。不管怎样，公开你的信箱终究会引来广告信件的。）&lt;/p&gt;
 
 &lt;h3 id=&quot;backslash&quot;&gt;反斜杠&lt;/h3&gt;
 
 &lt;p&gt;Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt; 标签），你可以在星号的前面加上反斜杠：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\*literal asterisks\*
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;\*literal asterisks\*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\   反斜线
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;\   反斜线
 `   反引号
 *   星号
 _   底线
@@ -2043,14 +1803,12 @@ _   底线
 -   减号
 .   英文句点
 !   惊叹号
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&quot;acknowledgement&quot;&gt;感谢&lt;/h2&gt;
 
 &lt;p&gt;感谢 &lt;a href=&quot;https://twitter.com/#!/leafy7382&quot;&gt;leafy7382&lt;/a&gt; 协助翻译，&lt;a href=&quot;http://iamhlb.com/&quot;&gt;hlb&lt;/a&gt;、&lt;a href=&quot;http://twitter.com/randylien&quot;&gt;Randylien&lt;/a&gt; 帮忙润稿，&lt;a href=&quot;https://twitter.com/#!/ethantw&quot;&gt;ethantw&lt;/a&gt; 的&lt;a href=&quot;http://ethantw.net/projects/han/&quot;&gt;汉字标准格式・CSS Reset&lt;/a&gt;， &lt;a href=&quot;http://kidwm.net/&quot;&gt;WM&lt;/a&gt; 回报文字错误。&lt;/p&gt;
 
 &lt;p&gt;感谢 &lt;a href=&quot;https://github.com/fenprace&quot;&gt;fenprace&lt;/a&gt;，&lt;a href=&quot;https://github.com/addv&quot;&gt;addv&lt;/a&gt;。&lt;/p&gt;
-
 </content>
  </entry>
  
@@ -2059,29 +1817,28 @@ _   底线
    <link href="http://heguixiang.github.io/blog/2014/07/markdown-basics.html"/>
    <updated>2014-07-10T00:00:00+08:00</updated>
    <id>/blog/2014/07/markdown-basics</id>
-   <content type="html">&lt;p&gt;&lt;strong&gt;声明：&lt;/strong&gt; 这份文档派生(fork)于&lt;a href=&quot;http://markdown.tw/&quot;&gt;繁体中文版&lt;/a&gt;，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里&lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/basics.md&quot;&gt;查看它的源文件&lt;/a&gt;。「繁体中文版的原始文件可以&lt;a href=&quot;https://github.com/othree/markdown-syntax-zhtw/blob/master/basics.md&quot;&gt;查看这里&lt;/a&gt;」–By @&lt;a href=&quot;http://twitter.com/riku&quot;&gt;riku&lt;/a&gt; / 本项目托管于 &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN&quot;&gt;GitCafe&lt;/a&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;strong&gt;声明：&lt;/strong&gt; 这份文档派生(fork)于&lt;a href=&quot;http://markdown.tw/&quot;&gt;繁体中文版&lt;/a&gt;，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里&lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/basics.md&quot;&gt;查看它的源文件&lt;/a&gt;。「繁体中文版的原始文件可以&lt;a href=&quot;https://github.com/othree/markdown-syntax-zhtw/blob/master/basics.md&quot;&gt;查看这里&lt;/a&gt;」--By @&lt;a href=&quot;http://twitter.com/riku&quot;&gt;riku&lt;/a&gt; / 本项目托管于 &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN&quot;&gt;GitCafe&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 本项目同时也托管于 &lt;a href=&quot;https://github.com/riku/Markdown-Syntax-CN&quot;&gt;Github&lt;/a&gt;上，请通过 fork＋pull request 方式来帮忙改进本项目。&lt;/p&gt;
 
-&lt;h1 id=&quot;markdown-basics---markdown-syntaxhtml&quot;&gt;Markdown: Basics （快速入门） / (&lt;a href=&quot;./markdown-syntax.html&quot;&gt;点击查看完整语法说明&lt;/a&gt;)&lt;/h1&gt;
+&lt;h1&gt;Markdown: Basics （快速入门） / (&lt;a href=&quot;./markdown-syntax.html&quot;&gt;点击查看完整语法说明&lt;/a&gt;)&lt;/h1&gt;
 
-&lt;h2 id=&quot;getting-the-gist-of-markdowns-formatting-syntax&quot;&gt;Getting the Gist of Markdown’s Formatting Syntax&lt;/h2&gt;
+&lt;h2&gt;Getting the Gist of Markdown&amp;#39;s Formatting Syntax&lt;/h2&gt;
 
 &lt;p&gt;此页提供了 Markdown 的简单概念， &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md&quot; title=&quot;Markdown Syntax&quot;&gt;语法说明&lt;/a&gt; 页提供了完整详细的文档，说明了每项功能。但是 Markdown 其实很简单就可以上手，此页文档提供了一些范例，并且每个范例都会提供输出的 HTML 结果。&lt;/p&gt;
 
 &lt;p&gt;其实直接试试看也是一个很不错的方法， &lt;a href=&quot;http://daringfireball.net/projects/markdown/dingus&quot; title=&quot;Markdown Dingus&quot;&gt;Dingus&lt;/a&gt; 是一个网页应用程序，你可以把自已编写的 Markdown 文档转成 XHTML。&lt;/p&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;段落、标题、区块代码&lt;/h2&gt;
+&lt;h2&gt;段落、标题、区块代码&lt;/h2&gt;
 
 &lt;p&gt;一个段落是由一个以上的连接的行句组成，而一个以上的空行则会划分出不同的段落（空行的定义是显示上看起来像是空行，就被视为空行，例如有一行只有空白和 tab，那该行也会被视为空行），一般的段落不需要用空白或换行缩进。&lt;/p&gt;
 
 &lt;p&gt;Markdown 支持两种标题的语法，&lt;a href=&quot;http://docutils.sourceforge.net/mirror/setext.html&quot;&gt;Setext&lt;/a&gt; 和 &lt;a href=&quot;http://www.aaronsw.com/2002/atx/&quot;&gt;atx&lt;/a&gt; 形式。Setext 形式是用底线的形式，利用 &lt;code&gt;=&lt;/code&gt; （最高阶标题）和 &lt;code&gt;-&lt;/code&gt; （第二阶标题），Atx 形式在行首插入 1 到 6 个 &lt;code&gt;#&lt;/code&gt; ，对应到标题 1 到 6 阶。&lt;/p&gt;
 
-&lt;p&gt;区块引用则使用 email 形式的 ‘&lt;code&gt;&amp;gt;&lt;/code&gt;’ 角括号。&lt;/p&gt;
+&lt;p&gt;区块引用则使用 email 形式的 &amp;#39;&lt;code&gt;&amp;gt;&lt;/code&gt;&amp;#39; 角括号。&lt;/p&gt;
 
 &lt;p&gt;Markdown 语法:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;A First Level Header
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;A First Level Header
 ====================
 A Second Level Header
 ---------------------
@@ -2091,7 +1848,7 @@ the aid of their country. This is just a
 regular paragraph.
 
 The quick brown fox jumped over the lazy
-dog's back.
+dog&amp;#39;s back.
 ### Header 3
 
 &amp;gt; This is a blockquote.
@@ -2099,228 +1856,177 @@ dog's back.
 &amp;gt; This is the second paragraph in the blockquote.
 &amp;gt;
 &amp;gt; ## This is an H2 in a blockquote
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出 HTML 为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;h1&amp;gt;A First Level Header&amp;lt;/h1&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;h1&amp;gt;A First Level Header&amp;lt;/h1&amp;gt;
 &amp;lt;h2&amp;gt;A Second Level Header&amp;lt;/h2&amp;gt;
 &amp;lt;p&amp;gt;Now is the time for all good men to come to
 the aid of their country. This is just a
 regular paragraph.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;The quick brown fox jumped over the lazy
-dog's back.&amp;lt;/p&amp;gt;
+dog&amp;#39;s back.&amp;lt;/p&amp;gt;
 &amp;lt;h3&amp;gt;Header 3&amp;lt;/h3&amp;gt;
 &amp;lt;blockquote&amp;gt;
 &amp;lt;p&amp;gt;This is a blockquote.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;This is the second paragraph in the blockquote.&amp;lt;/p&amp;gt;
 &amp;lt;h2&amp;gt;This is an H2 in a blockquote&amp;lt;/h2&amp;gt;
 &amp;lt;/blockquote&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;修辞和强调&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;修辞和强调&lt;/h3&gt;
 
 &lt;p&gt;Markdown 使用星号和底线来标记需要强调的区段。&lt;/p&gt;
 
 &lt;p&gt;Markdown 语法:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Some of these words *are emphasized*.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Some of these words *are emphasized*.
 Some of these words _are emphasized also_.
 Use two asterisks for **strong emphasis**.
 Or, if you prefer, __use two underscores instead__.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出 HTML 为:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Some of these words &amp;lt;em&amp;gt;are emphasized&amp;lt;/em&amp;gt;.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;Some of these words &amp;lt;em&amp;gt;are emphasized&amp;lt;/em&amp;gt;.
 Some of these words &amp;lt;em&amp;gt;are emphasized also&amp;lt;/em&amp;gt;.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;Use two asterisks for &amp;lt;strong&amp;gt;strong emphasis&amp;lt;/strong&amp;gt;.
 Or, if you prefer, &amp;lt;strong&amp;gt;use two underscores instead&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;列表&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;列表&lt;/h2&gt;
 
 &lt;p&gt;无序列表使用星号、加号和减号来做为列表的项目标记，这些符号是都可以使用的，使用星号：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;* Candy.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;* Candy.
 * Gum.
 * Booze.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;加号：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+ Candy.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;+ Candy.
 + Gum.
 + Booze.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;和减号&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;- Candy.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- Candy.
 - Gum.
 - Booze.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;都会输出 HTML 为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
 &amp;lt;li&amp;gt;Candy.&amp;lt;/li&amp;gt;
 &amp;lt;li&amp;gt;Gum.&amp;lt;/li&amp;gt;
 &amp;lt;li&amp;gt;Booze.&amp;lt;/li&amp;gt;
 &amp;lt;/ul&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;有序的列表则是使用一般的数字接着一个英文句点作为项目标记：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;1. Red
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1. Red
 2. Green
 3. Blue
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出 HTML 为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;ol&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ol&amp;gt;
 &amp;lt;li&amp;gt;Red&amp;lt;/li&amp;gt;
 &amp;lt;li&amp;gt;Green&amp;lt;/li&amp;gt;
 &amp;lt;li&amp;gt;Blue&amp;lt;/li&amp;gt;
 &amp;lt;/ol&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果你在项目之间插入空行，那项目的内容会用 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 包起来，你也可以在一个项目内放上多个段落，只要在它前面缩排 4 个空白或 1 个 tab 。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;* A list item.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;* A list item.
 With multiple paragraphs.
 
 * Another item in the list.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出 HTML 为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul&amp;gt;
 &amp;lt;li&amp;gt;&amp;lt;p&amp;gt;A list item.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;With multiple paragraphs.&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
 &amp;lt;li&amp;gt;&amp;lt;p&amp;gt;Another item in the list.&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt; ### 链接 ###
-&lt;/code&gt;&lt;/pre&gt;
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;链接&lt;/h3&gt;
 
 &lt;p&gt;Markdown 支援两种形式的链接语法： &lt;em&gt;行内&lt;/em&gt; 和 &lt;em&gt;参考&lt;/em&gt; 两种形式，两种都是使用角括号来把文字转成连结。&lt;/p&gt;
 
 &lt;p&gt;行内形式是直接在后面用括号直接接上链接：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;This is an [example link](http://example.com/).
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;This is an [example link](http://example.com/).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出 HTML 为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is an &amp;lt;a href=&quot;http://example.com/&quot;&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;This is an &amp;lt;a href=&amp;quot;http://example.com/&amp;quot;&amp;gt;
 example link&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;你也可以选择性的加上 title 属性：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;This is an [example link](http://example.com/ &quot;With a Title&quot;).
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;This is an [example link](http://example.com/ &amp;quot;With a Title&amp;quot;).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出 HTML 为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is an &amp;lt;a href=&quot;http://example.com/&quot; title=&quot;With a Title&quot;&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;This is an &amp;lt;a href=&amp;quot;http://example.com/&amp;quot; title=&amp;quot;With a Title&amp;quot;&amp;gt;
 example link&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;参考形式的链接让你可以为链接定一个名称，之后你可以在文件的其他地方定义该链接的内容：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google][1] than from
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;I get 10 times more traffic from [Google][1] than from
 [Yahoo][2] or [MSN][3].
 
-[1]: http://google.com/ &quot;Google&quot;
-[2]: http://search.yahoo.com/ &quot;Yahoo Search&quot;
-[3]: http://search.msn.com/ &quot;MSN Search&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
+[1]: http://google.com/ &amp;quot;Google&amp;quot;
+[2]: http://search.yahoo.com/ &amp;quot;Yahoo Search&amp;quot;
+[3]: http://search.msn.com/ &amp;quot;MSN Search&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出 HTML 为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;I get 10 times more traffic from &amp;lt;a href=&quot;http://google.com/&quot;
-title=&quot;Google&quot;&amp;gt;Google&amp;lt;/a&amp;gt; than from &amp;lt;a href=&quot;http://search.yahoo.com/&quot;
-title=&quot;Yahoo Search&quot;&amp;gt;Yahoo&amp;lt;/a&amp;gt; or &amp;lt;a href=&quot;http://search.msn.com/&quot;
-title=&quot;MSN Search&quot;&amp;gt;MSN&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;I get 10 times more traffic from &amp;lt;a href=&amp;quot;http://google.com/&amp;quot;
+title=&amp;quot;Google&amp;quot;&amp;gt;Google&amp;lt;/a&amp;gt; than from &amp;lt;a href=&amp;quot;http://search.yahoo.com/&amp;quot;
+title=&amp;quot;Yahoo Search&amp;quot;&amp;gt;Yahoo&amp;lt;/a&amp;gt; or &amp;lt;a href=&amp;quot;http://search.msn.com/&amp;quot;
+title=&amp;quot;MSN Search&amp;quot;&amp;gt;MSN&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;title 属性是选择性的，链接名称可以用字母、数字和空格，但是不分大小写：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;I start my morning with a cup of coffee and
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;I start my morning with a cup of coffee and
 [The New York Times][NY Times].
 
 [ny times]: http://www.nytimes.com/
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出 HTML 为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;I start my morning with a cup of coffee and
-&amp;lt;a href=&quot;http://www.nytimes.com/&quot;&amp;gt;The New York Times&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;图片&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;I start my morning with a cup of coffee and
+&amp;lt;a href=&amp;quot;http://www.nytimes.com/&amp;quot;&amp;gt;The New York Times&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;图片&lt;/h3&gt;
 
 &lt;p&gt;图片的语法和链接很像。&lt;/p&gt;
 
 &lt;p&gt;行内形式（title 是选择性的）：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;![alt text](/path/to/img.jpg &quot;Title&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;![alt text](/path/to/img.jpg &amp;quot;Title&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;参考形式：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;![alt text][id]
 
-&lt;pre&gt;&lt;code&gt;![alt text][id]
-
-[id]: /path/to/img.jpg &quot;Title&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
+[id]: /path/to/img.jpg &amp;quot;Title&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;上面两种方法都会输出 HTML 为：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;img src=&amp;quot;/path/to/img.jpg&amp;quot; alt=&amp;quot;alt text&amp;quot; title=&amp;quot;Title&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;代码&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&quot;/path/to/img.jpg&quot; alt=&quot;alt text&quot; title=&quot;Title&quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;代码&lt;/h3&gt;
 &lt;p&gt;在一般的段落文字中，你可以使用反引号 &lt;code&gt;`&lt;/code&gt; 来标记代码区段，区段内的 &lt;code&gt;&amp;amp;&lt;/code&gt;、&lt;code&gt;&amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;gt;&lt;/code&gt; 都会被自动的转换成 HTML 实体，这项特性让你可以很容易的在代码区段内插入 HTML 码：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;I strongly recommend against using any `&amp;lt;blink&amp;gt;` tags.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;I strongly recommend against using any `&amp;lt;blink&amp;gt;` tags.
 
 I wish SmartyPants used named entities like `&amp;amp;mdash;`
 instead of decimal-encoded entites like `&amp;amp;#8212;`.
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出 HTML 为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;I strongly recommend against using any
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;I strongly recommend against using any
 &amp;lt;code&amp;gt;&amp;amp;lt;blink&amp;amp;gt;&amp;lt;/code&amp;gt; tags.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;I wish SmartyPants used named entities like
 &amp;lt;code&amp;gt;&amp;amp;amp;mdash;&amp;lt;/code&amp;gt; instead of decimal-encoded
 entites like &amp;lt;code&amp;gt;&amp;amp;amp;#8212;&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果要建立一个已经格式化好的代码区块，只要每行都缩进 4 个空格或是一个 tab 就可以了，而 &lt;code&gt;&amp;amp;&lt;/code&gt;、&lt;code&gt;&amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;gt;&lt;/code&gt; 也一样会自动转成 HTML 实体。&lt;/p&gt;
 
 &lt;p&gt;Markdown 语法:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;If you want your page to validate under XHTML 1.0 Strict,
-you've got to put paragraph tags in your blockquotes:
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;If you want your page to validate under XHTML 1.0 Strict,
+you&amp;#39;ve got to put paragraph tags in your blockquotes:
 
 &amp;lt;blockquote&amp;gt;
 &amp;lt;p&amp;gt;For example.&amp;lt;/p&amp;gt;
 &amp;lt;/blockquote&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;输出 HTML 为：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;If you want your page to validate under XHTML 1.0 Strict,
-you've got to put paragraph tags in your blockquotes:&amp;lt;/p&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;p&amp;gt;If you want your page to validate under XHTML 1.0 Strict,
+you&amp;#39;ve got to put paragraph tags in your blockquotes:&amp;lt;/p&amp;gt;
 &amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;amp;lt;blockquote&amp;amp;gt;
 &amp;amp;lt;p&amp;amp;gt;For example.&amp;amp;lt;/p&amp;amp;gt;
 &amp;amp;lt;/blockquote&amp;amp;gt;
 &amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-</content>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
  </entry>
  
  <entry>
@@ -2332,86 +2038,82 @@ you've got to put paragraph tags in your blockquotes:&amp;lt;/p&amp;gt;
 
 &lt;p&gt;大部分 C 程序员都以为基本的整形操作都是安全的其实不然,看下面这个例子,
 你觉得输出结果是什么:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;int main(int argc, char** argv) {
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;int main(int argc, char** argv) {
     long i = -1;
 
     if (i &amp;lt; sizeof(i)) {
-         printf(&quot;OK\n&quot;);
+         printf(&amp;quot;OK\n&amp;quot;);
     }
     else {
-         printf(&quot;error\n&quot;);
+         printf(&amp;quot;error\n&amp;quot;);
     }
 
     return 0;
-} 当一个变量转换成无符号整形时,i的值不再是-1,而是 size_t的最大值,因 为sizeof操作返回的是一个 size_t类型的无符号数。 在C99/C11标准里写道:
-&lt;/code&gt;&lt;/pre&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;当一个变量转换成无符号整形时,i的值不再是-1,而是 size_t的最大值,因
+为sizeof操作返回的是一个 size_t类型的无符号数。
+在C99/C11标准里写道:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;“If the operand that has unsigned integer type has rank greater or
+&lt;p&gt;&amp;quot;If the operand that has unsigned integer type has rank greater or
 equal to the rank of the type of the other operand, then the operand
 with signed integer type is converted to the type of the operand with
-unsigned integer type.”&lt;/p&gt;
+unsigned integer type.&amp;quot;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;在C标准里面 size_t至少是一个 16 位的无符号整数,对于给定的架构 size_t 一般对应long,所以sizeof（int）和size_t至少相等,这就带来了可移植性的问题,C标准没有定义 short, int,long,longlong的大小,只是说明了他们的最小长度,对于 x86_64 架构,long在Linux下是64位,而在64位Windows下是32位。一般的方法是采用固定长度的类型比如定义在C99头文件stdint.h中的uint16_t,int32_t,uint_least16_t,uint_fast16_t等。&lt;/p&gt;
 
 &lt;p&gt;如果 int可以表示原始类型的所有值,那么这个操作数会转换成 int,否则
 他会转换成 unsigned int。下面这个函数在 32 位平台返回 65536,但是在 16 位系统返回 0。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;uint32_t sum()
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;uint32_t sum()
 {
     uint16_t a = 65535;
     uint16_t b = 1;
     return a+b;
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;对于char 类型到底是 signed 还是 unsigned 取决于硬件架构和操作系统,通常
 由特定平台的 ABI(Application Binary Interface) 指定,如果是 signed char,下面的代码输出-128 和-127,否则输出 128,129(x86 架构)。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;char c = 128;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;char c = 128;
 char d = 129;
-printf(&quot;%d,%d\n&quot;,c,d);
-&lt;/code&gt;&lt;/pre&gt;
+printf(&amp;quot;%d,%d\n&amp;quot;,c,d);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
 
-&lt;hr /&gt;
-&lt;p&gt;##内存管理和分配&lt;/p&gt;
+&lt;h2&gt;内存管理和分配&lt;/h2&gt;
 
 &lt;p&gt;malloc 函数分配制定字节大小的内存,对象未被初始化,如果 size 是 0 取
 决与系统实现。malloc(0)返回一个空指针或者 unique pointer,如果 size 是表达式的运算结果,确保没有整形溢出。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;“If the size of the space requested is 0, the behavior is
+&lt;p&gt;“If the size of the space requested is 0, the behavior is
 implementation- defined: the value returned shall be either a null
 pointer or a unique pointer.”&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code&gt;size_t computed_size;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;size_t computed_size;
 
 if (elem_size &amp;amp;&amp;amp; num &amp;gt; SIZE_MAX / elem_size) {
     errno = ENOMEM;
-    err(1, &quot;overflow&quot;);
+    err(1, &amp;quot;overflow&amp;quot;);
 }
 
 computed_size = elem_size*num;
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;malloc不会给分配的内存初始化，如果要对新分配的内存初始化，可以用calloc代替malloc,一般情况下给序列分配相等大小的元素时,用calloc来代替用表达式计算大小,calloc 会把内存初始化为 0。&lt;/p&gt;
 
 &lt;p&gt;realloc 用来对已经分配内存的对象改变大小,如果新的 size 更大,额外的空间
 没 有 被 初 始 化 , 如 果 提 供 给 realloc 的 指 针 是 空 指 针 , realloc 就 等 效 于malloc,如果原指针非空而 new size是0,结果依赖于操作系统的具体实现。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;“In case of failure realloc shall return NULL and leave provided memory
+&lt;p&gt;“In case of failure realloc shall return NULL and leave provided memory
 object intact. Thus it is important not only to check for integer
 overflow of size argument, but also to correctly handle object size if
 realloc fails.”&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;下面这段代码可以带你领会malloc,calloc，realloc,free的用法：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
 #include &amp;lt;stdint.h&amp;gt;
 #include &amp;lt;malloc.h&amp;gt;
 #include &amp;lt;errno.h&amp;gt;
@@ -2482,80 +2184,68 @@ int grow_vector(struct vector *vc) {
     vc-&amp;gt;size = newsize;
     return VECTOR_OK;
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
 
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;避免重大错误&lt;/h2&gt;
+&lt;h2&gt;避免重大错误&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;使用未初始化的变量，
- C语言要求所有变量在使用之前要初始化，使用未初始化的变量会造成为定义的行为，这和C++不同，C++保证所有变量在使用之前都得到初始化，Java&lt;strong&gt;尽量保证&lt;/strong&gt;变量使用前的得到初始化，如类基本数据成员会被初始化为默认值。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;free错误
+&lt;li&gt;&lt;p&gt;使用未初始化的变量，
+C语言要求所有变量在使用之前要初始化，使用未初始化的变量会造成为定义的行为，这和C++不同，C++保证所有变量在使用之前都得到初始化，Java*&lt;em&gt;尽量保证&lt;/em&gt;*变量使用前的得到初始化，如类基本数据成员会被初始化为默认值。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;free错误
 对空指针调用 free,对不是由 malloc family 函数分配的指针调用 free,或者对
 已经调用 free 的指针再次调用 free。
-一开始初始化指针为NULL可以减少错误,GCC和Clang编译器有-Wuninitialized 选项来对未初始化的变量显示警告信息,另外不要将同一个指针用于静态变量和动态变量。&lt;/p&gt;
-  &lt;/li&gt;
+一开始初始化指针为NULL可以减少错误,GCC和Clang编译器有-Wuninitialized 选项来对未初始化的变量显示警告信息,另外不要将同一个指针用于静态变量和动态变量。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;blockquote&gt;
-  &lt;pre&gt;&lt;code&gt;char *ptr = NULL;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;char *ptr = NULL;
 void nullfree(void **pptr) {
     void *ptr = *pptr;
     assert(ptr != NULL)
     free(ptr);
     *pptr = NULL;
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
 
 &lt;p&gt;3.对空指针解引用，数组越界访问&lt;/p&gt;
 
-&lt;p&gt;对NULL指针或者free’d内存解引用，数组越界访问，是很明显的错误，为了消除这种错误，一般的做法就是增加数组越界检查的功能，比如Java里的array就有下标检查的功能，但是这样会带来严重的性能代价，我们要修改ABI（application binary interface），让每个指针都跟随着它的范围信息，在数值计算中cost is terrible。&lt;/p&gt;
+&lt;p&gt;对NULL指针或者free&amp;#39;d内存解引用，数组越界访问，是很明显的错误，为了消除这种错误，一般的做法就是增加数组越界检查的功能，比如Java里的array就有下标检查的功能，但是这样会带来严重的性能代价，我们要修改ABI（application binary interface），让每个指针都跟随着它的范围信息，在数值计算中cost is terrible。&lt;/p&gt;
 
 &lt;p&gt;4.违反类型规则&lt;/p&gt;
 
-&lt;p&gt;把int×指针cast成float×，然后对它解引用，在C里面会引发undefined behavior，C规定这种类型的转换需要使用memset，C++里面有个reinterpret_cast函数用于无关类型之间的转换，reinterpret_cast &lt;new_type&gt; (expression)&lt;/new_type&gt;&lt;/p&gt;
+&lt;p&gt;把int×指针cast成float×，然后对它解引用，在C里面会引发undefined behavior，C规定这种类型的转换需要使用memset，C++里面有个reinterpret_cast函数用于无关类型之间的转换，reinterpret_cast &lt;new_type&gt; (expression)&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;防止内存泄漏&lt;/h2&gt;
+&lt;h2&gt;防止内存泄漏&lt;/h2&gt;
 
 &lt;p&gt;内存泄漏发生在程序不再使用的动态内存没有得到释放，这需要我们掌握动态分配对象的作用域，尤其是什么时候该调用free来释放内存，常用的集中方法如下：&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;在程序启动的时候分配
- 在程序启动的时候分配需要的heap memory，程序退出时把释放的任务交给操作系统，这种方法一般适用于程序运行后马上退出的那种。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;使用变长数组（VLA）
- 如果你需要一块变长大小的空间并且作用域在函数中，变长数组可以帮到你，但是也有一个限制，一个函数中的变长数组内存大小一般不超过几百字节，这个数字C标准没有明确的定义，最好是把内存分配到栈上，在栈上允许分配的最大VLA内存是SIZE_MAX，掌握目标平台的栈大小可以有效的防止栈溢出。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;使用引用计数
- 引用计数是一个很好的管理内存的方法，特别是当你不希望自己定义的对象被复制时，每一次赋值把引用计数加1,每次失去引用就把引用计数减1,当引用计数等于0时，以为的对象已经不再需要了，我们需要释放对象占用的内存，由于C不提供自动的析构函数，我们必须手动释放内存，看一个例子：&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code&gt;#include &amp;lt;stdlib.h&amp;gt;
+&lt;li&gt;&lt;p&gt;在程序启动的时候分配
+在程序启动的时候分配需要的heap memory，程序退出时把释放的任务交给操作系统，这种方法一般适用于程序运行后马上退出的那种。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用变长数组（VLA）
+如果你需要一块变长大小的空间并且作用域在函数中，变长数组可以帮到你，但是也有一个限制，一个函数中的变长数组内存大小一般不超过几百字节，这个数字C标准没有明确的定义，最好是把内存分配到栈上，在栈上允许分配的最大VLA内存是SIZE_MAX，掌握目标平台的栈大小可以有效的防止栈溢出。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用引用计数
+引用计数是一个很好的管理内存的方法，特别是当你不希望自己定义的对象被复制时，每一次赋值把引用计数加1,每次失去引用就把引用计数减1,当引用计数等于0时，以为的对象已经不再需要了，我们需要释放对象占用的内存，由于C不提供自动的析构函数，我们必须手动释放内存，看一个例子：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#include &amp;lt;stdlib.h&amp;gt;
 #include &amp;lt;stdint.h&amp;gt;
-    
+
 #define MAX_REF_OBJ 100
 #define RC_ERROR -1
-    
+
 struct mem_obj_t{
     void *ptr;
     uint16_t count;
 };
-    
+
 static struct mem_obj_t references[MAX_REF_OBJ];
 static uint16_t reference_count = 0;
-    
+
 /* create memory object and return handle */
 uint16_t create(size_t size){
-    
+
     if (reference_count &amp;gt;= MAX_REF_OBJ)
         return RC_ERROR;
 
@@ -2571,8 +2261,7 @@ if (ptr != NULL){
 
     return RC_ERROR;
 }
-        
-        
+
 /* get memory object and increment reference counter */
 void* retain(uint16_t handle){
 
@@ -2583,53 +2272,49 @@ if(handle &amp;lt; reference_count &amp;amp;&amp;amp; handle &amp;gt;= 0){
         return NULL;
     }
 }
-    
+
 /* decrement reference counter */
 void release(uint16_t handle){
-printf(&quot;release\n&quot;);
+printf(&amp;quot;release\n&amp;quot;);
 
 if(handle &amp;lt; reference_count &amp;amp;&amp;amp; handle &amp;gt;= 0){
     struct mem_obj_t *object = &amp;amp;references[handle];
 
     if (object-&amp;gt;count &amp;lt;= 1){
-        printf(&quot;released\n&quot;);
+        printf(&amp;quot;released\n&amp;quot;);
     free(object-&amp;gt;ptr);
     reference_count--;
 } else {
-    printf(&quot;decremented\n&quot;);
+    printf(&amp;quot;decremented\n&amp;quot;);
     object-&amp;gt;count--;
         }
      }
-} C++标准库有个auto_ptr智能指针，能够自动释放指针所指对象的内存，C++ boost库有个boost：：shared_ptr智能指针，内置引用计数，支持拷贝和赋值，看下面这个例子：
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;C++标准库有个auto_ptr智能指针，能够自动释放指针所指对象的内存，C++ boost库有个boost：：shared_ptr智能指针，内置引用计数，支持拷贝和赋值，看下面这个例子：&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;blockquote&gt;
-
-  &lt;p&gt;“Objects of shared_ptr types have the ability of taking ownership of a pointer and share that ownership: once they take ownership, the group of owners of a pointer become responsible for its deletion when the last one of them releases that ownership.”&lt;/p&gt;
+&lt;p&gt;&amp;quot;Objects of shared_ptr types have the ability of taking ownership of a pointer and share that ownership: once they take ownership, the group of owners of a pointer become responsible for its deletion when the last one of them releases that ownership.&amp;quot;&lt;/p&gt;
 &lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;boost/smart_ptr.hpp&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#include &amp;lt;boost/smart_ptr.hpp&amp;gt;
 #include &amp;lt;iostream&amp;gt;
 int main()
 {
     // Basic useage
     boost::shared_ptr&amp;lt;int&amp;gt; p1(new int(10));
-    std::cout &amp;lt;&amp;lt; &quot;ref count of p1: &quot; &amp;lt;&amp;lt; p1.use_count() &amp;lt;&amp;lt; std::endl;
+    std::cout &amp;lt;&amp;lt; &amp;quot;ref count of p1: &amp;quot; &amp;lt;&amp;lt; p1.use_count() &amp;lt;&amp;lt; std::endl;
     boost::shared_ptr&amp;lt;int&amp;gt; p2(p1); // or p2 = p1;
-    std::cout &amp;lt;&amp;lt; &quot;ref count of p1: &quot; &amp;lt;&amp;lt; p1.use_count() &amp;lt;&amp;lt; std::endl;
+    std::cout &amp;lt;&amp;lt; &amp;quot;ref count of p1: &amp;quot; &amp;lt;&amp;lt; p1.use_count() &amp;lt;&amp;lt; std::endl;
     *p1 = 999;
-    std::cout &amp;lt;&amp;lt; &quot;*p2: &quot; &amp;lt;&amp;lt; *p2 &amp;lt;&amp;lt; std::endl;
+    std::cout &amp;lt;&amp;lt; &amp;quot;*p2: &amp;quot; &amp;lt;&amp;lt; *p2 &amp;lt;&amp;lt; std::endl;
     p2.reset();
-    std::cout &amp;lt;&amp;lt; &quot;ref count of p1: &quot; &amp;lt;&amp;lt; p1.use_count() &amp;lt;&amp;lt; std::endl;
+    std::cout &amp;lt;&amp;lt; &amp;quot;ref count of p1: &amp;quot; &amp;lt;&amp;lt; p1.use_count() &amp;lt;&amp;lt; std::endl;
     return 0;
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;4.内存池，有利于减少内存碎片，看下面这个例子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdlib.h&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#include &amp;lt;stdlib.h&amp;gt;
 #include &amp;lt;stdint.h&amp;gt;
 
 struct mem_pool_t{
@@ -2673,15 +2358,14 @@ free(pool-&amp;gt;ptr);
 free(pool);
  }
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;5.垃圾回收机制
  引用计数采用的方法是当内存不再需要时得到手动释放，垃圾回收发生在内存分配失败或者内存到达一定的水位（watermarks），实现垃圾回收最简单的一个算法是MARK AND SWEEP算法，该算法的思路是遍历所有动态分配对象的内存，标记那些还能继续使用的，回收那些没有被标记的内存。
-    Java采用的垃圾回收机制就更复杂了，思路也是回收那些不再使用的内存，JAVA的垃圾回收和C++的析构函数又不一样，C++保证对象在使用之前得到初始化，对象超出作用域之后内存得到释放，而JAVA不能保证对象一定被析构。&lt;/p&gt;
+    Java采用的垃圾回收机制就更复杂了，思路也是回收那些不再使用的内存，JAVA的垃圾回收和C++的析构函数又不一样，C++保证对象在使用之前得到初始化，对象超出作用域之后内存得到释放，而JAVA不能保证对象一定被析构。 &lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;指针和数组&lt;/h2&gt;
+&lt;h2&gt;指针和数组&lt;/h2&gt;
 
 &lt;p&gt;我们一般的概念里指针和数组名是可互换的，但是在编译器里他们被不同的对待，当我们说一个对象或者表达式具有某种类型的时候我们一般是说这个对象是个左值（lvalue），当对象不是const的时候，左值是可以修改的，比如对象是复制操作符的左参数，而数组名是一个const左值，指向地一个元素的const指针，所以你不能给数组名赋值或者意图改变数组名，如果表达式是数组类型，数组名通常转换成指向地一个元素的指针。&lt;/p&gt;
 
@@ -2690,8 +2374,7 @@ free(pool);
 2.当它是取地址操作&amp;amp;的操作数时，返回一个数组的地址&lt;/p&gt;
 
 &lt;p&gt;看下面这个例子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;short a[] = {1,2,3};
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;short a[] = {1,2,3};
 short *pa;
 short (*px)[];
 
@@ -2699,26 +2382,23 @@ void init(){
     pa = a;
     px = &amp;amp;a;
 
-    printf(&quot;a:%p; pa:%p; px:%p\n&quot;, a, pa, px);
+    printf(&amp;quot;a:%p; pa:%p; px:%p\n&amp;quot;, a, pa, px);
 
-    printf(&quot;a[1]:%i; pa[1]:%i (*px)[1]:%i\n&quot;, a[1], pa[1],(*px)[1]);
+    printf(&amp;quot;a[1]:%i; pa[1]:%i (*px)[1]:%i\n&amp;quot;, a[1], pa[1],(*px)[1]);
 }
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;a是一个short类型数组，pa是一个指向short类型的指针，px呢？
 px是一个指向数组类型的指针，在a被赋值给pa之前，他的值被转换成一个指向数组第一个元素的指针，下面那个a却没有转换，因为遇到的是&amp;amp;操作符。
 数组下标a[1]等价于&lt;em&gt;(a+1),和p[1]一样，也指向&lt;/em&gt;(p+1)，但是两者还是有区别的，a是一个数组，它实际上存储的是第一个元素的地址，所以数组a是用来定位第一个元素的，而pa不一样，它就是一个指针，不是用来定位的。
 再比如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;int a[10];
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;int a[10];
 int b[10];
 int *a;
 c=&amp;amp;a[0];//c是指向数组a地一个元素的指针
 c=a;//a自动转换成指向第一个元素的指针，实际上是指针拷贝
 b=a;//非法的，你不能用赋值符把一个数组的所有元素赋给另一个数组
 a=c;//非法的，你不能修改const指针的值
-&lt;/code&gt;&lt;/pre&gt;
-</content>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
  </entry>
  
  
