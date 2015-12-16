@@ -75,7 +75,6 @@ layout: default
 
 
 <!-- 根据标题自动生成目录 -->
-<script src= "/js/jquery.js"></script>
 <script src="{{ "/js/jquery-catalog.js" | prepend:site.baseurl }}"></script>
 <link rel="stylesheet" href="{{"/css/jquery-catalog.css"| prepend:site.baseurl}}">
 <script>
