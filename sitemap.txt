@@ -37,8 +37,6 @@
 
     /blog/2014/07/markdown-syntax.html
 
-    /blog/2014/07/markdown-syntax.html
-
     /blog/2014/07/markdown-basics.html
 
     /blog/2014/07/c-advanced-programming.html
