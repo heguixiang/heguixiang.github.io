@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-16T22:04:39+08:00</updated>
+ <updated>2015-12-16T22:38:52+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -117,34 +117,6 @@
    5.6 结果分析
 
 第六章 总结与展望&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>hello,world</title>
-   <link href="http://heguixiang.github.io/blog/2015/12/just-a-test.html"/>
-   <updated>2015-12-02T00:00:00+08:00</updated>
-   <id>/blog/2015/12/just-a-test</id>
-   <content type="html">&lt;div class=&quot;toc&quot;&gt;
-            
-&lt;/div&gt;
-
-&lt;h2&gt;test1&lt;/h2&gt;
-
-&lt;p&gt;这只是一个测试，hello，world，edited by wade,1 &lt;/p&gt;
-
-&lt;h2&gt;test2&lt;/h2&gt;
-
-&lt;p&gt;这只是一个测试，hello，world，edited by wade,2 &lt;/p&gt;
-
-&lt;h2&gt;test3&lt;/h2&gt;
-
-&lt;p&gt;这只是一个测试，hello，world，edited by wade,3 &lt;/p&gt;
-
-&lt;h2&gt;test4&lt;/h2&gt;
-
-&lt;p&gt;&lt;a name=&quot;test4&quot;/&gt;
-这只是一个测试，hello，world，edited by wade,4 &lt;/p&gt;
 </content>
  </entry>
  
@@ -1178,11 +1150,7 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
    <link href="http://heguixiang.github.io/blog/2014/07/markdown-syntax.html"/>
    <updated>2014-07-11T00:00:00+08:00</updated>
    <id>/blog/2014/07/markdown-syntax</id>
-   <content type="html">&lt;div class=&quot;toc&quot;&gt;
-        
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown: Syntax&lt;/a&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown: Syntax&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;声明：&lt;/strong&gt; 这份文档派生(fork)于&lt;a href=&quot;http://markdown.tw/&quot;&gt;繁体中文版&lt;/a&gt;，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里&lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md&quot;&gt;查看它的源文件&lt;/a&gt;。「繁体中文版的原始文件可以&lt;a href=&quot;https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md&quot;&gt;查看这里&lt;/a&gt; 。」--By @&lt;a href=&quot;http://twitter.com/riku&quot;&gt;riku&lt;/a&gt; / 本项目托管于 &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN&quot;&gt;GitCafe&lt;/a&gt;&lt;/p&gt;
 

@@ -19,15 +19,11 @@
 
     /sitemap.txt
 
-    /sitemap.txt
-
 
 
     /blog/2015/12/android-jni-parsec.html
 
     /blog/2015/12/graduation-thesis-framework.html
-
-    /blog/2015/12/just-a-test.html
 
     /blog/2014/08/java-multithread.html
 
