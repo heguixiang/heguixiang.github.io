@@ -20,13 +20,13 @@ tags : [java, 多线程]
 
 创建Thread子类的一个实例并重写run方法，run方法会在调用start()方法之后被执行。例子如下：
 
-    ```cpp
+```cpp
     public class MyThread extends Thread {
        public void run(){
          System.out.println("MyThread running");
        }
     }
-    ```
+```
 
 可以用如下方式创建并运行上述Thread子类
 
