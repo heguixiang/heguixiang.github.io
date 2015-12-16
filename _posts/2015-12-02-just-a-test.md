@@ -5,7 +5,9 @@ category: life
 tag: test
 --- 
 
-<div class="toc"></div>
+<div class="toc">
+            
+</div>
 
 ##test1
 这只是一个测试，hello，world，edited by wade,1 

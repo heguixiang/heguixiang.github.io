@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-16T21:27:14+08:00</updated>
+ <updated>2015-12-16T21:33:09+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -125,7 +125,9 @@
    <link href="http://heguixiang.github.io/blog/2015/12/just-a-test.html"/>
    <updated>2015-12-02T00:00:00+08:00</updated>
    <id>/blog/2015/12/just-a-test</id>
-   <content type="html">&lt;div class=&quot;toc&quot;&gt;&lt;/div&gt;
+   <content type="html">&lt;div class=&quot;toc&quot;&gt;
+            
+&lt;/div&gt;
 
 &lt;h2&gt;test1&lt;/h2&gt;
 
@@ -1176,22 +1178,17 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
    <link href="http://heguixiang.github.io/blog/2014/07/markdown-syntax.html"/>
    <updated>2014-07-11T00:00:00+08:00</updated>
    <id>/blog/2014/07/markdown-syntax</id>
-   <content type="html">&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown: Syntax&lt;/a&gt;.&lt;/p&gt;
+   <content type="html">&lt;div class=&quot;toc&quot;&gt;
+        
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown: Syntax&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;声明：&lt;/strong&gt; 这份文档派生(fork)于&lt;a href=&quot;http://markdown.tw/&quot;&gt;繁体中文版&lt;/a&gt;，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里&lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md&quot;&gt;查看它的源文件&lt;/a&gt;。「繁体中文版的原始文件可以&lt;a href=&quot;https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md&quot;&gt;查看这里&lt;/a&gt; 。」--By @&lt;a href=&quot;http://twitter.com/riku&quot;&gt;riku&lt;/a&gt; / 本项目托管于 &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN&quot;&gt;GitCafe&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt; 本项目同时也托管于 &lt;a href=&quot;https://github.com/riku/Markdown-Syntax-CN&quot;&gt;Github&lt;/a&gt; 上，请通过 fork＋pull request 方式来帮忙改进本项目。&lt;/p&gt;
 
 &lt;h1&gt;Markdown 语法说明 (简体中文版) / (&lt;a href=&quot;./markdown-basics.html&quot;&gt;点击查看快速入门&lt;/a&gt;)&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;auto-gen TOC:
-{:toc}
-&lt;div class=&quot;toc&quot;&gt;&lt;/div&gt;
-[toc]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;[TOC]&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;  &lt;a href=&quot;#overview&quot;&gt;概述&lt;/a&gt;

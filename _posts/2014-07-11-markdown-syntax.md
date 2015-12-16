@@ -6,6 +6,10 @@ category : jekyll
 tags: [jekyll, markdown]
 ---
 
+<div class="toc">
+        
+</div>
+
 **NOTE:** This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to [Markdown: Syntax][eng-doc].
 
 [eng-doc]:http://daringfireball.net/projects/markdown/syntax
@@ -22,14 +26,6 @@ tags: [jekyll, markdown]
 
 Markdown 语法说明 (简体中文版) / ([点击查看快速入门](./markdown-basics.html))
 =================
-
-
-* auto-gen TOC:
-    {:toc}
-<div class="toc"></div>
-[toc]
-
-[TOC]
 
 *   [概述](#overview)
     *   [宗旨](#philosophy)
