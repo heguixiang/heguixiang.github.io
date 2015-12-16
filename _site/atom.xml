@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-16T19:03:53+08:00</updated>
+ <updated>2015-12-16T19:33:39+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -1265,7 +1265,7 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
 &lt;ul&gt;
   &lt;li&gt;auto-gen TOC:&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;div class=&quot;toc&quot;&gt;&lt;/div&gt;
 &lt;p&gt;[toc]&lt;/p&gt;
 
 &lt;p&gt;[TOC]&lt;/p&gt;

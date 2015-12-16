@@ -772,6 +772,20 @@ var duoshuoQuery = {short_name:"heguixiang"};
 </div> 
 </div>
 
+
+<!-- 根据标题自动生成目录 -->
+<script src="/js/jquery-catalog/jquery-catalog.js"></script>
+<link rel="stylesheet" href="/js/jquery-catalog/jquery-catalog.css">
+<script>
+	$(function(){
+		var options = {
+			root : $(".post-content")[0]
+		};
+		
+		$(".toc").generateCatalog(options);
+	});
+</script>
+
         </div>
 
 	 <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
