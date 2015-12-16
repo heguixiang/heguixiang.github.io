@@ -23,9 +23,8 @@ tags : [jekyll, markdown]
 Markdown 语法说明 (简体中文版) / ([点击查看快速入门](./markdown-basics.html))
 =================
 
-<!-- ttoc -->
 
-* auto-gen TOC:
+*auto-gen TOC:
 {:toc}
 
 [toc]
