@@ -21,11 +21,8 @@ kramdown:
   use_coderay: false
 
 JB :
-    #IMAGE_PATH : http://coolshell.info/images
     IMAGE_PATH :  heguixiang.github.io/images
 
-# presonal config
-#domain: http://coolshell.info
 domain: heguixiang.github.io
 title: 浪号
 description: 快乐生活
