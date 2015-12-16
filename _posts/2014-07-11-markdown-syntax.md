@@ -3,9 +3,7 @@ layout: post
 title: Markdown 语法 (简体中文版)
 keywords: jekyll, markdown, markdown语法
 category : jekyll
-toc: true
-tocstartlv: 2
-tags : [jekyll, markdown]
+tags: [jekyll, markdown]
 ---
 
 **NOTE:** This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to [Markdown: Syntax][eng-doc].
