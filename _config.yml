@@ -9,9 +9,9 @@ highlights: pygments
 url: http://heguixiang.github.io 
 #cdn_url: 7u2t01.com1.z0.glb.clouddn.com
 #lsi: false
-safe: true
+#safe: true
 #timezone: Asia/Shanghai
-auto: false 
+#auto: false 
 
 paginate: 8
 paginate_path: "page:num"
