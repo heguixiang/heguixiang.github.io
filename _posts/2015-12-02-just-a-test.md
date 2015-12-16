@@ -4,7 +4,6 @@ title: hello,world
 category: life
 tag: test
 --- 
-{:toc}
 
 <div class="toc"></div>
 

@@ -58,8 +58,7 @@
 		
 		btn.click(function() {
 			//隐藏
-			//if ("show" == $(this).attr("data-state")) {
-            if(false){
+			if ("show" == $(this).attr("data-state")) {
 				wrap.css("height", "0");
 				$(this).attr("data-state", "hide");
 				$(this).text("[显示]");
