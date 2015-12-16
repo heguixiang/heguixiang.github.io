@@ -1,165 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
-  
-  <head>
-    <meta name="baidu-site-verification" content="QolsRYSB3U" />
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Markdown 语法 (简体中文版) - 浪号 - Guixiang.He(guixiang.he@outlook.com)">
-    <title>
-      Markdown 语法 (简体中文版) - 浪号
-    </title>
-    <!-- Bootstrap Core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS 
-    <link href="/css/blog.css" rel="stylesheet">-->
-    <!-- index css -->
-    <link href="/css/index.css" rel="stylesheet">
-	<!-- pagments CSS-->
-	<link href="/css/pygments.css" rel="stylesheet">
-        <!-- jQuery Version 1.11.0 -->
-    <script src="/js/jquery-1.11.0.js"> </script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
-   <!-- 回到顶部js-->
-    <script src="/js/index.js"></script>
 
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "//hm.baidu.com/hm.js?085fc257cb1e774f7764a2cf527c393d";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
+	    <html>
+	      <head>
+				  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	        <title>2014-07-11-markdown-syntax</title>
+					
+					<link href="/var/lib/gems/1.9.1/gems/tocmd-0.4.1/vendor/toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="/var/lib/gems/1.9.1/gems/tocmd-0.4.1/vendor/toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="/var/lib/gems/1.9.1/gems/tocmd-0.4.1/vendor/toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+			
+				  <style>
+					pre {
+					    counter-reset: line-numbering;
+					    border: solid 1px #d9d9d9;
+					    border-radius: 0;
+					    background: #fff;
+					    padding: 0;
+					    line-height: 23px;
+					    margin-bottom: 30px;
+					    white-space: pre;
+					    overflow-x: auto;
+					    word-break: inherit;
+					    word-wrap: inherit;
+					}
 
-  </head>
-  
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">
-              Toggle navigation
-            </span>
-            <span class="icon-bar">
-            </span>
-            <span class="icon-bar">
-            </span>
-            <span class="icon-bar">
-            </span>
-          </button>
-          <a class="navbar-brand" href="/index.html">
-            浪号
-          </a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-            <li>
-              <a href="/categories.html">
-                分 类
-              </a>
-            </li>
-            <li>
-              <a href="/tags.html">
-                标 签
-              </a>
-            </li>
-            <li>
-              <a href="/archives.html">
-                归 档
-              </a>
-            </li>
-            <li>
-              <a href="/faqs.html">
-                备 忘
-              </a>
-            </li>
-            <li>
-              <a href="/about.html">
-                关 于
-              </a>
-            </li>
-          </ul> 
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-    </nav>
-    <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
-          <!-- Blog Post -->
-<!-- Title -->
-<div class="row">
-  <div class="post-area post">
+					pre a::before {
+					  content: counter(line-numbering);
+					  counter-increment: line-numbering;
+					  padding-right: 1em; /* space after numbers */
+					  width: 25px;
+					  text-align: right;
+					  opacity: 0.7;
+					  display: inline-block;
+					  color: #aaa;
+					  background: #eee;
+					  margin-right: 16px;
+					  padding: 2px 10px;
+					  font-size: 13px;
+					  -webkit-touch-callout: none;
+					  -webkit-user-select: none;
+					  -khtml-user-select: none;
+					  -moz-user-select: none;
+					  -ms-user-select: none;
+					  user-select: none;
+					}
 
- 	<div class="post-list-body">
-        	<div class="all-posts" post-cate="All">
- 		<header>
-		<h1>
-		  Markdown 语法 (简体中文版)
-		  <div class="post-date"><a href="https://github.com/heguixiang/heguixiang.github.io/edit/master/_posts/2014-07-11-markdown-syntax.md" target="_blank">纠错</a>&nbsp;&nbsp;
-			<span class="glyphicon glyphicon-time"></span>
-			11 Jul 2014
-		  </div>
-		</h1>
- 		</header>
-		<!-- Author -->
-		<hr>
-		 <article>
-		<p><strong>NOTE:</strong> This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to <a href="http://daringfireball.net/projects/markdown/syntax">Markdown: Syntax</a>.</p>
+					pre a:first-of-type::before {
+					  padding-top: 10px;
+					}
 
-<p><strong>声明：</strong> 这份文档派生(fork)于<a href="http://markdown.tw/">繁体中文版</a>，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里<a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md">查看它的源文件</a>。「繁体中文版的原始文件可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md">查看这里</a> 。」–By @<a href="http://twitter.com/riku">riku</a> / 本项目托管于 <a href="http://gitcafe.com/riku/Markdown-Syntax-CN">GitCafe</a></p>
+					pre a:last-of-type::before {
+					  padding-bottom: 10px;
+					}
+
+					pre a:only-of-type::before {
+					  padding: 10px;
+					}
+			
+					.highlight { background-color: #ffffcc } /* RIGHT */
+					</style>
+	      </head>
+	      <body>
+				  <div>
+							<div style='width:25%;'>
+									<ul id="tree" class="ztree" style='width:100%'>
+		
+									</ul>
+							</div>
+			        <div id='readme' style='width:70%;margin-left:20%;'>
+			          	<article class='markdown-body'>
+			            	<style>.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f0f0f0; }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #40a070 } /* Literal.Number.Bin */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+<hr>
+
+<p>layout: post
+title: Markdown 语法 (简体中文版)
+keywords: jekyll, markdown, markdown语法
+category : jekyll</p>
+
+<h2>tags : [jekyll, markdown]</h2>
+
+<p><strong>NOTE:</strong> This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to <a href="http://daringfireball.net/projects/markdown/syntax">Markdown: Syntax</a>.</p>
+
+<p><strong>声明：</strong> 这份文档派生(fork)于<a href="http://markdown.tw/">繁体中文版</a>，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里<a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md">查看它的源文件</a>。「繁体中文版的原始文件可以<a href="https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md">查看这里</a> 。」--By @<a href="http://twitter.com/riku">riku</a> / 本项目托管于 <a href="http://gitcafe.com/riku/Markdown-Syntax-CN">GitCafe</a></p>
 
 <p><strong>注：</strong> 本项目同时也托管于 <a href="https://github.com/riku/Markdown-Syntax-CN">Github</a> 上，请通过 fork＋pull request 方式来帮忙改进本项目。</p>
 
-<h1 id="markdown----markdown-basicshtml">Markdown 语法说明 (简体中文版) / (<a href="./markdown-basics.html">点击查看快速入门</a>)</h1>
+<h1>Markdown 语法说明 (简体中文版) / (<a href="./markdown-basics.html">点击查看快速入门</a>)</h1>
+
 <!-- ttoc -->
+
 <ul>
-  <li><a href="#overview">概述</a>
-    <ul>
-      <li><a href="#philosophy">宗旨</a></li>
-      <li><a href="#html">兼容 HTML</a></li>
-      <li><a href="#autoescape">特殊字符自动转换</a></li>
-    </ul>
-  </li>
-  <li><a href="#block">区块元素</a>
-    <ul>
-      <li><a href="#p">段落和换行</a></li>
-      <li><a href="#header">标题</a></li>
-      <li><a href="#blockquote">区块引用</a></li>
-      <li><a href="#list">列表</a></li>
-      <li><a href="#precode">代码区块</a></li>
-      <li><a href="#hr">分隔线</a></li>
-    </ul>
-  </li>
-  <li><a href="#span">区段元素</a>
-    <ul>
-      <li><a href="#link">链接</a></li>
-      <li><a href="#em">强调</a></li>
-      <li><a href="#code">代码</a></li>
-      <li><a href="#img">图片</a></li>
-    </ul>
-  </li>
-  <li><a href="#misc">其它</a>
-    <ul>
-      <li><a href="#backslash">反斜杠</a></li>
-      <li><a href="#autolink">自动链接</a></li>
-    </ul>
-  </li>
-  <li><a href="#acknowledgement">感谢</a></li>
+<li>  <a href="#overview">概述</a>
+
+<ul>
+<li>  <a href="#philosophy">宗旨</a></li>
+<li>  <a href="#html">兼容 HTML</a></li>
+<li>  <a href="#autoescape">特殊字符自动转换</a></li>
+</ul></li>
+<li>  <a href="#block">区块元素</a>
+
+<ul>
+<li>  <a href="#p">段落和换行</a></li>
+<li>  <a href="#header">标题</a></li>
+<li>  <a href="#blockquote">区块引用</a></li>
+<li>  <a href="#list">列表</a></li>
+<li>  <a href="#precode">代码区块</a></li>
+<li>  <a href="#hr">分隔线</a></li>
+</ul></li>
+<li>  <a href="#span">区段元素</a>
+
+<ul>
+<li>  <a href="#link">链接</a></li>
+<li>  <a href="#em">强调</a></li>
+<li>  <a href="#code">代码</a></li>
+<li>  <a href="#img">图片</a></li>
+</ul></li>
+<li>  <a href="#misc">其它</a>
+
+<ul>
+<li>  <a href="#backslash">反斜杠</a></li>
+<li>  <a href="#autolink">自动链接</a></li>
+</ul></li>
+<li>  <a href="#acknowledgement">感谢</a></li>
 </ul>
 
-<hr />
+<hr>
 
 <h2 id="overview">概述</h2>
 
@@ -182,18 +208,16 @@
 <p>要制约的只有一些 HTML 区块元素――比如 <code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code> 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 <code>&lt;p&gt;</code> 标签。</p>
 
 <p>例子如下，在 Markdown 文件里加上一段 HTML 表格：</p>
+<div class="highlight"><pre>这是一个普通段落。
 
-<pre><code>这是一个普通段落。
-
-&lt;table&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Foo&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
+<span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Foo<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
 
 这是另一个普通段落。
-</code></pre>
-
+</pre></div>
 <p>请注意，在 HTML 区块标签间的 Markdown 格式语法将不会被处理。比如，你在 HTML 区块内使用 Markdown 样式的<code>*强调*</code>会没有效果。</p>
 
 <p>HTML 的区段（行内）标签如 <code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code> 可以在 Markdown 的段落、列表或是标题里随意使用。依照个人习惯，甚至可以不用 Markdown 格式，而直接采用 HTML 标签来格式化。举例说明：如果比较喜欢 HTML 的 <code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code> 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图像标签语法。</p>
@@ -205,47 +229,33 @@
 <p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和 <code>&amp;</code> 。 <code>&lt;</code> 符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML 实体，如果你只是想要显示这些字符的原型，你必须要使用实体的形式，像是 <code>&amp;lt;</code> 和 <code>&amp;amp;</code>。</p>
 
 <p><code>&amp;</code> 字符尤其让网络文档编写者受折磨，如果你要打「<code>AT&amp;T</code>」 ，你必须要写成「<code>AT&amp;amp;T</code>」。而网址中的 <code>&amp;</code> 字符也要转换。比如你要链接到：</p>
-
-<pre><code>http://images.google.com/images?num=30&amp;q=larry+bird
-</code></pre>
-
+<div class="highlight"><pre><span class="nl">http:</span><span class="o">//</span><span class="vg">images</span><span class="o">.</span><span class="vg">google</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="vg">images</span><span class="o">?</span><span class="vg">num</span><span class="o">=</span><span class="il">30</span><span class="o">&amp;</span><span class="vg">q</span><span class="o">=</span><span class="vg">larry</span><span class="o">+</span><span class="vg">bird</span>
+</pre></div>
 <p>你必须要把网址转换写为：</p>
-
-<pre><code>http://images.google.com/images?num=30&amp;amp;q=larry+bird
-</code></pre>
-
+<div class="highlight"><pre><span class="nl">http:</span><span class="o">//</span><span class="vg">images</span><span class="o">.</span><span class="vg">google</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="vg">images</span><span class="o">?</span><span class="vg">num</span><span class="o">=</span><span class="il">30</span><span class="o">&amp;</span><span class="vg">amp</span><span class="p">;</span><span class="vg">q</span><span class="o">=</span><span class="vg">larry</span><span class="o">+</span><span class="vg">bird</span>
+</pre></div>
 <p>才能放到链接标签的 <code>href</code> 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。</p>
 
 <p>Markdown 让你可以自然地书写字符，需要转换的由它来处理好了。如果你使用的 <code>&amp;</code> 字符是 HTML 字符实体的一部分，它会保留原状，否则它会被转换成 <code>&amp;amp</code>;。</p>
 
 <p>所以你如果要在文档中插入一个版权符号 <code>©</code>，你可以这样写：</p>
-
-<pre><code>&amp;copy;
-</code></pre>
-
+<div class="highlight"><pre><span class="o">&amp;</span><span class="vg">copy</span><span class="p">;</span>
+</pre></div>
 <p>Markdown 会保留它不动。而若你写：</p>
-
-<pre><code>AT&amp;T
-</code></pre>
-
+<div class="highlight"><pre><span class="vg">AT&amp;T</span>
+</pre></div>
 <p>Markdown 就会将它转为：</p>
-
-<pre><code>AT&amp;amp;T
-</code></pre>
-
+<div class="highlight"><pre><span class="vg">AT&amp;amp</span><span class="p">;</span><span class="vg">T</span>
+</pre></div>
 <p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 允许 <a href="#html">兼容 HTML</a> ，如果你是把 <code>&lt;</code> 符号作为 HTML 标签的定界符使用，那 Markdown 也不会对它做任何转换，但是如果你写：</p>
-
-<pre><code>4 &lt; 5
-</code></pre>
-
+<div class="highlight"><pre><span class="nl">4</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="il">5</span>
+</pre></div>
 <p>Markdown 将会把它转换为：</p>
-
-<pre><code>4 &amp;lt; 5
-</code></pre>
-
+<div class="highlight"><pre><span class="nl">4</span><span class="w"> </span><span class="o">&amp;</span><span class="vg">lt</span><span class="p">;</span><span class="w"> </span><span class="il">5</span>
+</pre></div>
 <p>不过需要注意的是，code 范围内，不论是行内还是区块， <code>&lt;</code> 和 <code>&amp;</code> 两个符号都<em>一定</em>会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code （和 HTML 相对而言， HTML 语法中，你要把所有的 <code>&lt;</code> 和 <code>&amp;</code> 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。）</p>
 
-<hr />
+<hr>
 
 <h2 id="block">区块元素</h2>
 
@@ -264,77 +274,63 @@
 <p>Markdown 支持两种标题的语法，类 <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> 和类 <a href="http://www.aaronsw.com/2002/atx/">atx</a> 形式。</p>
 
 <p>类 Setext 形式是用底线的形式，利用 <code>=</code> （最高阶标题）和 <code>-</code> （第二阶标题），例如：</p>
+<div class="highlight"><pre><span class="gh">This is an H1</span>
+<span class="gh">=============</span>
 
-<pre><code>This is an H1
-=============
-
-This is an H2
--------------
-</code></pre>
-
+<span class="gh">This is an H2</span>
+<span class="gh">-------------</span>
+</pre></div>
 <p>任何数量的 <code>=</code> 和 <code>-</code> 都可以有效果。</p>
 
 <p>类 Atx 形式则是在行首插入 1 到 6 个 <code>#</code> ，对应到标题 1 到 6 阶，例如：</p>
+<div class="highlight"><pre><span class="c"># 这是 H1</span>
 
-<pre><code># 这是 H1
+<span class="c">## 这是 H2</span>
 
-## 这是 H2
-
-###### 这是 H6
-</code></pre>
-
+<span class="c">###### 这是 H6</span>
+</pre></div>
 <p>你可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 <code>#</code>，而行尾的 <code>#</code> 数量也不用和开头一样（行首的井字符数量决定标题的阶数）：</p>
+<div class="highlight"><pre><span class="c"># 这是 H1 #</span>
 
-<pre><code># 这是 H1 #
+<span class="c">## 这是 H2 ##</span>
 
-## 这是 H2 ##
-
-### 这是 H3 ######
-</code></pre>
-
+<span class="c">### 这是 H3 ######</span>
+</pre></div>
 <h3 id="blockquote">区块引用 Blockquotes</h3>
 
 <p>Markdown 标记区块引用是使用类似 email 中用 <code>&gt;</code> 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 <code>&gt;</code> ：</p>
-
-<pre><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-&gt; 
-&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-&gt; id sem consectetuer libero luctus adipiscing.
-</code></pre>
-
+<div class="highlight"><pre><span class="o">&gt;</span><span class="w"> </span><span class="vg">This</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">blockquote</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">two</span><span class="w"> </span><span class="vg">paragraphs</span><span class="o">.</span><span class="w"> </span><span class="vg">Lorem</span><span class="w"> </span><span class="vg">ipsum</span><span class="w"> </span><span class="vg">dolor</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="p">,</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="vg">consectetuer</span><span class="w"> </span><span class="vg">adipiscing</span><span class="w"> </span><span class="vg">elit</span><span class="o">.</span><span class="w"> </span><span class="vg">Aliquam</span><span class="w"> </span><span class="vg">hendrerit</span><span class="w"> </span><span class="vg">mi</span><span class="w"> </span><span class="vg">posuere</span><span class="w"> </span><span class="vg">lectus</span><span class="o">.</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="vg">Vestibulum</span><span class="w"> </span><span class="vg">enim</span><span class="w"> </span><span class="vg">wisi</span><span class="p">,</span><span class="w"> </span><span class="vg">viverra</span><span class="w"> </span><span class="vg">nec</span><span class="p">,</span><span class="w"> </span><span class="vg">fringilla</span><span class="w"> </span><span class="vg">in</span><span class="p">,</span><span class="w"> </span><span class="vg">laoreet</span><span class="w"> </span><span class="vg">vitae</span><span class="p">,</span><span class="w"> </span><span class="vg">risus</span><span class="o">.</span>
+<span class="o">&gt;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="vg">Donec</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="w"> </span><span class="vg">nisl</span><span class="o">.</span><span class="w"> </span><span class="vg">Aliquam</span><span class="w"> </span><span class="vg">semper</span><span class="w"> </span><span class="vg">ipsum</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="w"> </span><span class="vg">velit</span><span class="o">.</span><span class="w"> </span><span class="vg">Suspendisse</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="vg">id</span><span class="w"> </span><span class="vg">sem</span><span class="w"> </span><span class="vg">consectetuer</span><span class="w"> </span><span class="vg">libero</span><span class="w"> </span><span class="vg">luctus</span><span class="w"> </span><span class="vg">adipiscing</span><span class="o">.</span>
+</pre></div>
 <p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 <code>&gt;</code> ：</p>
+<div class="highlight"><pre><span class="o">&gt;</span><span class="w"> </span><span class="vg">This</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">blockquote</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">two</span><span class="w"> </span><span class="vg">paragraphs</span><span class="o">.</span><span class="w"> </span><span class="vg">Lorem</span><span class="w"> </span><span class="vg">ipsum</span><span class="w"> </span><span class="vg">dolor</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="p">,</span>
+<span class="vg">consectetuer</span><span class="w"> </span><span class="vg">adipiscing</span><span class="w"> </span><span class="vg">elit</span><span class="o">.</span><span class="w"> </span><span class="vg">Aliquam</span><span class="w"> </span><span class="vg">hendrerit</span><span class="w"> </span><span class="vg">mi</span><span class="w"> </span><span class="vg">posuere</span><span class="w"> </span><span class="vg">lectus</span><span class="o">.</span>
+<span class="vg">Vestibulum</span><span class="w"> </span><span class="vg">enim</span><span class="w"> </span><span class="vg">wisi</span><span class="p">,</span><span class="w"> </span><span class="vg">viverra</span><span class="w"> </span><span class="vg">nec</span><span class="p">,</span><span class="w"> </span><span class="vg">fringilla</span><span class="w"> </span><span class="vg">in</span><span class="p">,</span><span class="w"> </span><span class="vg">laoreet</span><span class="w"> </span><span class="vg">vitae</span><span class="p">,</span><span class="w"> </span><span class="vg">risus</span><span class="o">.</span>
 
-<pre><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-
-&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-id sem consectetuer libero luctus adipiscing.
-</code></pre>
-
+<span class="o">&gt;</span><span class="w"> </span><span class="vg">Donec</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="w"> </span><span class="vg">nisl</span><span class="o">.</span><span class="w"> </span><span class="vg">Aliquam</span><span class="w"> </span><span class="vg">semper</span><span class="w"> </span><span class="vg">ipsum</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="w"> </span><span class="vg">velit</span><span class="o">.</span><span class="w"> </span><span class="vg">Suspendisse</span>
+<span class="vg">id</span><span class="w"> </span><span class="vg">sem</span><span class="w"> </span><span class="vg">consectetuer</span><span class="w"> </span><span class="vg">libero</span><span class="w"> </span><span class="vg">luctus</span><span class="w"> </span><span class="vg">adipiscing</span><span class="o">.</span>
+</pre></div>
 <p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 <code>&gt;</code> ：</p>
-
-<pre><code>&gt; This is the first level of quoting.
-&gt;
-&gt; &gt; This is nested blockquote.
-&gt;
-&gt; Back to the first level.
-</code></pre>
-
+<div class="highlight"><pre><span class="o">&gt;</span><span class="w"> </span><span class="vg">This</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">the</span><span class="w"> </span><span class="vg">first</span><span class="w"> </span><span class="vg">level</span><span class="w"> </span><span class="vg">of</span><span class="w"> </span><span class="vg">quoting</span><span class="o">.</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="vg">This</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">nested</span><span class="w"> </span><span class="vg">blockquote</span><span class="o">.</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="vg">Back</span><span class="w"> </span><span class="vg">to</span><span class="w"> </span><span class="vg">the</span><span class="w"> </span><span class="vg">first</span><span class="w"> </span><span class="vg">level</span><span class="o">.</span>
+</pre></div>
 <p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</p>
-
-<pre><code>&gt; ## 这是一个标题。
-&gt; 
-&gt; 1.   这是第一行列表项。
-&gt; 2.   这是第二行列表项。
-&gt; 
-&gt; 给出一些例子代码：
-&gt; 
-&gt;     return shell_exec("echo $input | $markdown_script");
-</code></pre>
-
+<div class="highlight"><pre><span class="o">&gt;</span><span class="w"> </span><span class="err">##</span><span class="w"> </span><span class="err">这是一个标题。</span>
+<span class="o">&gt;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="il">1</span><span class="o">.</span><span class="w">   </span><span class="err">这是第一行列表项。</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="il">2</span><span class="o">.</span><span class="w">   </span><span class="err">这是第二行列表项。</span>
+<span class="o">&gt;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="err">给出一些例子代码：</span>
+<span class="o">&gt;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w">     </span><span class="vg">return</span><span class="w"> </span><span class="vg">shell_exec</span><span class="p">(</span><span class="s2">&quot;echo $input | $markdown_script&quot;</span><span class="p">);</span>
+</pre></div>
 <p>任何像样的文本编辑器都能轻松地建立 email 型的引用。例如在 BBEdit 中，你可以选取文字后然后从选单中选择<em>增加引用阶层</em>。</p>
 
 <h3 id="list">列表</h3>
@@ -342,56 +338,42 @@ id sem consectetuer libero luctus adipiscing.
 <p>Markdown 支持有序列表和无序列表。</p>
 
 <p>无序列表使用星号、加号或是减号作为列表标记：</p>
-
-<pre><code>*   Red
-*   Green
-*   Blue
-</code></pre>
-
+<div class="highlight"><pre><span class="o">*</span><span class="w">   </span><span class="vg">Red</span>
+<span class="o">*</span><span class="w">   </span><span class="vg">Green</span>
+<span class="o">*</span><span class="w">   </span><span class="vg">Blue</span>
+</pre></div>
 <p>等同于：</p>
-
-<pre><code>+   Red
-+   Green
-+   Blue
-</code></pre>
-
+<div class="highlight"><pre><span class="o">+</span><span class="w">   </span><span class="vg">Red</span>
+<span class="o">+</span><span class="w">   </span><span class="vg">Green</span>
+<span class="o">+</span><span class="w">   </span><span class="vg">Blue</span>
+</pre></div>
 <p>也等同于：</p>
-
-<pre><code>-   Red
--   Green
--   Blue
-</code></pre>
-
+<div class="highlight"><pre><span class="o">-</span><span class="w">   </span><span class="vg">Red</span>
+<span class="o">-</span><span class="w">   </span><span class="vg">Green</span>
+<span class="o">-</span><span class="w">   </span><span class="vg">Blue</span>
+</pre></div>
 <p>有序列表则使用数字接着一个英文句点：</p>
-
-<pre><code>1.  Bird
-2.  McHale
-3.  Parish
-</code></pre>
-
+<div class="highlight"><pre><span class="nl">1</span><span class="o">.</span><span class="w">  </span><span class="vg">Bird</span>
+<span class="nl">2</span><span class="o">.</span><span class="w">  </span><span class="vg">McHale</span>
+<span class="nl">3</span><span class="o">.</span><span class="w">  </span><span class="vg">Parish</span>
+</pre></div>
 <p>很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为：</p>
-
-<pre><code>&lt;ol&gt;
-&lt;li&gt;Bird&lt;/li&gt;
-&lt;li&gt;McHale&lt;/li&gt;
-&lt;li&gt;Parish&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="nt">&lt;ol&gt;</span>
+<span class="nt">&lt;li&gt;</span>Bird<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;</span>McHale<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;</span>Parish<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+</pre></div>
 <p>如果你的列表标记写成：</p>
-
-<pre><code>1.  Bird
-1.  McHale
-1.  Parish
-</code></pre>
-
+<div class="highlight"><pre><span class="nl">1</span><span class="o">.</span><span class="w">  </span><span class="vg">Bird</span>
+<span class="nl">1</span><span class="o">.</span><span class="w">  </span><span class="vg">McHale</span>
+<span class="nl">1</span><span class="o">.</span><span class="w">  </span><span class="vg">Parish</span>
+</pre></div>
 <p>或甚至是：</p>
-
-<pre><code>3. Bird
-1. McHale
-8. Parish
-</code></pre>
-
+<div class="highlight"><pre><span class="nl">3</span><span class="o">.</span><span class="w"> </span><span class="vg">Bird</span>
+<span class="nl">1</span><span class="o">.</span><span class="w"> </span><span class="vg">McHale</span>
+<span class="nl">8</span><span class="o">.</span><span class="w"> </span><span class="vg">Parish</span>
+</pre></div>
 <p>你都会得到完全相同的 HTML 输出。重点在于，你可以让 Markdown 文件的列表数字和输出的结果相同，或是你懒一点，你可以完全不用在意数字的正确性。</p>
 
 <p>如果你使用懒惰的写法，建议第一个项目最好还是从 1. 开始，因为 Markdown 未来可能会支持有序列表的 start 属性。</p>
@@ -399,175 +381,137 @@ id sem consectetuer libero luctus adipiscing.
 <p>列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。</p>
 
 <p>要让列表看起来更漂亮，你可以把内容用固定的缩进整理好：</p>
-
-<pre><code>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-    viverra nec, fringilla in, laoreet vitae, risus.
-*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-    Suspendisse id sem consectetuer libero luctus adipiscing.
-</code></pre>
-
+<div class="highlight"><pre><span class="o">*</span><span class="w">   </span><span class="vg">Lorem</span><span class="w"> </span><span class="vg">ipsum</span><span class="w"> </span><span class="vg">dolor</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="p">,</span><span class="w"> </span><span class="vg">consectetuer</span><span class="w"> </span><span class="vg">adipiscing</span><span class="w"> </span><span class="vg">elit</span><span class="o">.</span>
+<span class="w">    </span><span class="vg">Aliquam</span><span class="w"> </span><span class="vg">hendrerit</span><span class="w"> </span><span class="vg">mi</span><span class="w"> </span><span class="vg">posuere</span><span class="w"> </span><span class="vg">lectus</span><span class="o">.</span><span class="w"> </span><span class="vg">Vestibulum</span><span class="w"> </span><span class="vg">enim</span><span class="w"> </span><span class="vg">wisi</span><span class="p">,</span>
+<span class="w">    </span><span class="vg">viverra</span><span class="w"> </span><span class="vg">nec</span><span class="p">,</span><span class="w"> </span><span class="vg">fringilla</span><span class="w"> </span><span class="vg">in</span><span class="p">,</span><span class="w"> </span><span class="vg">laoreet</span><span class="w"> </span><span class="vg">vitae</span><span class="p">,</span><span class="w"> </span><span class="vg">risus</span><span class="o">.</span>
+<span class="o">*</span><span class="w">   </span><span class="vg">Donec</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="w"> </span><span class="vg">nisl</span><span class="o">.</span><span class="w"> </span><span class="vg">Aliquam</span><span class="w"> </span><span class="vg">semper</span><span class="w"> </span><span class="vg">ipsum</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="w"> </span><span class="vg">velit</span><span class="o">.</span>
+<span class="w">    </span><span class="vg">Suspendisse</span><span class="w"> </span><span class="vg">id</span><span class="w"> </span><span class="vg">sem</span><span class="w"> </span><span class="vg">consectetuer</span><span class="w"> </span><span class="vg">libero</span><span class="w"> </span><span class="vg">luctus</span><span class="w"> </span><span class="vg">adipiscing</span><span class="o">.</span>
+</pre></div>
 <p>但是如果你懒，那也行：</p>
-
-<pre><code>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-viverra nec, fringilla in, laoreet vitae, risus.
-*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-Suspendisse id sem consectetuer libero luctus adipiscing.
-</code></pre>
-
+<div class="highlight"><pre><span class="o">*</span><span class="w">   </span><span class="vg">Lorem</span><span class="w"> </span><span class="vg">ipsum</span><span class="w"> </span><span class="vg">dolor</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="p">,</span><span class="w"> </span><span class="vg">consectetuer</span><span class="w"> </span><span class="vg">adipiscing</span><span class="w"> </span><span class="vg">elit</span><span class="o">.</span>
+<span class="vg">Aliquam</span><span class="w"> </span><span class="vg">hendrerit</span><span class="w"> </span><span class="vg">mi</span><span class="w"> </span><span class="vg">posuere</span><span class="w"> </span><span class="vg">lectus</span><span class="o">.</span><span class="w"> </span><span class="vg">Vestibulum</span><span class="w"> </span><span class="vg">enim</span><span class="w"> </span><span class="vg">wisi</span><span class="p">,</span>
+<span class="vg">viverra</span><span class="w"> </span><span class="vg">nec</span><span class="p">,</span><span class="w"> </span><span class="vg">fringilla</span><span class="w"> </span><span class="vg">in</span><span class="p">,</span><span class="w"> </span><span class="vg">laoreet</span><span class="w"> </span><span class="vg">vitae</span><span class="p">,</span><span class="w"> </span><span class="vg">risus</span><span class="o">.</span>
+<span class="o">*</span><span class="w">   </span><span class="vg">Donec</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="w"> </span><span class="vg">nisl</span><span class="o">.</span><span class="w"> </span><span class="vg">Aliquam</span><span class="w"> </span><span class="vg">semper</span><span class="w"> </span><span class="vg">ipsum</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="w"> </span><span class="vg">velit</span><span class="o">.</span>
+<span class="vg">Suspendisse</span><span class="w"> </span><span class="vg">id</span><span class="w"> </span><span class="vg">sem</span><span class="w"> </span><span class="vg">consectetuer</span><span class="w"> </span><span class="vg">libero</span><span class="w"> </span><span class="vg">luctus</span><span class="w"> </span><span class="vg">adipiscing</span><span class="o">.</span>
+</pre></div>
 <p>如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 <code>&lt;p&gt;</code> 
 标签包起来，举例来说：</p>
-
-<pre><code>*   Bird
-*   Magic
-</code></pre>
-
+<div class="highlight"><pre><span class="o">*</span><span class="w">   </span><span class="vg">Bird</span>
+<span class="o">*</span><span class="w">   </span><span class="vg">Magic</span>
+</pre></div>
 <p>会被转换为：</p>
-
-<pre><code>&lt;ul&gt;
-&lt;li&gt;Bird&lt;/li&gt;
-&lt;li&gt;Magic&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="nt">&lt;ul&gt;</span>
+<span class="nt">&lt;li&gt;</span>Bird<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;</span>Magic<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
 <p>但是这个：</p>
+<div class="highlight"><pre><span class="o">*</span><span class="w">   </span><span class="vg">Bird</span>
 
-<pre><code>*   Bird
-
-*   Magic
-</code></pre>
-
+<span class="o">*</span><span class="w">   </span><span class="vg">Magic</span>
+</pre></div>
 <p>会被转换为：</p>
-
-<pre><code>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Bird&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Magic&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="nt">&lt;ul&gt;</span>
+<span class="nt">&lt;li&gt;&lt;p&gt;</span>Bird<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;&lt;p&gt;</span>Magic<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
 <p>列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符：</p>
+<div class="highlight"><pre><span class="nl">1</span><span class="o">.</span><span class="w">  </span><span class="vg">This</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">list</span><span class="w"> </span><span class="vg">item</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">two</span><span class="w"> </span><span class="vg">paragraphs</span><span class="o">.</span><span class="w"> </span><span class="vg">Lorem</span><span class="w"> </span><span class="vg">ipsum</span><span class="w"> </span><span class="vg">dolor</span>
+<span class="w">    </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="p">,</span><span class="w"> </span><span class="vg">consectetuer</span><span class="w"> </span><span class="vg">adipiscing</span><span class="w"> </span><span class="vg">elit</span><span class="o">.</span><span class="w"> </span><span class="vg">Aliquam</span><span class="w"> </span><span class="vg">hendrerit</span>
+<span class="w">    </span><span class="vg">mi</span><span class="w"> </span><span class="vg">posuere</span><span class="w"> </span><span class="vg">lectus</span><span class="o">.</span>
 
-<pre><code>1.  This is a list item with two paragraphs. Lorem ipsum dolor
-    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-    mi posuere lectus.
+<span class="w">    </span><span class="vg">Vestibulum</span><span class="w"> </span><span class="vg">enim</span><span class="w"> </span><span class="vg">wisi</span><span class="p">,</span><span class="w"> </span><span class="vg">viverra</span><span class="w"> </span><span class="vg">nec</span><span class="p">,</span><span class="w"> </span><span class="vg">fringilla</span><span class="w"> </span><span class="vg">in</span><span class="p">,</span><span class="w"> </span><span class="vg">laoreet</span>
+<span class="w">    </span><span class="vg">vitae</span><span class="p">,</span><span class="w"> </span><span class="vg">risus</span><span class="o">.</span><span class="w"> </span><span class="vg">Donec</span><span class="w"> </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="w"> </span><span class="vg">nisl</span><span class="o">.</span><span class="w"> </span><span class="vg">Aliquam</span><span class="w"> </span><span class="vg">semper</span><span class="w"> </span><span class="vg">ipsum</span>
+<span class="w">    </span><span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="w"> </span><span class="vg">velit</span><span class="o">.</span>
 
-    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-    sit amet velit.
-
-2.  Suspendisse id sem consectetuer libero luctus adipiscing.
-</code></pre>
-
+<span class="nl">2</span><span class="o">.</span><span class="w">  </span><span class="vg">Suspendisse</span><span class="w"> </span><span class="vg">id</span><span class="w"> </span><span class="vg">sem</span><span class="w"> </span><span class="vg">consectetuer</span><span class="w"> </span><span class="vg">libero</span><span class="w"> </span><span class="vg">luctus</span><span class="w"> </span><span class="vg">adipiscing</span><span class="o">.</span>
+</pre></div>
 <p>如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许：</p>
+<div class="highlight"><pre><span class="o">*</span><span class="w">   </span><span class="vg">This</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">list</span><span class="w"> </span><span class="vg">item</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">two</span><span class="w"> </span><span class="vg">paragraphs</span><span class="o">.</span>
 
-<pre><code>*   This is a list item with two paragraphs.
+<span class="w">    </span><span class="vg">This</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">the</span><span class="w"> </span><span class="vg">second</span><span class="w"> </span><span class="vg">paragraph</span><span class="w"> </span><span class="vg">in</span><span class="w"> </span><span class="vg">the</span><span class="w"> </span><span class="vg">list</span><span class="w"> </span><span class="vg">item</span><span class="o">.</span><span class="w"> </span><span class="vg">You</span><span class="c1">&#39;re</span>
+<span class="vg">only</span><span class="w"> </span><span class="vg">required</span><span class="w"> </span><span class="vg">to</span><span class="w"> </span><span class="vg">indent</span><span class="w"> </span><span class="vg">the</span><span class="w"> </span><span class="vg">first</span><span class="w"> </span><span class="vg">line</span><span class="o">.</span><span class="w"> </span><span class="vg">Lorem</span><span class="w"> </span><span class="vg">ipsum</span><span class="w"> </span><span class="vg">dolor</span>
+<span class="vg">sit</span><span class="w"> </span><span class="vg">amet</span><span class="p">,</span><span class="w"> </span><span class="vg">consectetuer</span><span class="w"> </span><span class="vg">adipiscing</span><span class="w"> </span><span class="vg">elit</span><span class="o">.</span>
 
-    This is the second paragraph in the list item. You're
-only required to indent the first line. Lorem ipsum dolor
-sit amet, consectetuer adipiscing elit.
-
-*   Another item in the same list.
-</code></pre>
-
+<span class="o">*</span><span class="w">   </span><span class="vg">Another</span><span class="w"> </span><span class="vg">item</span><span class="w"> </span><span class="vg">in</span><span class="w"> </span><span class="vg">the</span><span class="w"> </span><span class="vg">same</span><span class="w"> </span><span class="vg">list</span><span class="o">.</span>
+</pre></div>
 <p>如果要在列表项目内放进引用，那 <code>&gt;</code> 就需要缩进：</p>
+<div class="highlight"><pre><span class="o">*</span><span class="w">   </span><span class="vg">A</span><span class="w"> </span><span class="vg">list</span><span class="w"> </span><span class="vg">item</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="nl">blockquote:</span>
 
-<pre><code>*   A list item with a blockquote:
-
-    &gt; This is a blockquote
-    &gt; inside a list item.
-</code></pre>
-
+<span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="vg">This</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">blockquote</span>
+<span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="vg">inside</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">list</span><span class="w"> </span><span class="vg">item</span><span class="o">.</span>
+</pre></div>
 <p>如果要放代码区块的话，该区块就需要缩进<em>两次</em>，也就是 8 个空格或是 2 个制表符：</p>
+<div class="highlight"><pre><span class="o">*</span><span class="w">   </span><span class="err">一列表项包含一个列表区块：</span>
 
-<pre><code>*   一列表项包含一个列表区块：
-
-        &lt;代码写在这&gt;
-</code></pre>
-
+<span class="w">        </span><span class="o">&lt;</span><span class="err">代码写在这</span><span class="o">&gt;</span>
+</pre></div>
 <p>当然，项目列表很可能会不小心产生，像是下面这样的写法：</p>
-
-<pre><code>1986. What a great season.
-</code></pre>
-
+<div class="highlight"><pre><span class="nl">1986</span><span class="o">.</span><span class="w"> </span><span class="vg">What</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">great</span><span class="w"> </span><span class="vg">season</span><span class="o">.</span>
+</pre></div>
 <p>换句话说，也就是在行首出现<em>数字-句点-空白</em>，要避免这样的状况，你可以在句点前面加上反斜杠。</p>
-
-<pre><code>1986\. What a great season.
-</code></pre>
-
+<div class="highlight"><pre><span class="nl">1986</span><span class="o">\.</span><span class="w"> </span><span class="vg">What</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">great</span><span class="w"> </span><span class="vg">season</span><span class="o">.</span>
+</pre></div>
 <h3 id="precode">代码区块</h3>
 
 <p>和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是照原来的样子显示，Markdown 会用 <code>&lt;pre&gt;</code> 和 <code>&lt;code&gt;</code> 标签来把代码区块包起来。</p>
 
 <p>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：</p>
+<div class="highlight"><pre><span class="err">这是一个普通段落：</span>
 
-<pre><code>这是一个普通段落：
-
-    这是一个代码区块。
-</code></pre>
-
+<span class="w">    </span><span class="err">这是一个代码区块。</span>
+</pre></div>
 <p>Markdown 会转换成：</p>
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>这是一个普通段落：<span class="nt">&lt;/p&gt;</span>
 
-<pre><code>&lt;p&gt;这是一个普通段落：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;这是一个代码区块。
-&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
-
+<span class="nt">&lt;pre&gt;&lt;code&gt;</span>这是一个代码区块。
+<span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</pre></div>
 <p>这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：</p>
+<div class="highlight"><pre><span class="vg">Here</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">an</span><span class="w"> </span><span class="vg">example</span><span class="w"> </span><span class="vg">of</span><span class="w"> </span><span class="nl">AppleScript:</span>
 
-<pre><code>Here is an example of AppleScript:
-
-    tell application "Foo"
-        beep
-    end tell
-</code></pre>
-
+<span class="w">    </span><span class="vg">tell</span><span class="w"> </span><span class="vg">application</span><span class="w"> </span><span class="s2">&quot;Foo&quot;</span>
+<span class="w">        </span><span class="vg">beep</span>
+<span class="w">    </span><span class="vg">end</span><span class="w"> </span><span class="vg">tell</span>
+</pre></div>
 <p>会被转换为：</p>
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Here is an example of AppleScript:<span class="nt">&lt;/p&gt;</span>
 
-<pre><code>&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tell application "Foo"
+<span class="nt">&lt;pre&gt;&lt;code&gt;</span>tell application &quot;Foo&quot;
     beep
 end tell
-&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
-
+<span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</pre></div>
 <p>一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。</p>
 
 <p>在代码区块里面， <code>&amp;</code> 、 <code>&lt;</code> 和 <code>&gt;</code> 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：</p>
-
-<pre><code>    &lt;div class="footer"&gt;
-        &amp;copy; 2004 Foo Corporation
-    &lt;/div&gt;
-</code></pre>
-
+<div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;footer&quot;</span><span class="nt">&gt;</span>
+        <span class="ni">&amp;copy;</span> 2004 Foo Corporation
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div>
 <p>会被转换为：</p>
-
-<pre><code>&lt;pre&gt;&lt;code&gt;&amp;lt;div class="footer"&amp;gt;
-    &amp;amp;copy; 2004 Foo Corporation
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>div class=&quot;footer&quot;<span class="ni">&amp;gt;</span>
+    <span class="ni">&amp;amp;</span>copy; 2004 Foo Corporation
+<span class="ni">&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+<span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</pre></div>
 <p>代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。</p>
 
 <h3 id="hr">分隔线</h3>
 
 <p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<div class="highlight"><pre><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span>
 
-<pre><code>* * *
+<span class="o">***</span>
 
-***
+<span class="o">*****</span>
 
-*****
+<span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span>
 
-- - -
-
----------------------------------------
-</code></pre>
-
-<hr />
+<span class="o">---------------------------------------</span>
+</pre></div>
+<hr>
 
 <h2 id="span">区段元素</h2>
 
@@ -578,136 +522,100 @@ end tell
 <p>不管是哪一种，链接文字都是用 [方括号] 来标记。</p>
 
 <p>要建立一个<em>行内式</em>的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：</p>
+<div class="highlight"><pre><span class="n">This</span> <span class="n">is</span> <span class="p">[</span><span class="n">an</span> <span class="n">example</span><span class="p">](</span><span class="nl">http</span><span class="p">:</span><span class="c1">//example.com/ &quot;Title&quot;) inline link.</span>
 
-<pre><code>This is [an example](http://example.com/ "Title") inline link.
-
-[This link](http://example.net/) has no title attribute.
-</code></pre>
-
+<span class="p">[</span><span class="n">This</span> <span class="n">link</span><span class="p">](</span><span class="nl">http</span><span class="p">:</span><span class="c1">//example.net/) has no title attribute.</span>
+</pre></div>
 <p>会产生：</p>
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>This is <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://example.com/&quot;</span> <span class="na">title=</span><span class="s">&quot;Title&quot;</span><span class="nt">&gt;</span>
+an example<span class="nt">&lt;/a&gt;</span> inline link.<span class="nt">&lt;/p&gt;</span>
 
-<pre><code>&lt;p&gt;This is &lt;a href="http://example.com/" title="Title"&gt;
-an example&lt;/a&gt; inline link.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://example.net/"&gt;This link&lt;/a&gt; has no
-title attribute.&lt;/p&gt;
-</code></pre>
-
+<span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://example.net/&quot;</span><span class="nt">&gt;</span>This link<span class="nt">&lt;/a&gt;</span> has no
+title attribute.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
 <p>如果你是要链接到同样主机的资源，你可以使用相对路径：</p>
-
-<pre><code>See my [About](/about/) page for details.   
-</code></pre>
-
+<div class="highlight"><pre><span class="vg">See</span><span class="w"> </span><span class="vg">my</span><span class="w"> </span><span class="p">[</span><span class="vg">About</span><span class="p">](</span><span class="o">/</span><span class="vg">about</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="vg">page</span><span class="w"> </span><span class="vg">for</span><span class="w"> </span><span class="vg">details</span><span class="o">.</span><span class="w">   </span>
+</pre></div>
 <p><em>参考式</em>的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记：</p>
-
-<pre><code>This is [an example][id] reference-style link.
-</code></pre>
-
+<div class="highlight"><pre><span class="n">This</span> <span class="n">is</span> <span class="p">[</span><span class="n">an</span> <span class="n">example</span><span class="p">][</span><span class="kt">id</span><span class="p">]</span> <span class="n">reference</span><span class="o">-</span><span class="n">style</span> <span class="n">link</span><span class="p">.</span>
+</pre></div>
 <p>你也可以选择性地在两个方括号中间加上一个空格：</p>
-
-<pre><code>This is [an example] [id] reference-style link.
-</code></pre>
-
+<div class="highlight"><pre><span class="n">This</span> <span class="n">is</span> <span class="p">[</span><span class="n">an</span> <span class="n">example</span><span class="p">]</span> <span class="p">[</span><span class="kt">id</span><span class="p">]</span> <span class="n">reference</span><span class="o">-</span><span class="n">style</span> <span class="n">link</span><span class="p">.</span>
+</pre></div>
 <p>接着，在文件的任意处，你可以把这个标记的链接内容定义出来：</p>
-
-<pre><code>[id]: http://example.com/  "Optional Title Here"
-</code></pre>
-
+<div class="highlight"><pre><span class="cp">[</span><span class="nx">id</span><span class="cp">]</span><span class="x">: http://example.com/  &quot;Optional Title Here&quot;</span>
+</pre></div>
 <p>链接内容定义的形式为：</p>
 
 <ul>
-  <li>方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字</li>
-  <li>接着一个冒号</li>
-  <li>接着一个以上的空格或制表符</li>
-  <li>接着链接的网址</li>
-  <li>选择性地接着 title 内容，可以用单引号、双引号或是括弧包着</li>
+<li>  方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字</li>
+<li>  接着一个冒号</li>
+<li>  接着一个以上的空格或制表符</li>
+<li>  接着链接的网址</li>
+<li>  选择性地接着 title 内容，可以用单引号、双引号或是括弧包着</li>
 </ul>
 
 <p>下面这三种链接的定义都是相同：</p>
-
-<pre><code>[foo]: http://example.com/  "Optional Title Here"
-[foo]: http://example.com/  'Optional Title Here'
-[foo]: http://example.com/  (Optional Title Here)
-</code></pre>
-
+<div class="highlight"><pre><span class="cp">[</span><span class="nx">foo</span><span class="cp">]</span><span class="x">: http://example.com/  &quot;Optional Title Here&quot;</span>
+<span class="cp">[</span><span class="nx">foo</span><span class="cp">]</span><span class="x">: http://example.com/  &#39;Optional Title Here&#39;</span>
+<span class="cp">[</span><span class="nx">foo</span><span class="cp">]</span><span class="x">: http://example.com/  (Optional Title Here)</span>
+</pre></div>
 <p><strong>请注意：</strong>有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title。</p>
 
 <p>链接网址也可以用方括号包起来：</p>
-
-<pre><code>[id]: &lt;http://example.com/&gt;  "Optional Title Here"
-</code></pre>
-
+<div class="highlight"><pre><span class="cp">[</span><span class="nx">id</span><span class="cp">]</span><span class="x">: &lt;http://example.com/&gt;  &quot;Optional Title Here&quot;</span>
+</pre></div>
 <p>你也可以把 title 属性放到下一行，也可以加一些缩进，若网址太长的话，这样会比较好看：</p>
-
-<pre><code>[id]: http://example.com/longish/path/to/resource/here
-    "Optional Title Here"
-</code></pre>
-
+<div class="highlight"><pre><span class="cp">[</span><span class="nx">id</span><span class="cp">]</span><span class="x">: http://example.com/longish/path/to/resource/here</span>
+<span class="x">    &quot;Optional Title Here&quot;</span>
+</pre></div>
 <p>网址定义只有在产生链接的时候用到，并不会直接出现在文件之中。</p>
 
 <p>链接辨别标签可以有字母、数字、空白和标点符号，但是并<em>不</em>区分大小写，因此下面两个链接是一样的：</p>
-
-<pre><code>[link text][a]
-[link text][A]
-</code></pre>
-
-<p><em>隐式链接标记</em>功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 “Google” 链接到 google.com，你可以简化成：</p>
-
-<pre><code>[Google][]
-</code></pre>
-
+<div class="highlight"><pre><span class="k">[link text][a]</span>
+<span class="k">[link text][A]</span>
+</pre></div>
+<p><em>隐式链接标记</em>功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 &quot;Google&quot; 链接到 google.com，你可以简化成：</p>
+<div class="highlight"><pre><span class="k">[Google][]</span>
+</pre></div>
 <p>然后定义链接内容：</p>
-
-<pre><code>[Google]: http://google.com/
-</code></pre>
-
+<div class="highlight"><pre><span class="cp">[</span><span class="nx">Google</span><span class="cp">]</span><span class="x">: http://google.com/</span>
+</pre></div>
 <p>由于链接文字可能包含空白，所以这种简化型的标记内也许包含多个单词：</p>
-
-<pre><code>Visit [Daring Fireball][] for more information.
-</code></pre>
-
+<div class="highlight"><pre><span class="n">Visit</span> <span class="p">[</span><span class="n">Daring</span> <span class="n">Fireball</span><span class="p">][]</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="p">.</span>
+</pre></div>
 <p>然后接着定义链接：</p>
-
-<pre><code>[Daring Fireball]: http://daringfireball.net/
-</code></pre>
-
+<div class="highlight"><pre><span class="p">[</span><span class="n">Daring</span> <span class="n">Fireball</span><span class="p">]</span><span class="o">:</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//daringfireball.net/</span>
+</pre></div>
 <p>链接的定义可以放在文件中的任何一个地方，我比较偏好直接放在链接出现段落的后面，你也可以把它放在文件最后面，就像是注解一样。</p>
 
 <p>下面是一个参考式链接的范例：</p>
+<div class="highlight"><pre><span class="vg">I</span><span class="w"> </span><span class="vg">get</span><span class="w"> </span><span class="il">10</span><span class="w"> </span><span class="vg">times</span><span class="w"> </span><span class="vg">more</span><span class="w"> </span><span class="vg">traffic</span><span class="w"> </span><span class="vg">from</span><span class="w"> </span><span class="p">[</span><span class="vg">Google</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="il">1</span><span class="p">]</span><span class="w"> </span><span class="vg">than</span><span class="w"> </span><span class="vg">from</span>
+<span class="p">[</span><span class="vg">Yahoo</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="il">2</span><span class="p">]</span><span class="w"> </span><span class="vg">or</span><span class="w"> </span><span class="p">[</span><span class="vg">MSN</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="il">3</span><span class="p">]</span><span class="o">.</span>
 
-<pre><code>I get 10 times more traffic from [Google] [1] than from
-[Yahoo] [2] or [MSN] [3].
-
-  [1]: http://google.com/        "Google"
-  [2]: http://search.yahoo.com/  "Yahoo Search"
-  [3]: http://search.msn.com/    "MSN Search"
-</code></pre>
-
+<span class="w">  </span><span class="p">[</span><span class="il">1</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nl">http:</span><span class="o">//</span><span class="vg">google</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="w">        </span><span class="s2">&quot;Google&quot;</span>
+<span class="w">  </span><span class="p">[</span><span class="il">2</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nl">http:</span><span class="o">//</span><span class="vg">search</span><span class="o">.</span><span class="vg">yahoo</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="w">  </span><span class="s2">&quot;Yahoo Search&quot;</span>
+<span class="w">  </span><span class="p">[</span><span class="il">3</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nl">http:</span><span class="o">//</span><span class="vg">search</span><span class="o">.</span><span class="vg">msn</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="w">    </span><span class="s2">&quot;MSN Search&quot;</span>
+</pre></div>
 <p>如果改成用链接名称的方式写：</p>
+<div class="highlight"><pre><span class="vg">I</span><span class="w"> </span><span class="vg">get</span><span class="w"> </span><span class="il">10</span><span class="w"> </span><span class="vg">times</span><span class="w"> </span><span class="vg">more</span><span class="w"> </span><span class="vg">traffic</span><span class="w"> </span><span class="vg">from</span><span class="w"> </span><span class="p">[</span><span class="vg">Google</span><span class="p">][]</span><span class="w"> </span><span class="vg">than</span><span class="w"> </span><span class="vg">from</span>
+<span class="p">[</span><span class="vg">Yahoo</span><span class="p">][]</span><span class="w"> </span><span class="vg">or</span><span class="w"> </span><span class="p">[</span><span class="vg">MSN</span><span class="p">][]</span><span class="o">.</span>
 
-<pre><code>I get 10 times more traffic from [Google][] than from
-[Yahoo][] or [MSN][].
-
-  [google]: http://google.com/        "Google"
-  [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
-  [msn]:    http://search.msn.com/    "MSN Search"
-</code></pre>
-
+<span class="w">  </span><span class="p">[</span><span class="vg">google</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nl">http:</span><span class="o">//</span><span class="vg">google</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="w">        </span><span class="s2">&quot;Google&quot;</span>
+<span class="w">  </span><span class="p">[</span><span class="vg">yahoo</span><span class="p">]</span><span class="o">:</span><span class="w">  </span><span class="nl">http:</span><span class="o">//</span><span class="vg">search</span><span class="o">.</span><span class="vg">yahoo</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="w">  </span><span class="s2">&quot;Yahoo Search&quot;</span>
+<span class="w">  </span><span class="p">[</span><span class="vg">msn</span><span class="p">]</span><span class="o">:</span><span class="w">    </span><span class="nl">http:</span><span class="o">//</span><span class="vg">search</span><span class="o">.</span><span class="vg">msn</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="w">    </span><span class="s2">&quot;MSN Search&quot;</span>
+</pre></div>
 <p>上面两种写法都会产生下面的 HTML。</p>
-
-<pre><code>&lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com/"
-title="Google"&gt;Google&lt;/a&gt; than from
-&lt;a href="http://search.yahoo.com/" title="Yahoo Search"&gt;Yahoo&lt;/a&gt;
-or &lt;a href="http://search.msn.com/" title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>I get 10 times more traffic from <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://google.com/&quot;</span>
+<span class="na">title=</span><span class="s">&quot;Google&quot;</span><span class="nt">&gt;</span>Google<span class="nt">&lt;/a&gt;</span> than from
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://search.yahoo.com/&quot;</span> <span class="na">title=</span><span class="s">&quot;Yahoo Search&quot;</span><span class="nt">&gt;</span>Yahoo<span class="nt">&lt;/a&gt;</span>
+or <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://search.msn.com/&quot;</span> <span class="na">title=</span><span class="s">&quot;MSN Search&quot;</span><span class="nt">&gt;</span>MSN<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
 <p>下面是用行内式写的同样一段内容的 Markdown 文件，提供作为比较之用：</p>
-
-<pre><code>I get 10 times more traffic from [Google](http://google.com/ "Google")
-than from [Yahoo](http://search.yahoo.com/ "Yahoo Search") or
-[MSN](http://search.msn.com/ "MSN Search").
-</code></pre>
-
+<div class="highlight"><pre><span class="vg">I</span><span class="w"> </span><span class="vg">get</span><span class="w"> </span><span class="il">10</span><span class="w"> </span><span class="vg">times</span><span class="w"> </span><span class="vg">more</span><span class="w"> </span><span class="vg">traffic</span><span class="w"> </span><span class="vg">from</span><span class="w"> </span><span class="p">[</span><span class="vg">Google</span><span class="p">](</span><span class="nl">http:</span><span class="o">//</span><span class="vg">google</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="w"> </span><span class="s2">&quot;Google&quot;</span><span class="p">)</span>
+<span class="vg">than</span><span class="w"> </span><span class="vg">from</span><span class="w"> </span><span class="p">[</span><span class="vg">Yahoo</span><span class="p">](</span><span class="nl">http:</span><span class="o">//</span><span class="vg">search</span><span class="o">.</span><span class="vg">yahoo</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="w"> </span><span class="s2">&quot;Yahoo Search&quot;</span><span class="p">)</span><span class="w"> </span><span class="vg">or</span>
+<span class="p">[</span><span class="vg">MSN</span><span class="p">](</span><span class="nl">http:</span><span class="o">//</span><span class="vg">search</span><span class="o">.</span><span class="vg">msn</span><span class="o">.</span><span class="vg">com</span><span class="o">/</span><span class="w"> </span><span class="s2">&quot;MSN Search&quot;</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
 <p>参考式的链接其实重点不在于它比较好写，而是它比较好读，比较一下上面的范例，使用参考式的文章本身只有 81 个字符，但是用行内形式的却会增加到 176 个字元，如果是用纯 HTML 格式来写，会有 234 个字元，在 HTML 格式中，标签比文本还要多。</p>
 
 <p>使用 Markdown 的参考式链接，可以让文件更像是浏览器最后产生的结果，让你可以把一些标记相关的元数据移到段落文字之外，你就可以增加链接而不让文章的阅读感觉被打断。</p>
@@ -715,98 +623,70 @@ than from [Yahoo](http://search.yahoo.com/ "Yahoo Search") or
 <h3 id="em">强调</h3>
 
 <p>Markdown 使用星号（<code>*</code>）和底线（<code>_</code>）作为标记强调字词的符号，被 <code>*</code> 或 <code>_</code> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 <code>*</code> 或 <code>_</code> 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：</p>
+<div class="highlight"><pre><span class="o">*</span><span class="vg">single</span><span class="w"> </span><span class="vg">asterisks</span><span class="o">*</span>
 
-<pre><code>*single asterisks*
+<span class="vg">_single</span><span class="w"> </span><span class="vg">underscores_</span>
 
-_single underscores_
+<span class="o">**</span><span class="vg">double</span><span class="w"> </span><span class="vg">asterisks</span><span class="o">**</span>
 
-**double asterisks**
-
-__double underscores__
-</code></pre>
-
+<span class="vg">__double</span><span class="w"> </span><span class="vg">underscores__</span>
+</pre></div>
 <p>会转成：</p>
+<div class="highlight"><pre><span class="nt">&lt;em&gt;</span>single asterisks<span class="nt">&lt;/em&gt;</span>
 
-<pre><code>&lt;em&gt;single asterisks&lt;/em&gt;
+<span class="nt">&lt;em&gt;</span>single underscores<span class="nt">&lt;/em&gt;</span>
 
-&lt;em&gt;single underscores&lt;/em&gt;
+<span class="nt">&lt;strong&gt;</span>double asterisks<span class="nt">&lt;/strong&gt;</span>
 
-&lt;strong&gt;double asterisks&lt;/strong&gt;
-
-&lt;strong&gt;double underscores&lt;/strong&gt;
-</code></pre>
-
+<span class="nt">&lt;strong&gt;</span>double underscores<span class="nt">&lt;/strong&gt;</span>
+</pre></div>
 <p>你可以随便用你喜欢的样式，唯一的限制是，你用什么符号开启标签，就要用什么符号结束。</p>
 
 <p>强调也可以直接插在文字中间：</p>
-
-<pre><code>un*frigging*believable
-</code></pre>
-
+<div class="highlight"><pre><span class="vg">un</span><span class="o">*</span><span class="vg">frigging</span><span class="o">*</span><span class="vg">believable</span>
+</pre></div>
 <p>但是<strong>如果你的 <code>*</code> 和 <code>_</code> 两边都有空白的话，它们就只会被当成普通的符号</strong>。</p>
 
 <p>如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：</p>
-
-<pre><code>\*this text is surrounded by literal asterisks\*
-</code></pre>
-
+<div class="highlight"><pre><span class="o">\*</span><span class="vg">this</span><span class="w"> </span><span class="vg">text</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">surrounded</span><span class="w"> </span><span class="vg">by</span><span class="w"> </span><span class="vg">literal</span><span class="w"> </span><span class="vg">asterisks</span><span class="o">\*</span>
+</pre></div>
 <h3 id="code">代码</h3>
 
 <p>如果要标记一小段行内代码，你可以用反引号把它包起来（<code>`</code>），例如：</p>
-
-<pre><code>Use the `printf()` function.
-</code></pre>
-
+<div class="highlight"><pre><span class="vg">Use</span><span class="w"> </span><span class="vg">the</span><span class="w"> </span><span class="err">`</span><span class="vg">printf</span><span class="p">()</span><span class="err">`</span><span class="w"> </span><span class="vg">function</span><span class="o">.</span>
+</pre></div>
 <p>会产生：</p>
-
-<pre><code>&lt;p&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/p&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Use the <span class="nt">&lt;code&gt;</span>printf()<span class="nt">&lt;/code&gt;</span> function.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
 <p>如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：</p>
-
-<pre><code>``There is a literal backtick (`) here.``
-</code></pre>
-
+<div class="highlight"><pre><span class="err">``</span><span class="vg">There</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">literal</span><span class="w"> </span><span class="vg">backtick</span><span class="w"> </span><span class="p">(</span><span class="err">`</span><span class="p">)</span><span class="w"> </span><span class="vg">here</span><span class="o">.</span><span class="err">``</span>
+</pre></div>
 <p>这段语法会产生：</p>
-
-<pre><code>&lt;p&gt;&lt;code&gt;There is a literal backtick (`) here.&lt;/code&gt;&lt;/p&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="nt">&lt;p&gt;&lt;code&gt;</span>There is a literal backtick (`) here.<span class="nt">&lt;/code&gt;&lt;/p&gt;</span>
+</pre></div>
 <p>代码区段的起始和结束端都可以放入一个空白，起始端后面一个，结束端前面一个，这样你就可以在区段的一开始就插入反引号：</p>
+<div class="highlight"><pre><span class="vg">A</span><span class="w"> </span><span class="vg">single</span><span class="w"> </span><span class="vg">backtick</span><span class="w"> </span><span class="vg">in</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">code</span><span class="w"> </span><span class="nl">span:</span><span class="w"> </span><span class="err">``</span><span class="w"> </span><span class="err">`</span><span class="w"> </span><span class="err">``</span>
 
-<pre><code>A single backtick in a code span: `` ` ``
-
-A backtick-delimited string in a code span: `` `foo` ``
-</code></pre>
-
+<span class="vg">A</span><span class="w"> </span><span class="vg">backtick</span><span class="o">-</span><span class="vg">delimited</span><span class="w"> </span><span class="vg">string</span><span class="w"> </span><span class="vg">in</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">code</span><span class="w"> </span><span class="nl">span:</span><span class="w"> </span><span class="err">``</span><span class="w"> </span><span class="err">`</span><span class="vg">foo</span><span class="err">`</span><span class="w"> </span><span class="err">``</span>
+</pre></div>
 <p>会产生：</p>
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>A single backtick in a code span: <span class="nt">&lt;code&gt;</span>`<span class="nt">&lt;/code&gt;&lt;/p&gt;</span>
 
-<pre><code>&lt;p&gt;A single backtick in a code span: &lt;code&gt;`&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;A backtick-delimited string in a code span: &lt;code&gt;`foo`&lt;/code&gt;&lt;/p&gt;
-</code></pre>
-
+<span class="nt">&lt;p&gt;</span>A backtick-delimited string in a code span: <span class="nt">&lt;code&gt;</span>`foo`<span class="nt">&lt;/code&gt;&lt;/p&gt;</span>
+</pre></div>
 <p>在代码区段内，<code>&amp;</code> 和方括号<strong>都</strong>会被自动地转成 HTML 实体，这使得插入 HTML 原始码变得很容易，Markdown 会把下面这段：</p>
-
-<pre><code>Please don't use any `&lt;blink&gt;` tags.
-</code></pre>
-
+<div class="highlight"><pre><span class="vg">Please</span><span class="w"> </span><span class="vg">don</span><span class="c1">&#39;t use any `&lt;blink&gt;` tags.</span>
+</pre></div>
 <p>转为：</p>
-
-<pre><code>&lt;p&gt;Please don't use any &lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Please don&#39;t use any <span class="nt">&lt;code&gt;</span><span class="ni">&amp;lt;</span>blink<span class="ni">&amp;gt;</span><span class="nt">&lt;/code&gt;</span> tags.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
 <p>你也可以这样写：</p>
-
-<pre><code>`&amp;#8212;` is the decimal-encoded equivalent of `&amp;mdash;`.
-</code></pre>
-
+<div class="highlight"><pre><span class="err">`</span><span class="o">&amp;</span><span class="err">#</span><span class="il">8212</span><span class="p">;</span><span class="err">`</span><span class="w"> </span><span class="vg">is</span><span class="w"> </span><span class="vg">the</span><span class="w"> </span><span class="vg">decimal</span><span class="o">-</span><span class="vg">encoded</span><span class="w"> </span><span class="vg">equivalent</span><span class="w"> </span><span class="vg">of</span><span class="w"> </span><span class="err">`</span><span class="o">&amp;</span><span class="vg">mdash</span><span class="p">;</span><span class="err">`</span><span class="o">.</span>
+</pre></div>
 <p>以产生：</p>
-
-<pre><code>&lt;p&gt;&lt;code&gt;&amp;amp;#8212;&lt;/code&gt; is the decimal-encoded
-equivalent of &lt;code&gt;&amp;amp;mdash;&lt;/code&gt;.&lt;/p&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="nt">&lt;p&gt;&lt;code&gt;</span><span class="ni">&amp;amp;</span>#8212;<span class="nt">&lt;/code&gt;</span> is the decimal-encoded
+equivalent of <span class="nt">&lt;code&gt;</span><span class="ni">&amp;amp;</span>mdash;<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
 <h3 id="img">图片</h3>
 
 <p>很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。</p>
@@ -814,488 +694,93 @@ equivalent of &lt;code&gt;&amp;amp;mdash;&lt;/code&gt;.&lt;/p&gt;
 <p>Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： <em>行内式</em>和<em>参考式</em>。</p>
 
 <p>行内式的图片语法看起来像是：</p>
+<div class="highlight"><pre><span class="o">!</span><span class="p">[</span><span class="n">Alt</span> <span class="n">text</span><span class="p">](</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">img</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
 
-<pre><code>![Alt text](/path/to/img.jpg)
-
-![Alt text](/path/to/img.jpg "Optional title")
-</code></pre>
-
+<span class="o">!</span><span class="p">[</span><span class="n">Alt</span> <span class="n">text</span><span class="p">](</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">img</span><span class="p">.</span><span class="n">jpg</span> <span class="s">&quot;Optional title&quot;</span><span class="p">)</span>
+</pre></div>
 <p>详细叙述如下：</p>
 
 <ul>
-  <li>一个惊叹号 <code>!</code></li>
-  <li>接着一个方括号，里面放上图片的替代文字</li>
-  <li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上
-选择性的 ‘title’ 文字。</li>
+<li>  一个惊叹号 <code>!</code></li>
+<li>  接着一个方括号，里面放上图片的替代文字</li>
+<li>  接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上
+选择性的 &#39;title&#39; 文字。</li>
 </ul>
 
 <p>参考式的图片语法则长得像这样：</p>
-
-<pre><code>![Alt text][id]
-</code></pre>
-
+<div class="highlight"><pre><span class="o">!</span><span class="p">[</span><span class="n">Alt</span> <span class="n">text</span><span class="p">][</span><span class="kt">id</span><span class="p">]</span>
+</pre></div>
 <p>「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：</p>
-
-<pre><code>[id]: url/to/image  "Optional title attribute"
-</code></pre>
-
+<div class="highlight"><pre><span class="cp">[</span><span class="nx">id</span><span class="cp">]</span><span class="x">: url/to/image  &quot;Optional title attribute&quot;</span>
+</pre></div>
 <p>到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 <code>&lt;img&gt;</code> 标签。</p>
 
-<hr />
+<hr>
 
 <h2 id="misc">其它</h2>
 
 <h3 id="autolink">自动链接</h3>
 
 <p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</p>
-
-<pre><code>&lt;http://example.com/&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="o">&lt;</span><span class="nl">http:</span><span class="o">//</span><span class="vg">example</span><span class="o">.</span><span class="vg">com</span><span class="o">/&gt;</span>
+</pre></div>
 <p>Markdown 会转为：</p>
-
-<pre><code>&lt;a href="http://example.com/"&gt;http://example.com/&lt;/a&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://example.com/&quot;</span><span class="nt">&gt;</span>http://example.com/<span class="nt">&lt;/a&gt;</span>
+</pre></div>
 <p>邮址的自动链接也很类似，只是 Markdown 会先做一个编码转换的过程，把文字字符转成 16 进位码的 HTML 实体，这样的格式可以糊弄一些不好的邮址收集机器人，例如：</p>
-
-<pre><code>&lt;address@example.com&gt;
-</code></pre>
-
+<div class="highlight"><pre><span class="o">&lt;</span><span class="vg">address@example</span><span class="o">.</span><span class="vg">com</span><span class="o">&gt;</span>
+</pre></div>
 <p>Markdown 会转成：</p>
-
-<pre><code>&lt;a href="&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;
-&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;
-&amp;#109;"&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;
-&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;
-</code></pre>
-
-<p>在浏览器里面，这段字串（其实是 <code>&lt;a href="mailto:address@example.com"&gt;address@example.com&lt;/a&gt;</code>）会变成一个可以点击的「address@example.com」链接。</p>
+<div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;</span>
+<span class="s">&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;</span>
+<span class="s">&amp;#109;&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;</span>
+<span class="ni">&amp;#109;&amp;#x70;&amp;#x6C;</span>e<span class="ni">&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;</span><span class="nt">&lt;/a&gt;</span>
+</pre></div>
+<p>在浏览器里面，这段字串（其实是 <code>&lt;a href=&quot;mailto:address@example.com&quot;&gt;address@example.com&lt;/a&gt;</code>）会变成一个可以点击的「address@example.com」链接。</p>
 
 <p>（这种作法虽然可以糊弄不少的机器人，但并不能全部挡下来，不过总比什么都不做好些。不管怎样，公开你的信箱终究会引来广告信件的。）</p>
 
 <h3 id="backslash">反斜杠</h3>
 
 <p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 <code>&lt;em&gt;</code> 标签），你可以在星号的前面加上反斜杠：</p>
-
-<pre><code>\*literal asterisks\*
-</code></pre>
-
+<div class="highlight"><pre><span class="o">\*</span><span class="vg">literal</span><span class="w"> </span><span class="vg">asterisks</span><span class="o">\*</span>
+</pre></div>
 <p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
-
-<pre><code>\   反斜线
-`   反引号
-*   星号
-_   底线
-{}  花括号
-[]  方括号
-()  括弧
-#   井字号
-+   加号
--   减号
-.   英文句点
-!   惊叹号
-</code></pre>
-
+<div class="highlight"><pre><span class="o">\</span><span class="w">   </span><span class="err">反斜线</span>
+<span class="err">`</span><span class="w">   </span><span class="err">反引号</span>
+<span class="o">*</span><span class="w">   </span><span class="err">星号</span>
+<span class="vg">_</span><span class="w">   </span><span class="err">底线</span>
+<span class="p">{}</span><span class="w">  </span><span class="err">花括号</span>
+<span class="p">[]</span><span class="w">  </span><span class="err">方括号</span>
+<span class="p">()</span><span class="w">  </span><span class="err">括弧</span>
+<span class="err">#</span><span class="w">   </span><span class="err">井字号</span>
+<span class="o">+</span><span class="w">   </span><span class="err">加号</span>
+<span class="o">-</span><span class="w">   </span><span class="err">减号</span>
+<span class="o">.</span><span class="w">   </span><span class="err">英文句点</span>
+<span class="o">!</span><span class="w">   </span><span class="err">惊叹号</span>
+</pre></div>
 <h2 id="acknowledgement">感谢</h2>
 
 <p>感谢 <a href="https://twitter.com/#!/leafy7382">leafy7382</a> 协助翻译，<a href="http://iamhlb.com/">hlb</a>、<a href="http://twitter.com/randylien">Randylien</a> 帮忙润稿，<a href="https://twitter.com/#!/ethantw">ethantw</a> 的<a href="http://ethantw.net/projects/han/">汉字标准格式・CSS Reset</a>， <a href="http://kidwm.net/">WM</a> 回报文字错误。</p>
 
 <p>感谢 <a href="https://github.com/fenprace">fenprace</a>，<a href="https://github.com/addv">addv</a>。</p>
 
-
-		  </article>
-		<hr>
-	<br/>
-	<div style="margin-top:10px;margin-bottom:10px">
+			          	</article>
+			        </div>
+					</div>
+	      </body>
+	    </html>
+			<script type="text/javascript" src="/var/lib/gems/1.9.1/gems/tocmd-0.4.1/vendor/toc/js/jquery-1.4.4.min.js"></script>
+			<script type="text/javascript" src="/var/lib/gems/1.9.1/gems/tocmd-0.4.1/vendor/toc/js/jquery.ztree.all-3.5.min.js"></script>
+			<script type="text/javascript" src="/var/lib/gems/1.9.1/gems/tocmd-0.4.1/vendor/toc/js/ztree_toc.js"></script>
+			<SCRIPT type="text/javascript" >
+			<!--
+			$(document).ready(function(){
+				$('#tree').ztree_toc({
+					is_auto_number:true,
+					documment_selector:'.markdown-body'
+				});
+			});
+			//-->
+			</SCRIPT>
 	  
-	  <span class="next">
-	    上篇：
-	    <a href="/blog/2014/07/markdown-syntax.html">
-	      Markdown Syntax
-	    </a>
-	  </span>
-	   
-	  
-	  <span class="prev">
-	    下篇：
-	    <a href="/blog/2014/07/qualified-programmer-should-read-what-books.html">
-	      一个合格的程序员应该读过哪些书
-	    </a>
-	  </span>
-	  
-	</div>
-	</div>
-	
-        
-	<div post-cate="programming">
-          <ul class="posts">
-            
-              
-                
-              
-            
-              
-                
-		<li>
-                  <a href="/blog/2014/07/qualified-programmer-should-read-what-books.html" class="post-list-item">
-                    <h2>一个合格的程序员应该读过哪些书</h2>
-                    <span class="date">Jul 15, 2014</span>
-                  </a>
-		</li>
-                
-              
-                
-		<li>
-                  <a href="/blog/2014/07/c-advanced-programming.html" class="post-list-item">
-                    <h2>C语言高级编程指南</h2>
-                    <span class="date">Jul 5, 2014</span>
-                  </a>
-		</li>
-                
-              
-            
-          </ul>
-	</div>
-        
-	<div post-cate="jekyll">
-          <ul class="posts">
-            
-              
-                
-              
-            
-              
-                
-		<li>
-                  <a href="/blog/2014/07/use-jekyll-build-blog-on-github.html" class="post-list-item">
-                    <h2>使用jekyll在Github上搭建博客</h2>
-                    <span class="date">Jul 15, 2014</span>
-                  </a>
-		</li>
-                
-              
-                
-		<li>
-                  <a href="/blog/2014/07/markdown-syntax.html" class="post-list-item">
-                    <h2>Markdown 语法 (简体中文版)</h2>
-                    <span class="date">Jul 11, 2014</span>
-                  </a>
-		</li>
-                
-              
-                
-		<li>
-                  <a href="/blog/2014/07/markdown-basics.html" class="post-list-item">
-                    <h2>markdown 快速入门</h2>
-                    <span class="date">Jul 10, 2014</span>
-                  </a>
-		</li>
-                
-              
-            
-          </ul>
-	</div>
-        
-	<div post-cate="java">
-          <ul class="posts">
-            
-              
-                
-              
-            
-              
-                
-		<li>
-                  <a href="/blog/2014/08/java-multithread.html" class="post-list-item">
-                    <h2>java并发和多线程</h2>
-                    <span class="date">Aug 2, 2014</span>
-                  </a>
-		</li>
-                
-              
-            
-          </ul>
-	</div>
-        
-	<div post-cate="life">
-          <ul class="posts">
-            
-              
-                
-              
-            
-              
-                
-		<li>
-                  <a href="/blog/2015/12/just-a-test.html" class="post-list-item">
-                    <h2>hello,world</h2>
-                    <span class="date">Dec 2, 2015</span>
-                  </a>
-		</li>
-                
-              
-            
-          </ul>
-	</div>
-        
-	<div post-cate="graduation">
-          <ul class="posts">
-            
-              
-                
-              
-            
-              
-                
-		<li>
-                  <a href="/blog/2015/12/android-jni-parsec.html" class="post-list-item">
-                    <h2>parsec3.0 android JNI</h2>
-                    <span class="date">Dec 14, 2015</span>
-                  </a>
-		</li>
-                
-              
-                
-		<li>
-                  <a href="/blog/2015/12/graduation-thesis-framework.html" class="post-list-item">
-                    <h2>毕业论文的目录框架</h2>
-                    <span class="date">Dec 8, 2015</span>
-                  </a>
-		</li>
-                
-              
-            
-          </ul>
-	</div>
-        
-	 </div>
-
-</div>
-
-
-<!-- Blog Comments -->
-<div class="media">
-  <!-- 多说评论框 start -->
-  <div class="post-comment">
-            <span>Comments</span>
-	<div class="ds-thread" data-thread-key="/blog/2014/07/markdown-syntax" data-title="Markdown 语法 (简体中文版)" data-url="heguixiang.github.io/blog/2014/07/markdown-syntax.html">
-	</div>
- </div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"heguixiang"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
-
- 
-</div> 
-</div>
-
-        </div>
-
-	 <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
-	      <a href="javascript:;">
-		<div class="arrow"></div>
-		<div class="stick"></div>
-	      </a>
-	    </div>
-
-        <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
-          <!-- Blog Search Well -->  
-	
-                    <div class="shadow-corner-curl hidden-xs">
-	  <div class="categories-list-header">站内搜索</div>
-<!-- 使用该代码即表示您同意接受 Google 自定义搜索服务条款。 -->
-<!-- 有关服务条款，请访问 http://www.google.com/cse/docs/tos.html?hl=zh-CN -->
-<form name="cse" id="searchbox_demo" action="/search.html">
-  <input type="hidden" name="cref" value="" />
-  <input type="hidden" name="ie" value="utf-8" />
-  <input type="hidden" name="hl" value="zh-CN" />
-  <input name="q" type="text" size="30" />
-  <input type="submit" name="sa" value="搜索" /> 
-</form>
-<script type="text/javascript" src="http://www.google.com/cse/tools/onthefly?form=searchbox_demo&lang=zh-CN"></script>			      
-     
-            
-</div>
-
-
-
-
-
-
-
-
-          <!-- Blog Categories Well -->
-              
-
-    <div class="shadow-corner-curl hidden-xs">
-      <div class="categories-list-header">
-        Categories
-      </div>
-      
-      <a href="/index.html" class="categories-list-item" cate="All">
-        All<span class="my-badge"> 10</span>
-      </a>
-      
-        <a href="javascript:;" class="categories-list-item" cate="programming">
-          programming <span class="my-badge">2</span>
-        </a>
-      
-        <a href="javascript:;" class="categories-list-item" cate="jekyll">
-          jekyll <span class="my-badge">3</span>
-        </a>
-      
-        <a href="javascript:;" class="categories-list-item" cate="java">
-          java <span class="my-badge">1</span>
-        </a>
-      
-        <a href="javascript:;" class="categories-list-item" cate="life">
-          life <span class="my-badge">1</span>
-        </a>
-      
-        <a href="javascript:;" class="categories-list-item" cate="graduation">
-          graduation <span class="my-badge">2</span>
-        </a>
-      
-    </div>
-
-
-
- 
-         
-              <div class="shadow-corner-curl hidden-xs">
-      <div class="categories-list-header">
-        热门文章
-      </div>
-
- <ul class="list-unstyled">
-      	<li><a href="/blog/2014/07/use-jekyll-build-blog-on-github.html" class="categories-list-item">利用Github-pages建立个人博客</a></li>	
-<li><a href="/blog/2014/07/qualified-programmer-should-read-what-books.html" class="categories-list-item">程序员图书推荐</a></li>
-<li><a href="/blog/2014/07/c-advanced-programming.html" class="categories-list-item">高级c语言</a></li>
-<li><a href="/blog/2014/08/java-multithread.html" class="categories-list-item">Java多线程</a></li>	 
-<li><a href="/blog/2014/07/markdown-basics.html" class="categories-list-item">markdown基础</a></li>	 
-<li><a href="/blog/2014/07/markdown-syntax.html" class="categories-list-item">markdown语法</a></li>	 
-</div>
- 
-       
-                   <div class="shadow-corner-curl hidden-xs">
-      <div class="categories-list-header">
-        相关链接
-      </div>    
- <ul class="list-unstyled">
-              <li>
-                <a href="http://tianna1121.com/" class="categories-list-item">
-                   大师兄网站 
-                </a>
-              </li>
-<li>
-                <a href="http://hello2mao.github.io" class="categories-list-item">
-                   毛宏斌同学博客
-                </a>
-              </li>
-<li>
-                <a href="http://jekyllrb.com/docs/posts/" class="categories-list-item">
-                  Jekyll文档 
-                </a>
-              </li>
-               
-               <li>
-                <a href="http://happyhls.me" class="categories-list-item">
-                   惠立升师兄网站
-                </a>
-              </li>        
-              
-              <li>
-                <a href="http://developer.android.com/" class="categories-list-item">
-                   Android Developer 
-                </a>
-              </li>
-              
-              <li>
-                <a href="http://www.zhibo8.cc" class="categories-list-item">
-                   Basketball
-                </a>
-              </li>
-              <li>
-                <a href="http://bbs.seu.edu.cn/frames.html" class="categories-list-item">
-                   东南大学bbs
-                </a>
-              </li>
-              <li>
-                <a href="http://www.en8848.com.cn/BEC/write/top-500yj/206418.html" class="categories-list-item">
-                   常用英文e-mail大全
-                </a>
-              </li>
-</div>
- 
-
-          <!-- Side Widget Well -->
-           
-        </div>
-      </div>
-
-
-
-      <!-- /.row -->
-      <hr>
-      <!-- Footer -->
-      <footer>
-             <div class="row">
-          <div class="col-lg-12">
-           <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <a href="mailto:guixiang.he@outlook.com"><span class="glyphicon glyphicon-envelope"></span> guixiang.he@outlook.com</a>
-        <span class="point"> · </span>
-        
-          
-          <a href="https://github.com/heguixiang">
-            <span class="icon">
-              <svg viewBox="0 0 16 16">
-                <path fill="#aaa" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
-              </svg>
-            </span>
-            Github
-            <!-- <span></span> -->
-          </a>
-          
-          
-          <span class="point"> · </span>
-          <span><a href="/feed.xml">RSS</a></span>
-          <span class="point"> · </span>
-          <span>快乐生活</span>
-          <span class="point"> · </span>
-          <span>&copy; 2015 Wade.He</span>
-          <span class="point"> · </span>
-          <span>Designed by <a href="https://github.com/heguixiang">wade</a></span>
-
-      </div>
-    </div>
-  </div>
- 
-         </div>
-          <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-              <div style="display:none;"><script src="http://s95.cnzz.com/z_stat.php?id=1254799848&web_id=1254799848" language="JavaScript"></script></div>
- 
-
-      </footer>
-    </div>
-    <!-- /.container -->
-  </body>
-
-</html>
