@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-16T11:03:21+08:00</updated>
+ <updated>2015-12-16T11:04:02+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -163,11 +163,13 @@
 
 &lt;p&gt;创建Thread子类的一个实例并重写run方法，run方法会在调用start()方法之后被执行。例子如下：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;public class MyThread extends Thread {
+&lt;pre&gt;&lt;code&gt;```c
+public class MyThread extends Thread {
    public void run(){
      System.out.println(&quot;MyThread running&quot;);
    }
 }
+```
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;可以用如下方式创建并运行上述Thread子类&lt;/p&gt;
