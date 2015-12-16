@@ -6,7 +6,9 @@ markdown: redcarpet
 redcarpet:
     extensions: [fenced_code_blocks,no_intra_emphasis,strikethrough,no_intra_emphasis,autolink,tables]
 highlights: pygments
-url: http://heguixiang.github.io 
+url: "http://heguixiang.github.io"
+baseurl: "/heguixiang"
+atom-baseurl: "http://heguixang.github.io/heguixiang"
 #cdn_url: 7u2t01.com1.z0.glb.clouddn.com
 #lsi: false
 #safe: true
