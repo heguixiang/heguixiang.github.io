@@ -3,8 +3,6 @@ layout: post
 title: hello,world
 category: life
 tag: test
-toc: true
-tocstartlv: 2
 --- 
 {:toc}
 
