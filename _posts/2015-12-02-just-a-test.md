@@ -8,6 +8,8 @@ tocstartlv: 2
 --- 
 {:toc}
 
+<div class="toc"></div>
+
 ##test1
 这只是一个测试，hello，world，edited by wade,1 
 
