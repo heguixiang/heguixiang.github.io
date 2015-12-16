@@ -29,8 +29,6 @@
 
     /blog/2015/12/just-a-test.html
 
-    /blog/2014/10/android-opensource.html
-
     /blog/2014/08/java-multithread.html
 
     /blog/2014/07/use-jekyll-build-blog-on-github.html
