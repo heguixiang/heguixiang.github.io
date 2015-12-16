@@ -18,12 +18,9 @@ Git查看、删除、重命名远程分支和tag: <http://zengrong.net/post/1746
 5,在线Android等源码：<http://www.grepcode.com/>, <http://androidxref.com/>  
 6,Twitter University: <http://www.bluemobi.cn/>  
 7,网页侧边栏目录制作博客链接:<http://jianshu.com/p/34c92cbd0aaf/>
-<!-- Blog Comments -->
 <div class="media">
-  <!-- UY BEGIN -->
   <div id="uyan_frame">
   </div>
   <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1511840">
   </script>
-  <!-- UY END -->
 </div>
