@@ -121,7 +121,40 @@
 <h3>parsec3.0 streamcluster android JNI</h3>
 
 <p>完成android sdk和android studio 1.4 IDE 版本的安装后，需要在terminal上输入javah -d jni -classpath时发现总是提示无法访问android.support.v7.app.AppCompatActivity,花了一上午找了很多网页，没有解决问题，郁闷至极，下午去打了个球，回来后，接着google，功夫不负有心人，最终解决了问题，感谢这位网友的博客，这是因为在sdk manager里面的“android support library”没有安装，链接在<a href="http://lxl520.com/me/blog/index.php/archives/19/">这里</a>.
-为了避免每次在terminal中输入很多字符，可以选择用环境变量搞定，链接在<a href="http://kanyinqing.com/read/baike/hulianwang/3474865.html">这里</a></p>
+为了避免每次在terminal中输入很多字符，可以选择用环境变量搞定，链接在<a href="http://kanyinqing.com/read/baike/hulianwang/3474865.html">这里</a>,因为是JNI编程，所以还需要安装NDK，我是从百度云盘中搜索找到的android-ndk-r10e,放在了C盘根目录下，再到local.properties文件中设置ndk路径，该文件的完整配置信息如下：
+<code>
+sdk.dir=C\:\\Android\\sdk
+ndk.dir=C\:\\android-ndk-r10e
+</code>
+在app目录下的 build.gradle中设置库文件名（生成的so文件名）：找到 defaultConfig 这项，在里面添加如下内容，
+<code>
+ndk{
+       moduleName &quot;callNative&quot;  //设置库(so)文件名称
+   }
+</code>
+我的MianActivity前几行代码如下：
+```
+public class MainActivity extends AppCompatActivity {
+    public native String callNative();
+    static {
+        System.loadLibrary(&quot;callNative&quot;);
+    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        TextView txtView = (TextView) findViewById(R.id.txt);
+        txtView.setText(callNative());</p>
+
+<p>}</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">在设置完ndk后，发现build会出现下面错误：
+</code></pre></div>
+<p>Android-Android studio 出现 Error: NDK integration is deprecated in the current plugin. 问题解决
+Error:(50, 0) Error: NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin. For details, see <a href="http://tools.android.com/tech-docs/new-build-system/gradle-experimental">http://tools.android.com/tech-docs/new-build-system/gradle-experimental</a>. Set &quot;android.useDeprecatedNdk=true&quot; in gradle.properties to continue using the current NDK integration.
+```
+google后找到<a href="http://blog.csdn.net/u014657752/article/details/48106081">答案</a>,在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图</p>
 
 		  </article>
 		<hr>
