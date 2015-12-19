@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-19T20:30:30+08:00</updated>
+ <updated>2015-12-19T20:33:15+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -22,7 +22,7 @@
 
 &lt;h3&gt;parsec3.0 streamcluster android JNI&lt;/h3&gt;
 
-&lt;p&gt;完成android studio 1.4版本的安装后，需要在terminal上输入javah -d jni -classpath时发现总是提示无法访问android.support.v7.app.AppCompatActivity,找了很大网页，最终解决了问题，感谢这位网友的博客，这是因为在sdk manager里面的“android support library”没有安装，链接在&lt;a href=&quot;http://lxl520.com/me/blog/index.php/archives/19/&quot;&gt;这里&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;完成android sdk和android studio 1.4 IDE 版本的安装后，需要在terminal上输入javah -d jni -classpath时发现总是提示无法访问android.support.v7.app.AppCompatActivity,花了一上午找了很多网页，没有解决问题，郁闷至极，下午去打了个球，回来后，接着google，功夫不负有心人，最终解决了问题，感谢这位网友的博客，这是因为在sdk manager里面的“android support library”没有安装，链接在&lt;a href=&quot;http://lxl520.com/me/blog/index.php/archives/19/&quot;&gt;这里&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
  
