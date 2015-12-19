@@ -9,5 +9,6 @@ tags: [ graduation, android ]
 测试[test4](./just-a-test.html#test4)
 
 ###parsec3.0 streamcluster android JNI
+完成android studio 1.4版本的安装后，需要在terminal上输入javah -d jni -classpath时发现总是提示无法访问android.support.v7.app.AppCompatActivity,找了很大网页，最终解决了问题，感谢这位网友的博客，这是因为在sdk manager里面的“android support library”没有安装，链接在[这里](http://lxl520.com/me/blog/index.php/archives/19/).
 
 
