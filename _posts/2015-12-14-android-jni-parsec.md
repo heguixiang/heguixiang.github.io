@@ -37,11 +37,13 @@ public class MainActivity extends AppCompatActivity {
         txtView.setText(callNative());
 
 }
-
 ```
+
 在设置完ndk后，发现build会出现下面错误：
+
 ```
 Android-Android studio 出现 Error: NDK integration is deprecated in the current plugin. 问题解决
 Error:(50, 0) Error: NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin. For details, see http://tools.android.com/tech-docs/new-build-system/gradle-experimental. Set "android.useDeprecatedNdk=true" in gradle.properties to continue using the current NDK integration.
 ```
-google后找到[答案](http://blog.csdn.net/u014657752/article/details/48106081),在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图
+
+google后找到[答案](http://blog.csdn.net/u014657752/article/details/48106081),在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图![JNI_demo](http://http://heguixiang.github.io/image/JNI_demo.png).
