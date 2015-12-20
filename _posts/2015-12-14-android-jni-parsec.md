@@ -196,7 +196,9 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 - 下面是我的jni目录情况
+
 ![dir](http://heguixiang.github.io/image/JNI_dir.png)
+
 - jni.c代码如下
 
 ```
@@ -241,7 +243,9 @@ int add(int x, int y) {
 int add(int x, int y);
 #endif
 ```
+
 - Android.mk的文件如下
+
 ```
 LOCAL_PATH := $(call my-dir)
 
@@ -252,7 +256,6 @@ LOCAL_SRC_FILES := jni.c
 LOCAL_SRC_FILES += add.c
 
 include $(BUILD_SHARED_LIBRARY)
-
 ```
 
 - Application.mk的文件如下
