@@ -289,5 +289,5 @@ k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\.
 ```
 
 最后，看一下手机app的效果
-<img src="http://heguixiang.github.io/image/JNI_add.png" width = "100" height = "200" alt="add" align=center />
+<img src="http://heguixiang.github.io/image/JNI_add.png" width = "300" height = "500" alt="add" align=center />
 ![add demo](http://heguixiang.github.io/image/JNI_add.png)
