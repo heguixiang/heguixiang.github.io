@@ -1,6 +1,6 @@
 ---
 layout: post
-title: parsec3.0 android JNI
+title: JNI
 keywords: Android JNI parsec3.0
 category: graduation
 tags: [graduation, android]

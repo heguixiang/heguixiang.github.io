@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-20T16:11:16+08:00</updated>
+ <updated>2015-12-20T16:13:33+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -12,7 +12,7 @@
 
  
  <entry>
-   <title>parsec3.0 android JNI</title>
+   <title>JNI</title>
    <link href="http://heguixiang.github.io/blog/2015/12/android-jni-parsec.html"/>
    <updated>2015-12-14T00:00:00+08:00</updated>
    <id>/blog/2015/12/android-jni-parsec</id>
