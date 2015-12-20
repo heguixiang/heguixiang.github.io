@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-20T16:27:52+08:00</updated>
+ <updated>2015-12-20T16:28:41+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -24,37 +24,15 @@
 
 &lt;p&gt;完成android sdk和android studio 1.4 IDE 版本的安装后，需要在terminal上输入javah -d jni -classpath时发现总是提示无法访问android.support.v7.app.AppCompatActivity,花了一上午找了很多网页，没有解决问题，郁闷至极，下午去打了个球，回来后，接着google，功夫不负有心人，最终解决了问题，感谢这位网友的博客，这是因为在sdk manager里面的“android support library”没有安装，链接在&lt;a href=&quot;http://lxl520.com/me/blog/index.php/archives/19/&quot;&gt;这里&lt;/a&gt;.
 为了避免每次在terminal中输入很多字符，可以选择用环境变量搞定，链接在&lt;a href=&quot;http://kanyinqing.com/read/baike/hulianwang/3474865.html&quot;&gt;这里&lt;/a&gt;,因为是JNI编程，所以还需要安装NDK，我是从百度云盘中搜索找到的android-ndk-r10e,放在了C盘根目录下，再到local.properties文件中设置ndk路径，该文件的完整配置信息如下：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sdk.dir=C\:\\Android\\sdk
-ndk.dir=C\:\\android-ndk-r10e
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h3&gt;Hello&lt;/h3&gt;
 
 &lt;p&gt;在app目录下的 build.gradle中设置库文件名（生成的so文件名）：找到 defaultConfig 这项，在里面添加如下内容:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ndk{
-       moduleName &amp;quot;callNative&amp;quot;  //设置库(so)文件名称
-   }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;我的MianActivity前几行代码如下：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public class MainActivity extends AppCompatActivity {
-    public native String callNative();
-    static {
-        System.loadLibrary(&amp;quot;callNative&amp;quot;);
-    }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        TextView txtView = (TextView) findViewById(R.id.txt);
-        txtView.setText(callNative());
 
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;我的MianActivity前几行代码如下：&lt;/p&gt;
+
 &lt;p&gt;在设置完ndk后，发现build会出现下面错误：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Android-Android studio 出现 Error: NDK integration is deprecated in the current plugin. 问题解决
-Error:(50, 0) Error: NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin. For details, see http://tools.android.com/tech-docs/new-build-system/gradle-experimental. Set &amp;quot;android.useDeprecatedNdk=true&amp;quot; in gradle.properties to continue using the current NDK integration.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;google后找到&lt;a href=&quot;http://blog.csdn.net/u014657752/article/details/48106081&quot;&gt;答案&lt;/a&gt;,在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图&lt;/p&gt;
 </content>
  </entry>
