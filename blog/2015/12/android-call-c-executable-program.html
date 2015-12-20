@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="C语言高级编程指南 - 浪号 - Guixiang.He(guixiang.he@outlook.com)">
+    <meta name="description" content="Android 调用 C 编程生成的可执行程序 - 浪号 - Guixiang.He(guixiang.he@outlook.com)">
     <title>
-      C语言高级编程指南 - 浪号
+      Android 调用 C 编程生成的可执行程序 - 浪号
     </title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -106,393 +106,157 @@
         	<div class="all-posts" post-cate="All">
  		<header>
 		<h1>
-		  C语言高级编程指南
-		  <div class="post-date"><a href="https://github.com/heguixiang/heguixiang.github.io/edit/master/_posts/2014-07-05-c-advanced-programming.md" target="_blank">纠错</a>&nbsp;&nbsp;
+		  Android 调用 C 编程生成的可执行程序
+		  <div class="post-date"><a href="https://github.com/heguixiang/heguixiang.github.io/edit/master/_posts/2015-12-20-android-call-c-executable-program.md" target="_blank">纠错</a>&nbsp;&nbsp;
 			<span class="glyphicon glyphicon-time"></span>
-			05 Jul 2014
+			20 Dec 2015
 		  </div>
 		</h1>
  		</header>
 		<!-- Author -->
 		<hr>
 		 <article>
-		<p><strong>整形溢出和提升</strong></p>
-
-<p>大部分 C 程序员都以为基本的整形操作都是安全的其实不然,看下面这个例子,
-你觉得输出结果是什么:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">int main(int argc, char** argv) {
-    long i = -1;
-
-    if (i &lt; sizeof(i)) {
-         printf(&quot;OK\n&quot;);
-    }
-    else {
-         printf(&quot;error\n&quot;);
-    }
-
-    return 0;
-}
+		<p>最近一直在弄Android JNI相关的东西，为的就是能够毕业课题中需要在安卓的环境下调用<a href="http://parsec.cs.princeton.edu/parsec3-doc.htm">parsec3.0</a>的测试集，比如streamcluster，但是今天看了一下他的MakeFile,执行起来如下所示，因为依赖了很多库，之前想用Android JNI解决这个问题没有想象中那么简单。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/usr/bin/g++ -O3 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -DENABLE_THREADS -pthread -c parsec_barrier.cpp
+/usr/bin/g++ -O3 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -DENABLE_THREADS -pthread -L/usr/lib64 -L/usr/lib -static streamcluster.o parsec_barrier.o  -o streamcluster
 </code></pre></div>
-<p>当一个变量转换成无符号整形时,i的值不再是-1,而是 size_t的最大值,因
-为sizeof操作返回的是一个 size_t类型的无符号数。
-在C99/C11标准里写道:</p>
+<p>streamcluster程序调用的方法为<code>./streamcluster 10 20 64 8192 8192 1000 none none 32</code>,参数的解释请看下面：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">    fprintf(stderr,&quot;  k1:          Min. number of centers allowed\n&quot;);
+    fprintf(stderr,&quot;  k2:          Max. number of centers allowed\n&quot;);
+    fprintf(stderr,&quot;  d:           Dimension of each data point\n&quot;);
+    fprintf(stderr,&quot;  n:           Number of data points\n&quot;);
+    fprintf(stderr,&quot;  chunksize:   Number of data points to handle per step\n&quot;);
+    fprintf(stderr,&quot;  clustersize: Maximum number of intermediate centers\n&quot;);
+    fprintf(stderr,&quot;  infile:      Input file (if n&lt;=0)\n&quot;);
+    fprintf(stderr,&quot;  outfile:     Output file\n&quot;);
+    fprintf(stderr,&quot;  nproc:       Number of threads to use\n&quot;);
+</code></pre></div>
+<p>google了一把还有什么方法可以调用C写的代码，搜了一下，还真有，看了一下，安卓下有个api叫<code>Runtime.getRuntime()</code>貌似符合我的要求,链接在<a href="http://blog.csdn.net/foruok/article/details/23207757">这里</a>。</p>
 
 <blockquote>
-<p>&quot;If the operand that has unsigned integer type has rank greater or
-equal to the rank of the type of the other operand, then the operand
-with signed integer type is converted to the type of the operand with
-unsigned integer type.&quot;</p>
+<p><strong>备注：</strong>滋生一个想法，编译streamcluster的时候加上-static命令，实现静态链接，这样生成的可执行程序就可以不用担心依赖库的问题了（JNI 方法很有可能在这边就会出问题）然后将生成的可执行文件放到/system/bin/下，然后到Android App下调用。不知道行不行，先把想法记录一下吧。</p>
 </blockquote>
 
-<p>在C标准里面 size_t至少是一个 16 位的无符号整数,对于给定的架构 size_t 一般对应long,所以sizeof（int）和size_t至少相等,这就带来了可移植性的问题,C标准没有定义 short, int,long,longlong的大小,只是说明了他们的最小长度,对于 x86_64 架构,long在Linux下是64位,而在64位Windows下是32位。一般的方法是采用固定长度的类型比如定义在C99头文件stdint.h中的uint16_t,int32_t,uint_least16_t,uint_fast16_t等。</p>
+<h2>Runtime.exec() 方法使用</h2>
 
-<p>如果 int可以表示原始类型的所有值,那么这个操作数会转换成 int,否则
-他会转换成 unsigned int。下面这个函数在 32 位平台返回 65536,但是在 16 位系统返回 0。</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">uint32_t sum()
-{
-    uint16_t a = 65535;
-    uint16_t b = 1;
-    return a+b;
+<p>Runtime.exec() 有四种调用方法:
+1. public Process exec(String command);
+2. public Process exec(String [] cmdArray);
+3. public Process exec(String command, String [] envp);
+4. public Process exec(String [] cmdArray, String [] envp);</p>
+
+<p>网友是怎么用这个API的：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Process process = Runtime.getRuntime().exec(&quot;/system/bin/ping&quot;);
+</code></pre></div>
+<p>Linux下调用系统命令并弹出终端窗口就要改成下面的格式</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">String [] cmd={&quot;/bin/sh&quot;,&quot;-c&quot;,&quot;xterm -e ln -s exe1 exe2&quot;};
+Process proc =Runtime.getRuntime().exec(cmd);
+</code></pre></div>
+<p>还有要设置调用程序的工作目录就要</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Process proc =Runtime.getRuntime().exec(&quot;exeflie&quot;,null, new File(&quot;workpath&quot;));
+</code></pre></div>
+<p>在当前目录执行dir命令，并将结果保存到c:\dir.txt文本文件中：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Runtime r = Runtime.getRuntime();
+try{
+  Process proc = r.exec(&quot;cmd /c dir &gt; %dest%&quot;, new String[]{&quot;dest=c:\\dir.txt&quot;, new File(&quot;d:\\test&quot;)});
+  int exitVal = proc.waitFor(); // 阻塞当前线程，并等待外部程序中止后获取结果码
+  System.out.println(exitVal == 0 ? &quot;成功&quot; : &quot;失败&quot;);
+}
+catch(Exception e){
+  e.printStackTrace();
 }
 </code></pre></div>
-<p>对于char 类型到底是 signed 还是 unsigned 取决于硬件架构和操作系统,通常
-由特定平台的 ABI(Application Binary Interface) 指定,如果是 signed char,下面的代码输出-128 和-127,否则输出 128,129(x86 架构)。</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">char c = 128;
-char d = 129;
-printf(&quot;%d,%d\n&quot;,c,d);
-</code></pre></div>
-<hr>
+<h2>使用NDK生成native C/C++的可执行程序</h2>
 
-<h2>内存管理和分配</h2>
-
-<p>malloc 函数分配制定字节大小的内存,对象未被初始化,如果 size 是 0 取
-决与系统实现。malloc(0)返回一个空指针或者 unique pointer,如果 size 是表达式的运算结果,确保没有整形溢出。</p>
-
-<blockquote>
-<p>“If the size of the space requested is 0, the behavior is
-implementation- defined: the value returned shall be either a null
-pointer or a unique pointer.”</p>
-</blockquote>
-<div class="highlight"><pre><code class="language-text" data-lang="text">size_t computed_size;
-
-if (elem_size &amp;&amp; num &gt; SIZE_MAX / elem_size) {
-    errno = ENOMEM;
-    err(1, &quot;overflow&quot;);
-}
-
-computed_size = elem_size*num;
-</code></pre></div>
-<p>malloc不会给分配的内存初始化，如果要对新分配的内存初始化，可以用calloc代替malloc,一般情况下给序列分配相等大小的元素时,用calloc来代替用表达式计算大小,calloc 会把内存初始化为 0。</p>
-
-<p>realloc 用来对已经分配内存的对象改变大小,如果新的 size 更大,额外的空间
-没 有 被 初 始 化 , 如 果 提 供 给 realloc 的 指 针 是 空 指 针 , realloc 就 等 效 于malloc,如果原指针非空而 new size是0,结果依赖于操作系统的具体实现。</p>
-
-<blockquote>
-<p>“In case of failure realloc shall return NULL and leave provided memory
-object intact. Thus it is important not only to check for integer
-overflow of size argument, but also to correctly handle object size if
-realloc fails.”</p>
-</blockquote>
-
-<p>下面这段代码可以带你领会malloc,calloc，realloc,free的用法：</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">#include &lt;stdio.h&gt;
-#include &lt;stdint.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;errno.h&gt;
-
-#define VECTOR_OK            0
-#define VECTOR_NULL_ERROR    1
-#define VECTOR_SIZE_ERROR    2
-#define VECTOR_ALLOC_ERROR   3
-
-struct vector {
-    int *data;
-    size_t size;
-};
-
-int create_vector(struct vector *vc, size_t num) {
-
-    if (vc == NULL) {
-        return VECTOR_NULL_ERROR;
-    }
-
-    vc-&gt;data = 0;
-    vc-&gt;size = 0;
-
-    /* check for integer and SIZE_MAX overflow */
-    if (num == 0 || SIZE_MAX / num &lt; sizeof(int)) {
-        errno = ENOMEM;
-        return VECTOR_SIZE_ERROR;
-    }
-
-    vc-&gt;data = calloc(num, sizeof(int));
-
-    /* calloc faild */
-    if (vc-&gt;data == NULL) {
-        return VECTOR_ALLOC_ERROR;
-    }
-
-    vc-&gt;size = num * sizeof(int);
-    return VECTOR_OK;
-}
-
-int grow_vector(struct vector *vc) {
-
-    void *newptr = 0;
-    size_t newsize;
-
-    if (vc == NULL) {
-        return VECTOR_NULL_ERROR;
-    }
-
-
-    /* check for integer and SIZE_MAX overflow */
-    if (vc-&gt;size == 0 || SIZE_MAX / 2 &lt; vc-&gt;size) {
-        errno = ENOMEM;
-        return VECTOR_SIZE_ERROR;
-    }
-
-    newsize = vc-&gt;size * 2;
-
-    newptr = realloc(vc-&gt;data, newsize);
-
-    /* realloc faild; vector stays intact size was not changed */
-    if (newptr == NULL) {
-        return VECTOR_ALLOC_ERROR;
-    }
-
-    /* upon success; update new address and size */
-    vc-&gt;data = newptr;
-    vc-&gt;size = newsize;
-    return VECTOR_OK;
-}
-</code></pre></div>
-<hr>
-
-<h2>避免重大错误</h2>
+<p>这一节摘自网友的<a href="http://blog.csdn.net/nicebooks/article/details/6601005">blog</a>。
+众所周知, NDK可以生成lib,让java程序通过jni来调用,其实,NDK也可以生成C/C++的可执行程序.不过这个程序要被执行的话还有要求.</p>
 
 <ol>
-<li><p>使用未初始化的变量，
-C语言要求所有变量在使用之前要初始化，使用未初始化的变量会造成为定义的行为，这和C++不同，C++保证所有变量在使用之前都得到初始化，Java*<em>尽量保证</em>*变量使用前的得到初始化，如类基本数据成员会被初始化为默认值。</p></li>
-<li><p>free错误
-对空指针调用 free,对不是由 malloc family 函数分配的指针调用 free,或者对
-已经调用 free 的指针再次调用 free。
-一开始初始化指针为NULL可以减少错误,GCC和Clang编译器有-Wuninitialized 选项来对未初始化的变量显示警告信息,另外不要将同一个指针用于静态变量和动态变量。</p></li>
+<li>可执行文件的名字必须是lib*.so. 否则apk安装时不会安装上去,因为目前apk的安装只支持安装lib文件,即lib*.so文件,如果不是此文件格式的,安装时不会拷到lib目录里.也可以考虑把可执行文件放assets里,java程序运行后把它拷贝到其它目录或系统目录.</li>
+<li>这个文件的执行必须由java程序通过Runtime.getRuntime().exec()来执行.</li>
 </ol>
 
-<blockquote>
-<div class="highlight"><pre><code class="language-text" data-lang="text">char *ptr = NULL;
-void nullfree(void **pptr) {
-    void *ptr = *pptr;
-    assert(ptr != NULL)
-    free(ptr);
-    *pptr = NULL;
-}
-</code></pre></div></blockquote>
+<p>下面是我看到的两个Android.mk的相关内容记录一下：</p>
 
-<p>3.对空指针解引用，数组越界访问</p>
-
-<p>对NULL指针或者free&#39;d内存解引用，数组越界访问，是很明显的错误，为了消除这种错误，一般的做法就是增加数组越界检查的功能，比如Java里的array就有下标检查的功能，但是这样会带来严重的性能代价，我们要修改ABI（application binary interface），让每个指针都跟随着它的范围信息，在数值计算中cost is terrible。</p>
-
-<p>4.违反类型规则</p>
-
-<p>把int×指针cast成float×，然后对它解引用，在C里面会引发undefined behavior，C规定这种类型的转换需要使用memset，C++里面有个reinterpret_cast函数用于无关类型之间的转换，reinterpret_cast <new_type> (expression)</p>
-
-<hr>
-
-<h2>防止内存泄漏</h2>
-
-<p>内存泄漏发生在程序不再使用的动态内存没有得到释放，这需要我们掌握动态分配对象的作用域，尤其是什么时候该调用free来释放内存，常用的集中方法如下：</p>
-
-<ol>
-<li><p>在程序启动的时候分配
-在程序启动的时候分配需要的heap memory，程序退出时把释放的任务交给操作系统，这种方法一般适用于程序运行后马上退出的那种。</p></li>
-<li><p>使用变长数组（VLA）
-如果你需要一块变长大小的空间并且作用域在函数中，变长数组可以帮到你，但是也有一个限制，一个函数中的变长数组内存大小一般不超过几百字节，这个数字C标准没有明确的定义，最好是把内存分配到栈上，在栈上允许分配的最大VLA内存是SIZE_MAX，掌握目标平台的栈大小可以有效的防止栈溢出。</p></li>
-<li><p>使用引用计数
-引用计数是一个很好的管理内存的方法，特别是当你不希望自己定义的对象被复制时，每一次赋值把引用计数加1,每次失去引用就把引用计数减1,当引用计数等于0时，以为的对象已经不再需要了，我们需要释放对象占用的内存，由于C不提供自动的析构函数，我们必须手动释放内存，看一个例子：</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">#include &lt;stdlib.h&gt;
-#include &lt;stdint.h&gt;
-
-#define MAX_REF_OBJ 100
-#define RC_ERROR -1
-
-struct mem_obj_t{
-    void *ptr;
-    uint16_t count;
-};
-
-static struct mem_obj_t references[MAX_REF_OBJ];
-static uint16_t reference_count = 0;
-
-/* create memory object and return handle */
-uint16_t create(size_t size){
-
-    if (reference_count &gt;= MAX_REF_OBJ)
-        return RC_ERROR;
-
-if (size){
-  void *ptr = calloc(1, size);
-
-if (ptr != NULL){
-    references[reference_count].ptr = ptr;
-    references[reference_count].count = 0;
-    return reference_count++;
-                }
-        }
-
-    return RC_ERROR;
-}
-
-/* get memory object and increment reference counter */
-void* retain(uint16_t handle){
-
-if(handle &lt; reference_count &amp;&amp; handle &gt;= 0){
-    references[handle].count++;
-    return references[handle].ptr;
-    } else {
-        return NULL;
-    }
-}
-
-/* decrement reference counter */
-void release(uint16_t handle){
-printf(&quot;release\n&quot;);
-
-if(handle &lt; reference_count &amp;&amp; handle &gt;= 0){
-    struct mem_obj_t *object = &amp;references[handle];
-
-    if (object-&gt;count &lt;= 1){
-        printf(&quot;released\n&quot;);
-    free(object-&gt;ptr);
-    reference_count--;
-} else {
-    printf(&quot;decremented\n&quot;);
-    object-&gt;count--;
-        }
-     }
-}
+<p>其一：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"> Android.mk中的内如如下：
+ LOCAL_PATH := $(call my-dir)
+ include $(CLEAR_VARS)
+ LDFALGS += -Bdynamic -Wl,-dynamic-linker,/system/bin/linker
+ LOCAL_LDLIBS += -llog
+ LOCAL_MODULE    := test
+ LOCAL_SRC_FILES := test.cpp
+ include $(BUILD_EXECUTABLE)
 </code></pre></div>
-<p>C++标准库有个auto_ptr智能指针，能够自动释放指针所指对象的内存，C++ boost库有个boost：：shared_ptr智能指针，内置引用计数，支持拷贝和赋值，看下面这个例子：</p></li>
-</ol>
-
-<blockquote>
-<p>&quot;Objects of shared_ptr types have the ability of taking ownership of a pointer and share that ownership: once they take ownership, the group of owners of a pointer become responsible for its deletion when the last one of them releases that ownership.&quot;</p>
-</blockquote>
-<div class="highlight"><pre><code class="language-text" data-lang="text">#include &lt;boost/smart_ptr.hpp&gt;
-#include &lt;iostream&gt;
-int main()
-{
-    // Basic useage
-    boost::shared_ptr&lt;int&gt; p1(new int(10));
-    std::cout &lt;&lt; &quot;ref count of p1: &quot; &lt;&lt; p1.use_count() &lt;&lt; std::endl;
-    boost::shared_ptr&lt;int&gt; p2(p1); // or p2 = p1;
-    std::cout &lt;&lt; &quot;ref count of p1: &quot; &lt;&lt; p1.use_count() &lt;&lt; std::endl;
-    *p1 = 999;
-    std::cout &lt;&lt; &quot;*p2: &quot; &lt;&lt; *p2 &lt;&lt; std::endl;
-    p2.reset();
-    std::cout &lt;&lt; &quot;ref count of p1: &quot; &lt;&lt; p1.use_count() &lt;&lt; std::endl;
-    return 0;
-}
+<p>其二：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"> Android.mk：
+ LOCAL_PATH := $(call my-dir)
+ include $(CLEAR_VARS)
+ LOCAL_SRC_FILES :=  main.c
+ LOCAL_MODULE := main.out
+ LOCAL_LDLIBS := -L$(LOCAL_PATH)/lib -llibeffecttest -llibeffectperformancetest -llibtestkittest -llibgraph -llibmediaplayer -llibkernel -llibmediaplayer -llibjsext -llibshell -llibdtv -llibdtvmx
+ LOCAL_LDLIBS += -lz -llog -ldl 
+ include $(BUILD_EXECUTABLE)
 </code></pre></div>
-<p>4.内存池，有利于减少内存碎片，看下面这个例子：</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">#include &lt;stdlib.h&gt;
-#include &lt;stdint.h&gt;
+<h3>模块描述变量</h3>
 
-struct mem_pool_t{
-void* ptr;//指向内存池起始地址
-size_t size;//内存池大小
-size_t used;//已用内存大小
-};
-
-//create memory pool
-struct mem_pool_t* create_pool(size_t size){
-mem_pool_t* pool=calloc(1,sizeof(struct men_pool_t));
-if(pool!=NULL){
-void* mem=calloc(1,size);
-if(mem!=NULL){
-pool-&gt;ptr=mem;
-pool-&gt;size=size;
-pool-&gt;used=0;
-return pool;
-        }
-    }
-return NULL;
-}
-
-//allocate memory from pool
-void* pool_alloc(mem_pool_t* pool,size_t size){
-if(pool=NULL)
-    return NULL;
-size_t bytes_left=pool-&gt;size-pool-&gt;used;
-if(size&amp;&amp;size&lt;=bytes_left){
-    void* mem=pool-&gt;ptr+pool-&gt;used;
-    pool-&gt;used+=size;
-    return mem;
-    }
-return NULL；
-}
-
-／／release memory of the pool
-void pool_free(mem_pool_t* pool){
-if(pool!=NULL){
-free(pool-&gt;ptr);
-free(pool);
- }
-}
+<p>下面的变量用于向编译系统描述你的模块。你应该定义在&#39;include  $(CLEAR_VARS)&#39;和&#39;include $(BUILD_XXXXX)&#39;之间。正如前面描写的那样，$(CLEAR_VARS)是一个脚本，清除所有这些变量。
+- LOCAL_PATH:  这个变量用于给出当前文件的路径。必须在 Android.mk 的开头定义，可以这样使用：LOCAL_PATH := $(call my-dir)  这个变量不会被$(CLEAR_VARS)清除，因此每个 Android.mk 只需要定义一次(即使在一个文件中定义了几个模块的情况下)。
+- LOCAL_MODULE: 这是模块的名字，它必须是唯一的，而且不能包含空格。必须在包含任一的$(BUILD_XXXX)脚本之前定义它。模块的名字决定了生成文件的名字。例如，如果一个一个共享库模块的名字是，那么生成文件的名字就是 lib.so。但是，在的 NDK 生成文
+件中(或者 Android.mk 或者 Application.mk)，应该只涉及(引用)有正常名字的其他模块。
+- LOCAL_SRC_FILES:  这是要编译的源代码文件列表。只要列出要传递给编译器的文件，因为编译系统自动计算依赖。注意源代码文件名称都是相对于 LOCAL_PATH的，你可以使用路径部分，例如：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">LOCAL_SRC_FILES := foo.c toto/bar.c\
+Hello.c
 </code></pre></div>
-<p>5.垃圾回收机制
- 引用计数采用的方法是当内存不再需要时得到手动释放，垃圾回收发生在内存分配失败或者内存到达一定的水位（watermarks），实现垃圾回收最简单的一个算法是MARK AND SWEEP算法，该算法的思路是遍历所有动态分配对象的内存，标记那些还能继续使用的，回收那些没有被标记的内存。
-    Java采用的垃圾回收机制就更复杂了，思路也是回收那些不再使用的内存，JAVA的垃圾回收和C++的析构函数又不一样，C++保证对象在使用之前得到初始化，对象超出作用域之后内存得到释放，而JAVA不能保证对象一定被析构。 </p>
-
-<hr>
-
-<h2>指针和数组</h2>
-
-<p>我们一般的概念里指针和数组名是可互换的，但是在编译器里他们被不同的对待，当我们说一个对象或者表达式具有某种类型的时候我们一般是说这个对象是个左值（lvalue），当对象不是const的时候，左值是可以修改的，比如对象是复制操作符的左参数，而数组名是一个const左值，指向地一个元素的const指针，所以你不能给数组名赋值或者意图改变数组名，如果表达式是数组类型，数组名通常转换成指向地一个元素的指针。</p>
-
-<p>但是也有例外，什么情况下数组名不是一个指针呢？
-1.当它是sizeof操作符的操作数时，返回数组占的内存字节数
-2.当它是取地址操作&amp;的操作数时，返回一个数组的地址</p>
-
-<p>看下面这个例子：</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">short a[] = {1,2,3};
-short *pa;
-short (*px)[];
-
-void init(){
-    pa = a;
-    px = &amp;a;
-
-    printf(&quot;a:%p; pa:%p; px:%p\n&quot;, a, pa, px);
-
-    printf(&quot;a[1]:%i; pa[1]:%i (*px)[1]:%i\n&quot;, a[1], pa[1],(*px)[1]);
-}
+<p>文件之间可以用空格或Tab键进行分割,换行请用&quot;\&quot;.如果是追加源代码文件的话，请用LOCAL_SRC_FILES +=
+注意：在生成文件中都要使用UNIX风格的斜杠(/).windows风格的反斜杠不会被正确的处理。
+注意：可以LOCAL_SRC_FILES := $(call all-subdir-java-files)这种形式来包含local_path目录下的所有java文件。
+-  LOCAL_CPP_EXTENSION:  这是一个可选变量， 用来指定C++代码文件的扩展名，默认是&#39;.cpp&#39;,但是可以改变它，比如：
+LOCAL_CPP_EXTENSION := .cxx
+-  LOCAL_C_INCLUDES:  可选变量，表示头文件的搜索路径。默认的头文件的搜索路径是LOCAL_PATH目录。
+示例:LOCAL_C_INCLUDES := sources/foo或LOCAL_C_INCLUDES := $(LOCAL_PATH)/../foo
+LOCAL_C_INCLUDES需要在任何包含LOCAL_CFLAGS/LOCAL_CPPFLAGS标志之前进行设置。
+-  LOCAL_CFLAGS:  可选的编译器选项，在编译 C 代码文件的时候使用。这可能是有
+用的，指定一个附加的包含路径(相对于NDK的顶层目录)，宏定义，或者编译选项。
+注意：不要在 Android.mk 中改变 optimization/debugging 级别，只要在 Application.mk 中指定合适的信息，就会自动地为你处理这个问题，在调试期间，会让 NDK自动生成有用的数据文件。
+-  LOCAL_CXXFLAGS:  与 LOCAL_CFLAGS同理，针对 C++源文件。
+-  LOCAL_CPPFLAGS:  与 LOCAL_CFLAGS同理，但是对 C 和 C++ source files都适用。
+-  LOCAL_STATIC_LIBRARIES: 表示该模块需要使用哪些静态库，以便在编译时进行链接。
+-  LOCAL_SHARED_LIBRARIES:  表示模块在运行时要依赖的共享库（动态库），在链接时就需要，以便在生成文件时嵌入其相应的信息。注意：它不会附加列出的模块到编译图，也就是仍然需要在Application.mk 中把它们添加到程序要求的模块中。
+-  LOCAL_LDLIBS:  编译模块时要使用的附加的链接器选项。这对于使用‘-l’前缀传递指定库的名字是有用的。
+例如，LOCAL_LDLIBS := -lz表示告诉链接器生成的模块要在加载时刻链接到/system/lib/libz.so
+可查看 docs/STABLE-APIS.TXT 获取使用 NDK发行版能链接到的开放的系统库列表。
+-   LOCAL_ALLOW_UNDEFINED_SYMBOLS:  默认情况下， 在试图编译一个共享库时，任何未定义的引用将导致一个“未定义的符号”错误。这对于在源代码文件中捕捉错误会有很大的帮助。然而，如果因为某些原因，需要不启动这项检查，可把这个变量设为‘true’。
+注意相应的共享库可能在运行时加载失败。(这个一般尽量不要去设为 true)。
+-   LOCAL_ARM_MODE: 默认情况下， arm目标二进制会以 thumb 的形式生成(16 位)，你可以通过设置这个变量为 arm如果你希望你的 module 是以 32 位指令的形式。
+&#39;arm&#39; (32-bit instructions) mode. E.g.:
+LOCAL_ARM_MODE := arm
+注意：可以在编译的时候告诉系统针对某个源码文件进行特定的类型的编译
+比如，LOCAL_SRC_FILES := foo.c bar.c.arm  这样就告诉系统总是将 bar.c 以arm的模式编译。
+-  LOCAL_MODULE_PATH 和 LOCAL_UNSTRIPPED_PATH
+在 Android.mk 文件中， 还可以用LOCAL_MODULE_PATH 和LOCAL_UNSTRIPPED_PATH指定最后的目标安装路径.
+不同的文件系统路径用以下的宏进行选择：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">TARGET_ROOT_OUT：表示根文件系统。
+TARGET_OUT：表示 system文件系统。
+TARGET_OUT_DATA：表示 data文件系统。
 </code></pre></div>
-<p>a是一个short类型数组，pa是一个指向short类型的指针，px呢？
-px是一个指向数组类型的指针，在a被赋值给pa之前，他的值被转换成一个指向数组第一个元素的指针，下面那个a却没有转换，因为遇到的是&amp;操作符。
-数组下标a[1]等价于<em>(a+1),和p[1]一样，也指向</em>(p+1)，但是两者还是有区别的，a是一个数组，它实际上存储的是第一个元素的地址，所以数组a是用来定位第一个元素的，而pa不一样，它就是一个指针，不是用来定位的。
-再比如：</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">int a[10];
-int b[10];
-int *a;
-c=&amp;a[0];//c是指向数组a地一个元素的指针
-c=a;//a自动转换成指向第一个元素的指针，实际上是指针拷贝
-b=a;//非法的，你不能用赋值符把一个数组的所有元素赋给另一个数组
-a=c;//非法的，你不能修改const指针的值
-</code></pre></div>
+<p>用法如：LOCAL_MODULE_PATH :=$(TARGET_ROOT_OUT) 
+至于LOCAL_MODULE_PATH 和LOCAL_UNSTRIPPED_PATH的区别，暂时还不清楚。</p>
+
+<h2>streamcluster MakeFile各个参数含义</h2>
+
 		  </article>
 		<hr>
 	<br/>
 	<div style="margin-top:30px;margin-bottom:30px">
-	   
 	  
-	  <span class="prev">
-	    下篇：
-	    <a href="/blog/2014/07/markdown-basics.html">
-	      markdown 快速入门
+	  <span class="next">
+	    上篇：
+	    <a href="/blog/2015/12/android-jni-parsec.html">
+	      Android JNI 基础篇
 	    </a>
 	  </span>
+	   
 	  
 	</div>
 	</div>
@@ -679,7 +443,7 @@ a=c;//非法的，你不能修改const指针的值
   <!-- 多说评论框 start -->
   <div class="post-comment">
             <span>Comments</span>
-	<div class="ds-thread" data-thread-key="/blog/2014/07/c-advanced-programming" data-title="C语言高级编程指南" data-url="heguixiang.github.io/blog/2014/07/c-advanced-programming.html">
+	<div class="ds-thread" data-thread-key="/blog/2015/12/android-call-c-executable-program" data-title="Android 调用 C 编程生成的可执行程序" data-url="heguixiang.github.io/blog/2015/12/android-call-c-executable-program.html">
 	</div>
  </div>
 <!-- 多说评论框 end -->
