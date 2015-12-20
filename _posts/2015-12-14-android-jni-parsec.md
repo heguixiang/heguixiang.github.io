@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Android JNI Parsec3.0
+description: 安卓JNI调用parsec3.0的benchmark
 keywords: Android JNI parsec3.0
 categories: [graduation]
 tags : [graduation, android]
@@ -57,4 +58,4 @@ Error:(50, 0) Error: NDK integration is deprecated in the current plugin. Consid
 ```
 
 google后找到[答案](http://blog.csdn.net/u014657752/article/details/48106081),在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图
-<!-->![JNI_demo](http://heguixiang.github.io/image/JNI_demo.png)
+<!-->![JNI_demo](http://heguixiang.github.io/image/JNI_demo.png)-->
