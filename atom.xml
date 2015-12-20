@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-20T16:13:33+08:00</updated>
+ <updated>2015-12-20T16:15:02+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -56,7 +56,7 @@ ndk.dir=C\:\\android-ndk-r10e
 Error:(50, 0) Error: NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin. For details, see http://tools.android.com/tech-docs/new-build-system/gradle-experimental. Set &amp;quot;android.useDeprecatedNdk=true&amp;quot; in gradle.properties to continue using the current NDK integration.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;google后找到&lt;a href=&quot;http://blog.csdn.net/u014657752/article/details/48106081&quot;&gt;答案&lt;/a&gt;,在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图
-&lt;img src=&quot;http://heguixiang.github.io/image/JNI_demo.png&quot; alt=&quot;JNI_demo&quot;&gt;&lt;/p&gt;
+&amp;lt;!--&amp;gt;&lt;img src=&quot;http://heguixiang.github.io/image/JNI_demo.png&quot; alt=&quot;JNI_demo&quot;&gt;&lt;/p&gt;
 </content>
  </entry>
  
