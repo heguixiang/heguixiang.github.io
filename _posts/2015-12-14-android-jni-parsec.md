@@ -4,7 +4,7 @@ title: Android JNI Parsec3.0
 description: 安卓JNI调用parsec3.0的benchmark
 keywords: Android JNI parsec3.0
 categories: [graduation]
-tags : [graduation, android]
+tags: graduation
 ---
 
 一步一步来，慢慢来研究下JNI。 
