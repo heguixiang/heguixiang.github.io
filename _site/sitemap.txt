@@ -19,7 +19,11 @@
 
     /sitemap.txt
 
+    /sitemap.txt
 
+
+
+    /blog/2015/12/android-call-c-executable-program.html
 
     /blog/2015/12/android-jni-parsec.html
 
