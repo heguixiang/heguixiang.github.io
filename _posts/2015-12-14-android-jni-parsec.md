@@ -14,7 +14,7 @@ tags : [graduation, android]
 **备注：**因为刚开始使用markdown写博文，有些东西需要在用的时候总结一下，这一篇博文中，我遇到一个问题是如果用`![](http://)`的语句插入图片，图片的大小往往和文章的尺寸格格不入。百度了一下，可以用嵌入html代码的方法，实现图片大小的自定义，代码如下:
 
 ```
-'<img src="http://..../xxx.png" width = "100" height = "200" alt="图片名称" align=center />
+<img src="http://..../xxx.png" width = "100" height = "200" alt="图片名称" align=center />
 ```
 
 ##parsec3.0 streamcluster android JNI   
