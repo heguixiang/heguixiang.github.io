@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-20T18:39:43+08:00</updated>
+ <updated>2015-12-20T18:41:47+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -195,8 +195,12 @@ public class MainActivity extends AppCompatActivity {
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;下面是我的jni目录情况
-&lt;img src=&quot;http://heguixiang.github.io/image/JNI_dir.png&quot; alt=&quot;dir&quot;&gt;&lt;/li&gt;
+&lt;li&gt;下面是我的jni目录情况&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://heguixiang.github.io/image/JNI_dir.png&quot; alt=&quot;dir&quot;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
 &lt;li&gt;jni.c代码如下&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#include &amp;quot;com_example_seu_hgx_hello_world_MainActivity.h&amp;quot;
@@ -241,39 +245,44 @@ int add(int x, int y);
 #endif
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;Android.mk的文件如下
-```
-LOCAL_PATH := $(call my-dir)&lt;/li&gt;
+&lt;li&gt;Android.mk的文件如下&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;LOCAL_PATH := $(call my-dir)
 
-&lt;p&gt;include $(CLEAR_VARS)&lt;/p&gt;
+include $(CLEAR_VARS)
 
-&lt;p&gt;LOCAL_MODULE    := AddJni
+LOCAL_MODULE    := AddJni
 LOCAL_SRC_FILES := jni.c
-LOCAL_SRC_FILES += add.c&lt;/p&gt;
+LOCAL_SRC_FILES += add.c
 
-&lt;p&gt;include $(BUILD_SHARED_LIBRARY)&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- Application.mk的文件如下
+include $(BUILD_SHARED_LIBRARY)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;APP_PROJECT_PATH := ${call my-dir}
-APP_MODULES := AddJni&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- 同时不要忘了将build.gradle defaultConfig里ndk项改成“AddJni”，如下所示
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;defaultConfig {
-    applicationId &amp;quot;com.example.seu_hgx.hello_world&amp;quot;
-    minSdkVersion 8
-    targetSdkVersion 23
-    versionCode 1
-    versionName &amp;quot;1.0&amp;quot;
-    ndk{
-        moduleName &amp;quot;AddJni&amp;quot;
+&lt;ul&gt;
+&lt;li&gt;Application.mk的文件如下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;APP_PROJECT_PATH := ${call my-dir}
+APP_MODULES := AddJni
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;同时不要忘了将build.gradle defaultConfig里ndk项改成“AddJni”，如下所示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;    defaultConfig {
+        applicationId &amp;quot;com.example.seu_hgx.hello_world&amp;quot;
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 1
+        versionName &amp;quot;1.0&amp;quot;
+        ndk{
+            moduleName &amp;quot;AddJni&amp;quot;
+        }
     }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;- terminal输入的一大串指令在这，记录一下
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;javah -d jni -classpath C:\Android\sdk\platforms\android-23\android.jar;C:\Android\sdk\extras\android\support\v4\android-support-v4.jar;C:\Android\sd
-k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;....\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
-```&lt;/p&gt;
-
+&lt;ul&gt;
+&lt;li&gt;terminal输入的一大串指令在这，记录一下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;javah -d jni -classpath C:\Android\sdk\platforms\android-23\android.jar;C:\Android\sdk\extras\android\support\v4\android-support-v4.jar;C:\Android\sd
+k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\..\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;最后，看一下手机app的效果
 &lt;img src=&quot;http://heguixiang.github.io/image/JNI_add.png&quot; alt=&quot;add demo&quot;&gt;&lt;/p&gt;
 </content>
