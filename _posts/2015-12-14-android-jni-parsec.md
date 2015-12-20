@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 - 下面是我的jni目录情况
-![dir](http://http://heguixiang.github.io/image/JNI_dir.png)
+![dir](http://heguixiang.github.io/image/JNI_dir.png)
 - jni.c代码如下
 
 ```
@@ -254,13 +254,17 @@ LOCAL_SRC_FILES += add.c
 include $(BUILD_SHARED_LIBRARY)
 
 ```
+
 - Application.mk的文件如下
+
 ```
 APP_PROJECT_PATH := ${call my-dir}
 APP_MODULES := AddJni
 
 ```
+
 - 同时不要忘了将build.gradle defaultConfig里ndk项改成“AddJni”，如下所示
+
 ```
     defaultConfig {
         applicationId "com.example.seu_hgx.hello_world"
@@ -273,10 +277,13 @@ APP_MODULES := AddJni
         }
     }
 ```
+
 - terminal输入的一大串指令在这，记录一下
+
 ```
 javah -d jni -classpath C:\Android\sdk\platforms\android-23\android.jar;C:\Android\sdk\extras\android\support\v4\android-support-v4.jar;C:\Android\sd
 k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\..\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
 ```
+
 最后，看一下手机app的效果
-![add demo](http://http://heguixiang.github.io/image/JNI_add.png)
+![add demo](http://heguixiang.github.io/image/JNI_add.png)

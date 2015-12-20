@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-20T18:36:02+08:00</updated>
+ <updated>2015-12-20T18:39:43+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;下面是我的jni目录情况
-&lt;img src=&quot;http://http://heguixiang.github.io/image/JNI_dir.png&quot; alt=&quot;dir&quot;&gt;&lt;/li&gt;
+&lt;img src=&quot;http://heguixiang.github.io/image/JNI_dir.png&quot; alt=&quot;dir&quot;&gt;&lt;/li&gt;
 &lt;li&gt;jni.c代码如下&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#include &amp;quot;com_example_seu_hgx_hello_world_MainActivity.h&amp;quot;
@@ -272,9 +272,10 @@ APP_MODULES := AddJni&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;javah -d jni -classpath C:\Android\sdk\platforms\android-23\android.jar;C:\Android\sdk\extras\android\support\v4\android-support-v4.jar;C:\Android\sd
 k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;....\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
-```
-最后，看一下手机app的效果
-&lt;img src=&quot;http://http://heguixiang.github.io/image/JNI_add.png&quot; alt=&quot;add demo&quot;&gt;&lt;/p&gt;
+```&lt;/p&gt;
+
+&lt;p&gt;最后，看一下手机app的效果
+&lt;img src=&quot;http://heguixiang.github.io/image/JNI_add.png&quot; alt=&quot;add demo&quot;&gt;&lt;/p&gt;
 </content>
  </entry>
  
