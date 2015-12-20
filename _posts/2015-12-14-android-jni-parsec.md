@@ -11,8 +11,10 @@ tags : [graduation, android]
 
 课题论文涉及到要跑多核多线程的benchmark，最好能体现coherence miss多的benchmark，但是就目前的情况，大部分安卓benchmark并没有充分多核多线程的优势。但是，linux的benchmark parsec3.0，很多测试集都能够跑出coherence miss。针对这个问题，有两个方案，第一，重写parsec，用java实现，第二，很简单，用android的JNI，调用C++代码。目前先用第二种方法试试看，效果怎么样。    
 
-**备注：**因为刚开始使用markdown写博文，有些东西需要在用的时候总结一下，这一篇博文中，我遇到一个问题是如果用`![](http://)`的语句插入图片，图片的大小往往和文章的尺寸格格不入。百度了一下，可以用嵌入html代码的方法，实现图片大小的自定义，代码如下
-'<img src="http://..../xxx.png" width = "100" height = "200" alt="图片名称" align=center />'。
+**备注：**因为刚开始使用markdown写博文，有些东西需要在用的时候总结一下，这一篇博文中，我遇到一个问题是如果用`![](http://)`的语句插入图片，图片的大小往往和文章的尺寸格格不入。百度了一下，可以用嵌入html代码的方法，实现图片大小的自定义，代码如下:
+```
+'<img src="http://..../xxx.png" width = "100" height = "200" alt="图片名称" align=center />
+```
 
 ##parsec3.0 streamcluster android JNI   
 
@@ -62,7 +64,7 @@ Error:(50, 0) Error: NDK integration is deprecated in the current plugin. Consid
 
 google后找到[答案](http://blog.csdn.net/u014657752/article/details/48106081),在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图
 
-<img src="http://..../xxx.png" width = "300" height = "500" alt="pic name" align=center />
+<img src="http://heguixiang.github.io/image/JNI_demo.png" width = "300" height = "500" alt="JNI demo" align=center />
 
 
 ### add function demo 
