@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-20T18:46:48+08:00</updated>
+ <updated>2015-12-20T18:50:17+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -284,7 +284,8 @@ APP_MODULES := AddJni
 k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\..\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;最后，看一下手机app的效果
-&lt;img src=&quot;http://heguixiang.github.io/image/JNI_add.png%20=100*100&quot; alt=&quot;add demo&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;http://heguixiang.github.io/image/JNI_add.png&quot; width = &quot;100&quot; height = &quot;200&quot; alt=&quot;add&quot; align=center /&gt;
+&lt;img src=&quot;http://heguixiang.github.io/image/JNI_add.png&quot; alt=&quot;add demo&quot;&gt;&lt;/p&gt;
 </content>
  </entry>
  
