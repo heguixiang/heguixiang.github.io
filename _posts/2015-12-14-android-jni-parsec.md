@@ -59,3 +59,224 @@ Error:(50, 0) Error: NDK integration is deprecated in the current plugin. Consid
 
 google后找到[答案](http://blog.csdn.net/u014657752/article/details/48106081),在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图
 ![JNI_demo](http://heguixiang.github.io/image/JNI_demo.png)
+### add function demo 
+- 下面是我的MainActivity文件的前几行
+
+```
+package com.example.seu_hgx.hello_world;
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.provider.Settings;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget .EditText;
+import android.view.View.OnClickListener;
+
+public class MainActivity extends AppCompatActivity {
+    private static final String tag = "MainActivity";
+    private Context mContext = null;
+    private Button btnClick = null;
+    private String mStrMSG = null;
+    private EditText etX = null;
+    private EditText etY = null;
+    private EditText etResult = null;
+
+    private int x = 0 ;
+    private int y = 0 ;
+
+    public native int AddJni(int x ,int y);
+    static {
+        System.loadLibrary("AddJni");
+    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        mContext = this;
+        //初始化控件
+        initViews();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * 初始化控件
+     */
+    private void initViews() {
+        etX = (EditText)findViewById(R.id.et_x);
+        etY = (EditText)findViewById(R.id.et_y);
+        etResult = (EditText)findViewById(R.id.et_result);
+        btnClick = (Button) findViewById(R.id.btn_click);
+
+        btnClick.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View v) {
+
+                if(getX() && getY()){
+                    int result = AddJni(x,y);
+                    etResult.setText(String.valueOf(result));
+
+                 }else {
+                    etX.setText("");
+                    etY.setText("");
+                    etResult.setText("");
+                 }
+            }
+        });
+
+    }
+
+    /**
+     * 获取x
+     */
+    private boolean getX() {
+        String str = etX.getText().toString().trim();
+        try {
+            x = Integer.valueOf(str);
+        } catch(NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 获取y
+     */
+    private boolean getY() {
+        String str = etY.getText().toString().trim();
+        try {
+            y = Integer.valueOf(str);
+        } catch(NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
+}
+
+```
+- 下面是我的jni目录情况
+![dir](http://http://heguixiang.github.io/image/JNI_dir.png)
+- jni.c代码如下
+
+```
+#include "com_example_seu_hgx_hello_world_MainActivity.h"
+#include "add.h"
+
+/*
+ * Class:     com_example_seu_hgx_hello_world_MainActivity
+ * Method:    callNative
+ * Signature: ()Ljava/lang/String;
+ */
+JNIEXPORT jint JNICALL Java_com_example_seu_1hgx_hello_1world_MainActivity_AddJni
+        (JNIEnv *env, jobject obj, jint x, jint y){
+    return  add(x, y);
+
+}
+```
+- add.c的文件如下
+
+```
+#include "add.h"
+
+/**
+
+ * C 实现的 加法
+
+ */
+
+int add(int x, int y) {
+
+    return x+y;
+
+}
+```
+- add.h的文件如下
+
+```
+#ifndef _ADD_H_
+#define _ADD_H_
+#include <jni.h>
+
+int add(int x, int y);
+#endif
+```
+- Android.mk的文件如下
+```
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := AddJni
+LOCAL_SRC_FILES := jni.c
+LOCAL_SRC_FILES += add.c
+
+include $(BUILD_SHARED_LIBRARY)
+
+```
+- Application.mk的文件如下
+```
+APP_PROJECT_PATH := ${call my-dir}
+APP_MODULES := AddJni
+
+```
+- 同时不要忘了将build.gradle defaultConfig里ndk项改成“AddJni”，如下所示
+```
+    defaultConfig {
+        applicationId "com.example.seu_hgx.hello_world"
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        ndk{
+            moduleName "AddJni"
+        }
+    }
+```
+- terminal输入的一大串指令在这，记录一下
+```
+javah -d jni -classpath C:\Android\sdk\platforms\android-23\android.jar;C:\Android\sdk\extras\android\support\v4\android-support-v4.jar;C:\Android\sd
+k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\..\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
+```
+最后，看一下手机app的效果
+![add demo](http://http://heguixiang.github.io/image/JNI_add.png)
