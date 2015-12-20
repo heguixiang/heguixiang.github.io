@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-20T19:04:00+08:00</updated>
+ <updated>2015-12-20T19:04:58+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -58,8 +58,9 @@ ndk.dir=C\:\\android-ndk-r10e
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Android-Android studio 出现 Error: NDK integration is deprecated in the current plugin. 问题解决
 Error:(50, 0) Error: NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin. For details, see http://tools.android.com/tech-docs/new-build-system/gradle-experimental. Set &amp;quot;android.useDeprecatedNdk=true&amp;quot; in gradle.properties to continue using the current NDK integration.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;google后找到&lt;a href=&quot;http://blog.csdn.net/u014657752/article/details/48106081&quot;&gt;答案&lt;/a&gt;,在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图
-&lt;img src=&quot;http://heguixiang.github.io/image/JNI_demo.png&quot; width = &quot;300&quot; height = &quot;500&quot; alt=&quot;JNI demo&quot; align=center /&gt;&lt;/p&gt;
+&lt;p&gt;google后找到&lt;a href=&quot;http://blog.csdn.net/u014657752/article/details/48106081&quot;&gt;答案&lt;/a&gt;,在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://heguixiang.github.io/image/JNI_demo.png&quot; width = &quot;300&quot; height = &quot;500&quot; alt=&quot;JNI demo&quot; align=center /&gt;&lt;/p&gt;
 
 &lt;h3&gt;add function demo&lt;/h3&gt;
 
@@ -286,8 +287,9 @@ APP_MODULES := AddJni
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;javah -d jni -classpath C:\Android\sdk\platforms\android-23\android.jar;C:\Android\sdk\extras\android\support\v4\android-support-v4.jar;C:\Android\sd
 k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\..\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;最后，看一下手机app的效果
-&lt;img src=&quot;http://heguixiang.github.io/image/JNI_add.png&quot; width = &quot;300&quot; height = &quot;500&quot; alt=&quot;add&quot; align=center /&gt;&lt;/p&gt;
+&lt;p&gt;最后，看一下手机app的效果&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://heguixiang.github.io/image/JNI_add.png&quot; width = &quot;300&quot; height = &quot;500&quot; alt=&quot;add&quot; align=center /&gt;&lt;/p&gt;
 </content>
  </entry>
  
