@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Android JNI Parsec3.0
-description: 安卓JNI调用parsec3.0的benchmark
-keywords: Android JNI parsec3.0
-categories: [graduation]
+title: Android JNI 基础篇
+description: 安卓JNI 实现java调用C/C++
+keywords: Android JNI 基础篇
+categories: [graduationi, android]
 tags : [graduation, android]
 ---
 
