@@ -62,7 +62,7 @@ Error:(50, 0) Error: NDK integration is deprecated in the current plugin. Consid
 
 google后找到[答案](http://blog.csdn.net/u014657752/article/details/48106081),在gradle.properties 文件里面添加 android.useDeprecatedNdk=true 后重新编译即可,重新build成功，下面是我安卓手机的截图
 
-<img src="http://heguixiang.github.io/image/JNI_demo.png" width = "300" height = "500" alt="JNI demo" align=center />
+<img src="http://..../xxx.png" width = "300" height = "500" alt="pic name" align=center />
 
 
 ### add function demo 
