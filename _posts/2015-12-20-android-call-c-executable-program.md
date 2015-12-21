@@ -264,6 +264,8 @@ ndk{
 }
 ```
 
+###JNI C调用C++，报错`undefined reference to start_function`
+
 ##附录A：
 
 gcc命令的常用选项
