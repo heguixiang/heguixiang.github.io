@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-21T19:42:40+08:00</updated>
+ <updated>2015-12-21T19:59:07+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -157,6 +157,14 @@ TARGET_OUT_DATA：表示 data文件系统。
 &lt;p&gt;下面一个一个来分析：&lt;/p&gt;
 
 &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;g: 如果希望可以使用gdb调试程序信息，需要在g++后添加-g参数。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;O3：-O选项告诉GCC对源代码进行基本优化。这些优化在大多数情况下都会是程序执行的更快。-O2选项告诉GCC产生尽可能小和尽可能快的代码。如-O2，-O3，-On(n常为0-3)；&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;-O 主要进行跳转和延迟退栈两种优化&lt;/li&gt;
+&lt;li&gt;-O2 除了完成-O1的优化之外，还进行一些额外的调整工作，如指令调整等。&lt;/li&gt;
+&lt;li&gt;-O3 则包括循环展开和其他一些与处理特性相关的优化工作&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;funroll-loops：使用编译器的 -funroll-loops 选项 完全展开循环结构。原理： -funroll-loops编译选项使得程序中的循环步骤完全展开，这样会增加汇编代码的长度。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;fprefetch-loop-arrays：生成数组预读取指令，对于使用巨大数组的程序可以加快代码执行速度，适合数据库相关的大型软件等。具体效果如何取决于代码。&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;fpermissive：在VS2010下编译通过的程序，移植到ARM平台时，通过ARM-GCC交叉编译时出现-fpermissive问题，问题描述是taking address of temporary [-fpermissive]查了一些资料，可能是不同编译器或者新旧编译器对于c++标准的不同解释的结果，在GCC下对于模板继承的规定与VS不同，有一个简单粗暴的解决办法，就是在交叉编译指令里面加入-fpermissive这一条命令，让模板代码由出错降为警告，从而编译通过。&lt;/p&gt;&lt;/li&gt;
@@ -233,18 +241,21 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 
 &lt;h2&gt;移植streamcluster前准备&lt;/h2&gt;
 
-&lt;p&gt;上一节我们提到了要编译streamcluster需要依赖一些第三方库，现在简单调研一下，看下在android NDK中是否能继续应用&lt;/p&gt;
+&lt;p&gt;上一节我们提到了要编译streamcluster需要依赖一些第三方库，现在简单调研一下，看下在android NDK中是否能继续应用
+- android ndk中使用Pthread，在android中使用POSIX线程&lt;/p&gt;
 
-&lt;h3&gt;android ndk中使用Pthread&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;在android中使用POSIX线程&lt;/li&gt;
+&lt;ol&gt;
 &lt;li&gt;在Android.mk中LOCAL_C_INCLUDES += system/core/include/cutils 
 线程库的头文件在这里。&lt;/li&gt;
 &lt;li&gt;在Android.mk中LOCAL_SHARED_LIBRARIES := libcutil&lt;/li&gt;
 &lt;li&gt;程序中加入include thread.h&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-L/usr/lib在android.mk中的写法,链接在&lt;a href=&quot;http://codingnow.cn/android/1623.html&quot;&gt;这里&lt;/a&gt;。&lt;/li&gt;
 &lt;/ul&gt;
-</content>
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -llog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
  </entry>
  
  <entry>
