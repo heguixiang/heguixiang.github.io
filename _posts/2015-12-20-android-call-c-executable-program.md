@@ -76,7 +76,7 @@ catch(Exception e){
 1. 可执行文件的名字必须是lib*.so. 否则apk安装时不会安装上去,因为目前apk的安装只支持安装lib文件,即lib*.so文件,如果不是此文件格式的,安装时不会拷到lib目录里.也可以考虑把可执行文件放assets里,java程序运行后把它拷贝到其它目录或系统目录.
 2. 这个文件的执行必须由java程序通过Runtime.getRuntime().exec()来执行.
 
-下面是我看到的两个Android.mk的相关内容记录一下：
+下面是我看到的几个Android.mk的相关内容记录一下：
 
 其一：
 
@@ -102,6 +102,14 @@ catch(Exception e){
  LOCAL_LDLIBS := -L$(LOCAL_PATH)/lib -llibeffecttest -llibeffectperformancetest -llibtestkittest -llibgraph -llibmediaplayer -llibkernel -llibmediaplayer -llibjsext -llibshell -llibdtv -llibdtvmx
  LOCAL_LDLIBS += -lz -llog -ldl 
  include $(BUILD_EXECUTABLE)
+```
+
+其三：
+
+```
+ CFLAGS="-march=corei7-avx -O2 -pipe -fomit-frame-pointer -fstack-check"
+ CXXFLAGS="${CFLAGS} -fno-enforce-eh-specs -fno-optional-diags"
+ LDFLAGS="${LDFLAGS} -Wl,--hash-style=gnu -Wl,--as-needed -Wl,-O1"
 ```
 
 ###模块描述变量
@@ -155,4 +163,58 @@ TARGET_OUT_DATA：表示 data文件系统。
 至于LOCAL_MODULE_PATH 和LOCAL_UNSTRIPPED_PATH的区别，暂时还不清楚。
 
 ##streamcluster MakeFile各个参数含义
+首先还是抄下上面提到的这个streamcluster的编译配置情况
+
+```
+/usr/bin/g++ -O3 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -DENABLE_THREADS -pthread -L/usr/lib64 -L/usr/lib -static streamcluster.o parsec_barrier.o  -o streamcluster
+```
+
+下面一个一个来分析：
+- funroll-loops：使用编译器的 -funroll-loops 选项 完全展开循环结构。原理： -funroll-loops编译选项使得程序中的循环步骤完全展开，这样会增加汇编代码的长度。
+- fprefetch-loop-arrays：生成数组预读取指令，对于使用巨大数组的程序可以加快代码执行速度，适合数据库相关的大型软件等。具体效果如何取决于代码。
+- fpermissive：在VS2010下编译通过的程序，移植到ARM平台时，通过ARM-GCC交叉编译时出现-fpermissive问题，问题描述是taking address of temporary [-fpermissive]查了一些资料，可能是不同编译器或者新旧编译器对于c++标准的不同解释的结果，在GCC下对于模板继承的规定与VS不同，有一个简单粗暴的解决办法，就是在交叉编译指令里面加入-fpermissive这一条命令，让模板代码由出错降为警告，从而编译通过。
+- fno-exceptions：禁用异常机制，一般只有对程序运行效率及资源占用比较看重的场合才会使用。
+- static-libgcc：静态链接 gcc 库，这里和半静态链接方式编译，这里和`-L/usr/lib64`以及`-L/usr/lib`一起说吧，这两个参数`-Ldir`指定库搜索路径。下面先介绍下三种标准库链接方式的选项和区别吧,更详细的说明在[这里](https://www.ibm.com/developerworks/cn/linux/l-cn-linklib/)。
+| 标准库连接方式 | 示例连接选项 | 优点 | 缺点 |
+|--------|--------|--------|--------|
+|    全静态    |   -static -pthread -lrt -ldl     |    不会发生应用程序在 不同 Linux 版本下的标准库不兼容问题。    |  生成的文件比较大，应用程序功能受限（不能调用动态库等）      |
+|    全动态    |   -pthread -lrt -ldl     |   生成文件是三者中最小的     |   比较容易发生应用程序在不同 Linux 版本下标准库依赖不兼容问题。     |
+|    半静态 (libgcc,libstdc++)   |    -static-libgcc -L. -pthread -lrt -ldl    |   灵活度大，能够针对不同的标准库采取不同的链接策略，从而避免不兼容问题发生。结合了全静态与全动态两种链接方式的优点。     |   比较难识别哪些库容易发生不兼容问题，目前只有依靠经验积累。某些功能会因选择的标准库版本而丧失。     |
+>备注：想用Android JNI还是用全静态靠谱
+-  Wl,--hash-style=both,--as-needed : Wl,option把选项option传递给连接器。如果option中含有逗号, 就在逗号处分割成多个选项。这个关系不大好像，默认加上。
+-  DPARSEC_VERSION=3.0-beta-20150206 -DENABLE_THREADS：这两选项跟streamcluster.cpp里自定义的编译编译选项有关系，请看代码，下面是跟PARSEC_VERTION相关：
+
+```
+#ifdef PARSEC_VERSION
+#define __PARSEC_STRING(x) #x
+#define __PARSEC_XSTRING(x) __PARSEC_STRING(x)
+        fprintf(stderr,"PARSEC Benchmark Suite Version "__PARSEC_XSTRING(PARSEC_VERSION)"\n");
+	fflush(NULL);
+#else
+        fprintf(stderr,"PARSEC Benchmark Suite\n");
+	fflush(NULL);
+#endif //PARSEC_VERSION
+#ifdef ENABLE_PARSEC_HOOKS
+  __parsec_bench_begin(__parsec_streamcluster);
+#endif
+```
+
+再看跟ENABLE_THREADS相关的编译选项：
+
+```
+#ifdef ENABLE_THREADS
+#include <pthread.h>
+#include "parsec_barrier.hpp"
+#endif
+```
+
+>备注：两个选项应该也要加进去的
+
+顺便看一下`./streamcluster/inst/amd64-linux.gcc/build-info`文件的CFLAGS
+
+```
+CFLAGS:  -O3 -g -funroll-loops -fprefetch-loop-arrays -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206
+LDFLAGS: -L/usr/lib64 -L/usr/lib -static
+```
+- pthread: -pthread或者-pthreads的编译选项是用于在编译时增加多线程的支持
 
