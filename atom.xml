@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-21T17:09:01+08:00</updated>
+ <updated>2015-12-21T18:10:55+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -12,7 +12,7 @@
 
  
  <entry>
-   <title>Android 调用 C 编程生成的可执行程序</title>
+   <title>Android JNI Parsec3.0 移植准备</title>
    <link href="http://heguixiang.github.io/blog/2015/12/android-call-c-executable-program.html"/>
    <updated>2015-12-20T00:00:00+08:00</updated>
    <id>/blog/2015/12/android-call-c-executable-program</id>
