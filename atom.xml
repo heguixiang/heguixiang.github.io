@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-21T20:26:13+08:00</updated>
+ <updated>2015-12-21T20:43:57+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -250,6 +250,8 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 &lt;li&gt;在Android.mk中LOCAL_SHARED_LIBRARIES := libcutil&lt;/li&gt;
 &lt;li&gt;程序中加入include thread.h&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;关于这块还可以看下这里&lt;a href=&quot;http://stackoverflow.com/questions/8219978/how-to-use-pthreads-with-android-ndk&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;-L/usr/lib在android.mk中的写法,链接在&lt;a href=&quot;http://codingnow.cn/android/1623.html&quot;&gt;这里&lt;/a&gt;。&lt;/li&gt;
