@@ -174,6 +174,13 @@ TARGET_OUT_DATA：表示 data文件系统。
 
 下面一个一个来分析：
 
+- g: 如果希望可以使用gdb调试程序信息，需要在g++后添加-g参数。
+
+- O3：-O选项告诉GCC对源代码进行基本优化。这些优化在大多数情况下都会是程序执行的更快。-O2选项告诉GCC产生尽可能小和尽可能快的代码。如-O2，-O3，-On(n常为0-3)；
+  1. -O 主要进行跳转和延迟退栈两种优化
+  2. -O2 除了完成-O1的优化之外，还进行一些额外的调整工作，如指令调整等。
+  3. -O3 则包括循环展开和其他一些与处理特性相关的优化工作
+
 - funroll-loops：使用编译器的 -funroll-loops 选项 完全展开循环结构。原理： -funroll-loops编译选项使得程序中的循环步骤完全展开，这样会增加汇编代码的长度。
 
 - fprefetch-loop-arrays：生成数组预读取指令，对于使用巨大数组的程序可以加快代码执行速度，适合数据库相关的大型软件等。具体效果如何取决于代码。
@@ -231,10 +238,16 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 
 ##移植streamcluster前准备
 上一节我们提到了要编译streamcluster需要依赖一些第三方库，现在简单调研一下，看下在android NDK中是否能继续应用
-###android ndk中使用Pthread
-- 在android中使用POSIX线程
+- android ndk中使用Pthread，在android中使用POSIX线程
+
 1. 在Android.mk中LOCAL_C_INCLUDES += system/core/include/cutils 
   线程库的头文件在这里。
 2. 在Android.mk中LOCAL_SHARED_LIBRARIES := libcutil
 3. 程序中加入include thread.h
+
+- -L/usr/lib在android.mk中的写法,链接在[这里](http://codingnow.cn/android/1623.html)。
+
+```
+LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -llog
+```
 
