@@ -331,6 +331,20 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 <li>pthread: -pthread或者-pthreads的编译选项是用于在编译时增加多线程的支持</li>
 </ul>
 
+<h2>移植streamcluster前准备</h2>
+
+<p>上一节我们提到了要编译streamcluster需要依赖一些第三方库，现在简单调研一下，看下在android NDK中是否能继续应用</p>
+
+<h3>android ndk中使用Pthread</h3>
+
+<ul>
+<li>在android中使用POSIX线程</li>
+<li>在Android.mk中LOCAL_C_INCLUDES += system/core/include/cutils 
+线程库的头文件在这里。</li>
+<li>在Android.mk中LOCAL_SHARED_LIBRARIES := libcutil</li>
+<li>程序中加入include thread.h</li>
+</ul>
+
 		  </article>
 		<hr>
 	<br/>

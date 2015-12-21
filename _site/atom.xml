@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-21T18:10:55+08:00</updated>
+ <updated>2015-12-21T19:42:40+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -229,6 +229,20 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;pthread: -pthread或者-pthreads的编译选项是用于在编译时增加多线程的支持&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;移植streamcluster前准备&lt;/h2&gt;
+
+&lt;p&gt;上一节我们提到了要编译streamcluster需要依赖一些第三方库，现在简单调研一下，看下在android NDK中是否能继续应用&lt;/p&gt;
+
+&lt;h3&gt;android ndk中使用Pthread&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在android中使用POSIX线程&lt;/li&gt;
+&lt;li&gt;在Android.mk中LOCAL_C_INCLUDES += system/core/include/cutils 
+线程库的头文件在这里。&lt;/li&gt;
+&lt;li&gt;在Android.mk中LOCAL_SHARED_LIBRARIES := libcutil&lt;/li&gt;
+&lt;li&gt;程序中加入include thread.h&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
