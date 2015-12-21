@@ -245,6 +245,8 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 2. 在Android.mk中LOCAL_SHARED_LIBRARIES := libcutil
 3. 程序中加入include thread.h
 
+关于这块还可以看下这里[链接](http://stackoverflow.com/questions/8219978/how-to-use-pthreads-with-android-ndk)
+
 - -L/usr/lib在android.mk中的写法,链接在[这里](http://codingnow.cn/android/1623.html)。
 
 ```
