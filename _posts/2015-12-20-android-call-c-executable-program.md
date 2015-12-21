@@ -125,33 +125,36 @@ Hello.c
 ```
 
 文件之间可以用空格或Tab键进行分割,换行请用"\".如果是追加源代码文件的话，请用LOCAL_SRC_FILES +=
-注意：在生成文件中都要使用UNIX风格的斜杠(/).windows风格的反斜杠不会被正确的处理。
-注意：可以LOCAL_SRC_FILES := $(call all-subdir-java-files)这种形式来包含local_path目录下的所有java文件。
--  LOCAL_CPP_EXTENSION:  这是一个可选变量， 用来指定C++代码文件的扩展名，默认是'.cpp',但是可以改变它，比如：
-LOCAL_CPP_EXTENSION := .cxx
--  LOCAL_C_INCLUDES:  可选变量，表示头文件的搜索路径。默认的头文件的搜索路径是LOCAL_PATH目录。
+**注意**：在生成文件中都要使用UNIX风格的斜杠(/).windows风格的反斜杠不会被正确的处理。
+**注意**：可以LOCAL_SRC_FILES := $(call all-subdir-java-files)这种形式来包含local_path目录下的所有java文件。
+
+- LOCAL_CPP_EXTENSION:  这是一个可选变量， 用来指定C++代码文件的扩展名，默认是'.cpp',但是可以改变它，比如：
+  LOCAL_CPP_EXTENSION := .cxx
+
+- LOCAL_C_INCLUDES:  可选变量，表示头文件的搜索路径。默认的头文件的搜索路径是LOCAL_PATH目录。
 示例:LOCAL_C_INCLUDES := sources/foo或LOCAL_C_INCLUDES := $(LOCAL_PATH)/../foo
-LOCAL_C_INCLUDES需要在任何包含LOCAL_CFLAGS/LOCAL_CPPFLAGS标志之前进行设置。
--  LOCAL_CFLAGS:  可选的编译器选项，在编译 C 代码文件的时候使用。这可能是有
-用的，指定一个附加的包含路径(相对于NDK的顶层目录)，宏定义，或者编译选项。
-注意：不要在 Android.mk 中改变 optimization/debugging 级别，只要在 Application.mk 中指定合适的信息，就会自动地为你处理这个问题，在调试期间，会让 NDK自动生成有用的数据文件。
--  LOCAL_CXXFLAGS:  与 LOCAL_CFLAGS同理，针对 C++源文件。
--  LOCAL_CPPFLAGS:  与 LOCAL_CFLAGS同理，但是对 C 和 C++ source files都适用。
--  LOCAL_STATIC_LIBRARIES: 表示该模块需要使用哪些静态库，以便在编译时进行链接。
--  LOCAL_SHARED_LIBRARIES:  表示模块在运行时要依赖的共享库（动态库），在链接时就需要，以便在生成文件时嵌入其相应的信息。注意：它不会附加列出的模块到编译图，也就是仍然需要在Application.mk 中把它们添加到程序要求的模块中。
--  LOCAL_LDLIBS:  编译模块时要使用的附加的链接器选项。这对于使用‘-l’前缀传递指定库的名字是有用的。
-例如，LOCAL_LDLIBS := -lz表示告诉链接器生成的模块要在加载时刻链接到/system/lib/libz.so
-可查看 docs/STABLE-APIS.TXT 获取使用 NDK发行版能链接到的开放的系统库列表。
--   LOCAL_ALLOW_UNDEFINED_SYMBOLS:  默认情况下， 在试图编译一个共享库时，任何未定义的引用将导致一个“未定义的符号”错误。这对于在源代码文件中捕捉错误会有很大的帮助。然而，如果因为某些原因，需要不启动这项检查，可把这个变量设为‘true’。
-注意相应的共享库可能在运行时加载失败。(这个一般尽量不要去设为 true)。
--   LOCAL_ARM_MODE: 默认情况下， arm目标二进制会以 thumb 的形式生成(16 位)，你可以通过设置这个变量为 arm如果你希望你的 module 是以 32 位指令的形式。
-'arm' (32-bit instructions) mode. E.g.:
-LOCAL_ARM_MODE := arm
-注意：可以在编译的时候告诉系统针对某个源码文件进行特定的类型的编译
-比如，LOCAL_SRC_FILES := foo.c bar.c.arm  这样就告诉系统总是将 bar.c 以arm的模式编译。
--  LOCAL_MODULE_PATH 和 LOCAL_UNSTRIPPED_PATH
-在 Android.mk 文件中， 还可以用LOCAL_MODULE_PATH 和LOCAL_UNSTRIPPED_PATH指定最后的目标安装路径.
-不同的文件系统路径用以下的宏进行选择：
+     LOCAL_C_INCLUDES需要在任何包含LOCAL_CFLAGS/LOCAL_CPPFLAGS标志之前进行设置。
+
+- LOCAL_CFLAGS:  可选的编译器选项，在编译 C 代码文件的时候使用。这可能是有用的，指定一个附加的包含路径(相对于NDK的顶层目录)，宏定义，或者编译选项。
+
+注意：不要在 Android.mk 中改变 optimization/debugging 级别，只要在 Application.mk中指定合适的信息，就会自动地为你处理这个问题，在调试期间，会让NDK自动生成有用的数据文件。
+
+- LOCAL_CXXFLAGS:  与 LOCAL_CFLAGS同理，针对 C++源文件。
+- LOCAL_CPPFLAGS:  与 LOCAL_CFLAGS同理，但是对 C 和 C++ source files都适用。
+- LOCAL_STATIC_LIBRARIES: 表示该模块需要使用哪些静态库，以便在编译时进行链接。
+- LOCAL_SHARED_LIBRARIES:表示模块在运行时要依赖的共享库（动态库），在链接时就需要，以便在生成文件时嵌入其相应的信息。注意：它不会附加列出的模块到编译图，也就是仍然需要在Application.mk 中把它们添加到程序要求的模块中。
+
+- LOCAL_LDLIBS:  编译模块时要使用的附加的链接器选项。这对于使用‘-l’前缀传递指定库的名字是有用的。
+例如，LOCAL_LDLIBS := -lz表示告诉链接器生成的模块要在加载时刻链接到/system/lib/libz.so。可查看 docs/STABLE-APIS.TXT 获取使用 NDK发行版能链接到的开放的系统库列表。
+
+- LOCAL_ALLOW_UNDEFINED_SYMBOLS:默认情况下，在试图编译一个共享库时，任何未定义的引用将导致一个“未定义的符号”错误。这对于在源代码文件中捕捉错误会有很大的帮助。然而，如果因为某些原因，需要不启动这项检查，可把这个变量设为‘true’。注意相应的共享库可能在运行时加载失败。(这个一般尽量不要去设为 true)。
+
+- LOCAL_ARM_MODE: 默认情况下， arm目标二进制会以 thumb 的形式生成(16 位)，你可以通过设置这个变量为 arm如果你希望你的 module 是以 32 位指令的形式。
+'arm' (32-bit instructions) mode. E.g.: LOCAL_ARM_MODE := arm
+注意：可以在编译的时候告诉系统针对某个源码文件进行特定的类型的编译.比如，LOCAL_SRC_FILES := foo.c bar.c.arm  这样就告诉系统总是将 bar.c 以arm的模式编译。
+
+- LOCAL_MODULE_PATH 和 LOCAL_UNSTRIPPED_PATH
+在 Android.mk 文件中， 还可以用LOCAL_MODULE_PATH 和LOCAL_UNSTRIPPED_PATH指定最后的目标安装路径.不同的文件系统路径用以下的宏进行选择：
 
 ```
 TARGET_ROOT_OUT：表示根文件系统。
@@ -170,19 +173,26 @@ TARGET_OUT_DATA：表示 data文件系统。
 ```
 
 下面一个一个来分析：
+
 - funroll-loops：使用编译器的 -funroll-loops 选项 完全展开循环结构。原理： -funroll-loops编译选项使得程序中的循环步骤完全展开，这样会增加汇编代码的长度。
+
 - fprefetch-loop-arrays：生成数组预读取指令，对于使用巨大数组的程序可以加快代码执行速度，适合数据库相关的大型软件等。具体效果如何取决于代码。
+
 - fpermissive：在VS2010下编译通过的程序，移植到ARM平台时，通过ARM-GCC交叉编译时出现-fpermissive问题，问题描述是taking address of temporary [-fpermissive]查了一些资料，可能是不同编译器或者新旧编译器对于c++标准的不同解释的结果，在GCC下对于模板继承的规定与VS不同，有一个简单粗暴的解决办法，就是在交叉编译指令里面加入-fpermissive这一条命令，让模板代码由出错降为警告，从而编译通过。
+
 - fno-exceptions：禁用异常机制，一般只有对程序运行效率及资源占用比较看重的场合才会使用。
 - static-libgcc：静态链接 gcc 库，这里和半静态链接方式编译，这里和`-L/usr/lib64`以及`-L/usr/lib`一起说吧，这两个参数`-Ldir`指定库搜索路径。下面先介绍下三种标准库链接方式的选项和区别吧,更详细的说明在[这里](https://www.ibm.com/developerworks/cn/linux/l-cn-linklib/)。
-| 标准库连接方式 | 示例连接选项 | 优点 | 缺点 |
-|--------|--------|--------|--------|
-|    全静态    |   -static -pthread -lrt -ldl     |    不会发生应用程序在 不同 Linux 版本下的标准库不兼容问题。    |  生成的文件比较大，应用程序功能受限（不能调用动态库等）      |
-|    全动态    |   -pthread -lrt -ldl     |   生成文件是三者中最小的     |   比较容易发生应用程序在不同 Linux 版本下标准库依赖不兼容问题。     |
-|    半静态 (libgcc,libstdc++)   |    -static-libgcc -L. -pthread -lrt -ldl    |   灵活度大，能够针对不同的标准库采取不同的链接策略，从而避免不兼容问题发生。结合了全静态与全动态两种链接方式的优点。     |   比较难识别哪些库容易发生不兼容问题，目前只有依靠经验积累。某些功能会因选择的标准库版本而丧失。     |
+
+|标准库连接方式|     示例连接选项           |                         优点                          |                            缺点                              |
+|--------------|----------------------------|-------------------------------------------------------|--------------------------------------------------------------|
+|    全静态    | -static -pthread -lrt -ldl | 不会发生应用程序在 不同 Linux 版本下的标准库不兼容问题|     生成的文件比较大，应用程序功能受限,不能调用动态库        |
+|    全动态    |   -pthread -lrt -ldl       |   生成文件是三者中最小的                              | 比较容易发生应用程序在不同Linux 版本下标准库依赖不兼容问题   |
+|    半静态    |-static-libgcc -L. -pthread -lrt -ldl|能够针对不同的标准库采取不同的链接策略，从而避免不兼容问题发生 |    比较难识别哪些库容易发生不兼容问题       |
 >备注：想用Android JNI还是用全静态靠谱
--  Wl,--hash-style=both,--as-needed : Wl,option把选项option传递给连接器。如果option中含有逗号, 就在逗号处分割成多个选项。这个关系不大好像，默认加上。
--  DPARSEC_VERSION=3.0-beta-20150206 -DENABLE_THREADS：这两选项跟streamcluster.cpp里自定义的编译编译选项有关系，请看代码，下面是跟PARSEC_VERTION相关：
+
+- Wl,--hash-style=both,--as-needed : Wl,option把选项option传递给连接器。如果option中含有逗号, 就在逗号处分割成多个选项。这个关系不大好像，默认加上。
+
+- DPARSEC_VERSION=3.0-beta-20150206 -DENABLE_THREADS：这两选项跟streamcluster.cpp里自定义的编译编译选项有关系，请看代码，下面是跟PARSEC_VERTION相关：
 
 ```
 #ifdef PARSEC_VERSION
