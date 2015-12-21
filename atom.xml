@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-21T22:46:11+08:00</updated>
+ <updated>2015-12-21T23:21:32+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -266,6 +266,8 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
     stl &amp;quot;stlport_static&amp;quot;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;JNI C调用C++，报错&lt;code&gt;undefined reference to start_function&lt;/code&gt;&lt;/h3&gt;
+
 &lt;h2&gt;附录A：&lt;/h2&gt;
 
 &lt;p&gt;gcc命令的常用选项&lt;/p&gt;
