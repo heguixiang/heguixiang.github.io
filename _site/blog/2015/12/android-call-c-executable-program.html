@@ -368,6 +368,8 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 </code></pre></div>
 <h3>JNI C调用C++，报错<code>undefined reference to start_function</code></h3>
 
+<p>本来回去睡觉了，临走前试了一下，因为我的jni目录下有很多文件，有的是Cpp，有的是c,而我是用C调用Cpp里的函数，怪不得提示找不到function，果断所有文件全部改成cpp，试了以下，编译通过，明天看下，打包出一个apk，放到gem5中跑一下，看看是否和linux跑的效果一样，一致性缺失会很多，明天，看结果吧！</p>
+
 <h2>附录A：</h2>
 
 <p>gcc命令的常用选项</p>
