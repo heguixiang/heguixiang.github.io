@@ -358,6 +358,14 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 </ul>
 <div class="highlight"><pre><code class="language-text" data-lang="text">LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -llog
 </code></pre></div>
+<h3>iostream:No such file or directory</h3>
+
+<p>已经在application.mk中添加了<code>APP_STL := stlport_static</code>这么一行，可是还是不行，最后google，找到<a href="http://stackoverflow.com/questions/27920781/application-mk-is-ignored-studio">答案</a>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ndk{
+    moudleName &quot;Jnitest&quot;
+    stl &quot;stlport_static&quot;
+}
+</code></pre></div>
 <h2>附录A：</h2>
 
 <p>gcc命令的常用选项</p>
