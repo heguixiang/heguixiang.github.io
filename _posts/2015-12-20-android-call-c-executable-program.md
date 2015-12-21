@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Android 调用 C 编程生成的可执行程序
-description: 安卓调用C生成的可执行程序
+title: Android JNI Parsec3.0 移植准备
+description: Android JNI Parsec3.0 移植准备
 keywords: Android Runtime.getRuntime().exec()方法
 categories: [graduation, android]
 tags : [graduation, android]
@@ -188,6 +188,7 @@ TARGET_OUT_DATA：表示 data文件系统。
 |    全静态    | -static -pthread -lrt -ldl | 不会发生应用程序在 不同 Linux 版本下的标准库不兼容问题|     生成的文件比较大，应用程序功能受限,不能调用动态库        |
 |    全动态    |   -pthread -lrt -ldl       |   生成文件是三者中最小的                              | 比较容易发生应用程序在不同Linux 版本下标准库依赖不兼容问题   |
 |    半静态    |-static-libgcc -L. -pthread -lrt -ldl|能够针对不同的标准库采取不同的链接策略，从而避免不兼容问题发生 |    比较难识别哪些库容易发生不兼容问题       |
+
 >备注：想用Android JNI还是用全静态靠谱
 
 - Wl,--hash-style=both,--as-needed : Wl,option把选项option传递给连接器。如果option中含有逗号, 就在逗号处分割成多个选项。这个关系不大好像，默认加上。
