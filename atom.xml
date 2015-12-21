@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-21T20:43:57+08:00</updated>
+ <updated>2015-12-21T22:46:11+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -257,6 +257,14 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 &lt;li&gt;-L/usr/lib在android.mk中的写法,链接在&lt;a href=&quot;http://codingnow.cn/android/1623.html&quot;&gt;这里&lt;/a&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -llog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;iostream:No such file or directory&lt;/h3&gt;
+
+&lt;p&gt;已经在application.mk中添加了&lt;code&gt;APP_STL := stlport_static&lt;/code&gt;这么一行，可是还是不行，最后google，找到&lt;a href=&quot;http://stackoverflow.com/questions/27920781/application-mk-is-ignored-studio&quot;&gt;答案&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ndk{
+    moudleName &amp;quot;Jnitest&amp;quot;
+    stl &amp;quot;stlport_static&amp;quot;
+}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;附录A：&lt;/h2&gt;
 
