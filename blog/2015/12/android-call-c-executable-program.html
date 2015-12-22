@@ -378,18 +378,45 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 
 <ol>
 <li>在对应的mk文件中加入:LOCAL_LDLIBS := -llog</li>
-<li>在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：
-#include <android/log.h>
-#define LOGD(...) <strong>android_log_print(ANDROID_LOG_DEBUG, &quot;keymatch&quot;, __VA_ARGS</strong>)</li>
-<li>这样就可以使用了：LOGD(&quot;我要看到的调试信息^<em>^&quot;); 这样，在logcat端看到的输出是： 我要看到的调试信息^</em>^。
-#define LOGV(...) <strong>android_log_print(ANDROID_LOG_VERBOSE, &quot;ProjectName&quot;, __VA_ARGS</strong>)
-#define LOGD(...) <strong>android_log_print(ANDROID_LOG_DEBUG , &quot;ProjectName&quot;, __VA_ARGS</strong>)
-#define LOGI(...) <strong>android_log_print(ANDROID_LOG_INFO , &quot;ProjectName&quot;, __VA_ARGS</strong>)
-#define LOGW(...) <strong>android_log_print(ANDROID_LOG_WARN , &quot;ProjectName&quot;, __VA_ARGS</strong>)
-#define LOGE(...) <strong>android_log_print(ANDROID_LOG_ERROR , &quot;ProjectName&quot;, __VA_ARGS</strong>)</li>
+<li>在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：</li>
 </ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">#include &lt;android/log.h&gt;
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, &quot;keymatch&quot;, __VA_ARGS__)
+</code></pre></div>
+<ol>
+<li>这样就可以使用了：LOGD(&quot;我要看到的调试信息^<em>^&quot;); 这样，在logcat端看到的输出是： 我要看到的调试信息^</em>^。</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">#define LOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, &quot;ProjectName&quot;, __VA_ARGS__)
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG , &quot;ProjectName&quot;, __VA_ARGS__)
+#define LOGI(...) __android_log_print(ANDROID_LOG_INFO , &quot;ProjectName&quot;, __VA_ARGS__)
+#define LOGW(...) __android_log_print(ANDROID_LOG_WARN , &quot;ProjectName&quot;, __VA_ARGS__)
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR , &quot;ProjectName&quot;, __VA_ARGS__)
+</code></pre></div>
+<p>使用方法如下图所示：
+<img src="http://heguixiang.github.io/image/JNI_log.jpg" alt="JNI_log"></p>
 
-<p>按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，如图所示</p>
+<p>按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，解决办法：
+修改build.gradle配置工程中共有两个build.gradle配置文件，我们要修改的是在\app\build.gradle这个文件。
+defaultConfig里面写入:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ndk{
+        ldLibs &quot;log&quot;, &quot;z&quot;, &quot;m&quot;
+                     ｝
+</code></pre></div>
+<p>我的设置是这样的:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">defaultConfig {
+        applicationId &quot;com.example.seu_hgx.hello_world&quot;
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 1
+        versionName &quot;1.0&quot;
+        ndk{
+            moduleName &quot;AddJni&quot;
+            stl &quot;stlport_static&quot;
+            ldLibs &quot;log&quot;,&quot;z&quot;,&quot;m&quot;
+        }
+    }
+</code></pre></div>
+<p>这样设置完之后，问题解决。</p>
 
 <h3>解决JNI中C文件某行出错</h3>
 
