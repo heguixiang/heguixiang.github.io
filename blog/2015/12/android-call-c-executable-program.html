@@ -392,7 +392,7 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 <p>使用方法如下图所示：
 <img src="http://heguixiang.github.io/image/JNI_log.jpg" alt="JNI_log"></p>
 
-<p>按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，解决办法：
+<p>按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to &#39;__android_log_print&#39;，解决办法：
 修改build.gradle配置工程中共有两个build.gradle配置文件，我们要修改的是在\app\build.gradle这个文件。
 defaultConfig里面写入:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">ndk{

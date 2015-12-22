@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-22T23:20:43+08:00</updated>
+ <updated>2015-12-22T23:22:35+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -292,7 +292,7 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 &lt;p&gt;使用方法如下图所示：
 &lt;img src=&quot;http://heguixiang.github.io/image/JNI_log.jpg&quot; alt=&quot;JNI_log&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，解决办法：
+&lt;p&gt;按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to &amp;#39;__android_log_print&amp;#39;，解决办法：
 修改build.gradle配置工程中共有两个build.gradle配置文件，我们要修改的是在\app\build.gradle这个文件。
 defaultConfig里面写入:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ndk{
