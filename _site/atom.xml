@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-22T23:16:48+08:00</updated>
+ <updated>2015-12-22T23:20:43+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -12,7 +12,7 @@
 
  
  <entry>
-   <title>Android JNI Parsec3.0 移植准备</title>
+   <title>Android JNI Parsec3.0 移植</title>
    <link href="http://heguixiang.github.io/blog/2015/12/android-call-c-executable-program.html"/>
    <updated>2015-12-20T00:00:00+08:00</updated>
    <id>/blog/2015/12/android-call-c-executable-program</id>
@@ -276,16 +276,13 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 
 &lt;h3&gt;JNI中C部分实现log的API&lt;/h3&gt;
 
-&lt;ol&gt;
-&lt;li&gt;在对应的mk文件中加入:LOCAL_LDLIBS := -llog&lt;/li&gt;
-&lt;li&gt;在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;按照网友的说法，分下面几步解决：
+1.在对应的mk文件中加入:LOCAL_LDLIBS := -llog
+2.在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#include &amp;lt;android/log.h&amp;gt;
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, &amp;quot;keymatch&amp;quot;, __VA_ARGS__)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;这样就可以使用了：LOGD(&amp;quot;我要看到的调试信息^&lt;em&gt;^&amp;quot;); 这样，在logcat端看到的输出是： 我要看到的调试信息^&lt;/em&gt;^。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;3.这样就可以使用了：LOGD(&amp;quot;我要看到的调试信息^&lt;em&gt;^&amp;quot;); 这样，在logcat端看到的输出是： 我要看到的调试信息^&lt;/em&gt;^。&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#define LOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, &amp;quot;ProjectName&amp;quot;, __VA_ARGS__)
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG , &amp;quot;ProjectName&amp;quot;, __VA_ARGS__)
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO , &amp;quot;ProjectName&amp;quot;, __VA_ARGS__)

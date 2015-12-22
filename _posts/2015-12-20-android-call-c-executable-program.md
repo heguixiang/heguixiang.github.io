@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Android JNI Parsec3.0 移植准备
-description: Android JNI Parsec3.0 移植准备
+title: Android JNI Parsec3.0 移植
+description: Android JNI Parsec3.0 移植
 keywords: Android Runtime.getRuntime().exec()方法
 categories: [graduation, android]
 tags : [graduation, android]
@@ -275,16 +275,16 @@ ndk{
 本来回去睡觉了，临走前试了一下，因为我的jni目录下有很多文件，有的是Cpp，有的是c,而我是用C调用Cpp里的函数，怪不得提示找不到function，果断所有文件全部改成cpp，试了以下，编译通过，明天看下，打包出一个apk，放到gem5中跑一下，看看是否和linux跑的效果一样，一致性缺失会很多。
 
 ###JNI中C部分实现log的API
-
-1. 在对应的mk文件中加入:LOCAL_LDLIBS := -llog
-2. 在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：
+按照网友的说法，分下面几步解决：
+1.在对应的mk文件中加入:LOCAL_LDLIBS := -llog
+2.在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：
 
 ```
 #include <android/log.h>
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "keymatch", __VA_ARGS__)
 ```
 
-3. 这样就可以使用了：LOGD("我要看到的调试信息^_^"); 这样，在logcat端看到的输出是： 我要看到的调试信息^_^。
+3.这样就可以使用了：LOGD("我要看到的调试信息^_^"); 这样，在logcat端看到的输出是： 我要看到的调试信息^_^。
 
 ```
 #define LOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, "ProjectName", __VA_ARGS__)
@@ -323,6 +323,7 @@ defaultConfig {
         }
     }
 ```
+
 这样设置完之后，问题解决。
 
 ###解决JNI中C文件某行出错
