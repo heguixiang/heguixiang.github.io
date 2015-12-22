@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-22T23:13:32+08:00</updated>
+ <updated>2015-12-22T23:16:48+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -278,18 +278,45 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 
 &lt;ol&gt;
 &lt;li&gt;在对应的mk文件中加入:LOCAL_LDLIBS := -llog&lt;/li&gt;
-&lt;li&gt;在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：
-#include &lt;android/log.h&gt;
-#define LOGD(...) &lt;strong&gt;android_log_print(ANDROID_LOG_DEBUG, &amp;quot;keymatch&amp;quot;, __VA_ARGS&lt;/strong&gt;)&lt;/li&gt;
-&lt;li&gt;这样就可以使用了：LOGD(&amp;quot;我要看到的调试信息^&lt;em&gt;^&amp;quot;); 这样，在logcat端看到的输出是： 我要看到的调试信息^&lt;/em&gt;^。
-#define LOGV(...) &lt;strong&gt;android_log_print(ANDROID_LOG_VERBOSE, &amp;quot;ProjectName&amp;quot;, __VA_ARGS&lt;/strong&gt;)
-#define LOGD(...) &lt;strong&gt;android_log_print(ANDROID_LOG_DEBUG , &amp;quot;ProjectName&amp;quot;, __VA_ARGS&lt;/strong&gt;)
-#define LOGI(...) &lt;strong&gt;android_log_print(ANDROID_LOG_INFO , &amp;quot;ProjectName&amp;quot;, __VA_ARGS&lt;/strong&gt;)
-#define LOGW(...) &lt;strong&gt;android_log_print(ANDROID_LOG_WARN , &amp;quot;ProjectName&amp;quot;, __VA_ARGS&lt;/strong&gt;)
-#define LOGE(...) &lt;strong&gt;android_log_print(ANDROID_LOG_ERROR , &amp;quot;ProjectName&amp;quot;, __VA_ARGS&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：&lt;/li&gt;
 &lt;/ol&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#include &amp;lt;android/log.h&amp;gt;
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, &amp;quot;keymatch&amp;quot;, __VA_ARGS__)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;这样就可以使用了：LOGD(&amp;quot;我要看到的调试信息^&lt;em&gt;^&amp;quot;); 这样，在logcat端看到的输出是： 我要看到的调试信息^&lt;/em&gt;^。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#define LOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, &amp;quot;ProjectName&amp;quot;, __VA_ARGS__)
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG , &amp;quot;ProjectName&amp;quot;, __VA_ARGS__)
+#define LOGI(...) __android_log_print(ANDROID_LOG_INFO , &amp;quot;ProjectName&amp;quot;, __VA_ARGS__)
+#define LOGW(...) __android_log_print(ANDROID_LOG_WARN , &amp;quot;ProjectName&amp;quot;, __VA_ARGS__)
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR , &amp;quot;ProjectName&amp;quot;, __VA_ARGS__)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;使用方法如下图所示：
+&lt;img src=&quot;http://heguixiang.github.io/image/JNI_log.jpg&quot; alt=&quot;JNI_log&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，如图所示&lt;/p&gt;
+&lt;p&gt;按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，解决办法：
+修改build.gradle配置工程中共有两个build.gradle配置文件，我们要修改的是在\app\build.gradle这个文件。
+defaultConfig里面写入:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ndk{
+        ldLibs &amp;quot;log&amp;quot;, &amp;quot;z&amp;quot;, &amp;quot;m&amp;quot;
+                     ｝
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;我的设置是这样的:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;defaultConfig {
+        applicationId &amp;quot;com.example.seu_hgx.hello_world&amp;quot;
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 1
+        versionName &amp;quot;1.0&amp;quot;
+        ndk{
+            moduleName &amp;quot;AddJni&amp;quot;
+            stl &amp;quot;stlport_static&amp;quot;
+            ldLibs &amp;quot;log&amp;quot;,&amp;quot;z&amp;quot;,&amp;quot;m&amp;quot;
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这样设置完之后，问题解决。&lt;/p&gt;
 
 &lt;h3&gt;解决JNI中C文件某行出错&lt;/h3&gt;
 

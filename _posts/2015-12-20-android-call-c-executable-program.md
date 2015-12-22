@@ -278,17 +278,52 @@ ndk{
 
 1. 在对应的mk文件中加入:LOCAL_LDLIBS := -llog
 2. 在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：
+
+```
 #include <android/log.h>
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "keymatch", __VA_ARGS__)
+```
+
 3. 这样就可以使用了：LOGD("我要看到的调试信息^_^"); 这样，在logcat端看到的输出是： 我要看到的调试信息^_^。
+
+```
 #define LOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, "ProjectName", __VA_ARGS__)
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG , "ProjectName", __VA_ARGS__)
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO , "ProjectName", __VA_ARGS__)
 #define LOGW(...) __android_log_print(ANDROID_LOG_WARN , "ProjectName", __VA_ARGS__)
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR , "ProjectName", __VA_ARGS__)
+```
 
-按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，如图所示
+使用方法如下图所示：
+![JNI_log](http://heguixiang.github.io/image/JNI_log.jpg)
 
+按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，解决办法：
+修改build.gradle配置工程中共有两个build.gradle配置文件，我们要修改的是在\app\build.gradle这个文件。
+defaultConfig里面写入:
+
+```
+ndk{
+		ldLibs "log", "z", "m"
+                     ｝
+```
+
+我的设置是这样的:
+
+```
+defaultConfig {
+        applicationId "com.example.seu_hgx.hello_world"
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        ndk{
+            moduleName "AddJni"
+            stl "stlport_static"
+            ldLibs "log","z","m"
+        }
+    }
+```
+这样设置完之后，问题解决。
 
 ###解决JNI中C文件某行出错
 一句一句debug，定位到出问题的地方，代码如下所示：
