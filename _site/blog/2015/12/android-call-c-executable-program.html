@@ -374,6 +374,23 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 
 <p>本来回去睡觉了，临走前试了一下，因为我的jni目录下有很多文件，有的是Cpp，有的是c,而我是用C调用Cpp里的函数，怪不得提示找不到function，果断所有文件全部改成cpp，试了以下，编译通过，明天看下，打包出一个apk，放到gem5中跑一下，看看是否和linux跑的效果一样，一致性缺失会很多。</p>
 
+<h3>JNI中C部分实现log的API</h3>
+
+<ol>
+<li>在对应的mk文件中加入:LOCAL_LDLIBS := -llog</li>
+<li>在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：
+#include <android/log.h>
+#define LOGD(...) <strong>android_log_print(ANDROID_LOG_DEBUG, &quot;keymatch&quot;, __VA_ARGS</strong>)</li>
+<li>这样就可以使用了：LOGD(&quot;我要看到的调试信息^<em>^&quot;); 这样，在logcat端看到的输出是： 我要看到的调试信息^</em>^。
+#define LOGV(...) <strong>android_log_print(ANDROID_LOG_VERBOSE, &quot;ProjectName&quot;, __VA_ARGS</strong>)
+#define LOGD(...) <strong>android_log_print(ANDROID_LOG_DEBUG , &quot;ProjectName&quot;, __VA_ARGS</strong>)
+#define LOGI(...) <strong>android_log_print(ANDROID_LOG_INFO , &quot;ProjectName&quot;, __VA_ARGS</strong>)
+#define LOGW(...) <strong>android_log_print(ANDROID_LOG_WARN , &quot;ProjectName&quot;, __VA_ARGS</strong>)
+#define LOGE(...) <strong>android_log_print(ANDROID_LOG_ERROR , &quot;ProjectName&quot;, __VA_ARGS</strong>)</li>
+</ol>
+
+<p>按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，如图所示</p>
+
 <h3>解决JNI中C文件某行出错</h3>
 
 <p>一句一句debug，定位到出问题的地方，代码如下所示：</p>

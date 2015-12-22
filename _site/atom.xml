@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-22T22:48:54+08:00</updated>
+ <updated>2015-12-22T23:13:32+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -273,6 +273,23 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 &lt;h3&gt;JNI C调用C++，报错&lt;code&gt;undefined reference to start_function&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;本来回去睡觉了，临走前试了一下，因为我的jni目录下有很多文件，有的是Cpp，有的是c,而我是用C调用Cpp里的函数，怪不得提示找不到function，果断所有文件全部改成cpp，试了以下，编译通过，明天看下，打包出一个apk，放到gem5中跑一下，看看是否和linux跑的效果一样，一致性缺失会很多。&lt;/p&gt;
+
+&lt;h3&gt;JNI中C部分实现log的API&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在对应的mk文件中加入:LOCAL_LDLIBS := -llog&lt;/li&gt;
+&lt;li&gt;在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：
+#include &lt;android/log.h&gt;
+#define LOGD(...) &lt;strong&gt;android_log_print(ANDROID_LOG_DEBUG, &amp;quot;keymatch&amp;quot;, __VA_ARGS&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;这样就可以使用了：LOGD(&amp;quot;我要看到的调试信息^&lt;em&gt;^&amp;quot;); 这样，在logcat端看到的输出是： 我要看到的调试信息^&lt;/em&gt;^。
+#define LOGV(...) &lt;strong&gt;android_log_print(ANDROID_LOG_VERBOSE, &amp;quot;ProjectName&amp;quot;, __VA_ARGS&lt;/strong&gt;)
+#define LOGD(...) &lt;strong&gt;android_log_print(ANDROID_LOG_DEBUG , &amp;quot;ProjectName&amp;quot;, __VA_ARGS&lt;/strong&gt;)
+#define LOGI(...) &lt;strong&gt;android_log_print(ANDROID_LOG_INFO , &amp;quot;ProjectName&amp;quot;, __VA_ARGS&lt;/strong&gt;)
+#define LOGW(...) &lt;strong&gt;android_log_print(ANDROID_LOG_WARN , &amp;quot;ProjectName&amp;quot;, __VA_ARGS&lt;/strong&gt;)
+#define LOGE(...) &lt;strong&gt;android_log_print(ANDROID_LOG_ERROR , &amp;quot;ProjectName&amp;quot;, __VA_ARGS&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，如图所示&lt;/p&gt;
 
 &lt;h3&gt;解决JNI中C文件某行出错&lt;/h3&gt;
 

@@ -274,6 +274,22 @@ ndk{
 ###JNI C调用C++，报错`undefined reference to start_function`
 本来回去睡觉了，临走前试了一下，因为我的jni目录下有很多文件，有的是Cpp，有的是c,而我是用C调用Cpp里的函数，怪不得提示找不到function，果断所有文件全部改成cpp，试了以下，编译通过，明天看下，打包出一个apk，放到gem5中跑一下，看看是否和linux跑的效果一样，一致性缺失会很多。
 
+###JNI中C部分实现log的API
+
+1. 在对应的mk文件中加入:LOCAL_LDLIBS := -llog
+2. 在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：
+#include <android/log.h>
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "keymatch", __VA_ARGS__)
+3. 这样就可以使用了：LOGD("我要看到的调试信息^_^"); 这样，在logcat端看到的输出是： 我要看到的调试信息^_^。
+#define LOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, "ProjectName", __VA_ARGS__)
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG , "ProjectName", __VA_ARGS__)
+#define LOGI(...) __android_log_print(ANDROID_LOG_INFO , "ProjectName", __VA_ARGS__)
+#define LOGW(...) __android_log_print(ANDROID_LOG_WARN , "ProjectName", __VA_ARGS__)
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR , "ProjectName", __VA_ARGS__)
+
+按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，如图所示
+
+
 ###解决JNI中C文件某行出错
 一句一句debug，定位到出问题的地方，代码如下所示：
 
