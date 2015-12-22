@@ -297,7 +297,7 @@ ndk{
 使用方法如下图所示：
 ![JNI_log](http://heguixiang.github.io/image/JNI_log.jpg)
 
-按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to ‘__android_log_print‘，解决办法：
+按照上面做了之后，Android studio中JNI-NDK开发打印LOG出现  undefined reference to '__android_log_print'，解决办法：
 修改build.gradle配置工程中共有两个build.gradle配置文件，我们要修改的是在\app\build.gradle这个文件。
 defaultConfig里面写入:
 
