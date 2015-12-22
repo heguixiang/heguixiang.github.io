@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Android JNI Parsec3.0 移植准备 - 浪号 - Guixiang.He(guixiang.he@outlook.com)">
+    <meta name="description" content="Android JNI Parsec3.0 移植 - 浪号 - Guixiang.He(guixiang.he@outlook.com)">
     <title>
-      Android JNI Parsec3.0 移植准备 - 浪号
+      Android JNI Parsec3.0 移植 - 浪号
     </title>
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -106,7 +106,7 @@
         	<div class="all-posts" post-cate="All">
  		<header>
 		<h1>
-		  Android JNI Parsec3.0 移植准备
+		  Android JNI Parsec3.0 移植
 		  <div class="post-date"><a href="https://github.com/heguixiang/heguixiang.github.io/edit/master/_posts/2015-12-20-android-call-c-executable-program.md" target="_blank">纠错</a>&nbsp;&nbsp;
 			<span class="glyphicon glyphicon-time"></span>
 			20 Dec 2015
@@ -376,16 +376,13 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 
 <h3>JNI中C部分实现log的API</h3>
 
-<ol>
-<li>在对应的mk文件中加入:LOCAL_LDLIBS := -llog</li>
-<li>在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：</li>
-</ol>
+<p>按照网友的说法，分下面几步解决：
+1.在对应的mk文件中加入:LOCAL_LDLIBS := -llog
+2.在JNI的实现代码文件（.c或者.cpp）中加入包含LOG头文件的如下代码：</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">#include &lt;android/log.h&gt;
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, &quot;keymatch&quot;, __VA_ARGS__)
 </code></pre></div>
-<ol>
-<li>这样就可以使用了：LOGD(&quot;我要看到的调试信息^<em>^&quot;); 这样，在logcat端看到的输出是： 我要看到的调试信息^</em>^。</li>
-</ol>
+<p>3.这样就可以使用了：LOGD(&quot;我要看到的调试信息^<em>^&quot;); 这样，在logcat端看到的输出是： 我要看到的调试信息^</em>^。</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">#define LOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, &quot;ProjectName&quot;, __VA_ARGS__)
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG , &quot;ProjectName&quot;, __VA_ARGS__)
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO , &quot;ProjectName&quot;, __VA_ARGS__)
@@ -648,7 +645,7 @@ defaultConfig里面写入:</p>
                 
 		<li>
                   <a href="/blog/2015/12/android-call-c-executable-program.html" class="post-list-item">
-                    <h2>Android JNI Parsec3.0 移植准备</h2>
+                    <h2>Android JNI Parsec3.0 移植</h2>
                     <span class="date">Dec 20, 2015</span>
                   </a>
 		</li>
@@ -699,7 +696,7 @@ defaultConfig里面写入:</p>
                 
 		<li>
                   <a href="/blog/2015/12/android-call-c-executable-program.html" class="post-list-item">
-                    <h2>Android JNI Parsec3.0 移植准备</h2>
+                    <h2>Android JNI Parsec3.0 移植</h2>
                     <span class="date">Dec 20, 2015</span>
                   </a>
 		</li>
@@ -728,7 +725,7 @@ defaultConfig里面写入:</p>
   <!-- 多说评论框 start -->
   <div class="post-comment">
             <span>Comments</span>
-	<div class="ds-thread" data-thread-key="/blog/2015/12/android-call-c-executable-program" data-title="Android JNI Parsec3.0 移植准备" data-url="heguixiang.github.io/blog/2015/12/android-call-c-executable-program.html">
+	<div class="ds-thread" data-thread-key="/blog/2015/12/android-call-c-executable-program" data-title="Android JNI Parsec3.0 移植" data-url="heguixiang.github.io/blog/2015/12/android-call-c-executable-program.html">
 	</div>
  </div>
 <!-- 多说评论框 end -->
