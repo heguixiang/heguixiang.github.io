@@ -13,6 +13,13 @@ tags : [graduation, android]
 /usr/bin/g++ -O3 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -DENABLE_THREADS -pthread -L/usr/lib64 -L/usr/lib -static streamcluster.o parsec_barrier.o  -o streamcluster
 ```
 
+下面是Android studio用来生成JNI API接口，记录一下。
+
+```
+javah -d jni -classpath C:\Android\sdk\platforms\android-23\android.jar;C:\Android\sdk\extras\android\support\v4\android-support-v4.jar;C:\Android\sd
+k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\..\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
+```
+
 streamcluster程序调用的方法为`./streamcluster 10 20 64 8192 8192 1000 none none 32`,参数的解释请看下面：
 
 ```
@@ -265,12 +272,84 @@ ndk{
 ```
 
 ###JNI C调用C++，报错`undefined reference to start_function`
-本来回去睡觉了，临走前试了一下，因为我的jni目录下有很多文件，有的是Cpp，有的是c,而我是用C调用Cpp里的函数，怪不得提示找不到function，果断所有文件全部改成cpp，试了以下，编译通过，明天看下，打包出一个apk，放到gem5中跑一下，看看是否和linux跑的效果一样，一致性缺失会很多，明天，看结果吧！
+本来回去睡觉了，临走前试了一下，因为我的jni目录下有很多文件，有的是Cpp，有的是c,而我是用C调用Cpp里的函数，怪不得提示找不到function，果断所有文件全部改成cpp，试了以下，编译通过，明天看下，打包出一个apk，放到gem5中跑一下，看看是否和linux跑的效果一样，一致性缺失会很多。
+
+###解决JNI中C文件某行出错
+一句一句debug，定位到出问题的地方，代码如下所示：
 
 ```
-javah -d jni -classpath C:\Android\sdk\platforms\android-23\android.jar;C:\Android\sdk\extras\android\support\v4\android-support-v4.jar;C:\Android\sd
-k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\..\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
+void outcenterIDs( Points* centers, long* centerIDs, char* outfile ) {
+    LOGI("------------ outcenterIDs here  1 ------------------");
+    FILE* fp = fopen(outfile, "a+");
+    if( fp==NULL ) {
+         LOGI("------------ outcenterIDs here  2 ------------------");
+         fprintf(stderr, "error opening %s\n",outfile);
+         exit(1);
+     }
+    int* is_a_median = (int*)calloc( sizeof(int), centers->num );
+    LOGI("------------ outcenterIDs here  3 ------------------");
+    for( int i =0 ; i< centers->num; i++ ) {
+        is_a_median[centers->p[i].assign] = 1;
+    }
+    LOGI("------------ outcenterIDs here  4 ------------------");
+    for( int i = 0; i < centers->num; i++ ) {
+        if( is_a_median[i] ) {
+            fprintf(fp, "%u\n", centerIDs[i]);
+            fprintf(fp, "%lf\n", centers->p[i].weight);
+            for( int k = 0; k < centers->dim; k++ ) {
+                fprintf(fp, "%lf ", centers->p[i].coord[k]);
+            }
+            fprintf(fp,"\n\n");
+        }
+    }
+  LOGI("------------ outcenterIDs here  5 ------------------");
+    fclose(fp);
+}
 ```
+
+到了这里发现，总是发现他打印`outcenterIDs here 1`和`outcenterIDs here
+2`，而不打印3,4,5。很明显是因为文件打开失败，百度了一把，原来是要在AndroidManifest.xml下加读写权限，但是我找这样做了，还是不行，又检查了一下源码，发现，移植前文件outfile被定义为output.txt，这默认不在sdcard中，而上面设置的权限仅对于sdcard，所以，还需要将outfile改为`/sdcard/output.txt`。重新编译，搞定。
+
+下面备注一下容易忘的创建文件方式：
+
+```
+"w" 写入方式打开，将文件指针指向文件头并将文件大小截为零。如果文件不存在则尝试创建之。 
+"w+" 读写方式打开，将文件指针指向文件头并将文件大小截为零。如果文件不存在则尝试创建之。 
+"a" 写入方式打开，将文件指针指向文件末尾。如果文件不存在则尝试创建之。 
+"a+" 读写方式打开，将文件指针指向文件末尾。如果文件不存在则尝试创建之。
+```
+
+下面是我的Manifest文件：
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.seu_hgx.hello_world" >
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+```
+
+至此，Parsec3.0 streamcluster移植到Android JNI成功，剩余测试集的就有经验了，课题最担心的事情也算终于解决了。
 
 ##附录A：
 

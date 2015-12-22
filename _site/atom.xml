@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2015-12-22T20:36:08+08:00</updated>
+ <updated>2015-12-22T22:48:54+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -19,6 +19,10 @@
    <content type="html">&lt;p&gt;最近一直在弄Android JNI相关的东西，为的就是能够毕业课题中需要在安卓的环境下调用&lt;a href=&quot;http://parsec.cs.princeton.edu/parsec3-doc.htm&quot;&gt;parsec3.0&lt;/a&gt;的测试集，比如streamcluster，但是今天看了一下他的MakeFile,执行起来如下所示，因为依赖了很多库，之前想用Android JNI解决这个问题没有想象中那么简单。&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/usr/bin/g++ -O3 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -DENABLE_THREADS -pthread -c parsec_barrier.cpp
 /usr/bin/g++ -O3 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc -Wl,--hash-style=both,--as-needed -DPARSEC_VERSION=3.0-beta-20150206 -DENABLE_THREADS -pthread -L/usr/lib64 -L/usr/lib -static streamcluster.o parsec_barrier.o  -o streamcluster
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;下面是Android studio用来生成JNI API接口，记录一下。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;javah -d jni -classpath C:\Android\sdk\platforms\android-23\android.jar;C:\Android\sdk\extras\android\support\v4\android-support-v4.jar;C:\Android\sd
+k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\..\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;streamcluster程序调用的方法为&lt;code&gt;./streamcluster 10 20 64 8192 8192 1000 none none 32&lt;/code&gt;,参数的解释请看下面：&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;    fprintf(stderr,&amp;quot;  k1:          Min. number of centers allowed\n&amp;quot;);
@@ -268,10 +272,77 @@ LDFLAGS: -L/usr/lib64 -L/usr/lib -static
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;JNI C调用C++，报错&lt;code&gt;undefined reference to start_function&lt;/code&gt;&lt;/h3&gt;
 
-&lt;p&gt;本来回去睡觉了，临走前试了一下，因为我的jni目录下有很多文件，有的是Cpp，有的是c,而我是用C调用Cpp里的函数，怪不得提示找不到function，果断所有文件全部改成cpp，试了以下，编译通过，明天看下，打包出一个apk，放到gem5中跑一下，看看是否和linux跑的效果一样，一致性缺失会很多，明天，看结果吧！&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;javah -d jni -classpath C:\Android\sdk\platforms\android-23\android.jar;C:\Android\sdk\extras\android\support\v4\android-support-v4.jar;C:\Android\sd
-k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\..\build\intermediates\classes\debug com.example.seu_hgx.hello_world.MainActivity
+&lt;p&gt;本来回去睡觉了，临走前试了一下，因为我的jni目录下有很多文件，有的是Cpp，有的是c,而我是用C调用Cpp里的函数，怪不得提示找不到function，果断所有文件全部改成cpp，试了以下，编译通过，明天看下，打包出一个apk，放到gem5中跑一下，看看是否和linux跑的效果一样，一致性缺失会很多。&lt;/p&gt;
+
+&lt;h3&gt;解决JNI中C文件某行出错&lt;/h3&gt;
+
+&lt;p&gt;一句一句debug，定位到出问题的地方，代码如下所示：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;void outcenterIDs( Points* centers, long* centerIDs, char* outfile ) {
+    LOGI(&amp;quot;------------ outcenterIDs here  1 ------------------&amp;quot;);
+    FILE* fp = fopen(outfile, &amp;quot;a+&amp;quot;);
+    if( fp==NULL ) {
+         LOGI(&amp;quot;------------ outcenterIDs here  2 ------------------&amp;quot;);
+         fprintf(stderr, &amp;quot;error opening %s\n&amp;quot;,outfile);
+         exit(1);
+     }
+    int* is_a_median = (int*)calloc( sizeof(int), centers-&amp;gt;num );
+    LOGI(&amp;quot;------------ outcenterIDs here  3 ------------------&amp;quot;);
+    for( int i =0 ; i&amp;lt; centers-&amp;gt;num; i++ ) {
+        is_a_median[centers-&amp;gt;p[i].assign] = 1;
+    }
+    LOGI(&amp;quot;------------ outcenterIDs here  4 ------------------&amp;quot;);
+    for( int i = 0; i &amp;lt; centers-&amp;gt;num; i++ ) {
+        if( is_a_median[i] ) {
+            fprintf(fp, &amp;quot;%u\n&amp;quot;, centerIDs[i]);
+            fprintf(fp, &amp;quot;%lf\n&amp;quot;, centers-&amp;gt;p[i].weight);
+            for( int k = 0; k &amp;lt; centers-&amp;gt;dim; k++ ) {
+                fprintf(fp, &amp;quot;%lf &amp;quot;, centers-&amp;gt;p[i].coord[k]);
+            }
+            fprintf(fp,&amp;quot;\n\n&amp;quot;);
+        }
+    }
+  LOGI(&amp;quot;------------ outcenterIDs here  5 ------------------&amp;quot;);
+    fclose(fp);
+}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;到了这里发现，总是发现他打印&lt;code&gt;outcenterIDs here 1&lt;/code&gt;和&lt;code&gt;outcenterIDs here
+2&lt;/code&gt;，而不打印3,4,5。很明显是因为文件打开失败，百度了一把，原来是要在AndroidManifest.xml下加读写权限，但是我找这样做了，还是不行，又检查了一下源码，发现，移植前文件outfile被定义为output.txt，这默认不在sdcard中，而上面设置的权限仅对于sdcard，所以，还需要将outfile改为&lt;code&gt;/sdcard/output.txt&lt;/code&gt;。重新编译，搞定。&lt;/p&gt;
+
+&lt;p&gt;下面备注一下容易忘的创建文件方式：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;quot;w&amp;quot; 写入方式打开，将文件指针指向文件头并将文件大小截为零。如果文件不存在则尝试创建之。 
+&amp;quot;w+&amp;quot; 读写方式打开，将文件指针指向文件头并将文件大小截为零。如果文件不存在则尝试创建之。 
+&amp;quot;a&amp;quot; 写入方式打开，将文件指针指向文件末尾。如果文件不存在则尝试创建之。 
+&amp;quot;a+&amp;quot; 读写方式打开，将文件指针指向文件末尾。如果文件不存在则尝试创建之。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;下面是我的Manifest文件：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
+&amp;lt;manifest xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;
+    package=&amp;quot;com.example.seu_hgx.hello_world&amp;quot; &amp;gt;
+    &amp;lt;uses-permission android:name=&amp;quot;android.permission.WRITE_EXTERNAL_STORAGE&amp;quot;&amp;gt;&amp;lt;/uses-permission&amp;gt;
+    &amp;lt;uses-permission android:name=&amp;quot;android.permission.MOUNT_UNMOUNT_FILESYSTEMS&amp;quot;/&amp;gt;
+    &amp;lt;application
+        android:allowBackup=&amp;quot;true&amp;quot;
+        android:icon=&amp;quot;@mipmap/ic_launcher&amp;quot;
+        android:label=&amp;quot;@string/app_name&amp;quot;
+        android:supportsRtl=&amp;quot;true&amp;quot;
+        android:theme=&amp;quot;@style/AppTheme&amp;quot; &amp;gt;
+        &amp;lt;uses-permission android:name=&amp;quot;android.permission.WRITE_EXTERNAL_STORAGE&amp;quot;&amp;gt;&amp;lt;/uses-permission&amp;gt;
+        &amp;lt;activity
+            android:name=&amp;quot;.MainActivity&amp;quot;
+            android:label=&amp;quot;@string/app_name&amp;quot;
+            android:theme=&amp;quot;@style/AppTheme.NoActionBar&amp;quot; &amp;gt;
+            &amp;lt;intent-filter&amp;gt;
+                &amp;lt;action android:name=&amp;quot;android.intent.action.MAIN&amp;quot; /&amp;gt;
+
+                &amp;lt;category android:name=&amp;quot;android.intent.category.LAUNCHER&amp;quot; /&amp;gt;
+            &amp;lt;/intent-filter&amp;gt;
+        &amp;lt;/activity&amp;gt;
+    &amp;lt;/application&amp;gt;
+
+&amp;lt;/manifest&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;至此，Parsec3.0 streamcluster移植到Android JNI成功，剩余测试集的就有经验了，课题最担心的事情也算终于解决了。&lt;/p&gt;
+
 &lt;h2&gt;附录A：&lt;/h2&gt;
 
 &lt;p&gt;gcc命令的常用选项&lt;/p&gt;
