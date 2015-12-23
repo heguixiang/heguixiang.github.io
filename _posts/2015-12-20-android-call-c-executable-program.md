@@ -401,6 +401,34 @@ void outcenterIDs( Points* centers, long* centerIDs, char* outfile ) {
 </manifest>
 ```
 
+再看下工程中Android.mk的写法
+
+```
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+#LOCAL_STATIC_LIBRARIES +=  libstlport
+
+#LOCAL_C_INCLUDES += external/stlport/stlport
+#LOCAL_C_INCLUDES += bionic
+
+LOCAL_MODULE    := AddJni
+LOCAL_SRC_FILES := jni.cpp
+LOCAL_SRC_FILES += add.cpp
+LOCAL_SRC_FILES += parsec_barrier.cpp
+LOCAL_SRC_FILES += streamcluster.cpp
+
+LOCAL_CFLAGS := -O3 -g -funroll-loops -fprefetch-loop-arrays -fpermissive -fno-exceptions -static-libgcc
+LOCAL_CFLAGS += -pthread -static -static-libgcc
+lOCAL_LDFLAGS :=  -Wl,--hash-style=both,--as-needed
+LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -L$(SYSROOT)/usr/lib64
+LOCAL_LDLIBS += -llog
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
+
+include $(BUILD_SHARED_LIBRARY)
+```
+
 至此，Parsec3.0 streamcluster移植到Android JNI成功，剩余测试集的就有经验了，课题最担心的事情也算终于解决了。
 
 ##附录A：
