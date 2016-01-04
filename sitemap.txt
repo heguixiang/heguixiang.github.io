@@ -23,6 +23,8 @@
 
 
 
+    /blog/2016/01/multicore-communication-overhead.html
+
     /blog/2015/12/android-call-c-executable-program.html
 
     /blog/2015/12/android-jni-parsec.html
