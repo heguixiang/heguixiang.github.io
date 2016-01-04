@@ -1,11 +1,3 @@
----
-layout: post
-title: 多核
-description: 核间通信开销和一致性缺失的关系
-keywords: 多核性能 核间通信开销 一致性缺失 
-categories: [graduation, multicore]
-tags : [graduation, multicore]
----
 因为课题的需要，需要在论文里说明清楚核间通信开销和一致性缺失事件的关系。 于是就有下面这些问题：
 
 1. 为什么会有多核，为什么CPU要向多核技术发展
