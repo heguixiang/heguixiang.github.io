@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2016-01-04T21:42:49+08:00</updated>
+ <updated>2016-01-04T21:47:53+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -12,7 +12,7 @@
 
  
  <entry>
-   <title>Multicore Communication Overhead</title>
+   <title>多核</title>
    <link href="http://heguixiang.github.io/blog/2016/01/multicore-communication-overhead.html"/>
    <updated>2016-01-04T00:00:00+08:00</updated>
    <id>/blog/2016/01/multicore-communication-overhead</id>
