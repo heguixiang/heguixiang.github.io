@@ -3,7 +3,7 @@ layout: post
 title: Android JNI 基础篇
 description: 安卓JNI 实现java调用C/C++
 keywords: Android JNI 基础篇
-categories: [graduationi, android]
+categories: [graduation, android]
 tags : [graduation, android]
 ---
 
