@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2016-01-04T21:56:15+08:00</updated>
+ <updated>2016-01-04T22:30:03+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -109,6 +109,13 @@
 &lt;p&gt;Bootloader支持&lt;code&gt;Octeon_phy_mem_named_block_alloc( )&lt;/code&gt;，分配以名字命名的物理内存空间，不管是Service Executive应用程序还是linux kernel都可以通过&lt;code&gt;Octeon_phy_mem_named_block_find( )&lt;/code&gt;找到这部分内存，实现core之间的共享数据。&lt;/p&gt;
 
 &lt;p&gt;Linux kernel也提供了共享内存的机制。主要有&lt;code&gt;mmap()&lt;/code&gt;，系统V，Posix共享内存模型等。系统调用mmap()通过映射一个普通文件实现共享内存。普通文件被映射到进程地址空间后，进程可以向访问普通内存一样对文件进行访问。系统V共享内存指的是把所有共享数据放在共享内存区域（IPC shared memory region），任何想要访问该数据的进程都必须在本进程的地址空间新增一块内存区域，用来映射存放共享数据的物理内存页面。posix共享内存区首先指定一个名字参数调用shm_open,以创建一个新的共享内存区对象或打开一个以存在的共享内存区对象。然后调用mmap把这个共享内存区映射到调用进程的地址空间。传递给shm_open的名字参数随后由希望共享该内存区的任何其他进程使用。&lt;/p&gt;
+
+&lt;p&gt;多核操作系统需要面临的两大难题&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;如何让应用并行化以获得效率&lt;/li&gt;
+&lt;li&gt;如何对资源合理分配以达到性能最优&lt;/li&gt;
+&lt;/ol&gt;
 </content>
  </entry>
  
