@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2016-01-05T19:57:56+08:00</updated>
+ <updated>2016-01-05T20:12:04+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -127,11 +127,13 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
 &lt;p&gt;实际获得的这个阶段8个线程的加速比是4.72。如果没有一致性缺失，在临界区的执行时间就不会增加，从而避免更糟糕的性能所示影响。根据一个更加细节的计算，得出的结论是，如果没有一致性缺失事件的发生，那么8个线程在这个阶段的加速比为7.5。&lt;strong&gt;所以说这个阶段的加速比的损失基本全部来自于一致性缺失的贡献&lt;/strong&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;2.2015年一篇Trans期刊，论文名叫《Adaptive Cache Coherence Mechanisms with Producer-Consumer Sharing Optimization for Chip Multiprocessors》一文中摘要的第一句话的观点对我论文很重要，因为这句话是我要在我的论文中引用的，表明我主要研究cache一致性缺失对核间通信开销的影响，因为它是多核性能开销的一个主要原因，所以贴出来，记一下。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;In Chip Multiprocessors(CMPs),maintaining cache coherence can account for a major performance overhead.
+&lt;p&gt;2.2015年一篇Trans期刊，论文名叫《Adaptive Cache Coherence Mechanisms with Producer-Consumer Sharing Optimization for Chip Multiprocessors》一文中有这么两句话对我论文很重要，因为这句话是我要在我的论文中引用的，表明我主要研究cache一致性缺失对核间通信开销的影响，因为它是多核性能开销的一个主要原因，所以贴出来，记一下。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.In Chip Multiprocessors(CMPs),maintaining cache coherence can account for a major performance overhead.
+2.The proposed mechanisms were shown to reduce coherence misses by up to 48% and in return speed up application up to 30%
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;翻译一下：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;在多核处理器中，保持Cache的一致性可以算是性能开销的一个主要原因
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.在多核处理器中，保持Cache的一致性可以算是性能开销的一个主要原因
+2.提出的机制实验显示可以减少48%的一致性缺失，换得的是应用运行加速了30%
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;核间通信不可避免，而不可避免的多核间核间通信开销又阻碍了系统性能大幅提升，使得多核性能不能随着核数的增加而线性增加，因此研究如何&lt;a href=&quot;http://heguixiang.github.io/paper/Scheduling_Algorithm_with_Communication_Overhead_Reduction.pdf&quot;&gt;降低核间通信开销&lt;/a&gt; 变得尤为重要。而本文研究重点是快速并有效的量化不同cache配置下核间通信开销（其实就是一致性缺失惩罚时间）。&lt;/p&gt;
 
