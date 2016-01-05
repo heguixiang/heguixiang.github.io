@@ -225,6 +225,11 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
 <p>实际获得的这个阶段8个线程的加速比是4.72。如果没有一致性缺失，在临界区的执行时间就不会增加，从而避免更糟糕的性能所示影响。根据一个更加细节的计算，得出的结论是，如果没有一致性缺失事件的发生，那么8个线程在这个阶段的加速比为7.5。所以说这个阶段的加速比的损失基本全部来自于一致性缺失的贡献。</p>
 </blockquote>
 
+<p>2015年一篇Trans期刊，论文名叫《Adaptive Cache Coherence Mechanisms with Producer-Consumer Sharing Optimization for Chip Multiprocessors》一文中摘要的第一句话的观点对我论文很重要，因为这句话是我要在我的论文中引用的，表明我主要研究cache一致性缺失对核间通信开销的影响，因为它是多核性能开销的一个主要原因，所以贴出来，记一下。
+    In Chip Multiprocessors(CMPs),maintaining cache coherence can account for a major performance overhead.
+翻译一下：
+    在多核处理器中，保持Cache的一致性可以算是性能开销的一个主要原因</p>
+
 <p>核间通信不可避免，而不可避免的多核间核间通信开销又阻碍了系统性能大幅提升，使得多核性能不能随着核数的增加而线性增加，因此研究如何<a href="http://heguixiang.github.io/paper/Scheduling_Algorithm_with_Communication_Overhead_Reduction.pdf">降低核间通信开销</a> 变得尤为重要。而本文研究重点是快速并有效的量化不同cache配置下核间通信开销（其实就是一致性缺失惩罚时间）。</p>
 
 <p>顺便提一下，多核操作系统需要面临的两大难题</p>
