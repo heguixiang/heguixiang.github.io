@@ -95,7 +95,7 @@ Linux kernel也提供了共享内存的机制。主要有`mmap()`，系统V，Po
 
 **核间通信开销：**多核处理器在嵌入式领域得到越来越广泛的应用，在多核环境下，运行在不同核上的任务之间存在数据依赖，即多核之间存在数据共享问题，一致性缺失问题便由此产生,Uppsala大学14年一篇IEEE论文提出，在有些情况下[14' IEEE](http://heguixiang.github.io/paper/Modeling Cache Coherence Misses on Multicores.pdf)，一致性缺失事件发生造成的开销基本等于多核性能损失的那部分加速比，当然这是在程序并行度理想的情况下，因为影响多核加速比的另一个重要因素是程序的并行度的高与低。
 
-核间通信不可避免，而不可避免的多核间核间通信开销又阻碍了系统性能大幅提升，使得多核性能不能随着核数的增加而线性增加，因此研究如何[降低核间通信开销](http://heguixiang.github.io/paper/Scheduling_Algorithm_with_Communication_Overhead_Reduction.pdf)变得尤为重要。而本文研究重点是快速并有效的量化不同cache配置下核间通信开销（其实就是一致性缺失惩罚时间）。
+核间通信不可避免，而不可避免的多核间核间通信开销又阻碍了系统性能大幅提升，使得多核性能不能随着核数的增加而线性增加，因此研究如何[降低核间通信开销](http://heguixiang.github.io/paper/Scheduling Algorithm with Communication Overhead Reduction.pdf)变得尤为重要。而本文研究重点是快速并有效的量化不同cache配置下核间通信开销（其实就是一致性缺失惩罚时间）。
 
 顺便提一下，多核操作系统需要面临的两大难题
 
