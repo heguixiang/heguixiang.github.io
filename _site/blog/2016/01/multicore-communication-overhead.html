@@ -231,7 +231,7 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
 <div class="highlight"><pre><code class="language-text" data-lang="text">In Chip Multiprocessors(CMPs),maintaining cache coherence can account for a major performance overhead.
 </code></pre></div>
 <p>翻译一下：</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">在多核处理器中，**保持Cache的一致性可以算是性能开销的一个主要原因**
+<div class="highlight"><pre><code class="language-text" data-lang="text">在多核处理器中，保持Cache的一致性可以算是性能开销的一个主要原因
 </code></pre></div>
 <p>核间通信不可避免，而不可避免的多核间核间通信开销又阻碍了系统性能大幅提升，使得多核性能不能随着核数的增加而线性增加，因此研究如何<a href="http://heguixiang.github.io/paper/Scheduling_Algorithm_with_Communication_Overhead_Reduction.pdf">降低核间通信开销</a> 变得尤为重要。而本文研究重点是快速并有效的量化不同cache配置下核间通信开销（其实就是一致性缺失惩罚时间）。</p>
 

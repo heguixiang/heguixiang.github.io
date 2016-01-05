@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2016-01-05T19:57:02+08:00</updated>
+ <updated>2016-01-05T19:57:56+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -131,7 +131,7 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;In Chip Multiprocessors(CMPs),maintaining cache coherence can account for a major performance overhead.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;翻译一下：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;在多核处理器中，**保持Cache的一致性可以算是性能开销的一个主要原因**
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;在多核处理器中，保持Cache的一致性可以算是性能开销的一个主要原因
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;核间通信不可避免，而不可避免的多核间核间通信开销又阻碍了系统性能大幅提升，使得多核性能不能随着核数的增加而线性增加，因此研究如何&lt;a href=&quot;http://heguixiang.github.io/paper/Scheduling_Algorithm_with_Communication_Overhead_Reduction.pdf&quot;&gt;降低核间通信开销&lt;/a&gt; 变得尤为重要。而本文研究重点是快速并有效的量化不同cache配置下核间通信开销（其实就是一致性缺失惩罚时间）。&lt;/p&gt;
 
