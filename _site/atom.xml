@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2016-01-06T15:45:05+08:00</updated>
+ <updated>2016-01-06T16:06:14+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -20,8 +20,8 @@
 
 &lt;ol&gt;
 &lt;li&gt;为什么会有多核，为什么CPU要向多核技术发展&lt;/li&gt;
-&lt;li&gt;什么是核间通信开销，它跟多核性能有什么关系呢&lt;/li&gt;
-&lt;li&gt;核间通信开销跟哪些因素有关系，而核间通信开销到底和一致性缺失存在多大的关系&lt;/li&gt;
+&lt;li&gt;什么是核间通信开销，核间通信和一致性缺失存在什么关系&lt;/li&gt;
+&lt;li&gt;核间通信开销和我们常说的多核性能以及speedup有什么关系，还和其他哪些因素有关&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;下面一一来看这三个问题&lt;/p&gt;
@@ -135,7 +135,7 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.在多核处理器中，保持Cache的一致性可以算是性能开销的一个主要原因
 2.提出的机制实验显示可以减少48%的一致性缺失，换得的是应用运行加速了30%
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;3.07年一篇合肥工业大学的硕士论文《对称多核处理器中cache一致性的研究与实现》的摘要第一段有这么样一句话：&lt;strong&gt;在此基础上引出了数据一致性问题，数据高速缓存的一致性(cache coherence)是解决多核之间通信的一个重要课题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3.07年一篇合肥工业大学的硕士论文&lt;a href=&quot;http://heguixiang.github.io/paper/%E5%AF%B9%E7%A7%B0%E5%A4%9A%E6%A0%B8%E5%A4%84%E7%90%86%E5%99%A8Cache%E4%B8%80%E8%87%B4%E6%80%A7%E7%9A%84%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AE%9E%E7%8E%B0.caj&quot;&gt;《对称多核处理器中cache一致性的研究与实现》&lt;/a&gt;的摘要第一段有这么样一句话：&lt;strong&gt;在此基础上引出了数据一致性问题，数据高速缓存的一致性(cache coherence)是解决多核之间通信的一个重要课题&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;由此可见一致性缺失确实是现在多核核间通信开销的一个问题。&lt;/p&gt;
 
@@ -147,6 +147,16 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
 &lt;li&gt;如何让应用并行化以获得效率，所谓的并行度高&lt;/li&gt;
 &lt;li&gt;如何对资源合理分配以达到性能最优，减少对资源的竞争，降低一致性缺失事件发生的次数。&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h2&gt;核间通信开销与多核性能的关系&lt;/h2&gt;
+
+&lt;p&gt;多核性能的非线性化包含核间通信开销因素，12年一篇Ghent大学的&lt;a href=&quot;http://heguixiang.github.io/paper/Speedup_Stacks.pdf&quot;&gt;论文&lt;/a&gt;说到了加速比栈，也就是加速比跟哪些因素有关，请看下图&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://heguixiang.github.io/image/speedup_stacks.png&quot; alt=&quot;speedup stacks&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看到多核加速比跟很多关系相关，包括并行化开销，cache一致性等很多因素，但是核间通信开销主要还是跟一致性缺失相关。&lt;/p&gt;
+
+&lt;p&gt;综上，有了这些材料，可以写论文第一章了。&lt;/p&gt;
 </content>
  </entry>
  
