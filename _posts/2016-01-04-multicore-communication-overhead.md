@@ -113,16 +113,19 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
     1.In Chip Multiprocessors(CMPs),maintaining cache coherence can account for a major performance overhead.
     2.The proposed mechanisms were shown to reduce coherence misses by up to 48% and in return speed up application up to 30%
 
-3.07年一篇合肥工业大学的硕士论文《对称多核处理器中cache一致性的研究与实现》的摘要第一段有这么样一句话：**在此基础上引出了数据一致性问题，数据高速缓存的一致性(cache coherence)是解决多核之间通信的一个重要课题**
-
-由此可见一致性缺失确实是现在多核核间通信开销的一个问题。
 
 翻译一下：
 
     1.在多核处理器中，保持Cache的一致性可以算是性能开销的一个主要原因
     2.提出的机制实验显示可以减少48%的一致性缺失，换得的是应用运行加速了30%
 
+
+3.07年一篇合肥工业大学的硕士论文《对称多核处理器中cache一致性的研究与实现》的摘要第一段有这么样一句话：**在此基础上引出了数据一致性问题，数据高速缓存的一致性(cache coherence)是解决多核之间通信的一个重要课题**
+
+由此可见一致性缺失确实是现在多核核间通信开销的一个问题。
+
 核间通信不可避免，而不可避免的多核间核间通信开销又阻碍了系统性能大幅提升，使得多核性能不能随着核数的增加而线性增加，因此研究如何[降低核间通信开销](http://heguixiang.github.io/paper/Scheduling_Algorithm_with_Communication_Overhead_Reduction.pdf) 变得尤为重要。而本文研究重点是快速并有效的量化不同cache配置下核间通信开销（其实就是一致性缺失惩罚时间）。
+
 
 顺便提一下，多核操作系统需要面临的两大难题
 
