@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 多核
+title: 多核核间通信开销
 description: 核间通信开销和一致性缺失的关系
 keywords: 多核性能 核间通信开销 一致性缺失 
 categories: [graduation, multicore]
