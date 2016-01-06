@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2016-01-06T16:06:14+08:00</updated>
+ <updated>2016-01-06T16:07:57+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -135,7 +135,7 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.在多核处理器中，保持Cache的一致性可以算是性能开销的一个主要原因
 2.提出的机制实验显示可以减少48%的一致性缺失，换得的是应用运行加速了30%
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;3.07年一篇合肥工业大学的硕士论文&lt;a href=&quot;http://heguixiang.github.io/paper/%E5%AF%B9%E7%A7%B0%E5%A4%9A%E6%A0%B8%E5%A4%84%E7%90%86%E5%99%A8Cache%E4%B8%80%E8%87%B4%E6%80%A7%E7%9A%84%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AE%9E%E7%8E%B0.caj&quot;&gt;《对称多核处理器中cache一致性的研究与实现》&lt;/a&gt;的摘要第一段有这么样一句话：&lt;strong&gt;在此基础上引出了数据一致性问题，数据高速缓存的一致性(cache coherence)是解决多核之间通信的一个重要课题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3.07年一篇合肥工业大学的硕士论文《对称多核处理器中cache一致性的研究与实现》的摘要第一段有这么样一句话：&lt;strong&gt;在此基础上引出了数据一致性问题，数据高速缓存的一致性(cache coherence)是解决多核之间通信的一个重要课题&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;由此可见一致性缺失确实是现在多核核间通信开销的一个问题。&lt;/p&gt;
 
