@@ -4,7 +4,7 @@
  <title>浪号</title>
  <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
  <link href="http://heguixiang.github.io"/>
- <updated>2016-01-06T15:02:58+08:00</updated>
+ <updated>2016-01-06T15:42:06+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -112,7 +112,7 @@
 
 &lt;p&gt;&lt;strong&gt;核间通信开销：&lt;/strong&gt;多核处理器在嵌入式领域得到越来越广泛的应用，在多核环境下，运行在不同核上的任务之间存在数据依赖，即多核之间存在数据共享问题，一致性缺失问题便由此产生,Uppsala大学14年一篇IEEE论文提出，在有些情况下&lt;a href=&quot;http://heguixiang.github.io/paper/Modeling_Cache_Coherence_Misses_on_Multicores.pdf&quot;&gt;14&amp;#39; IEEE&lt;/a&gt;，一致性缺失事件发生造成的开销基本等于多核性能损失的那部分加速比，当然这是在程序并行度理想的情况下，因为影响多核加速比的另一个重要因素是程序的并行度的高与低。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;为了引出一致性缺失与核间通信开销的关系，我需要引用这两篇论文的实验和结论&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为了引出一致性缺失与核间通信开销的关系，我需要引用下面几篇论文的实验和结论&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;1.下面详细说明下上面提到的这一篇文章中提到的观点：在文章的Introduction的第二段，我这里将他翻译一下吧：&lt;/p&gt;
 
@@ -131,6 +131,10 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.In Chip Multiprocessors(CMPs),maintaining cache coherence can account for a major performance overhead.
 2.The proposed mechanisms were shown to reduce coherence misses by up to 48% and in return speed up application up to 30%
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;3.07年一篇合肥工业大学的硕士论文《对称多核处理器中cache一致性的研究与实现》的摘要第一段有这么样一句话：&lt;strong&gt;在此基础上引出了数据一致性问题，数据高速缓存的一致性(cache coherence)是解决多核之间通信的一个重要课题&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;由此可见一致性缺失确实是现在多核核间通信开销的一个问题。&lt;/p&gt;
+
 &lt;p&gt;翻译一下：&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1.在多核处理器中，保持Cache的一致性可以算是性能开销的一个主要原因
 2.提出的机制实验显示可以减少48%的一致性缺失，换得的是应用运行加速了30%

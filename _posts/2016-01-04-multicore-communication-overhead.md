@@ -95,7 +95,7 @@ Linux kernel也提供了共享内存的机制。主要有`mmap()`，系统V，Po
 
 **核间通信开销：**多核处理器在嵌入式领域得到越来越广泛的应用，在多核环境下，运行在不同核上的任务之间存在数据依赖，即多核之间存在数据共享问题，一致性缺失问题便由此产生,Uppsala大学14年一篇IEEE论文提出，在有些情况下[14' IEEE](http://heguixiang.github.io/paper/Modeling_Cache_Coherence_Misses_on_Multicores.pdf)，一致性缺失事件发生造成的开销基本等于多核性能损失的那部分加速比，当然这是在程序并行度理想的情况下，因为影响多核加速比的另一个重要因素是程序的并行度的高与低。
 
-**为了引出一致性缺失与核间通信开销的关系，我需要引用这两篇论文的实验和结论**
+**为了引出一致性缺失与核间通信开销的关系，我需要引用下面几篇论文的实验和结论**
 
 1.下面详细说明下上面提到的这一篇文章中提到的观点：在文章的Introduction的第二段，我这里将他翻译一下吧：
 
@@ -112,6 +112,10 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
 
     1.In Chip Multiprocessors(CMPs),maintaining cache coherence can account for a major performance overhead.
     2.The proposed mechanisms were shown to reduce coherence misses by up to 48% and in return speed up application up to 30%
+
+3.07年一篇合肥工业大学的硕士论文《对称多核处理器中cache一致性的研究与实现》的摘要第一段有这么样一句话：**在此基础上引出了数据一致性问题，数据高速缓存的一致性(cache coherence)是解决多核之间通信的一个重要课题**
+
+由此可见一致性缺失确实是现在多核核间通信开销的一个问题。
 
 翻译一下：
 
