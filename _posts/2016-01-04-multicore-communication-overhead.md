@@ -124,6 +124,14 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
 
 4.11年一篇哈尔滨工程大学的硕士论文《多核环境Cache一致性协议研究》的摘要也有类似的一句话：**多核处理器与单核处理器相比具有容易获得高频率，功耗低，通信延迟等优点，但是同样存在着应用限制和技术挑战，其中，Cache一致性是影响多核处理器性能的一个关键问题**
 
+5.10年一篇来自于[ACM](http://heguixiang.github.io/paper/An_adaptive_cache_coherence_protocol_for_chip_multiprocessors.pdf)的论文《An adaptive cache coherence protocal for chip multiprocessors》摘要的第二句话如下：
+
+    CMPs(Chip Multiprocessors) introduce many challenges that need to be addressed to achieve the best performance. One of the big challenges comes with the shared-memory model observed in such architectures which is the cache coherence overhead problem.
+
+翻译一下：
+    
+    为了获得最好的性能，多核处理器引入了很多挑战。这其中有个很大的挑战来自于共享内存处理器架构的一致性开销问题。
+
 由此可见一致性缺失确实是现在多核核间通信开销的一个问题。
 
 核间通信不可避免，而不可避免的多核间核间通信开销又阻碍了系统性能大幅提升，使得多核性能不能随着核数的增加而线性增加，因此研究如何[降低核间通信开销](http://heguixiang.github.io/paper/Scheduling_Algorithm_with_Communication_Overhead_Reduction.pdf) 变得尤为重要。而本文研究重点是快速并有效的量化不同cache配置下核间通信开销（其实就是一致性缺失惩罚时间）。
