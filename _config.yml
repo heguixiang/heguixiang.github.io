@@ -6,9 +6,11 @@ markdown: redcarpet
 redcarpet:
     extensions: [fenced_code_blocks,no_intra_emphasis,strikethrough,no_intra_emphasis,autolink,tables]
 highlights: pygments
-url: "http://heguixiang.github.io"
+#url: "http://heguixiang.github.io"
+url: "http://www.hello2hgx.cn"
 baseurl: ""
-atom-baseurl: "http://heguixang.github.io"
+#atom-baseurl: "http://heguixang.github.io"
+atom-baseurl: "http://www.hello2hgx.cn"
 #cdn_url: 7u2t01.com1.z0.glb.clouddn.com
 #lsi: false
 #safe: true
@@ -26,7 +28,8 @@ paginate_path: "page:num"
 #  use_coderay: false
 
 JB :
-    IMAGE_PATH :  heguixiang.github.io/images
+    #IMAGE_PATH :  heguixiang.github.io/images
+    IMAGE_PATH :  hello2hgx.cn/images
 
 domain: heguixiang.github.io
 title: 浪号
