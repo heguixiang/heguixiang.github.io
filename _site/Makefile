@@ -3,6 +3,7 @@ deploy:
 	jekyll build
 	git add -A
 	git commit -m "update source"
+	cp CNAME _site/
 	cp -r _site /tmp/
 	git checkout master
 	rm -r ./*
