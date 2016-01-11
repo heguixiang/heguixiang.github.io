@@ -8,7 +8,7 @@ redcarpet:
 highlights: pygments
 #url: "http://heguixiang.github.io"
 url: "http://hello2hgx.cn"
-baseurl: ""
+baseurl: "/"
 #atom-baseurl: "http://heguixang.github.io"
 atom-baseurl: "http://hello2hgx.cn"
 #cdn_url: 7u2t01.com1.z0.glb.clouddn.com
