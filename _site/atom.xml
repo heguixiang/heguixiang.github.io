@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>浪号</title>
- <link href="http://heguixiang.github.io/atom.xml" rel="self"/>
- <link href="http://heguixiang.github.io"/>
- <updated>2016-01-11T14:22:51+08:00</updated>
+ <link href="http://http://hello2hgx.cn/atom.xml" rel="self"/>
+ <link href="http://http://hello2hgx.cn"/>
+ <updated>2016-01-11T14:29:46+08:00</updated>
  <author>
    <name>Guixiang.He</name>
    <email>guixiang.he@outlook.com</email>
@@ -13,7 +13,7 @@
  
  <entry>
    <title>多核核间通信开销</title>
-   <link href="http://heguixiang.github.io/blog/2016/01/multicore-communication-overhead.html"/>
+   <link href="http://http://hello2hgx.cn/blog/2016/01/multicore-communication-overhead.html"/>
    <updated>2016-01-04T00:00:00+08:00</updated>
    <id>/blog/2016/01/multicore-communication-overhead</id>
    <content type="html">&lt;p&gt;因为课题的需要，需要在论文里说明清楚核间通信开销和一致性缺失事件的关系。 于是就有下面这些问题：&lt;/p&gt;
@@ -170,7 +170,7 @@ miss主要来自于对临界区共享数据的访问，因为保护共享数据�
  
  <entry>
    <title>Android JNI Parsec3.0 移植</title>
-   <link href="http://heguixiang.github.io/blog/2015/12/android-call-c-executable-program.html"/>
+   <link href="http://http://hello2hgx.cn/blog/2015/12/android-call-c-executable-program.html"/>
    <updated>2015-12-20T00:00:00+08:00</updated>
    <id>/blog/2015/12/android-call-c-executable-program</id>
    <content type="html">&lt;p&gt;最近一直在弄Android JNI相关的东西，为的就是能够毕业课题中需要在安卓的环境下调用&lt;a href=&quot;http://parsec.cs.princeton.edu/parsec3-doc.htm&quot;&gt;parsec3.0&lt;/a&gt;的测试集，比如streamcluster，但是今天看了一下他的MakeFile,执行起来如下所示，因为依赖了很多库，之前想用Android JNI解决这个问题没有想象中那么简单。&lt;/p&gt;
@@ -613,7 +613,7 @@ include $(BUILD_SHARED_LIBRARY)
  
  <entry>
    <title>Android JNI 基础篇</title>
-   <link href="http://heguixiang.github.io/blog/2015/12/android-jni-parsec.html"/>
+   <link href="http://http://hello2hgx.cn/blog/2015/12/android-jni-parsec.html"/>
    <updated>2015-12-14T00:00:00+08:00</updated>
    <id>/blog/2015/12/android-jni-parsec</id>
    <content type="html">&lt;p&gt;一步一步来，慢慢来研究下JNI。 &lt;/p&gt;
@@ -898,7 +898,7 @@ k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\.
  
  <entry>
    <title>毕业论文的目录框架</title>
-   <link href="http://heguixiang.github.io/blog/2015/12/graduation-thesis-framework.html"/>
+   <link href="http://http://hello2hgx.cn/blog/2015/12/graduation-thesis-framework.html"/>
    <updated>2015-12-08T00:00:00+08:00</updated>
    <id>/blog/2015/12/graduation-thesis-framework</id>
    <content type="html">&lt;p&gt;老板在要论文的思路，这里我就把我毕业论文的目录框架发给他吧，正好让老板帮我看看，有没有什么不妥的地方，现在这个时间也该开始写论文初稿了。&lt;/p&gt;
@@ -994,7 +994,7 @@ k\extras\android\support\v7\appcompat\libs\android-support-v7-appcompat.jar;..\.
  
  <entry>
    <title>java并发和多线程</title>
-   <link href="http://heguixiang.github.io/blog/2014/08/java-multithread.html"/>
+   <link href="http://http://hello2hgx.cn/blog/2014/08/java-multithread.html"/>
    <updated>2014-08-02T00:00:00+08:00</updated>
    <id>/blog/2014/08/java-multithread</id>
    <content type="html">&lt;p&gt;注：本文的内容翻译自&lt;a href=&quot;http://tutorials.jenkov.com/java-concurrency/deadlock.html&quot;&gt;http://tutorials.jenkov.com/java-concurrency/deadlock.html&lt;/a&gt;&lt;/p&gt;
@@ -1459,7 +1459,7 @@ Transaction 2, request 2, tries to lock record 1 for update.
  
  <entry>
    <title>使用jekyll在Github上搭建博客</title>
-   <link href="http://heguixiang.github.io/blog/2014/07/use-jekyll-build-blog-on-github.html"/>
+   <link href="http://http://hello2hgx.cn/blog/2014/07/use-jekyll-build-blog-on-github.html"/>
    <updated>2014-07-15T00:00:00+08:00</updated>
    <id>/blog/2014/07/use-jekyll-build-blog-on-github</id>
    <content type="html">&lt;p&gt;jekyll是一个使用Ruby编写的静态站点生成工具，使用Liquid模板渲染引擎，支持Markdown和Textile标记语言，并且可以为所有以 .html、.markdown、.textile扩展名结尾的文件使用YAML配置，内置语法高亮功能。&lt;/p&gt;
@@ -1566,7 +1566,7 @@ $ ruby dk.rb install
  
  <entry>
    <title>一个合格的程序员应该读过哪些书</title>
-   <link href="http://heguixiang.github.io/blog/2014/07/qualified-programmer-should-read-what-books.html"/>
+   <link href="http://http://hello2hgx.cn/blog/2014/07/qualified-programmer-should-read-what-books.html"/>
    <updated>2014-07-15T00:00:00+08:00</updated>
    <id>/blog/2014/07/qualified-programmer-should-read-what-books</id>
    <content type="html">&lt;p&gt;编者按：2008年8月4日，StackOverflow 网友 Bert F 发帖提问：哪本最具影响力的书，是每个程序员都应该读的？&lt;/p&gt;
@@ -2019,7 +2019,7 @@ Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳�
  
  <entry>
    <title>Markdown 语法 (简体中文版)</title>
-   <link href="http://heguixiang.github.io/blog/2014/07/markdown-syntax.html"/>
+   <link href="http://http://hello2hgx.cn/blog/2014/07/markdown-syntax.html"/>
    <updated>2014-07-11T00:00:00+08:00</updated>
    <id>/blog/2014/07/markdown-syntax</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown: Syntax&lt;/a&gt;.&lt;/p&gt;
@@ -2649,7 +2649,7 @@ _   底线
  
  <entry>
    <title>markdown 快速入门</title>
-   <link href="http://heguixiang.github.io/blog/2014/07/markdown-basics.html"/>
+   <link href="http://http://hello2hgx.cn/blog/2014/07/markdown-basics.html"/>
    <updated>2014-07-10T00:00:00+08:00</updated>
    <id>/blog/2014/07/markdown-basics</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;声明：&lt;/strong&gt; 这份文档派生(fork)于&lt;a href=&quot;http://markdown.tw/&quot;&gt;繁体中文版&lt;/a&gt;，在此基础上进行了繁体转简体工作，并进行了适当的润色。此文档用 Markdown 语法编写，你可以到这里&lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/basics.md&quot;&gt;查看它的源文件&lt;/a&gt;。「繁体中文版的原始文件可以&lt;a href=&quot;https://github.com/othree/markdown-syntax-zhtw/blob/master/basics.md&quot;&gt;查看这里&lt;/a&gt;」--By @&lt;a href=&quot;http://twitter.com/riku&quot;&gt;riku&lt;/a&gt; / 本项目托管于 &lt;a href=&quot;http://gitcafe.com/riku/Markdown-Syntax-CN&quot;&gt;GitCafe&lt;/a&gt;&lt;/p&gt;
@@ -2866,7 +2866,7 @@ you&amp;#39;ve got to put paragraph tags in your blockquotes:&amp;lt;/p&amp;gt;
  
  <entry>
    <title>C语言高级编程指南</title>
-   <link href="http://heguixiang.github.io/blog/2014/07/c-advanced-programming.html"/>
+   <link href="http://http://hello2hgx.cn/blog/2014/07/c-advanced-programming.html"/>
    <updated>2014-07-05T00:00:00+08:00</updated>
    <id>/blog/2014/07/c-advanced-programming</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;整形溢出和提升&lt;/strong&gt;&lt;/p&gt;
