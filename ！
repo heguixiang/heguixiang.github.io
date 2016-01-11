@@ -1,0 +1,45 @@
+permalink: /blog/:year/:month/:title.html 
+include: ['.htaccess']
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "CNAME", "Gemfile", "Gemfile.lock"]
+#markdown: kramdown
+markdown: redcarpet
+redcarpet:
+    extensions: [fenced_code_blocks,no_intra_emphasis,strikethrough,no_intra_emphasis,autolink,tables]
+highlights: pygments
+#url: "http://heguixiang.github.io"
+url: "http://hello2hgx.cn"
+baseurl: ""
+#atom-baseurl: "http://heguixang.github.io"
+atom-baseurl: "http://hello2hgx.cn"
+#cdn_url: 7u2t01.com1.z0.glb.clouddn.com
+#lsi: false
+#safe: true
+#timezone: Asia/Shanghai
+#auto: false 
+
+paginate: 8
+paginate_path: "page:num"
+
+#kramdown:
+#auto_ids: true,
+#  footnote_nr: 1
+#  entity_output: as_char
+#  toc_levels: 1..6
+#  use_coderay: false
+
+JB :
+    #IMAGE_PATH :  heguixiang.github.io/images
+    IMAGE_PATH :  http://hello2hgx.cn/images
+
+#domain: heguixiang.github.io
+domain: http://hello2hgx.cn
+title: 浪号
+description: 快乐生活
+author: Guixiang.He
+email: guixiang.he@outlook.com
+github: heguixiang
+
+config:
+  js_dir:
+  img_dir:
+  css_dir:
